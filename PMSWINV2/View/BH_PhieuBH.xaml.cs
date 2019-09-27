@@ -1,6 +1,4 @@
-﻿using DevExpress.Xpf.Core;
-using DevExpress.Xpf.Grid;
-using DevExpress.XtraEditors;
+﻿
 using MTPMSWIN.Model;
 using System;
 using System.Collections.Generic;
@@ -1037,11 +1035,10 @@ namespace MTPMSWIN.View
 
         private void txtBarCode_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
-            if (isEdit == false) { return; }
-
+            if (isEdit == false) { return; }        
             if (e.Key == Key.Enter){                
-                try{
-                    if (txtBarCode.Text.Trim() != "" && txtBarCode.Text.Length > 5)
+                try{                    
+                    if (txtBarCode.Text.Trim() != "" && txtBarCode.Text.Length >2)
                     {
                         String mCode = "";
                         Double mDongia = 0;
@@ -1139,17 +1136,10 @@ namespace MTPMSWIN.View
                             return true;
                         } 
                     }
-                    catch(Exception ex) 
-                    {
-                        Utils.showMessage("Lỗi hệ thống: " + ex.ToString());
-                    }
+                    catch { }
                 }
             }
-            catch (Exception ex)
-            {
-                Utils.showMessage("Lỗi hệ thống: " + ex.ToString());
-                return false; 
-            }
+            catch { return false; }
             return false;
         }
 
@@ -1170,11 +1160,7 @@ namespace MTPMSWIN.View
                     }catch { }
                 }
             }
-            catch (Exception ex)
-            {
-                Utils.showMessage("Lỗi hệ thống: " + ex.ToString());
-                return false; 
-            }
+            catch { return false; }
             return false;
         }
 
@@ -1304,10 +1290,7 @@ namespace MTPMSWIN.View
                     }
                 }
             }
-            catch (Exception ex)
-            {
-                Utils.showMessage("Lỗi hệ thống: " + ex.ToString());
-            }
+            catch (Exception ex) { System.Windows.Forms.MessageBox.Show(ex.Message.ToString()); }
         }
 
         private void txtCK_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
