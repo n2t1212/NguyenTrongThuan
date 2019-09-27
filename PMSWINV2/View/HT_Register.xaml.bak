@@ -1,0 +1,30 @@
+﻿<Window x:Class="MTPMSWIN.View.HT_Register" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Đăng ký" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        WindowStyle="None"       
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" Width="700" Height="386.568" AllowsTransparency="True" Background="Transparent">
+    
+        <Border BorderBrush="#FFC7D7EE"
+            BorderThickness="1.5"
+            CornerRadius="10" OverridesDefaultStyle="True" Background="#FFE4ECF7" >
+        <Grid>
+            <Label Content="ĐĂNG KÝ THÔNG TIN" x:Name="lblRegister" HorizontalContentAlignment="Center" Margin="10,0,0,0" Height="45" VerticalAlignment="Top" HorizontalAlignment="Left" Width="677" Foreground="#FF3C8CCF" FontSize="18" Opacity="0.9" RenderTransformOrigin="0.608,0.793" FontWeight="Bold" MouseDown="lblRegister_MouseDown" />
+            <Label Content="Tên đơn vị sử dụng" x:Name="lblCustomer" Margin="45,91,0,0" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="156" Foreground="#FF3C8CCF" FontSize="16" Opacity="0.9" RenderTransformOrigin="0.608,0.793" />
+            <TextBox Margin="206,0,0,258" Name="txtCustomer" CharacterCasing="Upper" Height="45" VerticalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="405"   Background="#FFF9FBFF" BorderBrush="#FF3C8CCF" PreviewKeyDown="txtCustomer_PreviewKeyDown" BorderThickness="2,1,1,2"/>
+            <Label Content="Địa chỉ" x:Name="lblAddress" Margin="45,128,0,0" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="132" Foreground="#FF3C8CCF" FontSize="16" Opacity="0.9" RenderTransformOrigin="0.608,0.793" />
+            <TextBox Margin="206,0,0,211" x:Name="txtAddress" CharacterCasing="Upper" Height="45" VerticalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="405"   Background="#FFF9FBFF" BorderBrush="#FF3C8CCF" PreviewKeyDown="txtAddress_PreviewKeyDown" BorderThickness="2,1,1,2"/>
+            <Label Content="Số điện thoại" x:Name="lblPhone" Margin="45,175,0,0" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="132" Foreground="#FF3C8CCF" FontSize="16" Opacity="0.9" RenderTransformOrigin="0.608,0.793" />
+            <TextBox Margin="206,0,0,164" x:Name="txtPhone" CharacterCasing="Upper" Height="45" VerticalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="405" Background="#FFF9FBFF" BorderBrush="#FF3C8CCF" PreviewKeyDown="txtPhone_PreviewKeyDown" BorderThickness="2,1,1,2"/>
+            <Label Content="Số Imei" x:Name="lblImei" Margin="45,222,0,0" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="132" Foreground="#FF3C8CCF" FontSize="16" Opacity="0.9" RenderTransformOrigin="0.608,0.793" />
+            <TextBox Margin="206,0,0,117" x:Name="txtImei" CharacterCasing="Upper" Height="45" VerticalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="405"  Background="#FFE4ECF7" BorderBrush="#FF3C8CCF" FontStyle="Italic" IsReadOnly="True" PreviewKeyDown="txtImei_PreviewKeyDown" BorderThickness="2,1,1,2"/>
+
+            <Button Content="Đăng ký" Style="{StaticResource MyButtonAction}" Margin="255,316,0,0" x:Name="btnRegister" Height="45" VerticalAlignment="Top" HorizontalAlignment="Left" Width="138" Cursor="Hand" FontFamily="FontAwesome"  Click="onRegister"  />
+            <Button Content="Thoát" Style="{StaticResource MyButtonAction}" Margin="398,316,0,0" x:Name="btnCancel" Height="45" VerticalAlignment="Top" HorizontalAlignment="Left" Width="131" Cursor="Hand" FontFamily="FontAwesome"  Click="onCancel"/>
+            <Label x:Name="lblActive" Content="..." Margin="45,272,0,0" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Width="566" Foreground="#FF93B4DE" FontSize="14" Opacity="0.9" />
+        </Grid>
+
+    </Border>
+</Window>

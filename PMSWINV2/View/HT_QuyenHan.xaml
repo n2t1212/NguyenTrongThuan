@@ -1,0 +1,109 @@
+﻿<Window
+        xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        xmlns:local="clr-namespace:MTPMSWIN.View"
+        x:Class="MTPMSWIN.View.HT_QuyenHan"
+        Title="" Height="623.418" Width="1117.463" WindowStyle="None">
+    <Grid Margin="0,0,2,2" Background="#FFE4ECF7" Loaded="formLoad">
+        <dxg:GridControl x:Name="grdQuyenHan" AutoPopulateColumns="False" ShowBorder="False" Margin="449,0,4,85" HorizontalAlignment="Stretch" PreviewKeyDown="grdQuyenHan_PreviewKeyDown" >
+            <dxg:GridControl.View>
+                <dxg:TableView x:Name="tblView" ExpandDetailButtonWidth="14" ShowFilterPanelMode="Never" ShowGroupPanel="False" RowMinHeight="25" IndicatorWidth="25" HeaderPanelMinHeight="45"
+    				NavigationStyle="Row" CellValueChanging="tblView_CellValueChanging"/>
+            </dxg:GridControl.View>
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn x:Name="soid" FieldName="soid" Header="soid" Width="120" HorizontalHeaderContentAlignment="Center" Visible="False"/>
+                <dxg:GridColumn x:Name="macn" FieldName="macn" Header="macn" Width="120" HorizontalHeaderContentAlignment="Center" Visible="False"/>
+                <dxg:GridColumn x:Name="colChucNang" FieldName="chucnang" Header="Tên chức năng" Width="250" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colThem" FieldName="them" Header="Thêm" Width="90" HorizontalHeaderContentAlignment="Center">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:CheckEditSettings/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="colSua" FieldName="sua" Header="Sửa" Width="90" HorizontalHeaderContentAlignment="Center">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:CheckEditSettings/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="colXoa" FieldName="xoa" Header="Xoá" Width="90" HorizontalHeaderContentAlignment="Center">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:CheckEditSettings/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="colDuyet" FieldName="duyet" Header="Duyệt" Width="90" HorizontalHeaderContentAlignment="Center">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:CheckEditSettings/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="colIn" FieldName="in" Header="In" Width="90" HorizontalHeaderContentAlignment="Center">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:CheckEditSettings/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+            </dxg:GridControl.Columns>
+
+        </dxg:GridControl>
+        <dxg:GridControl x:Name="grdNhomQuyen" AutoPopulateColumns="False" HorizontalAlignment="Left" Height="528" ShowBorder="False" VerticalAlignment="Top" Width="449" >
+            <dxg:GridControl.View>
+                <dxg:TableView x:Name="tblViewGrp" ExpandDetailButtonWidth="14" ShowGroupPanel="False" RowMinHeight="25" IndicatorWidth="25" HeaderPanelMinHeight="45"
+        			NavigationStyle="Row" FocusedRowChanged="onFocusRowChange"/>
+
+            </dxg:GridControl.View>
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn x:Name="colsoid" FieldName="soid" Header="ID" Width="120" HorizontalHeaderContentAlignment="Center" Visible="False"/>
+                <dxg:GridColumn x:Name="colMaNhom" FieldName="manhom" Header="Mã nhóm" Width="100" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colTenNhom" FieldName="tennhom" Header="Tên nhóm" Width="200" HorizontalHeaderContentAlignment="Center"/>            
+            </dxg:GridControl.Columns>
+
+        </dxg:GridControl>
+
+        <Grid x:Name="Toolbar" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Height="55" Margin="0,0,10,24">
+            <Button x:Name="cmdThemNQ" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right"  Margin="0,10,816,0" VerticalAlignment="Top" Width="200" Click="cmdThemNQ_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_addnew.png" Height="20"  Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="171" Foreground="White" FontWeight="Normal">Thêm nhóm quyền (F2)</Label>
+                </StackPanel>
+            </Button>
+            <Button x:Name="cmdThemQH" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right"  Margin="0,10,592,0" VerticalAlignment="Top" Width="200" Click="cmdThemQH_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_addnew.png" Height="20"  Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="171" Foreground="White" FontWeight="Normal" Content="Thêm quyền hạn (F3)"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="cmdEdit" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right"  Margin="0,10,475,0" VerticalAlignment="Top" Width="112" Click="cmdEdit_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_edit.png" Height="20"  Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="171" Foreground="White" FontWeight="Normal" Content="Sửa (F4)"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="cmdDelete" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right"  Margin="0,10,358,0" VerticalAlignment="Top" Width="112" Click="cmdDelete_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_del.png" Height="20"  Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="67" Foreground="White" FontWeight="Normal" Content="Xóa (F5)"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="cmdSave" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right"  Margin="0,10,241,0" VerticalAlignment="Top" Width="112" Click="cmdDelete_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/MTPMSWIN;component/Images/Icons/pos_save.png" Height="20"  Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="171" Foreground="White" FontWeight="Normal" Content="Lưu (F6)"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="cmdAbort" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right"  Margin="0,10,124,0" VerticalAlignment="Top" Width="112" Click="cmdAbort_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/MTPMSWIN;component/Images/Icons/pos_abort.png" Height="20"  Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="171" Foreground="White" FontWeight="Normal" Content="Hủy (F7)"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="cmdExit" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right" Margin="0,10,5,0" VerticalAlignment="Top" Width="110" Height="35" Click="cmdExit_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_exit.png" Height="20"  Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="74" Foreground="White" FontWeight="Normal">Thoát (F8)</Label>
+                </StackPanel>
+            </Button>
+        </Grid>
+        <TreeView HorizontalAlignment="Left" Height="0" Margin="0,459,0,0" VerticalAlignment="Top" Width="396"/>
+    </Grid>
+
+</Window>
+

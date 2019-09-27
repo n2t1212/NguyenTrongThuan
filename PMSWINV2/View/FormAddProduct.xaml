@@ -1,0 +1,45 @@
+﻿<Window x:Class="MTPMSWIN.View.FormAddProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        Title="Đăng ký" mc:Ignorable="d" 
+        WindowStyle="None"       
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" Width="700" Height="700" AllowsTransparency="True" Background="Transparent" Loaded="Window_Loaded">
+
+    <Border BorderBrush="#FFB9F397"
+            BorderThickness="1.5"
+            CornerRadius="10" OverridesDefaultStyle="True" >
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF1A94F9" Offset="0"/>
+                <GradientStop Color="#FFCF2BFF" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <Label Content="THÊM SẢN PHẨM" x:Name="lblForm" Margin="283,25,0,0" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="199" Foreground="#FFFBBEED" FontSize="18" Opacity="0.9" RenderTransformOrigin="0.608,0.793" FontFamily="{DynamicResource {x:Static SystemFonts.CaptionFontFamilyKey}}" FontWeight="Bold" />
+            <Label Content="Mã sản phẩm" x:Name="lblProductCode" Margin="45,91,0,0" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="132" Foreground="#FFFBBEED" FontSize="16" Opacity="0.9" RenderTransformOrigin="0.608,0.793" />
+            <TextBox Margin="196,0,0,571" x:Name="txtProductCode" Height="45" VerticalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="405" FontFamily="FontAwesome"  Style="{StaticResource MyTextEditLogin}" Background="{x:Null}" BorderBrush="#FFF096F9" FontWeight="Normal"/>
+            <Label Content="Tên sản phẩm" x:Name="lblProductName" Margin="45,154,0,0" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="132" Foreground="#FFFBBEED" FontSize="16" Opacity="0.9" RenderTransformOrigin="0.608,0.793" />
+            <TextBox Margin="196,0,0,508" x:Name="txtProductName"  Height="45" VerticalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="405" FontFamily="FontAwesome"  Style="{StaticResource MyTextEditLogin}" Background="{x:Null}" BorderBrush="#FFF096F9" FontWeight="Normal"/>
+            <Label Content="Đơn vị tính" x:Name="lblDVT" Margin="45,214,0,0" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="132" Foreground="#FFFBBEED" FontSize="16" Opacity="0.9" RenderTransformOrigin="0.608,0.793" />
+            <TextBox Margin="196,0,0,448" x:Name="txtDVT"  Height="45" VerticalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="405" FontFamily="FontAwesome"  Style="{StaticResource MyTextEditLogin}" Background="{x:Null}" BorderBrush="#FFF096F9" FontWeight="Normal"/>
+            <Label Content="Quy cách" x:Name="lblQuyCach" Margin="45,274,0,0" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="132" Foreground="#FFFBBEED" FontSize="16" Opacity="0.9" RenderTransformOrigin="0.608,0.793" />
+            <TextBox Margin="196,0,0,388" x:Name="txtQuyCach"  Height="45" VerticalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="405" FontFamily="FontAwesome"  Style="{StaticResource MyTextEditLogin}" Background="{x:Null}" BorderBrush="#FFF096F9" FontWeight="Normal"/>
+            <Label Content="Quy đổi lẻ" x:Name="lblQuyDoiLe" Margin="45,343,0,0" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="132" Foreground="#FFFBBEED" FontSize="16" Opacity="0.9" RenderTransformOrigin="0.608,0.793" />
+            <TextBox Margin="196,0,0,319" x:Name="txtQuyDoiLe"  Height="45" VerticalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="405" FontFamily="FontAwesome"  Style="{StaticResource MyTextEditLogin}" Background="{x:Null}" BorderBrush="#FFF096F9" FontWeight="Normal"/>
+            <Label Content="Quy đổi thùng" x:Name="lblQuyDoiThung" Margin="45,406,0,0" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="132" Foreground="#FFFBBEED" FontSize="16" Opacity="0.9" RenderTransformOrigin="0.608,0.793" />
+            <TextBox Margin="196,0,0,256" x:Name="txtQuyDoiThung"  Height="45" VerticalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="405" FontFamily="FontAwesome"  Style="{StaticResource MyTextEditLogin}" Background="{x:Null}" BorderBrush="#FFF096F9" FontWeight="Normal"/>
+            <Label Content="Nhóm" x:Name="lblNhom" Margin="45,460,0,0" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="132" Foreground="#FFFBBEED" FontSize="16" Opacity="0.9" RenderTransformOrigin="0.608,0.793" />
+            <ComboBox x:Name="cbbProductGroup" HorizontalAlignment="Left" Height="35" Margin="196,460,0,0" VerticalAlignment="Top" Width="405"/>
+            <Label Content="Nhà cung cấp" x:Name="lblNhacc" Margin="45,532,0,0" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="132" Foreground="#FFFBBEED" FontSize="16" Opacity="0.9" RenderTransformOrigin="0.608,0.793" />
+            <TextBox Margin="196,0,0,130" x:Name="txtNhaCC"  Height="45" VerticalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="405" FontFamily="FontAwesome"  Style="{StaticResource MyTextEditLogin}" Background="{x:Null}" BorderBrush="#FFF096F9" FontWeight="Normal"/>
+            <Button Content="Lưu" Margin="87,612,0,0" x:Name="btnSave" Height="45" VerticalAlignment="Top" HorizontalAlignment="Left" Width="90" Cursor="Hand" FontFamily="FontAwesome" Style="{StaticResource MyButtonLogin}" Click="onClickSave" />
+            <Button Content="Lưu và thêm mới" Margin="249,612,0,0" x:Name="btnSaveAndAdd" Height="45" VerticalAlignment="Top" HorizontalAlignment="Left" Width="162" Cursor="Hand" FontFamily="FontAwesome" Style="{StaticResource MyButtonLogin}" Click="onClickSaveAndAddNew" />
+            <Button Content="Hủy" Margin="485,612,0,0" x:Name="btnCancel" Height="45" VerticalAlignment="Top" HorizontalAlignment="Left" Width="90" Cursor="Hand" FontFamily="FontAwesome" Style="{StaticResource MyButtonLogin}" RenderTransformOrigin="2.659,0.539" Click="onClickCancel"/>
+        </Grid>
+
+    </Border>
+</Window>

@@ -1,0 +1,91 @@
+﻿<Window
+        xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="MTPMSWIN.View.HT_ThamSo"
+        Title="HT_ThamSo" Height="623.418" Width="1110" WindowStyle="None">
+    <Grid Loaded="GridForm_Loaded" Margin="0,0,0,2" Background="#FFE4ECF7" PreviewKeyDown="Grid_PreviewKeyDown_1">
+        <Grid x:Name="Toolbar" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="55" Margin="0,520,0,0">
+            <Button x:Name="cmdIn" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right" Margin="0,8,540,0" VerticalAlignment="Top" Width="110" Click="cmdSave_Click" Height="37" Visibility="Hidden">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_print.png" Height="20"  Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="74" Foreground="White" FontWeight="Normal">In (F7)</Label>
+                </StackPanel>
+            </Button>
+            <Button x:Name="cmdSave" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right" Margin="0,8,385,0" VerticalAlignment="Top" Width="133" Click="cmdSave_Click" Visibility="Hidden">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_save.png" Height="20"  Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="74" Foreground="White" FontWeight="Normal">Ghi (F5)</Label>
+                </StackPanel>
+            </Button>
+            <Button x:Name="cmdAdd" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right"  Margin="0,8,385,0" VerticalAlignment="Top" Width="133" Click="cmdAdd_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_addnew.png" Height="20"  Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="74" Foreground="White" FontWeight="Normal">Thêm (F2)</Label>
+                </StackPanel>
+            </Button>
+            <Button x:Name="cmdAbort"  Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right"  Margin="0,8,270,0" VerticalAlignment="Top" Width="115" Click="cmdAbort_Click" Visibility="Hidden">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_abort.png" Height="20"  Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="74" Foreground="White" FontWeight="Normal">Hủy (Esc)</Label>
+                </StackPanel>
+            </Button>
+            <Button x:Name="cmdEdit" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right"  Margin="0,8,270,0" VerticalAlignment="Top" Width="115" Click="cmdEdit_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_edit.png" Height="20"  Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="74" Foreground="White" FontWeight="Normal">Sửa (F3)</Label>
+                </StackPanel>
+            </Button>
+            <Button x:Name="cmdDel" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right"  Margin="0,8,150,0" VerticalAlignment="Top" Width="120" Click="cmdDel_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_del.png" Height="20"  Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="74" Foreground="White" FontWeight="Normal">Xóa (F4)</Label>
+                </StackPanel>
+            </Button>
+            <Button x:Name="cmdExit" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right" Margin="0,8,5,0" VerticalAlignment="Top" Width="110" Click="cmdExit_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_exit.png" Height="20"  Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="74" Foreground="White" FontWeight="Normal">Thoát (F8)</Label>
+                </StackPanel>
+            </Button>
+        </Grid>
+        <Grid VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="0 40 0 0" Height="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="170*"/>
+                <ColumnDefinition Width="685*"/>
+                <ColumnDefinition Width="81*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <dxg:GridControl x:Name="grdPara" AutoPopulateColumns="False" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="515" ShowBorder="False" >
+            <dxg:GridControl.View>
+                <dxg:TableView x:Name="tblView" FocusedRowChanged="tblView_FocusedRowChanged" InitNewRow="tblView_InitNewRow"  NewItemRowCellStyle="{DynamicResource NewItemRow}" InvalidRowException="tblView_InvalidRowException" CellValueChanging="tblView_CellValueChanging" ValidateRow="tblView_ValidateRow" ExpandDetailButtonWidth="14" ShowGroupPanel="False" RowMinHeight="25" IndicatorWidth="25" HeaderPanelMinHeight="45"
+    				NavigationStyle="Row"/>
+
+            </dxg:GridControl.View>
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn x:Name="colParaName" FieldName="PARA_NAME" Header="Tham Số" Width="120" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colParaVal" FieldName="PARA_VAL" Header="Giá Trị" Width="350" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colParaType" FieldName="PARA_TYPE" Header="Loại" Width="100" HorizontalHeaderContentAlignment="Center">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings>
+                            <dxe:ComboBoxEditSettings.Items>
+                                <System:String>HT</System:String>
+                                <System:String>PM</System:String>
+                                <System:String>RPT</System:String>
+                                <System:String>USER</System:String>
+                            </dxe:ComboBoxEditSettings.Items>
+                        </dxe:ComboBoxEditSettings>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+
+                <dxg:GridColumn x:Name="colParaDesc" FieldName="PARA_DESC" Header="Diễn Giải" Width="450" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colParaReadOnly" FieldName="PARA_READONLY" Header="Chỉ Đọc" Width="80" HorizontalHeaderContentAlignment="Center">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:CheckEditSettings/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+            </dxg:GridControl.Columns>
+
+        </dxg:GridControl>
+    </Grid>
+</Window>

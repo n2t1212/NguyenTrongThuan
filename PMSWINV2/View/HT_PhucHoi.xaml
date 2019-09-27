@@ -1,0 +1,24 @@
+﻿<Window xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" x:Class="MTPMSWIN.View.HT_PhucHoi"
+        Title="BH_BanHangList" Height="596.164" Width="1110" WindowStyle="None" IsHitTestVisible="False" Background="#FFE4ECF7">
+
+    <Grid Margin="0,0,0,60" Loaded="formLoad" Background="#FFE4ECF7">
+        <Label Content="Server" HorizontalAlignment="Left" Height="30" Margin="314,104,0,0" VerticalAlignment="Top" Width="100" FontSize="14" FontWeight="Bold"/>
+        <Label Name="lblDataBase" Content="Database" HorizontalAlignment="Left" Height="30" Margin="312,340,0,0" VerticalAlignment="Top" Width="100" FontSize="14" FontWeight="Bold" Visibility="Hidden"/>
+        <Label Content="Username" HorizontalAlignment="Left" Height="30" Margin="314,167,0,0" VerticalAlignment="Top" Width="100" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Password" HorizontalAlignment="Left" Height="30" Margin="314,221,0,0" VerticalAlignment="Top" Width="100" FontSize="14" FontWeight="Bold"/>
+        <Button Content="Phục hồi" Name="btnRestore" HorizontalAlignment="Left" Height="48" Margin="498,447,0,0" VerticalAlignment="Top" Width="98" FontSize="16" FontWeight="Bold" RenderTransformOrigin="-4.061,3.802" Click="btnRestore_Click" Visibility="Hidden"/>
+        <Label Name="lblChonFile" Content="Chọn file" HorizontalAlignment="Left" Height="30" Margin="312,396,0,0" VerticalAlignment="Top" Width="112" FontSize="14" FontWeight="Bold" Visibility="Hidden"/>
+        <dxe:TextEdit Name="txtPathRestore" HorizontalAlignment="Left" Height="30" Margin="440,396,0,0" Foreground="#FF030304" VerticalAlignment="Top" Width="304" Visibility="Hidden"/>
+        <Button Content="Chọn" Name="btnSelectPath" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Left" Height="28" Margin="762,398,0,0" VerticalAlignment="Top" Width="76" FontSize="14" FontWeight="Bold" Click="btnSelectPath_Click" Visibility="Hidden"/>
+
+        <dxe:ComboBoxEdit Name="cbcServer" HorizontalAlignment="Left" Height="30" Margin="442,104,0,0" VerticalAlignment="Top" Width="305" Foreground="#FF030304"
+            ItemsSource="{Binding dsServer}"  
+            	DisplayMember="name"
+            	ValueMember="name" PreviewKeyDown="cbcServer_PreviewKeyDown">
+        </dxe:ComboBoxEdit>
+        <dxe:TextEdit Name="txtUsername" HorizontalAlignment="Left" Height="30" Margin="442,164,0,0" VerticalAlignment="Top" Width="303" Foreground="#FF030304" PreviewKeyDown="txtUsername_PreviewKeyDown"/>
+        <dxe:PasswordBoxEdit  Name="txtPassword" HorizontalAlignment="Left" Height="30" Margin="442,221,0,0" VerticalAlignment="Top" Width="303" Foreground="#FF030304" PreviewKeyDown="txtPassword_PreviewKeyDown"/>
+        <Button Content="Test kết nối" x:Name="btnTestConnect" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Left" Height="48" Margin="498,269,0,0" VerticalAlignment="Top" Width="120" FontSize="16" FontWeight="Bold" RenderTransformOrigin="-4.061,3.802" Click="btnTestConnect_Click"/>
+		<dxe:TextEdit Name="txtDatabase" HorizontalAlignment="Left" Height="30" Margin="442,340,0,0" VerticalAlignment="Top" Width="302" Visibility="Hidden" Foreground="#FF030304" PreviewKeyDown="txtDatabase_PreviewKeyDown"/>
+    </Grid>
+</Window>

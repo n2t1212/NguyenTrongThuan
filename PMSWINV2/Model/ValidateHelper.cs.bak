@@ -1,0 +1,152 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Data.SQLite;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+
+namespace MTPMSWIN.Model
+{
+    public static class ValidateHelper
+    {
+        /**
+         * Validate field has content value empty or not
+         * Return error message if any
+         **/
+        public static String validateFieldNotEmpty(String field, String value)
+        {
+            String err = "";
+            if(value.Trim().Length == 0){
+                err = Utils.ERR_NOT_ALLOW_EMPTY_FIELD(field);
+            }
+            return err;
+        }
+
+        /**
+         * Validate field has value number or not
+         * Return error message if any
+         **/
+        public static String validateFieldIsNumber(String field, String value)
+        {
+            String err = "";
+            long n;
+            bool isNumeric = long.TryParse(value, out n);
+            if (!isNumeric)
+            {
+                err = Utils.ERR_FIELD_IS_NOT_NUMBER(field);
+            }
+            return err;
+        }
+
+        public static bool isActivePC()
+        {
+            string mSQL = string.Format("select * from HT_PARA WHERE PARA_NAME = 'PARA_ACTIVE' AND PARA_VAL = '1'");
+            DataSet DSetMain = new DataSet();
+            SqlDataAdapter SQLAdaptor = new MTSQLServer().wAdapter(mSQL, null, false);
+            SQLAdaptor.Fill(DSetMain, "USER");
+            int rowNumber = DSetMain.Tables["USER"].Rows.Count;
+            if (rowNumber == 1)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static String checkCodeValueNotDuplicate(String tableName, String codeName, String codeValue, String codeHeader)
+        {
+            String err = "";
+            try
+            {
+                String mSQL = String.Format("select * from {0} where {1} = '{2}'", tableName, codeName, codeValue);
+                DataSet DSetMain = new DataSet();
+                SqlDataAdapter SQLAdaptor = new MTSQLServer().wAdapter(mSQL, null, false);
+                SQLAdaptor.Fill(DSetMain, tableName);
+
+                int rowNumber = DSetMain.Tables[tableName].Rows.Count;
+                if (rowNumber > 0)
+                {
+                    return Utils.ERR_DUPLICATE_VALUE_OF_FIELD(codeHeader);
+                }
+            }
+            catch(Exception e)
+            {
+                err = Utils.ERR_CONNECT_DB;
+            }
+            return err;
+        }
+
+        public static bool isAmountInputValid(string storeId, string productId, double amountInput)
+        {
+            string thang = DateTime.Now.Month.ToString().PadLeft(2, '0');
+            String mSQL = String.Format("select * from NX_NHAP_XUAT_TON where makho = '{0}' and masp = '{1}' and thang = {2}", storeId, productId, thang);
+            return true;
+        }
+
+
+        public static bool fValidPhone(string mPhone = "")
+        {
+            try
+            {
+                if (mPhone == "") return true;
+                if (mPhone.IndexOf(",") > 0)
+                {
+                    string[] Phone = mPhone.Split(',');
+                    for (int i = 0; i < Phone.Length; i++)
+                    {
+                        int Num = 0;
+                        bool isNum = int.TryParse(Phone[i], out Num);
+                        if (Phone[i].Length < 10 || Phone[i].Length > 11 || Phone[i].Trim().Substring(0, 1) != "0" || isNum == false) return false;
+
+                    }
+                }
+                else
+                {
+                    int Num = 0;
+                    bool isNum = int.TryParse(mPhone, out Num);
+                    if (mPhone.Length < 10 || mPhone.Length > 11 || mPhone.Trim().Substring(0, 1) != "0" || isNum == false) return false;
+                }
+                return true;
+            }
+            catch { return false; }
+        }
+
+        public static bool fValidEmail(string mEmail = "")
+        {
+            try
+            {
+                Regex matchRegex = new Regex(@"[a-zA-Z0-9_\-\.]+@[a-zA-Z0-9_\-\.]+\.[a-zA-Z]{2,5}");
+                MatchCollection matches = matchRegex.Matches(mEmail);
+                if (matches.Count == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            catch { return false; }
+        }
+
+
+        public static bool IsNetworkActive()
+        {
+            try
+            {
+                if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
+                {
+                    System.Net.NetworkInformation.NetworkInterface[] interfaces = System.Net.NetworkInformation.NetworkInterface.GetAllNetworkInterfaces();
+                    return (from face in interfaces
+                            where face.OperationalStatus == System.Net.NetworkInformation.OperationalStatus.Up
+                            where (face.NetworkInterfaceType != System.Net.NetworkInformation.NetworkInterfaceType.Tunnel) && (face.NetworkInterfaceType != System.Net.NetworkInformation.NetworkInterfaceType.Loopback)
+                            select face.GetIPv4Statistics()).Any(statistics => (statistics.BytesReceived > 0) && (statistics.BytesSent > 0));
+                }
+            }
+            catch { return false; }
+            return false;
+        }
+
+    }
+}

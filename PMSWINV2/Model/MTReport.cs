@@ -1,0 +1,757 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+
+using DevExpress.XtraPrinting;
+using DevExpress.Xpf.Printing;
+
+using MTPMSWIN.Report;
+using MTPMSWIN.View;
+
+namespace MTPMSWIN.Model
+{
+    public class MTReport
+    {
+        public MTReport(){}
+
+      #region "FORMAT-REPORT"
+        private void setParameterInfo(DevExpress.XtraReports.UI.XtraReport oReport)
+        {
+            try{
+                foreach (var Par in oReport.Parameters)
+                {
+                    if (Par.Name == "parCompany")
+                    {
+                        Par.Value = MTGlobal.RPT_COMPANY;
+                    }
+                    if (Par.Name == "parAddress")
+                    {
+                        Par.Value = MTGlobal.RPT_ADDRESS;
+                    }
+                    if (Par.Name == "parTel")
+                    {
+                        Par.Value = MTGlobal.RPT_TEL;
+                    }
+                    if (Par.Name == "parTax")
+                    {
+                        Par.Value = MTGlobal.RPT_TAX;
+                    }
+                }
+            }catch { }
+      
+        }
+      
+        private void setFormatReport(DevExpress.XtraReports.UI.XtraReport oReport)
+        {
+            oReport.RequestParameters = false;
+            oReport.CreateDocument(false);
+            oReport.PrintingSystem.ShowMarginsWarning = false;
+        }
+        private void SetMarginReport(DevExpress.XtraReports.UI.XtraReport oReport, Boolean isLandCape, Int16 isTop, Int16 isBottom, Int16 isLeft, Int16 isRight)
+        {
+            try
+            {
+                oReport.DefaultPrinterSettingsUsing.UseMargins = true;
+                oReport.DefaultPrinterSettingsUsing.UsePaperKind = true;
+                oReport.PaperKind = System.Drawing.Printing.PaperKind.A4;
+                oReport.PrintingSystem.PageSettings.LeftMargin = isLeft;
+                oReport.PrintingSystem.PageSettings.RightMargin = isRight;
+                oReport.PrintingSystem.PageSettings.TopMargin = isTop;
+                oReport.PrintingSystem.PageSettings.BottomMargin = isBottom;
+                oReport.PrintingSystem.PageSettings.Landscape = isLandCape;
+            }
+            catch { }
+        }
+
+        private void SetCustomPageQR(DevExpress.XtraReports.UI.XtraReport oReport,String isMauIn="25_15"){
+            switch (isMauIn) { 
+                case "25_15":
+                    oReport.ReportUnit=global::DevExpress.XtraReports.UI.ReportUnit.TenthsOfAMillimeter;
+
+                    //PrinterSettingsUsing pst = new PrinterSettingsUsing(); 
+                    
+                    oReport.PaperKind=System.Drawing.Printing.PaperKind.Custom;
+                    //oReport.PageSize=new System.Drawing.Size(945,312);
+                    oReport.PageSize = new System.Drawing.Size(1050, 150);
+                    oReport.DefaultPrinterSettingsUsing.UsePaperKind = false;
+                    oReport.DefaultPrinterSettingsUsing.UseLandscape=false;
+                    oReport.DefaultPrinterSettingsUsing.UseMargins=false;
+                    
+
+                    oReport.PrintingSystem.PageSettings.LeftMargin =30;
+                    oReport.PrintingSystem.PageSettings.RightMargin =30;
+                    oReport.PrintingSystem.PageSettings.TopMargin =30;
+                    oReport.PrintingSystem.PageSettings.BottomMargin =30;                    
+                          
+                    break;
+
+                case "35_22":
+                    oReport.ReportUnit = global::DevExpress.XtraReports.UI.ReportUnit.TenthsOfAMillimeter;
+                    oReport.PaperKind = System.Drawing.Printing.PaperKind.Custom;
+                    //oReport.PageSize=new System.Drawing.Size(945,312);
+                    //oReport.PageSize = new System.Drawing.Size(1050, 220);
+                    oReport.DefaultPrinterSettingsUsing.UseLandscape = false;
+                    oReport.DefaultPrinterSettingsUsing.UseMargins = false;
+                    oReport.DefaultPrinterSettingsUsing.UsePaperKind = false;
+                 
+                    oReport.PrintingSystem.PageSettings.LeftMargin =30;
+                    oReport.PrintingSystem.PageSettings.RightMargin = 30;
+                    oReport.PrintingSystem.PageSettings.TopMargin = 30;
+                    oReport.PrintingSystem.PageSettings.BottomMargin = 30;
+                    oReport.RequestParameters = false;                    
+                    break;
+
+                case "30_30":
+                    oReport.ReportUnit=global::DevExpress.XtraReports.UI.ReportUnit.TenthsOfAMillimeter;
+                    oReport.PaperKind=System.Drawing.Printing.PaperKind.Custom;
+                    oReport.PageSize=new System.Drawing.Size(945,312);
+                    oReport.DefaultPrinterSettingsUsing.UseLandscape=false;
+                    oReport.DefaultPrinterSettingsUsing.UseMargins=false;
+                    oReport.DefaultPrinterSettingsUsing.UsePaperKind=false;
+                    oReport.RequestParameters=false;
+
+                    oReport.PrintingSystem.PageSettings.LeftMargin =3;
+                    oReport.PrintingSystem.PageSettings.RightMargin =3;
+                    oReport.PrintingSystem.PageSettings.TopMargin = 3;
+                    oReport.PrintingSystem.PageSettings.BottomMargin = 3;
+                    break;            
+            }
+          
+        }
+
+        private void SetCustomPageBill(DevExpress.XtraReports.UI.XtraReport oReport, String isMauIn = "80")
+        {
+            switch (isMauIn)
+            {
+                case "80":
+                    oReport.ReportUnit = global::DevExpress.XtraReports.UI.ReportUnit.TenthsOfAMillimeter;
+                    oReport.PaperKind = System.Drawing.Printing.PaperKind.Custom;
+                    //oReport.PageSize=new System.Drawing.Size(945,312);
+                    oReport.PageSize = new System.Drawing.Size(721, 2970);
+                    oReport.DefaultPrinterSettingsUsing.UseLandscape = false;
+                    oReport.DefaultPrinterSettingsUsing.UseMargins = false;
+                    oReport.DefaultPrinterSettingsUsing.UsePaperKind = false;
+                    oReport.RequestParameters = false;
+
+                    oReport.PrintingSystem.PageSettings.LeftMargin = 5;
+                    oReport.PrintingSystem.PageSettings.RightMargin = 5;
+                    oReport.PrintingSystem.PageSettings.TopMargin = 25;
+                    oReport.PrintingSystem.PageSettings.BottomMargin = 25;
+                    break;
+
+                case "90":
+                    oReport.ReportUnit = global::DevExpress.XtraReports.UI.ReportUnit.TenthsOfAMillimeter;
+                    oReport.PaperKind = System.Drawing.Printing.PaperKind.Custom;
+                    //oReport.PageSize=new System.Drawing.Size(945,312);
+                    oReport.PageSize = new System.Drawing.Size(820, 2970);
+                    oReport.DefaultPrinterSettingsUsing.UseLandscape = false;
+                    oReport.DefaultPrinterSettingsUsing.UseMargins = false;
+                    oReport.DefaultPrinterSettingsUsing.UsePaperKind = false;
+                    oReport.RequestParameters = false;
+
+                    oReport.PrintingSystem.PageSettings.LeftMargin = 2;
+                    oReport.PrintingSystem.PageSettings.RightMargin = 2;
+                    oReport.PrintingSystem.PageSettings.TopMargin = 2;
+                    oReport.PrintingSystem.PageSettings.BottomMargin = 2;
+                    break;
+
+            }
+
+        }
+     
+        public static void BlankWithZero(object sender){
+            try{
+                if (!string.IsNullOrEmpty(((DevExpress.XtraReports.UI.XRLabel)sender).Text) && Convert.ToDouble(((DevExpress.XtraReports.UI.XRLabel)sender).Text) == 0)
+                {
+                    ((DevExpress.XtraReports.UI.XRLabel)sender).Text = "";
+                }
+            }
+            catch { }
+        }
+
+
+/*
+  private System.Drawing.Image fQRCode(string mQRTitle, string mQRData){
+    try{
+       // Dim QRPath As String
+        BarcodeSettings QRSetting = new BarcodeSettings();
+        QRSetting.Type = BarCodeType.QRCode;
+        QRSetting.Data = mQRData;
+        QRSetting.Data2D = mQRTitle;
+        QRSetting.QRCodeDataMode = QRCodeDataMode.AlphaNumber;
+
+        QRSetting.ResolutionType = ResolutionType.Graphics;
+        QRSetting.Unit = System.Drawing.GraphicsUnit.Millimeter;
+        QRSetting.DpiX = 300;
+        QRSetting.DpiY = 300;
+
+        QRSetting.BarHeight = 25;
+        QRSetting.HasBorder = false;
+        QRSetting.BorderWidth = 1;
+
+        QRSetting.ImageHeight = 25; // 2.53 Inch | 64.2 Inch |128mm | 480 Pixel
+        QRSetting.ImageWidth = 25;
+        QRSetting.AutoResize = true;
+
+        QRSetting.X = 0.5F;
+        QRSetting.QRCodeECL = QRCodeECL.H;
+        QRSetting.TopMargin = 1;
+        QRSetting.LeftMargin = 1;
+        QRSetting.RightMargin = 1;
+        QRSetting.BottomMargin = 1;
+        QRSetting.ForeColor = System.Drawing.Color.Black;
+        // QRSetting.ForeColor = Color.CadetBlue
+
+        System.Drawing.Font myFont = new System.Drawing.Font("Verdana", 8);
+        QRSetting.TextFont = myFont;
+        QRSetting.ShowText = false;
+        QRSetting.TopText = mQRTitle;
+        QRSetting.TopTextColor = System.Drawing.Color.Green;
+        QRSetting.ShowTextOnBottom = false;
+
+        BarCodeGenerator QRGer = new BarCodeGenerator(QRSetting);
+        System.Drawing.Image Img = QRGer.GenerateImage();
+
+        // 'Dim QRBitmap As System.Drawing.Bitmap = oQR.GetGraphic(20)
+        System.IO.MemoryStream oMS = new System.IO.MemoryStream();
+        Img.Save(oMS, System.Drawing.Imaging.ImageFormat.Png); 
+        return Img;
+    }
+    catch (Exception ex)
+    {
+        return null;
+    }
+  }
+        */
+
+    #endregion
+
+        public void rptInMaVach(DataTable oTblSP, Boolean isDG = false, Boolean isMaQR = true,String isMauIn="25_15")
+        {
+            try
+            {
+                if (oTblSP == null || oTblSP.Rows.Count <= 0)
+                {
+                    Utils.showMessage(String.Format("Bạn chưa chọn sản phẩm cần tạo mã {0}", isMaQR == true ? " QRCode.." : " Vạch.."), "Lưu ý");
+                    return;
+                }
+
+                SqlParameter[] arrPara = new SqlParameter[5];
+                arrPara[0] = new SqlParameter("@tblMasp", SqlDbType.Structured);
+                arrPara[0].Value = oTblSP;
+                arrPara[1] = new SqlParameter("@Loai", SqlDbType.TinyInt);
+                arrPara[1].Value = isMaQR == true ? 0 : 1;
+                arrPara[2] = new SqlParameter("@Cogia", SqlDbType.Bit);
+                arrPara[2].Value = isDG == true ? 1 : 0;
+                arrPara[3] = new SqlParameter("@Denngay", SqlDbType.NVarChar, 15);
+                arrPara[3].Value = MTGlobal.MT_DENNGAY;
+                arrPara[4] = new SqlParameter("@Nguoidung", SqlDbType.NVarChar, 50);
+                arrPara[4].Value = MTGlobal.MT_USER_LOGIN;
+
+                DataTable otblMaCode = new MTSQLServer().wRead("rptDM_InMaQRCode", arrPara);
+                if (otblMaCode != null)
+                {
+                    switch (isMauIn) { 
+                        case "25_15":
+                            rptHH_QRCode_25_15 oReport = new rptHH_QRCode_25_15();
+                            oReport.InitMacode(isMaQR);
+                            oReport.DataSource = otblMaCode;
+                            oReport.BindData();                                                    
+                            SetCustomPageQR(oReport, isMauIn);            
+                            setFormatReport(oReport); 
+
+                            XtraReportPreviewModel model = new XtraReportPreviewModel(oReport);            
+                            model.AutoShowParametersPanel = false; 
+                            DocumentPreviewWindow oPrev = new DocumentPreviewWindow() { Model = model };           
+                            
+                            oPrev.WindowStyle = System.Windows.WindowStyle.SingleBorderWindow;
+                            oPrev.WindowState = System.Windows.WindowState.Normal;
+                            oPrev.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+                            oPrev.Title = "IN MÃ VẠCH";    
+                   
+                            oPrev.ShowDialog(); 
+                            break;
+
+                        //3TEM/ROW
+                        case "35_22": 
+                            /*
+                            Spire.Barcode.BarcodeSettings.ApplyKey("3GZHB-UT3PY-9YAGD-EXYS6-PREGK");
+                            DataTable oTblCode = new DataTable();
+                            oTblCode.Columns.Add("Macode", typeof(System.String));
+                            oTblCode.Columns.Add("MacodeText", typeof(System.String));
+                            oTblCode.Columns.Add("PicCode", typeof(System.Drawing.Image));
+                            foreach (DataRow vR in otblMaCode.Rows) {
+                                DataRow dR = oTblCode.NewRow();
+                                dR["Macode"] = vR["Macode"];
+                                dR["MacodeText"] = vR["MacodeText"];
+                                dR["PicCode"] =fQRCode(vR["MacodeText"].ToString(),vR["Macode"].ToString());
+                                oTblCode.Rows.Add(dR);
+
+                            }
+                            oTblCode.AcceptChanges();
+                            rptHH_QRCode_3temImg_35_22 oReport3t = new rptHH_QRCode_3temImg_35_22();
+                            oReport3t.InitMacode(isMaQR);
+                            oReport3t.DataSource = oTblCode;
+                            oReport3t.BindData();
+                            SetCustomPageQR(oReport3t, isMauIn);
+                            setFormatReport(oReport3t);
+                                                   
+                            PrintPreview oPreview3t = new PrintPreview();
+                            oPreview3t.report = oReport3t;
+                            
+                            oPreview3t.Show();
+                            break;
+                            */
+
+                            if (isMaQR){
+                                rptHH_QRCode_35_22 oRptQRcode3T = new rptHH_QRCode_35_22();
+                                oRptQRcode3T.InitMacode(isMaQR);
+                                oRptQRcode3T.DataSource = otblMaCode;
+                                oRptQRcode3T.BindData();
+                                SetCustomPageQR(oRptQRcode3T, isMauIn);
+                                setFormatReport(oRptQRcode3T);
+
+                                PrintPreview oPreviewQR = new PrintPreview();
+                                oPreviewQR.report = oRptQRcode3T;
+                                oPreviewQR.ShowDialog();
+                                /*
+                                XtraReportPreviewModel model2 = new XtraReportPreviewModel(oRptQRcode3T);
+                                model2.AutoShowParametersPanel = false;
+                                DocumentPreviewWindow oPrev2 = new DocumentPreviewWindow() { Model = model2 };
+                                oPrev2.UpdateLayout(); 
+
+                                oPrev2.WindowStyle = System.Windows.WindowStyle.SingleBorderWindow;
+                                oPrev2.WindowState = System.Windows.WindowState.Normal;
+                                oPrev2.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+                                oPrev2.Title = "IN MÃ QRCODE";
+                                //oPrev2.Topmost = true;
+                                oPrev2.ShowDialog(); */
+
+                            }
+                            else {
+                                rptHH_Barcode_35_22 oRptBarcode3T = new rptHH_Barcode_35_22();
+                                oRptBarcode3T.InitMacode(isMaQR);
+                                oRptBarcode3T.DataSource = otblMaCode;
+                                oRptBarcode3T.BindData();
+                           
+                                XtraReportPreviewModel model2 = new XtraReportPreviewModel(oRptBarcode3T);
+                                model2.AutoShowParametersPanel = false;
+                                DocumentPreviewWindow oPrev2 = new DocumentPreviewWindow() { Model = model2 };
+                                //oRptBarcode3T.CreateDocument(false);
+                                oPrev2.WindowStyle = System.Windows.WindowStyle.SingleBorderWindow;
+                                oPrev2.WindowState = System.Windows.WindowState.Normal;
+                                oPrev2.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+                                oPrev2.Title = "IN MÃ VẠCH";
+                                //oPrev2.Topmost = true;
+                                //SetCustomPageQR(oRptBarcode3T, isMauIn);
+                                setFormatReport(oRptBarcode3T);
+                                oPrev2.ShowDialog(); 
+                            }
+                         
+                            break; 
+
+                        case "30_30":
+                            rptHH_QRCode_30_30 oReport30 = new rptHH_QRCode_30_30();
+                            oReport30.InitMacode(isMaQR);
+                            oReport30.DataSource = otblMaCode;
+                            oReport30.BindData();                                                
+                            setFormatReport(oReport30);
+                            SetCustomPageQR(oReport30);                        
+                            PrintPreview oPreview30 = new PrintPreview();
+                            oPreview30.report = oReport30;
+                            oPreview30.ShowDialog();
+                            break;                    
+                    }
+
+                }
+                else
+                {
+                    Utils.showMessage("Không thể đọc dữ liệu tạo mã vạch..", "Thông báo");
+                }
+            }
+            catch { }
+        }
+
+        public void rptBH_InBill(String mPhieuID)
+        {
+            try
+            {
+                DevExpress.Utils.WaitDialogForm Dlg = new DevExpress.Utils.WaitDialogForm("Vui lòng chờ, hệ thống đang xử lý...", "In sản phẩm");
+
+                rptBH_InBill_80mm oReport = new rptBH_InBill_80mm();
+                SqlParameter[] arrPara = new SqlParameter[2];
+                arrPara[0] = new SqlParameter("@Phieubhid", SqlDbType.NVarChar, 50);
+                arrPara[0].Value = mPhieuID;
+                arrPara[1] = new SqlParameter("@Nguoidung", SqlDbType.NVarChar, 50);
+                arrPara[1].Value = MTGlobal.MT_USER_LOGIN;
+                DataTable otblRpt = new MTSQLServer().wRead("rptBH_InBill", arrPara);
+
+                Dlg.Close();
+                if (otblRpt != null)
+                {
+                    oReport.DataSource = otblRpt;
+                    oReport.BindData();
+
+                    setParameterInfo(oReport);
+                    setFormatReport(oReport);
+                    SetCustomPageBill(oReport);
+                    //SetMarginReport(oReport, false, 25, 25, 20, 20);
+
+                    PrintPreview oPreview = new PrintPreview();
+                    oPreview.report = oReport;
+
+                    oPreview.ShowDialog();
+                }
+                else
+                {
+                    Utils.showMessage("Không tìm thấy dữ liệu báo cáo..", "Thông báo");
+                }
+
+                Dlg.Close();
+            }
+            catch (Exception ex) { }
+        }
+
+
+
+
+        public void rptDM_SanPham() {
+            try{
+                DevExpress.Utils.WaitDialogForm Dlg = new DevExpress.Utils.WaitDialogForm("Vui lòng chờ, hệ thống đang xử lý...", "In sản phẩm");
+                 
+                rptDM_SanPham oReport = new  rptDM_SanPham();
+                DataTable otblRpt = new MTSQLServer().wRead("rptDM_SanPham",null,false);
+
+                Dlg.Close();
+                if (otblRpt != null)
+                {
+                    oReport.DataSource = otblRpt;
+                    oReport.BindData();
+                    setParameterInfo(oReport);
+                    setFormatReport(oReport);
+                    SetMarginReport(oReport, false, 30, 30, 30, 25);
+
+                    PrintPreview oPreview = new PrintPreview();
+                    oPreview.report = oReport;
+                    oPreview.ShowDialog();
+                }
+                else {
+                    Utils.showMessage("Không tìm thấy dữ liệu báo cáo..", "Thông báo");
+                }
+
+                Dlg.Close(); 
+            }
+            catch (Exception ex) { }           
+        }
+        
+        public void rptDM_TheKho(DataTable oTblSPChon){
+            try{
+                if (oTblSPChon == null || oTblSPChon.Rows.Count <= 0) {
+                    Utils.showMessage("Bạn chưa chọn sản phẩm cần xem..", "Lưu ý");
+                    return;
+                }
+                DevExpress.Utils.WaitDialogForm Dlg = new DevExpress.Utils.WaitDialogForm("Vui lòng chờ, hệ thống đang xử lý...", "In sản phẩm");                
+                DataTable otblChon = new DataTable();
+                otblChon.Columns.Add(new DataColumn("Maspid", typeof(System.String)));
+                otblChon.Columns.Add(new DataColumn("Masp", typeof(System.String)));
+                foreach (DataRow vsR in oTblSPChon.Rows) {
+                    DataRow vR = otblChon.NewRow();
+                    vR["Maspid"] = vsR["Maspid"];
+                    vR["Masp"] = vsR["Masp"];
+                    otblChon.Rows.Add(vR);
+                }
+
+                SqlParameter[] arrPara = new SqlParameter[5];
+                arrPara[0] = new SqlParameter("@tblSanpham", SqlDbType.Structured);
+                arrPara[0].Value = otblChon;
+                arrPara[1] = new SqlParameter("@Ngaydau", SqlDbType.NVarChar, 15);
+                arrPara[1].Value = MTGlobal.MT_TUNGAY;
+                arrPara[2] = new SqlParameter("@Ngaycuoi", SqlDbType.NVarChar,15);
+                arrPara[2].Value = MTGlobal.MT_DENNGAY;
+                arrPara[3] = new SqlParameter("@Nguoidung", SqlDbType.NVarChar, 50);
+                arrPara[3].Value = MTGlobal.MT_USER_LOGIN;
+                arrPara[4] = new SqlParameter("@Ngayin", SqlDbType.NVarChar, 50);
+                arrPara[4].Direction = ParameterDirection.Output;
+                DataTable otblRpt = new MTSQLServer().wRead("rptHH_Thekho",arrPara);
+
+                if (otblRpt == null || otblRpt.Rows.Count <= 0) {
+                    Utils.showMessage("Không tìm thấy dữ liệu thẻ kho...", "Thông báo");
+                    Dlg.Close();
+                    return;
+                }
+
+                rptHH_Thekho oReport = new rptHH_Thekho();             
+                Dlg.Close();
+                if (otblRpt != null)
+                {
+                    oReport.DataSource = otblRpt;
+                    oReport.BindData();
+                    setParameterInfo(oReport);
+                    oReport.Parameters["parThangNam"].Value = arrPara[4].Value.ToString();
+                    setFormatReport(oReport);
+                    SetMarginReport(oReport, false, 30, 30, 30, 25);
+                 
+                    PrintPreview oPreview = new PrintPreview();
+                    oPreview.report = oReport;
+                    oPreview.ShowDialog();
+                }
+                else {
+                    Utils.showMessage("Không tìm thấy dữ liệu báo cáo..", "Thông báo");
+                }
+                Dlg.Close();
+            }catch (Exception ex) { }
+        }
+
+      
+        public void rptNX_Phieunhap(String mPhieunxid){
+            try{
+                DevExpress.Utils.WaitDialogForm Dlg = new DevExpress.Utils.WaitDialogForm("Vui lòng chờ, hệ thống đang xử lý...", "In phiếu nhập");
+
+                rptNX_Phieunhap oReport = new rptNX_Phieunhap();
+                SqlParameter[] arrPara = new SqlParameter[2];
+                arrPara[0] = new SqlParameter("@Phieunxid", SqlDbType.NVarChar, 50);
+                arrPara[0].Value = mPhieunxid;
+                arrPara[1] = new SqlParameter("@Nguoidung", SqlDbType.NVarChar, 50);
+                arrPara[1].Value = MTGlobal.MT_USER_LOGIN;
+                DataTable otblRpt = new MTSQLServer().wRead("rptNX_Phieunhapxuat", arrPara);
+
+                Dlg.Close();
+                if (otblRpt != null)
+                {
+                    oReport.DataSource = otblRpt;
+                    oReport.BindData();
+                    setParameterInfo(oReport);
+                    setFormatReport(oReport);
+                    SetMarginReport(oReport, false, 30, 30, 30, 25);
+                    PrintPreview oPreview = new PrintPreview();
+                    oPreview.report = oReport;
+
+                    oPreview.ShowDialog();
+                }
+
+                Dlg.Close();
+            }
+            catch (Exception ex) { }
+        }
+
+
+        public void rptNX_Phieuxuat(String mPhieunxid)
+        {
+            try
+            {
+                DevExpress.Utils.WaitDialogForm Dlg = new DevExpress.Utils.WaitDialogForm("Vui lòng chờ, hệ thống đang xử lý...", "In phiếu nhập");
+
+                rptNX_Phieuxuat oReport = new rptNX_Phieuxuat();
+                SqlParameter[] arrPara = new SqlParameter[2];
+                arrPara[0] = new SqlParameter("@Phieunxid", SqlDbType.NVarChar, 50);
+                arrPara[0].Value = mPhieunxid;
+                arrPara[1] = new SqlParameter("@Nguoidung", SqlDbType.NVarChar, 50);
+                arrPara[1].Value = MTGlobal.MT_USER_LOGIN;
+                DataTable otblRpt = new MTSQLServer().wRead("rptNX_Phieunhapxuat", arrPara);
+
+                Dlg.Close();
+                if (otblRpt != null)
+                {
+                    oReport.DataSource = otblRpt;
+                    oReport.BindData();
+                    setParameterInfo(oReport);
+                    setFormatReport(oReport);
+                    SetMarginReport(oReport, false, 30, 30, 30, 25);
+                    PrintPreview oPreview = new PrintPreview();
+                    oPreview.report = oReport;
+                    oPreview.ShowDialog();
+                }
+
+                Dlg.Close();
+            }
+            catch (Exception ex) { }
+        }
+
+        public void rptHH_Baocaonhapxuatton(DataTable oTblSPChon)
+        {
+            try{                
+                DevExpress.Utils.WaitDialogForm Dlg = new DevExpress.Utils.WaitDialogForm("Vui lòng chờ, hệ thống đang xử lý...", "In sản phẩm");
+                DataTable otblChon = new DataTable();
+                otblChon.Columns.Add(new DataColumn("Maspid", typeof(System.String)));
+                otblChon.Columns.Add(new DataColumn("Masp", typeof(System.String)));
+                foreach (DataRow vsR in oTblSPChon.Rows)
+                {
+                    DataRow vR = otblChon.NewRow();
+                    vR["Maspid"] = vsR["Maspid"];
+                    vR["Masp"] = vsR["Masp"];
+                    otblChon.Rows.Add(vR);
+                }
+
+                SqlParameter[] arrPara = new SqlParameter[5];
+                arrPara[0] = new SqlParameter("@tblSanpham", SqlDbType.Structured);
+                arrPara[0].Value = otblChon;
+                arrPara[1] = new SqlParameter("@Ngaydau", SqlDbType.NVarChar, 15);
+                arrPara[1].Value = MTGlobal.MT_TUNGAY;
+                arrPara[2] = new SqlParameter("@Ngaycuoi", SqlDbType.NVarChar, 15);
+                arrPara[2].Value = MTGlobal.MT_DENNGAY;
+                arrPara[3] = new SqlParameter("@Nguoidung", SqlDbType.NVarChar, 50);
+                arrPara[3].Value = MTGlobal.MT_USER_LOGIN;
+                arrPara[4] = new SqlParameter("@Ngayin", SqlDbType.NVarChar, 50);
+                arrPara[4].Direction = ParameterDirection.Output;
+                DataTable otblRpt = new MTSQLServer().wRead("rptHH_Baocaonhapxuatton", arrPara);
+
+                if (otblRpt == null || otblRpt.Rows.Count <= 0)
+                {
+                    Utils.showMessage("Không tìm thấy dữ liệu...", "Thông báo");
+                    Dlg.Close();
+                    return;
+                }
+
+                rptHH_Baocaonhapxuatton oReport = new rptHH_Baocaonhapxuatton();
+                Dlg.Close();
+                if (otblRpt != null)
+                {
+                    oReport.DataSource = otblRpt;
+                    oReport.BindData();
+                    setParameterInfo(oReport);
+                    oReport.Parameters["parThangNam"].Value = arrPara[4].Value.ToString();
+                    setFormatReport(oReport);
+                    SetMarginReport(oReport, true, 30, 30, 30, 25);
+
+                    PrintPreview oPreview = new PrintPreview();
+                    oPreview.report = oReport;
+                    oPreview.ShowDialog();
+                }
+                else
+                {
+                    Utils.showMessage("Không tìm thấy dữ liệu báo cáo..", "Thông báo");
+                }
+                Dlg.Close();
+            }
+            catch (Exception ex) { }
+        }
+
+
+        public void rptNX_Chanhxe(String mPhieuid)
+        {
+            try{
+                DevExpress.Utils.WaitDialogForm Dlg = new DevExpress.Utils.WaitDialogForm("Vui lòng chờ, hệ thống đang xử lý...", "In phiếu gửi chành");
+
+                rptCX_Phieuguichanh oReport = new rptCX_Phieuguichanh();
+                SqlParameter[] arrPara = new SqlParameter[2];
+                arrPara[0] = new SqlParameter("@Phieuid", SqlDbType.NVarChar, 50);
+                arrPara[0].Value = mPhieuid;
+                arrPara[1] = new SqlParameter("@Nguoidung", SqlDbType.NVarChar, 50);
+                arrPara[1].Value = MTGlobal.MT_USER_LOGIN;
+                DataTable otblRpt = new MTSQLServer().wRead("rptNX_Phieunchanh", arrPara);
+
+                Dlg.Close();
+                if (otblRpt != null)
+                {
+                    oReport.DataSource = otblRpt;
+                    oReport.BindData();
+                    setParameterInfo(oReport);
+                    setFormatReport(oReport);
+                    SetMarginReport(oReport, false, 30, 30, 30, 25);
+                    PrintPreview oPreview = new PrintPreview();
+                    oPreview.report = oReport;
+                    oPreview.ShowDialog();
+                }
+
+                Dlg.Close();
+            }
+            catch (Exception ex) { }
+        }
+
+        public void rptNX_Thongkeguichanh(DataTable otblPhieuChon,String mNgaydau="",String mNgaycuoi=""){
+            try{
+                 
+                DevExpress.Utils.WaitDialogForm Dlg = new DevExpress.Utils.WaitDialogForm("Vui lòng chờ, hệ thống đang xử lý...", "Thống kê gửi chành");
+
+                DataTable otblChon = new DataTable();
+                otblChon.Columns.Add(new DataColumn("Sophieu", typeof(System.String)));                
+                foreach (DataRow vsR in otblPhieuChon.Rows)
+                {
+                    DataRow vR = otblChon.NewRow();
+                    vR["Sophieu"] = vsR["Sophieu"];                    
+                    otblChon.Rows.Add(vR);
+                }
+
+                rptCX_Thongkeguichanh oReport = new rptCX_Thongkeguichanh();
+                 
+                SqlParameter[] arrPara = new SqlParameter[4];
+                arrPara[0] = new SqlParameter("@tblSophieu", SqlDbType.Structured);
+                arrPara[0].Value = otblChon;
+                arrPara[1] = new SqlParameter("@Ngaydau", SqlDbType.NVarChar,15);
+                arrPara[1].Value =mNgaydau;
+                arrPara[2] = new SqlParameter("@Ngaycuoi", SqlDbType.NVarChar,15);
+                arrPara[2].Value = mNgaycuoi;
+                arrPara[3] = new SqlParameter("@Nguoidung", SqlDbType.NVarChar, 50);
+                arrPara[3].Value = MTGlobal.MT_USER_LOGIN;
+                DataTable otblRpt = new MTSQLServer().wRead("rptNX_Thongkeguichanh",arrPara);
+
+                Dlg.Close();
+                if (otblRpt != null)
+                {
+                    oReport.DataSource = otblRpt;
+                    oReport.BindData();
+                    
+                    setParameterInfo(oReport);
+                    
+                    setFormatReport(oReport);
+                    SetMarginReport(oReport, true, 30, 30, 30, 25);
+
+                    PrintPreview oPreview = new PrintPreview();
+                    oPreview.report = oReport;
+
+                    oPreview.ShowDialog();
+                }
+
+                Dlg.Close();
+            }
+            catch (Exception ex) { }
+        }
+
+
+        public void rptNX_Baocaobanhang(DataTable otblSanpham, String mNgaydau = "", String mNgaycuoi = "")
+        {
+            try
+            {
+                DevExpress.Utils.WaitDialogForm Dlg = new DevExpress.Utils.WaitDialogForm("Vui lòng chờ, hệ thống đang xử lý...", "Báo cáo bán hàng");
+
+                rptNX_Baocaobanhang oReport = new rptNX_Baocaobanhang();
+
+                SqlParameter[] arrPara = new SqlParameter[5];
+                arrPara[0] = new SqlParameter("@tblSanpham", SqlDbType.Structured);
+                arrPara[0].Value = otblSanpham;
+                arrPara[1] = new SqlParameter("@Ngaydau", SqlDbType.NVarChar, 15);
+                arrPara[1].Value = mNgaydau;
+                arrPara[2] = new SqlParameter("@Ngaycuoi", SqlDbType.NVarChar, 15);
+                arrPara[2].Value = mNgaycuoi;
+                arrPara[3] = new SqlParameter("@Nguoidung", SqlDbType.NVarChar, 50);
+                arrPara[3].Value = MTGlobal.MT_USER_LOGIN;
+                arrPara[4] = new SqlParameter("@Ngayin", SqlDbType.NVarChar, 50);
+                arrPara[4].Direction = ParameterDirection.Output;
+                DataTable otblRpt = new MTSQLServer().wRead("rptNX_Baocaobanhang", arrPara);
+
+                Dlg.Close();
+                if (otblRpt != null)
+                {
+                    oReport.DataSource = otblRpt;
+                    oReport.BindData();
+
+                    oReport.Parameters["parNgayin"].Value = arrPara[4].Value.ToString();
+                    setParameterInfo(oReport);
+                    setFormatReport(oReport);
+                    SetMarginReport(oReport, true, 30, 30, 30, 25);                   
+                 
+
+                    PrintPreview oPreview = new PrintPreview();
+                    oPreview.report = oReport;
+                    oPreview.ShowDialog();
+                }
+                Dlg.Close();
+            }
+            catch (Exception ex) { }
+        }
+
+    }
+}

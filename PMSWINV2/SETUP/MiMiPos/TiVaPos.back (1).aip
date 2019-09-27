@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="15.9" version="16.2" Modules="professional" RootPath="." Language="en" Id="{65EC9656-1BE7-4185-97F0-3E04AD103DFE}">
+  <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
+    <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent;MsiJavaComponent;MsiDriverPackagesComponent;UserAccountsComponent;ScheduledTasksComponent;SqlConnectionComponent;AutorunComponent;FirewallExceptionComponent;GameUxComponent;MsiDirectEditorComponent;SharePointSlnComponent;SilverlightSlnComponent;MultipleInstancesComponent;SccmComponent;ActSyncAppComponent;FixupComponent"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_COLOR_DISABLED_TEXT" Value="3026478" MultiBuildValue="DefaultBuild:15461355" MsiKey="AI_COLOR_DISABLED_TEXT"/>
+    <ROW Property="AI_CONTROL_VISUAL_STYLE" Value="2960685;4276545;6776679;16176031" MultiBuildValue="DefaultBuild:16777215;15859690;7579735;3957806" MsiKey="AI_CONTROL_VISUAL_STYLE"/>
+    <ROW Property="AI_CONTROL_VISUAL_STYLE_EX" Value="1513239;3026478;3026478" MultiBuildValue="DefaultBuild:16514043;15461355;15461355" MsiKey="AI_CONTROL_VISUAL_STYLE_EX"/>
+    <ROW Property="AI_CONTROL_VISUAL_STYLE_FLAT" MultiBuildValue="DefaultBuild:15859690;15859690;7579735;3957806" MsiKey="AI_CONTROL_VISUAL_STYLE_FLAT"/>
+    <ROW Property="AI_EXTERNALUIUNINSTALLERNAME" MultiBuildValue="DefaultBuild:aiui"/>
+    <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
+    <ROW Property="AI_FrameBtnsColor" Value="metroblack" MultiBuildValue="DefaultBuild:metrogreen" MsiKey="AI_FrameBtnsColor"/>
+    <ROW Property="AI_FrameColor" Value="metroblack" MultiBuildValue="DefaultBuild:metrogreen" MsiKey="AI_FrameColor"/>
+    <ROW Property="AI_PREDEF_LCONDS_PROPS" Value="AI_DETECTED_DOTNET_VERSION"/>
+    <ROW Property="AI_PRODUCTNAME_ARP" Value="TiVaPos"/>
+    <ROW Property="AI_REQUIRED_DOTNET_DISPLAY" MultiBuildValue="DefaultBuild:4.0" ValueLocId="-"/>
+    <ROW Property="AI_REQUIRED_DOTNET_VERSION" MultiBuildValue="DefaultBuild:4.0.1" ValueLocId="-"/>
+    <ROW Property="AI_RUN_AS_ADMIN" Value="0"/>
+    <ROW Property="AI_ThemeStyle" Value="default" MultiBuildValue="DefaultBuild:metrogreen" MsiKey="AI_ThemeStyle"/>
+    <ROW Property="AI_UNINSTALLER" Value="msiexec.exe"/>
+    <ROW Property="ALLUSERS" Value="1"/>
+    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="ARPNOREPAIR" Value="1" MultiBuildValue="DefaultBuild:1"/>
+    <ROW Property="ARPPRODUCTICON" Value="app_pos_2.exe" Type="8"/>
+    <ROW Property="ARPSYSTEMCOMPONENT" Value="1"/>
+    <ROW Property="Manufacturer" Value="MiMiGroup"/>
+    <ROW Property="ProductCode" Value="1033:{7BFD7940-1D4D-4559-8D29-13D2C27C6AE1} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="TiVaPos"/>
+    <ROW Property="ProductVersion" Value="1.0.0" Type="32"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
+    <ROW Property="UpgradeCode" Value="{41765563-8CF4-49C6-8229-21F6EE682A95}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003 RTM, Windows XP/2003 SP1, Windows XP SP2 x86" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003 RTM, Windows XP/2003 SP1, Windows XP SP2 x86" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
+    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+    <ROW Directory="de_Dir" Directory_Parent="APPDIR" DefaultDir="de"/>
+    <ROW Directory="es_Dir" Directory_Parent="APPDIR" DefaultDir="es"/>
+    <ROW Directory="ja_Dir" Directory_Parent="APPDIR" DefaultDir="ja"/>
+    <ROW Directory="ru_Dir" Directory_Parent="APPDIR" DefaultDir="ru"/>
+    <ROW Directory="x64_Dir" Directory_Parent="APPDIR" DefaultDir="x64"/>
+    <ROW Directory="x86_Dir" Directory_Parent="APPDIR" DefaultDir="x86"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="AI_CustomARPName" ComponentId="{FBFD343F-DC64-4264-B183-DB5DFFDC8B98}" Directory_="APPDIR" Attributes="4" KeyPath="DisplayName" Options="1"/>
+    <ROW Component="AI_ExePath" ComponentId="{B1CF0F42-ABB4-4739-887D-D3D8EEA4ED17}" Directory_="APPDIR" Attributes="4" KeyPath="AI_ExePath"/>
+    <ROW Component="APPDIR" ComponentId="{6726C724-A7C3-49C6-9689-537F0C38C9CC}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="DevExpress.BonusSkins.v12.2.dll" ComponentId="{340ABBFA-FFAD-487F-91D4-53A2D4F56A67}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.BonusSkins.v12.2.dll"/>
+    <ROW Component="DevExpress.Charts.v12.2.Core.dll" ComponentId="{2F54D483-BF3C-4A15-9605-D132D75CAF8D}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Charts.v12.2.Core.dll"/>
+    <ROW Component="DevExpress.Data.v12.2.dll" ComponentId="{FBE9C621-7089-4DAB-9BF5-37944F92E2A7}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Data.v12.2.dll"/>
+    <ROW Component="DevExpress.Data.v12.2.resources.dll" ComponentId="{62D17D0B-1BD8-401D-A215-1ADDD4ACBDA7}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Data.v12.2.resources.dll"/>
+    <ROW Component="DevExpress.Data.v12.2.resources.dll_1" ComponentId="{41118A10-8C5E-44BC-B5B8-CECDD3D2E032}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Data.v12.2.resources.dll_1"/>
+    <ROW Component="DevExpress.Data.v12.2.resources.dll_2" ComponentId="{E705007A-680D-4D81-9A82-CE5F0C753F71}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Data.v12.2.resources.dll_2"/>
+    <ROW Component="DevExpress.Data.v12.2.resources.dll_3" ComponentId="{614B2953-2CAA-4E7C-8B66-5012EBD479C7}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Data.v12.2.resources.dll_3"/>
+    <ROW Component="DevExpress.Data.v12.2.xml" ComponentId="{771CF92B-DA9F-4AC8-8441-1F001EAD93B3}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Data.v12.2.xml" Type="0"/>
+    <ROW Component="DevExpress.Office.v12.2.Core.dll" ComponentId="{6EF7929D-3FE5-4254-A530-0C84BCB5D475}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Office.v12.2.Core.dll"/>
+    <ROW Component="DevExpress.Printing.v12.2.Core.dll" ComponentId="{3AEAC708-AC17-41D6-A882-70B8B4C12B3B}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Printing.v12.2.Core.dll"/>
+    <ROW Component="DevExpress.Printing.v12.2.Core.resources.dll" ComponentId="{5DD2E653-4A44-4BDF-9F89-0C4EDFB872B9}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Printing.v12.2.Core.resources.dll"/>
+    <ROW Component="DevExpress.Printing.v12.2.Core.resources.dll_1" ComponentId="{4F26416E-D261-4D6E-91E3-B3DA37465A29}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Printing.v12.2.Core.resources.dll_1"/>
+    <ROW Component="DevExpress.Printing.v12.2.Core.resources.dll_2" ComponentId="{82477F2F-2FB6-4302-8FC1-5DBDA5BEF06C}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Printing.v12.2.Core.resources.dll_2"/>
+    <ROW Component="DevExpress.Printing.v12.2.Core.resources.dll_3" ComponentId="{F4F00183-3E08-4468-AFE4-8846C511914E}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Printing.v12.2.Core.resources.dll_3"/>
+    <ROW Component="DevExpress.RichEdit.v12.2.Core.dll" ComponentId="{AA5685E4-6D41-4C51-B60E-FE61AD5DFC7A}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.RichEdit.v12.2.Core.dll"/>
+    <ROW Component="DevExpress.RichEdit.v12.2.Core.resources.dll" ComponentId="{6A98F72C-BADC-42CA-8F2E-2BD6D2EF9F32}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.RichEdit.v12.2.Core.resources.dll"/>
+    <ROW Component="DevExpress.RichEdit.v12.2.Core.resources.dll_1" ComponentId="{4D9729F0-7DEB-4692-BCC2-25063C021ECB}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.RichEdit.v12.2.Core.resources.dll_1"/>
+    <ROW Component="DevExpress.RichEdit.v12.2.Core.resources.dll_2" ComponentId="{B548DC10-6A14-4C17-A8DE-A6C9959D90E4}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.RichEdit.v12.2.Core.resources.dll_2"/>
+    <ROW Component="DevExpress.RichEdit.v12.2.Core.resources.dll_3" ComponentId="{386F0629-4CEE-4468-85F5-B288DC339091}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.RichEdit.v12.2.Core.resources.dll_3"/>
+    <ROW Component="DevExpress.Utils.v12.2.UI.dll" ComponentId="{83EFDBC5-B9AC-4A77-9329-FA3475D24BB9}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Utils.v12.2.UI.dll"/>
+    <ROW Component="DevExpress.Utils.v12.2.UI.resources.dll" ComponentId="{A2B07076-390D-4FC3-8C9F-11B9B775AA30}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Utils.v12.2.UI.resources.dll"/>
+    <ROW Component="DevExpress.Utils.v12.2.UI.resources.dll_1" ComponentId="{856ACFCE-8470-47D0-B38B-20053B0F03FD}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Utils.v12.2.UI.resources.dll_1"/>
+    <ROW Component="DevExpress.Utils.v12.2.UI.resources.dll_2" ComponentId="{9AF21E6A-93F5-412D-B063-9CED44973BB4}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Utils.v12.2.UI.resources.dll_2"/>
+    <ROW Component="DevExpress.Utils.v12.2.UI.resources.dll_3" ComponentId="{A84EBE35-8FB6-4189-960B-DC02E38A35FF}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Utils.v12.2.UI.resources.dll_3"/>
+    <ROW Component="DevExpress.Utils.v12.2.dll" ComponentId="{BB83F279-991E-4C69-9896-A75B7BA6B486}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Utils.v12.2.dll"/>
+    <ROW Component="DevExpress.Utils.v12.2.resources.dll" ComponentId="{4A8A6304-6504-4899-A5EA-70BE9A534947}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Utils.v12.2.resources.dll"/>
+    <ROW Component="DevExpress.Utils.v12.2.resources.dll_1" ComponentId="{9FB5F8AB-AB1F-4037-9038-565104F16EF4}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Utils.v12.2.resources.dll_1"/>
+    <ROW Component="DevExpress.Utils.v12.2.resources.dll_2" ComponentId="{5D5F337C-086C-46A9-8DB9-E583E0FEB9F4}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Utils.v12.2.resources.dll_2"/>
+    <ROW Component="DevExpress.Utils.v12.2.resources.dll_3" ComponentId="{34DF9E76-4773-4695-9B7A-6D06E0CC644F}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Utils.v12.2.resources.dll_3"/>
+    <ROW Component="DevExpress.Xpf.Charts.v12.2.dll" ComponentId="{90C8BE93-34B8-4274-AE6B-1EC27EF3BD93}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Xpf.Charts.v12.2.dll"/>
+    <ROW Component="DevExpress.Xpf.Charts.v12.2.resources.dll" ComponentId="{2263C01C-D422-43F2-BA16-BCE4C210991B}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Xpf.Charts.v12.2.resources.dll"/>
+    <ROW Component="DevExpress.Xpf.Charts.v12.2.resources.dll_1" ComponentId="{C6D29509-B41E-4E50-B533-02D7C984FBD1}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Xpf.Charts.v12.2.resources.dll_1"/>
+    <ROW Component="DevExpress.Xpf.Charts.v12.2.resources.dll_2" ComponentId="{CA3C284F-37F7-40F3-8BC3-1E9683806171}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Xpf.Charts.v12.2.resources.dll_2"/>
+    <ROW Component="DevExpress.Xpf.Charts.v12.2.resources.dll_3" ComponentId="{C417FCE3-6872-4C8E-A908-B890609559D5}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Xpf.Charts.v12.2.resources.dll_3"/>
+    <ROW Component="DevExpress.Xpf.Core.v12.2.dll" ComponentId="{F04F7511-918A-4C6C-B879-D521170387EB}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Xpf.Core.v12.2.dll"/>
+    <ROW Component="DevExpress.Xpf.Core.v12.2.resources.dll" ComponentId="{3B59DBC9-6B91-4C47-8B02-683C1C3F76E7}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Xpf.Core.v12.2.resources.dll"/>
+    <ROW Component="DevExpress.Xpf.Core.v12.2.resources.dll_1" ComponentId="{C3E4CB52-E11E-4427-B6A0-A335CAAD203A}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Xpf.Core.v12.2.resources.dll_1"/>
+    <ROW Component="DevExpress.Xpf.Core.v12.2.resources.dll_2" ComponentId="{D1A7E7E3-1988-4ED6-A424-4ED4DF0EFAA9}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Xpf.Core.v12.2.resources.dll_2"/>
+    <ROW Component="DevExpress.Xpf.Core.v12.2.resources.dll_3" ComponentId="{76E4B274-1791-4B7A-A997-1F4BEA07273F}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Xpf.Core.v12.2.resources.dll_3"/>
+    <ROW Component="DevExpress.Xpf.Docking.v12.2.dll" ComponentId="{0597C8B4-9104-4676-A758-675184825FE9}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Xpf.Docking.v12.2.dll"/>
+    <ROW Component="DevExpress.Xpf.Docking.v12.2.resources.dll" ComponentId="{B5EF06A2-CE29-4A8A-B832-09E59F4FAE03}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Xpf.Docking.v12.2.resources.dll"/>
+    <ROW Component="DevExpress.Xpf.Docking.v12.2.resources.dll_1" ComponentId="{76B22D2E-A8BB-4FCF-B591-ACB881837A8F}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Xpf.Docking.v12.2.resources.dll_1"/>
+    <ROW Component="DevExpress.Xpf.Docking.v12.2.resources.dll_2" ComponentId="{B8EE3F63-B06F-4EDD-870B-8BDFEF0FAD29}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Xpf.Docking.v12.2.resources.dll_2"/>
+    <ROW Component="DevExpress.Xpf.Docking.v12.2.resources.dll_3" ComponentId="{064BD2D2-67F6-45B6-8ABF-FAE93EC484CE}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Xpf.Docking.v12.2.resources.dll_3"/>
+    <ROW Component="DevExpress.Xpf.Grid.v12.2.Core.dll" ComponentId="{75FC4384-4382-4890-848B-2E5D368CD0EA}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Xpf.Grid.v12.2.Core.dll"/>
+    <ROW Component="DevExpress.Xpf.Grid.v12.2.Core.resources.dll" ComponentId="{51D31099-94AD-44C3-97AA-819B3E69172C}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Xpf.Grid.v12.2.Core.resources.dll"/>
+    <ROW Component="DevExpress.Xpf.Grid.v12.2.Core.resources.dll_1" ComponentId="{E9466ECB-E6D3-4C98-B0B0-D685661E83D5}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Xpf.Grid.v12.2.Core.resources.dll_1"/>
+    <ROW Component="DevExpress.Xpf.Grid.v12.2.Core.resources.dll_2" ComponentId="{1974F4D1-C45F-45A5-B9F4-0E85C55ED6FE}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Xpf.Grid.v12.2.Core.resources.dll_2"/>
+    <ROW Component="DevExpress.Xpf.Grid.v12.2.Core.resources.dll_3" ComponentId="{04DFF7B1-558D-4916-8436-2178BA5739C1}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Xpf.Grid.v12.2.Core.resources.dll_3"/>
+    <ROW Component="DevExpress.Xpf.Grid.v12.2.dll" ComponentId="{3B6311CD-8830-4377-81DE-5B0CB81C5900}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Xpf.Grid.v12.2.dll"/>
+    <ROW Component="DevExpress.Xpf.Layout.v12.2.Core.dll" ComponentId="{486B71AE-36DF-467F-9C76-819B19C394A8}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Xpf.Layout.v12.2.Core.dll"/>
+    <ROW Component="DevExpress.Xpf.NavBar.v12.2.dll" ComponentId="{B0128C21-5A65-4B07-8BA3-919508BD9F90}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Xpf.NavBar.v12.2.dll"/>
+    <ROW Component="DevExpress.Xpf.NavBar.v12.2.resources.dll" ComponentId="{5328F961-751A-40E0-B4EC-2352BF372183}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Xpf.NavBar.v12.2.resources.dll"/>
+    <ROW Component="DevExpress.Xpf.NavBar.v12.2.resources.dll_1" ComponentId="{087010F6-01BF-474A-A70C-E03E5F09E8B6}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Xpf.NavBar.v12.2.resources.dll_1"/>
+    <ROW Component="DevExpress.Xpf.NavBar.v12.2.resources.dll_2" ComponentId="{04ADD969-69F5-447D-A4ED-FFEB0B1E45CF}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Xpf.NavBar.v12.2.resources.dll_2"/>
+    <ROW Component="DevExpress.Xpf.NavBar.v12.2.resources.dll_3" ComponentId="{3F9EF9A3-EEAA-4FDB-9760-04D458EAFC72}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Xpf.NavBar.v12.2.resources.dll_3"/>
+    <ROW Component="DevExpress.Xpf.PivotGrid.v12.2.dll" ComponentId="{1140E9B9-78E8-42BF-91B5-F492EF5B7086}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Xpf.PivotGrid.v12.2.dll"/>
+    <ROW Component="DevExpress.Xpf.Printing.v12.2.Core.dll" ComponentId="{988C4A61-A97F-4FC3-A28D-E14DCD4D8A56}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Xpf.Printing.v12.2.Core.dll"/>
+    <ROW Component="DevExpress.Xpf.Printing.v12.2.dll" ComponentId="{4BC2BE5C-5DCE-4F40-A0C9-80289BA97E62}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Xpf.Printing.v12.2.dll"/>
+    <ROW Component="DevExpress.Xpf.Printing.v12.2.resources.dll" ComponentId="{240BA45B-6D45-47D0-923C-80DEE8397323}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Xpf.Printing.v12.2.resources.dll"/>
+    <ROW Component="DevExpress.Xpf.Printing.v12.2.resources.dll_1" ComponentId="{C4BC2E21-E31B-4788-BF25-C055CD780DD2}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Xpf.Printing.v12.2.resources.dll_1"/>
+    <ROW Component="DevExpress.Xpf.Printing.v12.2.resources.dll_2" ComponentId="{90E86935-FCC0-4939-B360-91171852072A}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Xpf.Printing.v12.2.resources.dll_2"/>
+    <ROW Component="DevExpress.Xpf.Printing.v12.2.resources.dll_3" ComponentId="{C58ED197-D403-43E0-9902-994F6FE70CFA}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Xpf.Printing.v12.2.resources.dll_3"/>
+    <ROW Component="DevExpress.Xpf.ReportDesigner.v12.2.dll" ComponentId="{E07D97DD-FC6D-44A5-8B10-3C004ACD02D6}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Xpf.ReportDesigner.v12.2.dll"/>
+    <ROW Component="DevExpress.Xpf.Ribbon.v12.2.dll" ComponentId="{E8CB1E87-989D-47D3-879C-DCEC2D51CFAC}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Xpf.Ribbon.v12.2.dll"/>
+    <ROW Component="DevExpress.Xpf.Ribbon.v12.2.resources.dll" ComponentId="{4ACD36C0-469E-424E-9198-0D8E1A09A6B3}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.Xpf.Ribbon.v12.2.resources.dll"/>
+    <ROW Component="DevExpress.Xpf.Ribbon.v12.2.resources.dll_1" ComponentId="{2DCB58B0-B119-4070-B8C2-3DA2E5CDC5A3}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.Xpf.Ribbon.v12.2.resources.dll_1"/>
+    <ROW Component="DevExpress.Xpf.Ribbon.v12.2.resources.dll_2" ComponentId="{F7DE3BE1-B7D5-46CE-B3CB-7B7194138DAB}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.Xpf.Ribbon.v12.2.resources.dll_2"/>
+    <ROW Component="DevExpress.Xpf.Ribbon.v12.2.resources.dll_3" ComponentId="{BABAFA60-F710-4C41-8A52-521F891407BF}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.Xpf.Ribbon.v12.2.resources.dll_3"/>
+    <ROW Component="DevExpress.Xpf.Themes.Office2007Blue.v12.2.dll" ComponentId="{E6A8C088-B60D-4166-95FD-0F5EFA060ACB}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Xpf.Themes.Office2007Blue.v12.2.dll"/>
+    <ROW Component="DevExpress.XtraCharts.v12.2.dll" ComponentId="{707A64BF-DF79-4944-9B51-F486E04D42B7}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraCharts.v12.2.dll"/>
+    <ROW Component="DevExpress.XtraCharts.v12.2.resources.dll" ComponentId="{A105F11C-7487-4B9C-AC06-580DFA73BE87}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraCharts.v12.2.resources.dll"/>
+    <ROW Component="DevExpress.XtraCharts.v12.2.resources.dll_1" ComponentId="{9FB140CB-8AE7-4864-9181-7D48543748D5}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraCharts.v12.2.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraCharts.v12.2.resources.dll_2" ComponentId="{08069506-BD8B-4BA6-B057-9C7FDEE6719B}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraCharts.v12.2.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraCharts.v12.2.resources.dll_3" ComponentId="{3AC0D727-5A95-4597-A5AF-04433EED89C6}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraCharts.v12.2.resources.dll_3"/>
+    <ROW Component="DevExpress.XtraReports.v12.2.dll" ComponentId="{B29674A7-AB24-4A6B-B74A-A1CA888533CE}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraReports.v12.2.dll"/>
+    <ROW Component="DevExpress.XtraReports.v12.2.resources.dll" ComponentId="{D15ED709-07CE-4D8C-8D4E-AEBE2F197E60}" Directory_="de_Dir" Attributes="0" KeyPath="DevExpress.XtraReports.v12.2.resources.dll"/>
+    <ROW Component="DevExpress.XtraReports.v12.2.resources.dll_1" ComponentId="{9C0E9155-B8BE-4DEF-A530-C0539BB7BA1F}" Directory_="es_Dir" Attributes="0" KeyPath="DevExpress.XtraReports.v12.2.resources.dll_1"/>
+    <ROW Component="DevExpress.XtraReports.v12.2.resources.dll_2" ComponentId="{471A1A55-18B8-488B-91AF-644E33F759CF}" Directory_="ja_Dir" Attributes="0" KeyPath="DevExpress.XtraReports.v12.2.resources.dll_2"/>
+    <ROW Component="DevExpress.XtraReports.v12.2.resources.dll_3" ComponentId="{47163436-B9B6-44D9-8801-A1DBA361E448}" Directory_="ru_Dir" Attributes="0" KeyPath="DevExpress.XtraReports.v12.2.resources.dll_3"/>
+    <ROW Component="MTPMSWIN.exe" ComponentId="{D6D9BE62-417A-46F5-AB26-37E4DE695E11}" Directory_="APPDIR" Attributes="0" KeyPath="MTPMSWIN.exe"/>
+    <ROW Component="MTPMSWIN.vshost.exe" ComponentId="{7971879D-C755-4532-A739-640C3EC7773A}" Directory_="APPDIR" Attributes="0" KeyPath="MTPMSWIN.vshost.exe"/>
+    <ROW Component="Newtonsoft.Json.dll" ComponentId="{78C5EE58-A526-4E0E-A0EF-03400198214B}" Directory_="APPDIR" Attributes="0" KeyPath="Newtonsoft.Json.dll"/>
+    <ROW Component="PresentationCore.dll" ComponentId="{1C044927-14ED-4CE9-9A93-DB5C0813FFBC}" Directory_="APPDIR" Attributes="0" KeyPath="PresentationCore.dll"/>
+    <ROW Component="PresentationFramework.dll" ComponentId="{93D57BDB-85B5-4C65-A646-6D45DC31068B}" Directory_="APPDIR" Attributes="0" KeyPath="PresentationFramework.dll"/>
+    <ROW Component="ProductInformation" ComponentId="{8520F1EC-6B81-4521-AB1E-F4B9F57D6C40}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{FDBD81AB-AC91-41BD-B7BB-2D3B39968AE2}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="SQLite.Interop.dll" ComponentId="{61F292A6-2388-47BA-A1B8-6C8CFAEB4374}" Directory_="x64_Dir" Attributes="256" KeyPath="SQLite.Interop.dll"/>
+    <ROW Component="SQLite.Interop.dll_1" ComponentId="{FBC1E2B9-C359-41BA-A227-775AA0905D29}" Directory_="x86_Dir" Attributes="0" KeyPath="SQLite.Interop.dll_1"/>
+    <ROW Component="System.ComponentModel.DataAnnotations.dll" ComponentId="{62E82D20-831D-4585-AC65-2DA9060E6A11}" Directory_="APPDIR" Attributes="0" KeyPath="System.ComponentModel.DataAnnotations.dll"/>
+    <ROW Component="System.Configuration.dll" ComponentId="{0D283FC2-6A12-4AE3-8509-E847098AB91D}" Directory_="APPDIR" Attributes="0" KeyPath="System.Configuration.dll"/>
+    <ROW Component="System.Data.DataSetExtensions.dll" ComponentId="{DE372B07-72B0-4194-8137-8B3C46E5E71E}" Directory_="APPDIR" Attributes="0" KeyPath="System.Data.DataSetExtensions.dll"/>
+    <ROW Component="System.Data.SQLite.dll" ComponentId="{7EC745D8-9D8E-4C62-BB48-BA9CDF1CC08E}" Directory_="APPDIR" Attributes="0" KeyPath="System.Data.SQLite.dll"/>
+    <ROW Component="System.Data.dll" ComponentId="{A23FC5DE-1E89-4EB4-BFDD-D7581784B7D8}" Directory_="APPDIR" Attributes="0" KeyPath="System.Data.dll"/>
+    <ROW Component="System.Drawing.dll" ComponentId="{8DE75A7B-667F-4BAB-8562-CBFCEE18DAD9}" Directory_="APPDIR" Attributes="0" KeyPath="System.Drawing.dll"/>
+    <ROW Component="System.Net.Http.Extensions.dll" ComponentId="{311CC68B-5B09-4C76-A0C2-ADD7CA1D142E}" Directory_="APPDIR" Attributes="0" KeyPath="System.Net.Http.Extensions.dll"/>
+    <ROW Component="System.Net.Http.Primitives.dll" ComponentId="{30D2D2E3-DD3F-4729-9F4C-BD589D60674D}" Directory_="APPDIR" Attributes="0" KeyPath="System.Net.Http.Primitives.dll"/>
+    <ROW Component="System.Net.Http.WebRequest.dll" ComponentId="{7C38C6D7-702A-41E0-B1AB-70AE3344ED14}" Directory_="APPDIR" Attributes="0" KeyPath="System.Net.Http.WebRequest.dll"/>
+    <ROW Component="System.Net.Http.dll" ComponentId="{16EAB3FD-9935-472C-BB95-D073DB932E3D}" Directory_="APPDIR" Attributes="0" KeyPath="System.Net.Http.dll"/>
+    <ROW Component="System.Printing.dll" ComponentId="{3F8D9B7B-9838-464F-817D-83E5C0E8D8EC}" Directory_="APPDIR" Attributes="0" KeyPath="System.Printing.dll"/>
+    <ROW Component="System.Windows.Forms.dll" ComponentId="{9E4522D3-4877-413B-990A-23ACBD3C720E}" Directory_="APPDIR" Attributes="0" KeyPath="System.Windows.Forms.dll"/>
+    <ROW Component="System.Xaml.dll" ComponentId="{6ED66833-79CF-4BE1-BE1C-9C849500B096}" Directory_="APPDIR" Attributes="0" KeyPath="System.Xaml.dll"/>
+    <ROW Component="System.Xml.Linq.dll" ComponentId="{A7FC3B3E-EB00-49CE-B3C6-97CF007C6BE8}" Directory_="APPDIR" Attributes="0" KeyPath="System.Xml.Linq.dll"/>
+    <ROW Component="System.Xml.dll" ComponentId="{50073B8C-55F8-46EC-AF0A-299DC5987944}" Directory_="APPDIR" Attributes="0" KeyPath="System.Xml.dll"/>
+    <ROW Component="System.dll" ComponentId="{33A78EF9-4959-4763-B757-C3BFE9BD59EA}" Directory_="APPDIR" Attributes="0" KeyPath="System.dll"/>
+    <ROW Component="UIAutomationProvider.dll" ComponentId="{4C1C8C93-EC43-4868-8237-6FD8B1539391}" Directory_="APPDIR" Attributes="0" KeyPath="UIAutomationProvider.dll"/>
+    <ROW Component="UIAutomationTypes.dll" ComponentId="{B3F0D01A-DAF0-445F-B7A1-369DC9D9A8BA}" Directory_="APPDIR" Attributes="0" KeyPath="UIAutomationTypes.dll"/>
+    <ROW Component="WindowsBase.dll" ComponentId="{AE325C20-D1CC-4F8D-BBBD-892C899F952A}" Directory_="APPDIR" Attributes="0" KeyPath="WindowsBase.dll"/>
+    <ROW Component="devexpress.xpf.layoutcontrol.v12.2.dll" ComponentId="{C55977D1-A916-4359-B63D-66A8E7F62D0F}" Directory_="APPDIR" Attributes="0" KeyPath="devexpress.xpf.layoutcontrol.v12.2.dll"/>
+    <ROW Component="devexpress.xpf.layoutcontrol.v12.2.resources.dll" ComponentId="{C5237EB1-860F-476E-964D-C38325959896}" Directory_="de_Dir" Attributes="0" KeyPath="devexpress.xpf.layoutcontrol.v12.2.resources.dll"/>
+    <ROW Component="devexpress.xpf.layoutcontrol.v12.2.resources.dll_1" ComponentId="{FD12F63A-0F3D-44E9-A29B-5EC3DC5FB865}" Directory_="es_Dir" Attributes="0" KeyPath="devexpress.xpf.layoutcontrol.v12.2.resources.dll_1"/>
+    <ROW Component="devexpress.xpf.layoutcontrol.v12.2.resources.dll_2" ComponentId="{869F9C5B-7E29-46E8-9D7B-2925703C9B89}" Directory_="ja_Dir" Attributes="0" KeyPath="devexpress.xpf.layoutcontrol.v12.2.resources.dll_2"/>
+    <ROW Component="devexpress.xpf.layoutcontrol.v12.2.resources.dll_3" ComponentId="{2BF31B80-1797-44CC-A6AC-BB2819D64E6A}" Directory_="ru_Dir" Attributes="0" KeyPath="devexpress.xpf.layoutcontrol.v12.2.resources.dll_3"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="DevExpress.Data.v12.2.resources.dll" Component_="DevExpress.Data.v12.2.resources.dll" FileName="DEVEXP~1.DLL|DevExpress.Data.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.Data.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v12.2.Core.resources.dll" Component_="DevExpress.Printing.v12.2.Core.resources.dll" FileName="DEVEXP~2.DLL|DevExpress.Printing.v12.2.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.Printing.v12.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v12.2.Core.resources.dll" Component_="DevExpress.RichEdit.v12.2.Core.resources.dll" FileName="DEVEXP~3.DLL|DevExpress.RichEdit.v12.2.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.RichEdit.v12.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v12.2.resources.dll" Component_="DevExpress.Utils.v12.2.resources.dll" FileName="DEVEXP~4.DLL|DevExpress.Utils.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.Utils.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v12.2.UI.resources.dll" Component_="DevExpress.Utils.v12.2.UI.resources.dll" FileName="DEVEXP~5.DLL|DevExpress.Utils.v12.2.UI.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.Utils.v12.2.UI.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Charts.v12.2.resources.dll" Component_="DevExpress.Xpf.Charts.v12.2.resources.dll" FileName="DEVEXP~6.DLL|DevExpress.Xpf.Charts.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.Xpf.Charts.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Core.v12.2.resources.dll" Component_="DevExpress.Xpf.Core.v12.2.resources.dll" FileName="DEVEXP~7.DLL|DevExpress.Xpf.Core.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.Xpf.Core.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Docking.v12.2.resources.dll" Component_="DevExpress.Xpf.Docking.v12.2.resources.dll" FileName="DEVEXP~8.DLL|DevExpress.Xpf.Docking.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.Xpf.Docking.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Grid.v12.2.Core.resources.dll" Component_="DevExpress.Xpf.Grid.v12.2.Core.resources.dll" FileName="DEVEXP~9.DLL|DevExpress.Xpf.Grid.v12.2.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.Xpf.Grid.v12.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="devexpress.xpf.layoutcontrol.v12.2.resources.dll" Component_="devexpress.xpf.layoutcontrol.v12.2.resources.dll" FileName="DEVEX~10.DLL|devexpress.xpf.layoutcontrol.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\devexpress.xpf.layoutcontrol.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.NavBar.v12.2.resources.dll" Component_="DevExpress.Xpf.NavBar.v12.2.resources.dll" FileName="DEVEX~11.DLL|DevExpress.Xpf.NavBar.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.Xpf.NavBar.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Printing.v12.2.resources.dll" Component_="DevExpress.Xpf.Printing.v12.2.resources.dll" FileName="DEVEX~12.DLL|DevExpress.Xpf.Printing.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.Xpf.Printing.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Ribbon.v12.2.resources.dll" Component_="DevExpress.Xpf.Ribbon.v12.2.resources.dll" FileName="DEVEX~13.DLL|DevExpress.Xpf.Ribbon.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.Xpf.Ribbon.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v12.2.resources.dll" Component_="DevExpress.XtraCharts.v12.2.resources.dll" FileName="DEVEX~14.DLL|DevExpress.XtraCharts.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.XtraCharts.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraReports.v12.2.resources.dll" Component_="DevExpress.XtraReports.v12.2.resources.dll" FileName="DEVEX~15.DLL|DevExpress.XtraReports.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\de\DevExpress.XtraReports.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.BonusSkins.v12.2.dll" Component_="DevExpress.BonusSkins.v12.2.dll" FileName="DEVEXP~1.DLL|DevExpress.BonusSkins.v12.2.dll" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.BonusSkins.v12.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Charts.v12.2.Core.dll" Component_="DevExpress.Charts.v12.2.Core.dll" FileName="DEVEXP~2.DLL|DevExpress.Charts.v12.2.Core.dll" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Charts.v12.2.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Data.v12.2.dll" Component_="DevExpress.Data.v12.2.dll" FileName="DEVEXP~3.DLL|DevExpress.Data.v12.2.dll" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Data.v12.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Data.v12.2.xml" Component_="DevExpress.Data.v12.2.xml" FileName="DEVEXP~1.XML|DevExpress.Data.v12.2.xml" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Data.v12.2.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Office.v12.2.Core.dll" Component_="DevExpress.Office.v12.2.Core.dll" FileName="DEVEXP~4.DLL|DevExpress.Office.v12.2.Core.dll" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Office.v12.2.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Office.v12.2.Core.xml" Component_="DevExpress.Data.v12.2.xml" FileName="DEVEXP~2.XML|DevExpress.Office.v12.2.Core.xml" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Office.v12.2.Core.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v12.2.Core.dll" Component_="DevExpress.Printing.v12.2.Core.dll" FileName="DEVEXP~5.DLL|DevExpress.Printing.v12.2.Core.dll" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Printing.v12.2.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v12.2.Core.xml" Component_="DevExpress.Data.v12.2.xml" FileName="DEVEXP~3.XML|DevExpress.Printing.v12.2.Core.xml" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Printing.v12.2.Core.xml" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v12.2.Core.dll" Component_="DevExpress.RichEdit.v12.2.Core.dll" FileName="DEVEXP~6.DLL|DevExpress.RichEdit.v12.2.Core.dll" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.RichEdit.v12.2.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v12.2.Core.xml" Component_="DevExpress.Data.v12.2.xml" FileName="DEVEXP~4.XML|DevExpress.RichEdit.v12.2.Core.xml" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.RichEdit.v12.2.Core.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v12.2.dll" Component_="DevExpress.Utils.v12.2.dll" FileName="DEVEXP~7.DLL|DevExpress.Utils.v12.2.dll" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Utils.v12.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v12.2.UI.dll" Component_="DevExpress.Utils.v12.2.UI.dll" FileName="DEVEXP~8.DLL|DevExpress.Utils.v12.2.UI.dll" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Utils.v12.2.UI.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v12.2.UI.xml" Component_="DevExpress.Data.v12.2.xml" FileName="DEVEXP~5.XML|DevExpress.Utils.v12.2.UI.xml" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Utils.v12.2.UI.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v12.2.xml" Component_="DevExpress.Data.v12.2.xml" FileName="DEVEXP~6.XML|DevExpress.Utils.v12.2.xml" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Utils.v12.2.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Charts.v12.2.dll" Component_="DevExpress.Xpf.Charts.v12.2.dll" FileName="DEVEXP~9.DLL|DevExpress.Xpf.Charts.v12.2.dll" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Xpf.Charts.v12.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Charts.v12.2.xml" Component_="DevExpress.Data.v12.2.xml" FileName="DEVEXP~7.XML|DevExpress.Xpf.Charts.v12.2.xml" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Xpf.Charts.v12.2.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Core.v12.2.dll" Component_="DevExpress.Xpf.Core.v12.2.dll" FileName="DEVEX~10.DLL|DevExpress.Xpf.Core.v12.2.dll" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Xpf.Core.v12.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Core.v12.2.xml" Component_="DevExpress.Data.v12.2.xml" FileName="DEVEXP~8.XML|DevExpress.Xpf.Core.v12.2.xml" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Xpf.Core.v12.2.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Docking.v12.2.dll" Component_="DevExpress.Xpf.Docking.v12.2.dll" FileName="DEVEX~11.DLL|DevExpress.Xpf.Docking.v12.2.dll" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Xpf.Docking.v12.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Docking.v12.2.xml" Component_="DevExpress.Data.v12.2.xml" FileName="DEVEXP~9.XML|DevExpress.Xpf.Docking.v12.2.xml" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Xpf.Docking.v12.2.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Grid.v12.2.Core.dll" Component_="DevExpress.Xpf.Grid.v12.2.Core.dll" FileName="DEVEX~12.DLL|DevExpress.Xpf.Grid.v12.2.Core.dll" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Xpf.Grid.v12.2.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Grid.v12.2.Core.xml" Component_="DevExpress.Data.v12.2.xml" FileName="DEVEX~10.XML|DevExpress.Xpf.Grid.v12.2.Core.xml" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Xpf.Grid.v12.2.Core.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Grid.v12.2.dll" Component_="DevExpress.Xpf.Grid.v12.2.dll" FileName="DEVEX~13.DLL|DevExpress.Xpf.Grid.v12.2.dll" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Xpf.Grid.v12.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Grid.v12.2.xml" Component_="DevExpress.Data.v12.2.xml" FileName="DEVEX~11.XML|DevExpress.Xpf.Grid.v12.2.xml" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Xpf.Grid.v12.2.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Layout.v12.2.Core.dll" Component_="DevExpress.Xpf.Layout.v12.2.Core.dll" FileName="DEVEX~14.DLL|DevExpress.Xpf.Layout.v12.2.Core.dll" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Xpf.Layout.v12.2.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Layout.v12.2.Core.xml" Component_="DevExpress.Data.v12.2.xml" FileName="DEVEX~12.XML|DevExpress.Xpf.Layout.v12.2.Core.xml" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Xpf.Layout.v12.2.Core.xml" SelfReg="false"/>
+    <ROW File="devexpress.xpf.layoutcontrol.v12.2.dll" Component_="devexpress.xpf.layoutcontrol.v12.2.dll" FileName="DEVEX~15.DLL|devexpress.xpf.layoutcontrol.v12.2.dll" Attributes="0" SourcePath="..\..\bin\Release\devexpress.xpf.layoutcontrol.v12.2.dll" SelfReg="false"/>
+    <ROW File="devexpress.xpf.layoutcontrol.v12.2.xml" Component_="DevExpress.Data.v12.2.xml" FileName="DEVEX~13.XML|devexpress.xpf.layoutcontrol.v12.2.xml" Attributes="0" SourcePath="..\..\bin\Release\devexpress.xpf.layoutcontrol.v12.2.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.NavBar.v12.2.dll" Component_="DevExpress.Xpf.NavBar.v12.2.dll" FileName="DEVEX~16.DLL|DevExpress.Xpf.NavBar.v12.2.dll" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Xpf.NavBar.v12.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.NavBar.v12.2.xml" Component_="DevExpress.Data.v12.2.xml" FileName="DEVEX~14.XML|DevExpress.Xpf.NavBar.v12.2.xml" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Xpf.NavBar.v12.2.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.PivotGrid.v12.2.dll" Component_="DevExpress.Xpf.PivotGrid.v12.2.dll" FileName="DEVEX~17.DLL|DevExpress.Xpf.PivotGrid.v12.2.dll" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Xpf.PivotGrid.v12.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.PivotGrid.v12.2.xml" Component_="DevExpress.Data.v12.2.xml" FileName="DEVEX~15.XML|DevExpress.Xpf.PivotGrid.v12.2.xml" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Xpf.PivotGrid.v12.2.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Printing.v12.2.Core.dll" Component_="DevExpress.Xpf.Printing.v12.2.Core.dll" FileName="DEVEX~18.DLL|DevExpress.Xpf.Printing.v12.2.Core.dll" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Xpf.Printing.v12.2.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Printing.v12.2.Core.xml" Component_="DevExpress.Data.v12.2.xml" FileName="DEVEX~16.XML|DevExpress.Xpf.Printing.v12.2.Core.xml" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Xpf.Printing.v12.2.Core.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Printing.v12.2.dll" Component_="DevExpress.Xpf.Printing.v12.2.dll" FileName="DEVEX~19.DLL|DevExpress.Xpf.Printing.v12.2.dll" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Xpf.Printing.v12.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Printing.v12.2.xml" Component_="DevExpress.Data.v12.2.xml" FileName="DEVEX~17.XML|DevExpress.Xpf.Printing.v12.2.xml" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Xpf.Printing.v12.2.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.ReportDesigner.v12.2.dll" Component_="DevExpress.Xpf.ReportDesigner.v12.2.dll" FileName="DEVEX~20.DLL|DevExpress.Xpf.ReportDesigner.v12.2.dll" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Xpf.ReportDesigner.v12.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Ribbon.v12.2.dll" Component_="DevExpress.Xpf.Ribbon.v12.2.dll" FileName="DEVEX~21.DLL|DevExpress.Xpf.Ribbon.v12.2.dll" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Xpf.Ribbon.v12.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Ribbon.v12.2.xml" Component_="DevExpress.Data.v12.2.xml" FileName="DEVEX~18.XML|DevExpress.Xpf.Ribbon.v12.2.xml" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Xpf.Ribbon.v12.2.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Themes.Office2007Blue.v12.2.dll" Component_="DevExpress.Xpf.Themes.Office2007Blue.v12.2.dll" FileName="DEVEX~22.DLL|DevExpress.Xpf.Themes.Office2007Blue.v12.2.dll" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.Xpf.Themes.Office2007Blue.v12.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v12.2.dll" Component_="DevExpress.XtraCharts.v12.2.dll" FileName="DEVEX~23.DLL|DevExpress.XtraCharts.v12.2.dll" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.XtraCharts.v12.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v12.2.xml" Component_="DevExpress.Data.v12.2.xml" FileName="DEVEX~19.XML|DevExpress.XtraCharts.v12.2.xml" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.XtraCharts.v12.2.xml" SelfReg="false"/>
+    <ROW File="DevExpress.XtraReports.v12.2.dll" Component_="DevExpress.XtraReports.v12.2.dll" FileName="DEVEX~24.DLL|DevExpress.XtraReports.v12.2.dll" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.XtraReports.v12.2.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraReports.v12.2.xml" Component_="DevExpress.Data.v12.2.xml" FileName="DEVEX~20.XML|DevExpress.XtraReports.v12.2.xml" Attributes="0" SourcePath="..\..\bin\Release\DevExpress.XtraReports.v12.2.xml" SelfReg="false"/>
+    <ROW File="DevExpress.Data.v12.2.resources.dll_1" Component_="DevExpress.Data.v12.2.resources.dll_1" FileName="DEVEXP~1.DLL|DevExpress.Data.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.Data.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v12.2.Core.resources.dll_1" Component_="DevExpress.Printing.v12.2.Core.resources.dll_1" FileName="DEVEXP~2.DLL|DevExpress.Printing.v12.2.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.Printing.v12.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v12.2.Core.resources.dll_1" Component_="DevExpress.RichEdit.v12.2.Core.resources.dll_1" FileName="DEVEXP~3.DLL|DevExpress.RichEdit.v12.2.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.RichEdit.v12.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v12.2.resources.dll_1" Component_="DevExpress.Utils.v12.2.resources.dll_1" FileName="DEVEXP~4.DLL|DevExpress.Utils.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.Utils.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v12.2.UI.resources.dll_1" Component_="DevExpress.Utils.v12.2.UI.resources.dll_1" FileName="DEVEXP~5.DLL|DevExpress.Utils.v12.2.UI.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.Utils.v12.2.UI.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Charts.v12.2.resources.dll_1" Component_="DevExpress.Xpf.Charts.v12.2.resources.dll_1" FileName="DEVEXP~6.DLL|DevExpress.Xpf.Charts.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.Xpf.Charts.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Core.v12.2.resources.dll_1" Component_="DevExpress.Xpf.Core.v12.2.resources.dll_1" FileName="DEVEXP~7.DLL|DevExpress.Xpf.Core.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.Xpf.Core.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Docking.v12.2.resources.dll_1" Component_="DevExpress.Xpf.Docking.v12.2.resources.dll_1" FileName="DEVEXP~8.DLL|DevExpress.Xpf.Docking.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.Xpf.Docking.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Grid.v12.2.Core.resources.dll_1" Component_="DevExpress.Xpf.Grid.v12.2.Core.resources.dll_1" FileName="DEVEXP~9.DLL|DevExpress.Xpf.Grid.v12.2.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.Xpf.Grid.v12.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="devexpress.xpf.layoutcontrol.v12.2.resources.dll_1" Component_="devexpress.xpf.layoutcontrol.v12.2.resources.dll_1" FileName="DEVEX~10.DLL|devexpress.xpf.layoutcontrol.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\devexpress.xpf.layoutcontrol.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.NavBar.v12.2.resources.dll_1" Component_="DevExpress.Xpf.NavBar.v12.2.resources.dll_1" FileName="DEVEX~11.DLL|DevExpress.Xpf.NavBar.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.Xpf.NavBar.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Printing.v12.2.resources.dll_1" Component_="DevExpress.Xpf.Printing.v12.2.resources.dll_1" FileName="DEVEX~12.DLL|DevExpress.Xpf.Printing.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.Xpf.Printing.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Ribbon.v12.2.resources.dll_1" Component_="DevExpress.Xpf.Ribbon.v12.2.resources.dll_1" FileName="DEVEX~13.DLL|DevExpress.Xpf.Ribbon.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.Xpf.Ribbon.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v12.2.resources.dll_1" Component_="DevExpress.XtraCharts.v12.2.resources.dll_1" FileName="DEVEX~14.DLL|DevExpress.XtraCharts.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.XtraCharts.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraReports.v12.2.resources.dll_1" Component_="DevExpress.XtraReports.v12.2.resources.dll_1" FileName="DEVEX~15.DLL|DevExpress.XtraReports.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\es\DevExpress.XtraReports.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Data.v12.2.resources.dll_2" Component_="DevExpress.Data.v12.2.resources.dll_2" FileName="DEVEXP~1.DLL|DevExpress.Data.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.Data.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v12.2.Core.resources.dll_2" Component_="DevExpress.Printing.v12.2.Core.resources.dll_2" FileName="DEVEXP~2.DLL|DevExpress.Printing.v12.2.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.Printing.v12.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v12.2.Core.resources.dll_2" Component_="DevExpress.RichEdit.v12.2.Core.resources.dll_2" FileName="DEVEXP~3.DLL|DevExpress.RichEdit.v12.2.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.RichEdit.v12.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v12.2.resources.dll_2" Component_="DevExpress.Utils.v12.2.resources.dll_2" FileName="DEVEXP~4.DLL|DevExpress.Utils.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.Utils.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v12.2.UI.resources.dll_2" Component_="DevExpress.Utils.v12.2.UI.resources.dll_2" FileName="DEVEXP~5.DLL|DevExpress.Utils.v12.2.UI.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.Utils.v12.2.UI.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Charts.v12.2.resources.dll_2" Component_="DevExpress.Xpf.Charts.v12.2.resources.dll_2" FileName="DEVEXP~6.DLL|DevExpress.Xpf.Charts.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.Xpf.Charts.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Core.v12.2.resources.dll_2" Component_="DevExpress.Xpf.Core.v12.2.resources.dll_2" FileName="DEVEXP~7.DLL|DevExpress.Xpf.Core.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.Xpf.Core.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Docking.v12.2.resources.dll_2" Component_="DevExpress.Xpf.Docking.v12.2.resources.dll_2" FileName="DEVEXP~8.DLL|DevExpress.Xpf.Docking.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.Xpf.Docking.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Grid.v12.2.Core.resources.dll_2" Component_="DevExpress.Xpf.Grid.v12.2.Core.resources.dll_2" FileName="DEVEXP~9.DLL|DevExpress.Xpf.Grid.v12.2.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.Xpf.Grid.v12.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="devexpress.xpf.layoutcontrol.v12.2.resources.dll_2" Component_="devexpress.xpf.layoutcontrol.v12.2.resources.dll_2" FileName="DEVEX~10.DLL|devexpress.xpf.layoutcontrol.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\devexpress.xpf.layoutcontrol.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.NavBar.v12.2.resources.dll_2" Component_="DevExpress.Xpf.NavBar.v12.2.resources.dll_2" FileName="DEVEX~11.DLL|DevExpress.Xpf.NavBar.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.Xpf.NavBar.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Printing.v12.2.resources.dll_2" Component_="DevExpress.Xpf.Printing.v12.2.resources.dll_2" FileName="DEVEX~12.DLL|DevExpress.Xpf.Printing.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.Xpf.Printing.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Ribbon.v12.2.resources.dll_2" Component_="DevExpress.Xpf.Ribbon.v12.2.resources.dll_2" FileName="DEVEX~13.DLL|DevExpress.Xpf.Ribbon.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.Xpf.Ribbon.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v12.2.resources.dll_2" Component_="DevExpress.XtraCharts.v12.2.resources.dll_2" FileName="DEVEX~14.DLL|DevExpress.XtraCharts.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.XtraCharts.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraReports.v12.2.resources.dll_2" Component_="DevExpress.XtraReports.v12.2.resources.dll_2" FileName="DEVEX~15.DLL|DevExpress.XtraReports.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ja\DevExpress.XtraReports.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="MTPMSWIN.exe" Component_="MTPMSWIN.exe" FileName="MTPMSWIN.exe" Attributes="0" SourcePath="..\..\bin\Release\MTPMSWIN.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="MTPMSWIN.exe.config" Component_="DevExpress.Data.v12.2.xml" FileName="MTPMSW~1.CON|MTPMSWIN.exe.config" Attributes="0" SourcePath="..\..\bin\Release\MTPMSWIN.exe.config" SelfReg="false"/>
+    <ROW File="MTPMSWIN.pdb" Component_="MTPMSWIN.exe" FileName="MTPMSWIN.pdb" Attributes="0" SourcePath="..\..\bin\Release\MTPMSWIN.pdb" SelfReg="false"/>
+    <ROW File="MTPMSWIN.vshost.exe" Component_="MTPMSWIN.vshost.exe" FileName="MTPMSW~1.EXE|MTPMSWIN.vshost.exe" Attributes="0" SourcePath="..\..\bin\Release\MTPMSWIN.vshost.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="MTPMSWIN.vshost.exe.Config" Component_="DevExpress.Data.v12.2.xml" FileName="MTPMSW~2.CON|MTPMSWIN.vshost.exe.Config" Attributes="0" SourcePath="..\..\bin\Release\MTPMSWIN.vshost.exe.Config" SelfReg="false"/>
+    <ROW File="MTPMSWIN.vshost.exe.manifest" Component_="DevExpress.Data.v12.2.xml" FileName="MTPMSW~1.MAN|MTPMSWIN.vshost.exe.manifest" Attributes="0" SourcePath="..\..\bin\Release\MTPMSWIN.vshost.exe.manifest" SelfReg="false"/>
+    <ROW File="Newtonsoft.Json.dll" Component_="Newtonsoft.Json.dll" FileName="NEWTON~1.DLL|Newtonsoft.Json.dll" Attributes="0" SourcePath="..\..\bin\Release\Newtonsoft.Json.dll" SelfReg="false"/>
+    <ROW File="Newtonsoft.Json.xml" Component_="DevExpress.Data.v12.2.xml" FileName="NEWTON~1.XML|Newtonsoft.Json.xml" Attributes="0" SourcePath="..\..\bin\Release\Newtonsoft.Json.xml" SelfReg="false"/>
+    <ROW File="PresentationCore.dll" Component_="PresentationCore.dll" FileName="PRESEN~1.DLL|PresentationCore.dll" Attributes="0" SourcePath="..\..\bin\Release\PresentationCore.dll" SelfReg="false"/>
+    <ROW File="PresentationFramework.dll" Component_="PresentationFramework.dll" FileName="PRESEN~2.DLL|PresentationFramework.dll" Attributes="0" SourcePath="..\..\bin\Release\PresentationFramework.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Data.v12.2.resources.dll_3" Component_="DevExpress.Data.v12.2.resources.dll_3" FileName="DEVEXP~1.DLL|DevExpress.Data.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.Data.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Printing.v12.2.Core.resources.dll_3" Component_="DevExpress.Printing.v12.2.Core.resources.dll_3" FileName="DEVEXP~2.DLL|DevExpress.Printing.v12.2.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.Printing.v12.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.RichEdit.v12.2.Core.resources.dll_3" Component_="DevExpress.RichEdit.v12.2.Core.resources.dll_3" FileName="DEVEXP~3.DLL|DevExpress.RichEdit.v12.2.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.RichEdit.v12.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v12.2.resources.dll_3" Component_="DevExpress.Utils.v12.2.resources.dll_3" FileName="DEVEXP~4.DLL|DevExpress.Utils.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.Utils.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v12.2.UI.resources.dll_3" Component_="DevExpress.Utils.v12.2.UI.resources.dll_3" FileName="DEVEXP~5.DLL|DevExpress.Utils.v12.2.UI.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.Utils.v12.2.UI.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Charts.v12.2.resources.dll_3" Component_="DevExpress.Xpf.Charts.v12.2.resources.dll_3" FileName="DEVEXP~6.DLL|DevExpress.Xpf.Charts.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.Xpf.Charts.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Core.v12.2.resources.dll_3" Component_="DevExpress.Xpf.Core.v12.2.resources.dll_3" FileName="DEVEXP~7.DLL|DevExpress.Xpf.Core.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.Xpf.Core.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Docking.v12.2.resources.dll_3" Component_="DevExpress.Xpf.Docking.v12.2.resources.dll_3" FileName="DEVEXP~8.DLL|DevExpress.Xpf.Docking.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.Xpf.Docking.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Grid.v12.2.Core.resources.dll_3" Component_="DevExpress.Xpf.Grid.v12.2.Core.resources.dll_3" FileName="DEVEXP~9.DLL|DevExpress.Xpf.Grid.v12.2.Core.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.Xpf.Grid.v12.2.Core.resources.dll" SelfReg="false"/>
+    <ROW File="devexpress.xpf.layoutcontrol.v12.2.resources.dll_3" Component_="devexpress.xpf.layoutcontrol.v12.2.resources.dll_3" FileName="DEVEX~10.DLL|devexpress.xpf.layoutcontrol.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\devexpress.xpf.layoutcontrol.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.NavBar.v12.2.resources.dll_3" Component_="DevExpress.Xpf.NavBar.v12.2.resources.dll_3" FileName="DEVEX~11.DLL|DevExpress.Xpf.NavBar.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.Xpf.NavBar.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Printing.v12.2.resources.dll_3" Component_="DevExpress.Xpf.Printing.v12.2.resources.dll_3" FileName="DEVEX~12.DLL|DevExpress.Xpf.Printing.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.Xpf.Printing.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Xpf.Ribbon.v12.2.resources.dll_3" Component_="DevExpress.Xpf.Ribbon.v12.2.resources.dll_3" FileName="DEVEX~13.DLL|DevExpress.Xpf.Ribbon.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.Xpf.Ribbon.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraCharts.v12.2.resources.dll_3" Component_="DevExpress.XtraCharts.v12.2.resources.dll_3" FileName="DEVEX~14.DLL|DevExpress.XtraCharts.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.XtraCharts.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraReports.v12.2.resources.dll_3" Component_="DevExpress.XtraReports.v12.2.resources.dll_3" FileName="DEVEX~15.DLL|DevExpress.XtraReports.v12.2.resources.dll" Attributes="0" SourcePath="..\..\bin\Release\ru\DevExpress.XtraReports.v12.2.resources.dll" SelfReg="false"/>
+    <ROW File="System.ComponentModel.DataAnnotations.dll" Component_="System.ComponentModel.DataAnnotations.dll" FileName="SYSTEM~1.DLL|System.ComponentModel.DataAnnotations.dll" Attributes="0" SourcePath="..\..\bin\Release\System.ComponentModel.DataAnnotations.dll" SelfReg="false"/>
+    <ROW File="System.Configuration.dll" Component_="System.Configuration.dll" FileName="SYSTEM~2.DLL|System.Configuration.dll" Attributes="0" SourcePath="..\..\bin\Release\System.Configuration.dll" SelfReg="false"/>
+    <ROW File="System.Data.DataSetExtensions.dll" Component_="System.Data.DataSetExtensions.dll" FileName="SYSTEM~3.DLL|System.Data.DataSetExtensions.dll" Attributes="0" SourcePath="..\..\bin\Release\System.Data.DataSetExtensions.dll" SelfReg="false"/>
+    <ROW File="System.Data.dll" Component_="System.Data.dll" FileName="SYSTEM~4.DLL|System.Data.dll" Attributes="0" SourcePath="..\..\bin\Release\System.Data.dll" SelfReg="false"/>
+    <ROW File="System.Data.SQLite.dll" Component_="System.Data.SQLite.dll" FileName="SYSTEM~5.DLL|System.Data.SQLite.dll" Attributes="0" SourcePath="..\..\bin\Release\System.Data.SQLite.dll" SelfReg="false"/>
+    <ROW File="System.Data.SQLite.xml" Component_="DevExpress.Data.v12.2.xml" FileName="SYSTEM~1.XML|System.Data.SQLite.xml" Attributes="0" SourcePath="..\..\bin\Release\System.Data.SQLite.xml" SelfReg="false"/>
+    <ROW File="System.dll" Component_="System.dll" FileName="System.dll" Attributes="0" SourcePath="..\..\bin\Release\System.dll" SelfReg="false"/>
+    <ROW File="System.Drawing.dll" Component_="System.Drawing.dll" FileName="SYSTEM~6.DLL|System.Drawing.dll" Attributes="0" SourcePath="..\..\bin\Release\System.Drawing.dll" SelfReg="false"/>
+    <ROW File="System.Net.Http.dll" Component_="System.Net.Http.dll" FileName="SYSTEM~7.DLL|System.Net.Http.dll" Attributes="0" SourcePath="..\..\bin\Release\System.Net.Http.dll" SelfReg="false"/>
+    <ROW File="System.Net.Http.Extensions.dll" Component_="System.Net.Http.Extensions.dll" FileName="SYSTEM~8.DLL|System.Net.Http.Extensions.dll" Attributes="0" SourcePath="..\..\bin\Release\System.Net.Http.Extensions.dll" SelfReg="false"/>
+    <ROW File="System.Net.Http.Extensions.xml" Component_="DevExpress.Data.v12.2.xml" FileName="SYSTEM~2.XML|System.Net.Http.Extensions.xml" Attributes="0" SourcePath="..\..\bin\Release\System.Net.Http.Extensions.xml" SelfReg="false"/>
+    <ROW File="System.Net.Http.Primitives.dll" Component_="System.Net.Http.Primitives.dll" FileName="SYSTEM~9.DLL|System.Net.Http.Primitives.dll" Attributes="0" SourcePath="..\..\bin\Release\System.Net.Http.Primitives.dll" SelfReg="false"/>
+    <ROW File="System.Net.Http.Primitives.xml" Component_="DevExpress.Data.v12.2.xml" FileName="SYSTEM~3.XML|System.Net.Http.Primitives.xml" Attributes="0" SourcePath="..\..\bin\Release\System.Net.Http.Primitives.xml" SelfReg="false"/>
+    <ROW File="System.Net.Http.WebRequest.dll" Component_="System.Net.Http.WebRequest.dll" FileName="SYSTE~10.DLL|System.Net.Http.WebRequest.dll" Attributes="0" SourcePath="..\..\bin\Release\System.Net.Http.WebRequest.dll" SelfReg="false"/>
+    <ROW File="System.Net.Http.WebRequest.xml" Component_="DevExpress.Data.v12.2.xml" FileName="SYSTEM~4.XML|System.Net.Http.WebRequest.xml" Attributes="0" SourcePath="..\..\bin\Release\System.Net.Http.WebRequest.xml" SelfReg="false"/>
+    <ROW File="System.Net.Http.xml" Component_="DevExpress.Data.v12.2.xml" FileName="SYSTEM~5.XML|System.Net.Http.xml" Attributes="0" SourcePath="..\..\bin\Release\System.Net.Http.xml" SelfReg="false"/>
+    <ROW File="System.Printing.dll" Component_="System.Printing.dll" FileName="SYSTE~11.DLL|System.Printing.dll" Attributes="0" SourcePath="..\..\bin\Release\System.Printing.dll" SelfReg="false"/>
+    <ROW File="System.Windows.Forms.dll" Component_="System.Windows.Forms.dll" FileName="SYSTE~12.DLL|System.Windows.Forms.dll" Attributes="0" SourcePath="..\..\bin\Release\System.Windows.Forms.dll" SelfReg="false"/>
+    <ROW File="System.Xaml.dll" Component_="System.Xaml.dll" FileName="SYSTE~13.DLL|System.Xaml.dll" Attributes="0" SourcePath="..\..\bin\Release\System.Xaml.dll" SelfReg="false"/>
+    <ROW File="System.Xml.dll" Component_="System.Xml.dll" FileName="SYSTE~14.DLL|System.Xml.dll" Attributes="0" SourcePath="..\..\bin\Release\System.Xml.dll" SelfReg="false"/>
+    <ROW File="System.Xml.Linq.dll" Component_="System.Xml.Linq.dll" FileName="SYSTE~15.DLL|System.Xml.Linq.dll" Attributes="0" SourcePath="..\..\bin\Release\System.Xml.Linq.dll" SelfReg="false"/>
+    <ROW File="UIAutomationProvider.dll" Component_="UIAutomationProvider.dll" FileName="UIAUTO~1.DLL|UIAutomationProvider.dll" Attributes="0" SourcePath="..\..\bin\Release\UIAutomationProvider.dll" SelfReg="false"/>
+    <ROW File="UIAutomationTypes.dll" Component_="UIAutomationTypes.dll" FileName="UIAUTO~2.DLL|UIAutomationTypes.dll" Attributes="0" SourcePath="..\..\bin\Release\UIAutomationTypes.dll" SelfReg="false"/>
+    <ROW File="WindowsBase.dll" Component_="WindowsBase.dll" FileName="WINDOW~1.DLL|WindowsBase.dll" Attributes="0" SourcePath="..\..\bin\Release\WindowsBase.dll" SelfReg="false"/>
+    <ROW File="SQLite.Interop.dll" Component_="SQLite.Interop.dll" FileName="SQLITE~1.DLL|SQLite.Interop.dll" Attributes="0" SourcePath="..\..\bin\Release\x64\SQLite.Interop.dll" SelfReg="false"/>
+    <ROW File="SQLite.Interop.dll_1" Component_="SQLite.Interop.dll_1" FileName="SQLITE~1.DLL|SQLite.Interop.dll" Attributes="0" SourcePath="..\..\bin\Release\x86\SQLite.Interop.dll" SelfReg="false"/>
+    <ROW File="app_pos_2.ico" Component_="DevExpress.Data.v12.2.xml" FileName="APP_PO~1.ICO|app_pos_2.ico" Attributes="0" SourcePath="..\..\app_pos_2.ico" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
+    <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrapperUISequenceComponent">
+    <ROW Action="AI_DetectSoftware" Sequence="101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="Setup Files" PackageFileName="TiVaPos" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\Icon\app_pos_2.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" ExeName="TiVaPos"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="InstallDlg.aip" Path="&lt;AI_THEMES&gt;surface\fragments\InstallDlg.aip"/>
+    <ROW Fragment="LicenseAgreementDlg.aip" Path="&lt;AI_THEMES&gt;surface\fragments\LicenseAgreementDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;surface\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="PreparePrereqDlg.aip" Path="&lt;AI_THEMES&gt;surface\fragments\PreparePrereqDlg.aip"/>
+    <ROW Fragment="PrerequisitesDlg.aip" Path="&lt;AI_THEMES&gt;surface\fragments\PrerequisitesDlg.aip"/>
+    <ROW Fragment="ProgressPrereqDlg.aip" Path="&lt;AI_THEMES&gt;surface\fragments\ProgressPrereqDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;surface\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;surface\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;surface\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;surface\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomePrereqDlg.aip" Path="&lt;AI_THEMES&gt;surface\fragments\WelcomePrereqDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiActionTextComponent">
+    <ROW Action="AI_DeleteLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_DeleteRLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractFiles" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractLzma" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiAppSearchComponent">
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_LM" Builds="DefaultBuild"/>
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_CU" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="ExternalUICleaner.dll" SourcePath="&lt;AI_CUSTACTS&gt;ExternalUICleaner.dll"/>
+    <ROW Name="Prereq.dll" SourcePath="&lt;AI_CUSTACTS&gt;Prereq.dll"/>
+    <ROW Name="SoftwareDetector.dll" SourcePath="&lt;AI_CUSTACTS&gt;SoftwareDetector.dll"/>
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+    <ROW Name="lzmaextractor.dll" SourcePath="&lt;AI_CUSTACTS&gt;lzmaextractor.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
+    <ROW Dialog_="CustomizeDlg" Control="CustomizeDlgDialogInitializer" Type="DialogInitializer" X="0" Y="0" Width="0" Height="0" Attributes="0" Order="-1" TextLocId="-" HelpLocId="-" ExtDataLocId="-"/>
+    <ROW Dialog_="MsiRMFilesInUse" Control="Cancel" Type="ImageButton" X="163" Y="359" Width="78" Height="28" Attributes="2" Text="[NextCancelButtons]" TextStyle="[MetroButtonText]" Order="100" MsiKey="MsiRMFilesInUse#Cancel" Options="1" ExtType="ImageButton" ExtData="[ButtonText_Cancel]" ExtDataLocId="-"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control="PatchWelcomeDlgDialogInitializer" Type="DialogInitializer" X="0" Y="0" Width="0" Height="0" Attributes="0" Order="-1" TextLocId="-" HelpLocId="-" ExtDataLocId="-"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control="ProductNameTitle" Type="Text" X="83" Y="21" Width="245" Height="50" Attributes="196611" Text="[ProductName]" TextStyle="[ProductNameForSplash]" Order="600" TextLocId="Metro.Control.Text.ProductName" MsiKey="PatchWelcomeDlg#ProductNameTitle"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control="CompanyText" Type="Text" X="83" Y="16" Width="191" Height="12" Attributes="196611" Text="[Manufacturer]" TextStyle="[ManufacturerFont]" Order="700" TextLocId="Metro.Control.Text.Manufacturer" MsiKey="PatchWelcomeDlg#CompanyText"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control="ProductLogo" Type="Bitmap" X="17" Y="5" Width="59" Height="63" Attributes="1" Text="[AppLogoIcon]" Order="800" MsiKey="PatchWelcomeDlg#ProductLogo"/>
+    <ROW Dialog_="PreparePrereqDlg" Control="ProgressAnimation" Type="Bitmap" X="123" Y="83" Width="113" Height="30" Attributes="1048577" Text="PreparePrereqDlgProgress.gif" Order="800" MsiKey="PreparePrereqDlg#ProgressAnimation"/>
+    <ROW Dialog_="PrerequisitesDlg" Control="Cancel" Type="ImageButton" X="163" Y="359" Width="78" Height="28" Attributes="2" Text="[NextCancelButtons]" TextStyle="[MetroButtonText]" Order="100" MsiKey="PrerequisitesDlg#Cancel" Options="1" ExtType="ImageButton" ExtData="[ButtonText_Cancel]" ExtDataLocId="-"/>
+    <ROW Dialog_="ProgressPrereqDlg" Control="ActionText" Type="Text" X="17" Y="191" Width="309" Height="11" Attributes="196611" TextStyle="SubnoteFont" Order="800" MsiKey="ProgressPrereqDlg#ActionText"/>
+    <ROW Dialog_="ProgressPrereqDlg" Control="ProgressBar" Type="StyledProgressBar" X="17" Y="185" Width="312" Height="5" Attributes="65537" Text="PrereqProgressImage.png" Order="900" MsiKey="ProgressPrereqDlg#ProgressBar" ExtType="StyledProgressBar"/>
+    <ROW Dialog_="ProgressPrereqDlg" Control="StatusLabel" Type="Text" X="17" Y="171" Width="45" Height="13" Attributes="196611" Text="Status:" TextStyle="SubnoteFont" Order="1000" TextLocId="Control.Text.ProgressDlg#StatusLabel" MsiKey="ProgressPrereqDlg#StatusLabel"/>
+    <ROW Dialog_="ProgressPrereqDlg" Control="Text" Type="Text" X="17" Y="105" Width="300" Height="30" Attributes="196611" Text="Please wait while the [Wizard] [Progress2] prerequisites for [ProductName].  This may take several minutes." Order="1100" TextLocId="Control.Text.ProgressPrereqDlg#Text" MsiKey="ProgressPrereqDlg#Text"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="Cancel" Type="ImageButton" X="163" Y="359" Width="78" Height="28" Attributes="2" Text="[NextCancelButtons]" TextStyle="[MetroButtonText]" Order="100" MsiKey="VerifyReadyDlg#Cancel" Options="1" ExtType="ImageButton" ExtData="[ButtonText_Cancel]" ExtDataLocId="-"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="Back" Type="PushButton" X="5" Y="381" Width="11" Height="11" Attributes="2" Text="Control.Text.VerifyReadyDlg#Back" Help="Back|" Order="200" TextLocId="Control.Text.VerifyReadyDlg#Back" HelpLocId="Air.Control.Help#Back" MsiKey="VerifyReadyDlg#Back" Options="1" ExtType="PushButton" ExtData="[ButtonText_Back]" ExtDataLocId="-"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="ReadyToInstall" Type="Text" X="17" Y="105" Width="312" Height="19" Attributes="196611" Text="Ready to Install" TextStyle="[SubTitleStyle]" Order="400" TextLocId="Control.Text.VerifyReadyDlg#Title" MsiKey="VerifyReadyDlg#ReadyToInstall"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="Text_2" Type="Text" X="17" Y="139" Width="312" Height="100" Attributes="65539" Text="The [Wizard] is ready to begin the [ProductName] installation" Order="500" TextLocId="Control.Text.VerifyReadyDlg#Description" MsiKey="VerifyReadyDlg#Text_2"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="InstallButton" Type="ImageButton" X="251" Y="359" Width="78" Height="28" Attributes="3" Text="[metrobuttonimage]" TextStyle="[MetroButtonText]" Order="600" MsiKey="VerifyReadyDlg#InstallButton" ExtType="ImageButton" ExtData="INSTALL" ExtDataLocId="Metro.Control.ExtData.VerifyReadyDlg#InstallButton"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="ProductNameTitle" Type="Text" X="83" Y="21" Width="245" Height="50" Attributes="196611" Text="[ProductName]" TextStyle="[ProductNameForSplash]" Order="700" TextLocId="Metro.Control.Text.ProductName" MsiKey="VerifyReadyDlg#ProductNameTitle"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="CompanyText" Type="Text" X="83" Y="16" Width="191" Height="12" Attributes="196611" Text="[Manufacturer]" TextStyle="[ManufacturerFont]" Order="800" TextLocId="Metro.Control.Text.Manufacturer" MsiKey="VerifyReadyDlg#CompanyText"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="ProductLogo" Type="Bitmap" X="17" Y="5" Width="59" Height="63" Attributes="1" Text="[AppLogoIcon]" Order="900" MsiKey="VerifyReadyDlg#ProductLogo"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="AdvInst" Type="Text" X="5" Y="388" Width="74" Height="11" Attributes="196611" Text="Advanced Installer" TextStyle="[BrandingStyle]" Order="1000" MsiKey="VerifyReadyDlg#AdvInst"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control="Cancel" Type="ImageButton" X="163" Y="359" Width="78" Height="28" Attributes="2" Text="[NextCancelButtons]" TextStyle="[MetroButtonText]" Order="100" MsiKey="VerifyRemoveDlg#Cancel" Options="1" ExtType="ImageButton" ExtData="[ButtonText_Cancel]" ExtDataLocId="-"/>
+    <ROW Dialog_="VerifyRepairDlg" Control="Bitmap" Type="Bitmap" X="0" Y="0" Width="345" Height="400" Attributes="1" Text="[Background]" Order="100" MsiKey="VerifyRepairDlg#Bitmap"/>
+    <ROW Dialog_="VerifyRepairDlg" Control="Cancel" Type="ImageButton" X="163" Y="359" Width="78" Height="28" Attributes="2" Text="[NextCancelButtons]" TextStyle="[MetroButtonText]" Order="200" MsiKey="VerifyRepairDlg#Cancel" Options="1" ExtType="ImageButton" ExtData="[ButtonText_Cancel]" ExtDataLocId="-"/>
+    <ROW Dialog_="WelcomePrereqDlg" Control="Description" Type="Text" X="17" Y="139" Width="312" Height="211" Attributes="196611" Text="The setup has determined that some of the prerequisites needed to run [ProductName] are missing. This wizard will assist you in getting and installing those prerequisites. Click &quot;[Text_Next]&quot; to continue or &quot;[ButtonText_Cancel]&quot; to exit the [Wizard]." Order="800" TextLocId="Control.Text.WelcomePrereqDlg#Description" MsiKey="WelcomePrereqDlg#Description"/>
+    <ROW Dialog_="WelcomePrereqDlg" Control="SubTitle" Type="Text" X="17" Y="105" Width="312" Height="34" Attributes="196611" Text="Welcome to the Prerequisites [Wizard]" TextStyle="SubTitle" Order="900" TextLocId="Control.Text.WelcomePrereqDlg#SubTitle" MsiKey="WelcomePrereqDlg#SubTitle"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="WelcomePrereqDlg" Control_="Next" Event="NewDialog" Argument="PrerequisitesDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
+    <ROW Dialog_="PrerequisitesDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
+    <ROW Dialog_="PrerequisitesDlg" Control_="Back" Event="NewDialog" Argument="WelcomePrereqDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
+    <ROW Dialog_="InstallDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="301"/>
+    <ROW Dialog_="InstallDlg" Control_="YouMustAgreeCtrl" Event="NewDialog" Argument="LicenseAgreementDlg" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="301"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Back" Event="NewDialog" Argument="InstallDlg" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="1"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="101"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="699"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="199" Options="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="699"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Modify" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="99"/>
+    <ROW Dialog_="InstallDlg" Control_="Next" Event="SpawnDialog" Argument="OutOfRbDiskDlg" Condition="AI_INSTALL AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND (PROMPTROLLBACKCOST=&quot;P&quot; OR NOT PROMPTROLLBACKCOST)" Ordering="302" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="Next" Event="EnableRollback" Argument="False" Condition="AI_INSTALL AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;" Ordering="303" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="Next" Event="SpawnDialog" Argument="OutOfDiskDlg" Condition="AI_INSTALL AND ( (OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 1) OR (OutOfDiskSpace = 1 AND PROMPTROLLBACKCOST=&quot;F&quot;) )" Ordering="304" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="InstallDlgDialogInitializer" Event="[AI_ButtonText_Next_Orig]" Argument="[ButtonText_Next]" Condition="AI_INSTALL" Ordering="101" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="InstallDlgDialogInitializer" Event="[ButtonText_Next]" Argument="[[AI_CommitButton]]" Condition="AI_INSTALL" Ordering="102" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="InstallDlgDialogInitializer" Event="[AI_Text_Next_Orig]" Argument="[Text_Next]" Condition="AI_INSTALL" Ordering="103" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="InstallDlgDialogInitializer" Event="[Text_Next]" Argument="[Text_Install]" Condition="AI_INSTALL" Ordering="104" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="YouMustAgreeCtrl" Event="[ButtonText_Next]" Argument="[AI_ButtonText_Next_Orig]" Condition="AI_INSTALL" Ordering="302" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="YouMustAgreeCtrl" Event="[Text_Next]" Argument="[AI_Text_Next_Orig]" Condition="AI_INSTALL" Ordering="303" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="Back" Event="[ButtonText_Next]" Argument="[AI_ButtonText_Next_Orig]" Condition="AI_INSTALL" Ordering="0" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="Back" Event="[Text_Next]" Argument="[AI_Text_Next_Orig]" Condition="AI_INSTALL" Ordering="1" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Next" Event="SpawnDialog" Argument="OutOfRbDiskDlg" Condition="AI_INSTALL AND AiLicenseAgreement AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND (PROMPTROLLBACKCOST=&quot;P&quot; OR NOT PROMPTROLLBACKCOST)" Ordering="102" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Next" Event="EnableRollback" Argument="False" Condition="AI_INSTALL AND AiLicenseAgreement AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;" Ordering="103" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Next" Event="SpawnDialog" Argument="OutOfDiskDlg" Condition="AI_INSTALL AND AiLicenseAgreement AND ( (OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 1) OR (OutOfDiskSpace = 1 AND PROMPTROLLBACKCOST=&quot;F&quot;) )" Ordering="104" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="LicenseAgreementDlgDialogInitializer" Event="[AI_ButtonText_Next_Orig]" Argument="[ButtonText_Next]" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="101" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="LicenseAgreementDlgDialogInitializer" Event="[ButtonText_Next]" Argument="[[AI_CommitButton]]" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="102" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="LicenseAgreementDlgDialogInitializer" Event="[AI_Text_Next_Orig]" Argument="[Text_Next]" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="103" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="LicenseAgreementDlgDialogInitializer" Event="[Text_Next]" Argument="[Text_Install]" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="104" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Back" Event="[ButtonText_Next]" Argument="[AI_ButtonText_Next_Orig]" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="2" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Back" Event="[Text_Next]" Argument="[AI_Text_Next_Orig]" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="3" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Modify" Event="SpawnDialog" Argument="OutOfRbDiskDlg" Condition="AI_MAINT AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND (PROMPTROLLBACKCOST=&quot;P&quot; OR NOT PROMPTROLLBACKCOST)" Ordering="102" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Modify" Event="EnableRollback" Argument="False" Condition="AI_MAINT AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;" Ordering="103" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Modify" Event="SpawnDialog" Argument="OutOfDiskDlg" Condition="AI_MAINT AND ( (OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 1) OR (OutOfDiskSpace = 1 AND PROMPTROLLBACKCOST=&quot;F&quot;) )" Ordering="104" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="CustomizeDlgDialogInitializer" Event="[AI_ButtonText_Next_Orig]" Argument="[ButtonText_Next]" Condition="AI_MAINT" Ordering="0" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="CustomizeDlgDialogInitializer" Event="[ButtonText_Next]" Argument="[[AI_CommitButton]]" Condition="AI_MAINT" Ordering="1" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="CustomizeDlgDialogInitializer" Event="[AI_Text_Next_Orig]" Argument="[Text_Next]" Condition="AI_MAINT" Ordering="2" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="CustomizeDlgDialogInitializer" Event="[Text_Next]" Argument="[Text_Install]" Condition="AI_MAINT" Ordering="3" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="[ButtonText_Next]" Argument="[AI_ButtonText_Next_Orig]" Condition="AI_MAINT" Ordering="2" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="[Text_Next]" Argument="[AI_Text_Next_Orig]" Condition="AI_MAINT" Ordering="3" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="SpawnDialog" Argument="OutOfRbDiskDlg" Condition="AI_PATCH AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND (PROMPTROLLBACKCOST=&quot;P&quot; OR NOT PROMPTROLLBACKCOST)" Ordering="202" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="EnableRollback" Argument="False" Condition="AI_PATCH AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;" Ordering="203" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="SpawnDialog" Argument="OutOfDiskDlg" Condition="AI_PATCH AND ( (OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 1) OR (OutOfDiskSpace = 1 AND PROMPTROLLBACKCOST=&quot;F&quot;) )" Ordering="204" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="PatchWelcomeDlgDialogInitializer" Event="[AI_ButtonText_Next_Orig]" Argument="[ButtonText_Next]" Condition="AI_PATCH" Ordering="0" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="PatchWelcomeDlgDialogInitializer" Event="[ButtonText_Next]" Argument="[[AI_CommitButton]]" Condition="AI_PATCH" Ordering="1" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="PatchWelcomeDlgDialogInitializer" Event="[AI_Text_Next_Orig]" Argument="[Text_Next]" Condition="AI_PATCH" Ordering="2" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="PatchWelcomeDlgDialogInitializer" Event="[Text_Next]" Argument="[Text_Install]" Condition="AI_PATCH" Ordering="3" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Back" Event="[ButtonText_Next]" Argument="[AI_ButtonText_Next_Orig]" Condition="AI_PATCH" Ordering="0" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Back" Event="[Text_Next]" Argument="[AI_Text_Next_Orig]" Condition="AI_PATCH" Ordering="1" Options="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
+    <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_AppSearchEx" Type="1" Source="Prereq.dll" Target="DoAppSearchEx"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH_ORIGINAL" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_ChooseTextStyles" Type="1" Source="aicustact.dll" Target="ChooseTextStyles"/>
+    <ROW Action="AI_DATA_SETTER" Type="51" Source="AI_ExtractFiles" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DeleteCadLzma" Type="51" Source="AI_DeleteLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteLzma" Type="1025" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DeleteRCadLzma" Type="51" Source="AI_DeleteRLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteRLzma" Type="1281" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DetectSoftware" Type="257" Source="SoftwareDetector.dll" Target="OnDetectSoftware"/>
+    <ROW Action="AI_DoRemoveExternalUIStub" Type="3585" Source="ExternalUICleaner.dll" Target="DoRemoveExternalUIStub" WithoutSeq="true"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_EstimateExtractFiles" Type="1" Source="Prereq.dll" Target="EstimateExtractFiles"/>
+    <ROW Action="AI_ExtractCadLzma" Type="51" Source="AI_ExtractLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_ExtractFiles" Type="1025" Source="Prereq.dll" Target="ExtractSourceFiles" AdditionalSeq="AI_DATA_SETTER"/>
+    <ROW Action="AI_ExtractLzma" Type="1025" Source="lzmaextractor.dll" Target="ExtractLZMAFiles"/>
+    <ROW Action="AI_FindExeLzma" Type="1" Source="lzmaextractor.dll" Target="FindEXE"/>
+    <ROW Action="AI_GetArpIconPath" Type="1" Source="aicustact.dll" Target="GetArpIconPath"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH" Target="[AI_SETUPEXEPATH_ORIGINAL]"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_RemoveExternalUIStub" Type="1" Source="ExternalUICleaner.dll" Target="RemoveExternalUIStub"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_RunFinishActions" Type="1" Source="aicustact.dll" Target="RunFinishActions" WithoutSeq="true"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
+    <ROW Feature_="MainFeature" Component_="AI_CustomARPName"/>
+    <ROW Feature_="MainFeature" Component_="AI_ExePath"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.BonusSkins.v12.2.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Charts.v12.2.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.v12.2.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.v12.2.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.v12.2.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.v12.2.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.v12.2.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.v12.2.xml"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Office.v12.2.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Printing.v12.2.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Printing.v12.2.Core.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Printing.v12.2.Core.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Printing.v12.2.Core.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Printing.v12.2.Core.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.RichEdit.v12.2.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.RichEdit.v12.2.Core.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.RichEdit.v12.2.Core.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.RichEdit.v12.2.Core.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.RichEdit.v12.2.Core.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v12.2.UI.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v12.2.UI.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v12.2.UI.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v12.2.UI.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v12.2.UI.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v12.2.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v12.2.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v12.2.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v12.2.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v12.2.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Charts.v12.2.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Charts.v12.2.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Charts.v12.2.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Charts.v12.2.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Charts.v12.2.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Core.v12.2.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Core.v12.2.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Core.v12.2.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Core.v12.2.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Core.v12.2.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Docking.v12.2.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Docking.v12.2.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Docking.v12.2.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Docking.v12.2.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Docking.v12.2.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Grid.v12.2.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Grid.v12.2.Core.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Grid.v12.2.Core.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Grid.v12.2.Core.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Grid.v12.2.Core.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Grid.v12.2.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Layout.v12.2.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.NavBar.v12.2.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.NavBar.v12.2.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.NavBar.v12.2.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.NavBar.v12.2.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.NavBar.v12.2.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.PivotGrid.v12.2.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Printing.v12.2.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Printing.v12.2.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Printing.v12.2.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Printing.v12.2.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Printing.v12.2.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Printing.v12.2.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.ReportDesigner.v12.2.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Ribbon.v12.2.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Ribbon.v12.2.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Ribbon.v12.2.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Ribbon.v12.2.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Ribbon.v12.2.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Xpf.Themes.Office2007Blue.v12.2.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraCharts.v12.2.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraCharts.v12.2.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraCharts.v12.2.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraCharts.v12.2.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraCharts.v12.2.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraReports.v12.2.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraReports.v12.2.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraReports.v12.2.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraReports.v12.2.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraReports.v12.2.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="MTPMSWIN.exe"/>
+    <ROW Feature_="MainFeature" Component_="MTPMSWIN.vshost.exe"/>
+    <ROW Feature_="MainFeature" Component_="Newtonsoft.Json.dll"/>
+    <ROW Feature_="MainFeature" Component_="PresentationCore.dll"/>
+    <ROW Feature_="MainFeature" Component_="PresentationFramework.dll"/>
+    <ROW Feature_="MainFeature" Component_="ProductInformation"/>
+    <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
+    <ROW Feature_="MainFeature" Component_="SQLite.Interop.dll"/>
+    <ROW Feature_="MainFeature" Component_="SQLite.Interop.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="System.ComponentModel.DataAnnotations.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Configuration.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Data.DataSetExtensions.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Data.SQLite.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Data.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Drawing.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Net.Http.Extensions.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Net.Http.Primitives.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Net.Http.WebRequest.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Net.Http.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Printing.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Windows.Forms.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Xaml.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Xml.Linq.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Xml.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.dll"/>
+    <ROW Feature_="MainFeature" Component_="UIAutomationProvider.dll"/>
+    <ROW Feature_="MainFeature" Component_="UIAutomationTypes.dll"/>
+    <ROW Feature_="MainFeature" Component_="WindowsBase.dll"/>
+    <ROW Feature_="MainFeature" Component_="devexpress.xpf.layoutcontrol.v12.2.dll"/>
+    <ROW Feature_="MainFeature" Component_="devexpress.xpf.layoutcontrol.v12.2.resources.dll"/>
+    <ROW Feature_="MainFeature" Component_="devexpress.xpf.layoutcontrol.v12.2.resources.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="devexpress.xpf.layoutcontrol.v12.2.resources.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="devexpress.xpf.layoutcontrol.v12.2.resources.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="APPDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
+    <ROW Name="app_pos_2.exe" SourcePath="..\Icon\app_pos_2.ico" Index="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1502"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99" Builds="DefaultBuild"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="103" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="199" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="198" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="197" Builds="DefaultBuild"/>
+    <ROW Action="AI_FindExeLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="196" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1549" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1548" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="6599" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractFiles" Sequence="3998" Builds="DefaultBuild"/>
+    <ROW Action="AI_DATA_SETTER" Sequence="3997"/>
+    <ROW Action="AI_EstimateExtractFiles" Sequence="3999" Builds="DefaultBuild"/>
+    <ROW Action="AI_DetectSoftware" Sequence="102"/>
+    <ROW Action="AI_AppSearchEx" Sequence="101"/>
+    <ROW Action="AI_GetArpIconPath" Sequence="1401"/>
+    <ROW Action="AI_RemoveExternalUIStub" Condition="(REMOVE=&quot;ALL&quot;) AND ((VersionNT &gt; 500) OR((VersionNT = 500) AND (ServicePackLevel &gt;= 4)))" Sequence="1501"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="InstallDlg" Condition="AI_INSTALL" Sequence="1230" SeqType="3" MsiKey="WelcomeDlg"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_DpiContentScale" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="103"/>
+    <ROW Action="AI_DetectSoftware" Sequence="102"/>
+    <ROW Action="AI_AppSearchEx" Sequence="101"/>
+    <ROW Action="MaintenanceTypeDlg" Condition="AI_MAINT" Sequence="1250" SeqType="3" MsiKey="MaintenanceTypeDlg"/>
+    <ROW Action="AI_ChooseTextStyles" Sequence="74"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] cannot be installed on [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT64 OR ((VersionNT &lt;&gt; 501) OR (ServicePackLevel = 3))) AND ((VersionNT &lt;&gt; 502) OR (ServicePackLevel = 2))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="AI_DETECTED_DOTNET_VERSION &gt;= AI_REQUIRED_DOTNET_VERSION" Description="[ProductName] cannot be installed on systems with .NET Framework version lower than [AI_REQUIRED_DOTNET_DISPLAY]." DescriptionLocId="AI.LaunchCondition.DotNET" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="SETUPEXEDIR OR (REMOVE=&quot;ALL&quot;)" Description="This package can only be run from a bootstrapper." DescriptionLocId="AI.LaunchCondition.RequireBootstrapper" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegLocatorComponent">
+    <ROW Signature_="AI_EXE_PATH_CU" Root="1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+    <ROW Signature_="AI_EXE_PATH_LM" Root="2" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="AI_ExePath" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Value="[AI_SETUPEXEPATH]" Component_="AI_ExePath"/>
+    <ROW Registry="Comments" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Comments" Value="[ARPCOMMENTS]" Component_="AI_CustomARPName"/>
+    <ROW Registry="Contact" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Contact" Value="[ARPCONTACT]" Component_="AI_CustomARPName"/>
+    <ROW Registry="DisplayIcon" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayIcon" Value="[ARP_ICON_PATH]" Component_="AI_CustomARPName"/>
+    <ROW Registry="DisplayName" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayName" Value="[AI_PRODUCTNAME_ARP]" Component_="AI_CustomARPName"/>
+    <ROW Registry="DisplayVersion" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayVersion" Value="[ProductVersion]" Component_="AI_CustomARPName"/>
+    <ROW Registry="EstimatedSize" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="EstimatedSize" Value="#[AI_ARP_SIZE]" Component_="AI_CustomARPName"/>
+    <ROW Registry="HelpLink" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="HelpLink" Value="[ARPHELPLINK]" Component_="AI_CustomARPName"/>
+    <ROW Registry="HelpTelephone" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="HelpTelephone" Value="[ARPHELPTELEPHONE]" Component_="AI_CustomARPName"/>
+    <ROW Registry="InstallLocation" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="InstallLocation" Value="[APPDIR]" Component_="AI_CustomARPName"/>
+    <ROW Registry="ModifyPath" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="ModifyPath" Value="[AI_UNINSTALLER] /i [ProductCode] AI_UNINSTALLER_CTP=1" Component_="AI_CustomARPName"/>
+    <ROW Registry="NoRepair" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="NoRepair" Value="#1" Component_="AI_CustomARPName"/>
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="Publisher" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Publisher" Value="[Manufacturer]" Component_="AI_CustomARPName"/>
+    <ROW Registry="Readme" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Readme" Value="[ARPREADME]" Component_="AI_CustomARPName"/>
+    <ROW Registry="URLInfoAbout" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="URLInfoAbout" Value="[ARPURLINFOABOUT]" Component_="AI_CustomARPName"/>
+    <ROW Registry="URLUpdateInfo" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="URLUpdateInfo" Value="[ARPURLUPDATEINFO]" Component_="AI_CustomARPName"/>
+    <ROW Registry="UninstallPath" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="UninstallPath" Value="[AI_UNINSTALLER] /x [ProductCode] AI_UNINSTALLER_CTP=1" Component_="AI_CustomARPName"/>
+    <ROW Registry="UninstallString" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="UninstallString" Value="[AI_UNINSTALLER] /x [ProductCode] AI_UNINSTALLER_CTP=1" Component_="AI_CustomARPName"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+    <ROW Registry="VersionMajor" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="VersionMajor" Value="#1" Component_="AI_CustomARPName"/>
+    <ROW Registry="VersionMinor" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="VersionMinor" Value="#0" Component_="AI_CustomARPName"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="TiVaPos" Directory_="SHORTCUTDIR" Name="TiVaPos" Component_="MTPMSWIN.exe" Target="[#MTPMSWIN.exe]" Description="MiMiGroup" Hotkey="0" Icon_="app_pos_2.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="TiVaPos_1" Directory_="DesktopFolder" Name="TiVaPos" Component_="MTPMSWIN.exe" Target="[#MTPMSWIN.exe]" Description="MiMiGroup" Hotkey="0" Icon_="app_pos_2.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="surface"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
+    <ROW PrereqKey="C673FE9433B49AFAC9592AB26B8F8E4" DisplayName=".NET Framework 4.0" SetupFileUrl="..\Support\.NET Framework 4.0\dotNetFx40_Full_x86_x64.exe" Location="0" ExactSize="0" WinNTVersions="Windows 8 x86, Windows 8.1 x86, Windows 10 x86" WinNT64Versions="Windows 8 x64, Windows Server 2012 x64, Windows 8.1 x64, Windows Server 2012 R2 x64, Windows 10 x64, Windows Server x64" Operator="1" NoUiComLine="/q /norestart" Options="xy" TargetName="dotNetFx40_Full_x86_x64.exe\dotNetFx40_Full_x86_x64.exe"/>
+    <ROW PrereqKey="MicrosoftSQL2008S" DisplayName="Microsoft SQL 2008 Server Express Edition With Tools" VersionMin="10.0.1601.1" SetupFileUrl="..\Support\SQLEXPRWT_x86_ENU.exe" Location="0" ExactSize="0" Operator="1" ComLine="/x:C:\ExtractionFolder /qs /ACTION=INSTALL /FEATURES=SQL /INSTANCENAME=SQL2008 /SQLSVCACCOUNT=&quot;sa&quot; /SQLSVCPASSWORD=&quot;123456789&quot; /SQLSYSADMINACCOUNTS=&quot;&quot; /AGTSVCACCOUNT=&quot;NT AUTHORITY\Network Service&quot; /SQLSVCINSTANTFILEINIT=&quot;True&quot; /IACCEPTSQLSERVERLICENSETERMS" BasicUiComLine="/x:C:\ExtractionFolder /qs /ACTION=INSTALL /FEATURES=SQL /INSTANCENAME=SQL2008 /SQLSVCACCOUNT=&quot;sa&quot; /SQLSVCPASSWORD=&quot;123456789&quot; /SQLSYSADMINACCOUNTS=&quot;&quot; /AGTSVCACCOUNT=&quot;NT AUTHORITY\Network Service&quot; /SQLSVCINSTANTFILEINIT=&quot;True&quot; /IACCEPTSQLSERVERLICENSETERMS" NoUiComLine="/x:C:\ExtractionFolder /qs /ACTION=INSTALL /FEATURES=SQL /INSTANCENAME=SQL2008 /SQLSVCACCOUNT=&quot;sa&quot; /SQLSVCPASSWORD=&quot;123456789&quot; /SQLSYSADMINACCOUNTS=&quot;&quot; /AGTSVCACCOUNT=&quot;NT AUTHORITY\Network Service&quot; /SQLSVCINSTANTFILEINIT=&quot;True&quot; /IACCEPTSQLSERVERLICENSETERMS" Options="yi" TargetName="SQLEXPRWT_x86_ENU.exe"/>
+    <ROW PrereqKey="RequiredApplication" DisplayName="AccessDatabaseEngine" VersionMin="14.0.6119.5000" SetupFileUrl="..\Support\AccessDatabaseEngine.exe" Location="0" ExactSize="0" Operator="1" Options="yi" TargetName="AccessDatabaseEngine.exe"/>
+    <ATTRIBUTE name="PrereqsOrder" value="C673FE9433B49AFAC9592AB26B8F8E4 MicrosoftSQL2008S RequiredApplication"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqSearchComponent">
+    <ROW SearchKey="C673FE9433B49AFAC9592AB26B8F8E4Install" Prereq="C673FE9433B49AFAC9592AB26B8F8E4" SearchType="9" SearchString="HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\Install" RefContent="M1" Order="1" Property="PreReqSearch_C673FE9433B49AFAC9592A"/>
+    <ROW SearchKey="SystemFolderfile.dll" Prereq="MicrosoftSQL2008S" SearchType="0" SearchString="[SystemFolder]file.dll" VerMin="1.0" Order="1" Property="PreReqSearch"/>
+    <ROW SearchKey="SystemFolderfile.dll_1" Prereq="RequiredApplication" SearchType="0" SearchString="[SystemFolder]file.dll" VerMin="1.0" Order="1" Property="PreReqSearch_1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.SynchronizedFolderComponent">
+    <ROW Directory_="APPDIR" SourcePath="..\..\bin\Release" Feature="MainFeature" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6"/>
+  </COMPONENT>
+</DOCUMENT>

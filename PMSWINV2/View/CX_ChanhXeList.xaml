@@ -1,0 +1,87 @@
+﻿<Window
+        xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" x:Class="MTPMSWIN.View.CX_ChanhXeList"
+        Title="CX_ChanhXeList" Height="529" Width="1110" WindowStyle="None">
+
+    <Grid Margin="0,0,0,90" PreviewKeyDown="Grid_PreviewKeyDown_1">
+        <Grid x:Name="Toolbar" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Height="52" Margin="0,447,0,-68">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="153*"/>
+                <ColumnDefinition Width="398*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Label Name="lblAddNew" Content="F2: Thêm mới" Foreground="#999999" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,0"></Label>
+            <Label Name="lblDetail" Content="F6: Xem Chi tiết phiếu" Foreground="#999999" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="95,0,0,0"></Label>
+            <Label Name="lblIn" Content="F7: In chứng từ" Foreground="#999999" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="240,13,0,13" Grid.ColumnSpan="2" Width="143"></Label>
+            <Label Name="lblExit" Content="F8: Thoát" Foreground="#999999" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="33,13,0,13" Width="143" Grid.Column="1"/>
+
+            <Button x:Name="cmdIn" Content="In (F6)" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right" Margin="0,0,282,0" VerticalAlignment="Top" Width="110" Grid.Column="1" Visibility="Hidden"/>
+            <Button x:Name="cmdAdd" Content="Thêm (F2)" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right"  Margin="0,0,162,0" VerticalAlignment="Top" Width="110" Click="cmdAdd_Click" Grid.Column="1" Visibility="Hidden"/>
+            <Button x:Name="cmdExit" Content="Thoát" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right" Margin="0,0,11,0" VerticalAlignment="Top" Width="110" Click="cmdExit_Click" Grid.Column="1" Visibility="Hidden" />
+        </Grid>
+        <Grid VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="0 40 0 0" Height="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="170*"/>
+                <ColumnDefinition Width="685*"/>
+                <ColumnDefinition Width="81*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <dxg:GridControl x:Name="grdPhieu" AutoPopulateColumns="False" HorizontalAlignment="Stretch" ShowBorder="True" Margin="0,0,0,204" MouseDoubleClick="grdPhieu_MouseDoubleClick" >
+            <dxg:GridControl.View>
+                <dxg:TableView x:Name="tblViewList" NewItemRowCellStyle="{DynamicResource NewItemRow}" ExpandDetailButtonWidth="14" ShowGroupPanel="False" FocusedRowChanged="tblViewList_FocusedRowChanged" ShowAutoFilterRow="True"/>
+            </dxg:GridControl.View>
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn x:Name="colChanhxeid" FieldName="Chanhxeid" Header="SOID" Width="120" HorizontalHeaderContentAlignment="Center" Visible="False"/>
+                <dxg:GridColumn x:Name="colSophieu" FieldName="Sophieu" Header="Số Phiếu" Width="100" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colNgayCT" FieldName="Ngayct" Header="Ngày CT" Width="80" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colNgayPS" FieldName="Ngayps" Header="Ngày PS" Width="80" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colMakh" FieldName="Makh" Header="Mã KH" Width="100" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colTenkh" FieldName="Tenkh" Header="Khách hàng" Width="200" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colDienthoai" FieldName="Dienthoai" Header="Điện thoại" Width="80" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colDiachi" FieldName="Diachi" Header="Địa chỉ" Width="250" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colSoxe" FieldName="Soxe" Header="Số xe" Width="100" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colLoaixe" FieldName="Loaixe" Header="Loại xe" Width="150" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colTaixe" FieldName="Taixe" Header="Tài xế" Width="180" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colTrongluong" FieldName="Trongluong" Header="Trọng lượng" Width="90" HorizontalHeaderContentAlignment="Center">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:TextEditSettings Mask="n0" MaskType="Numeric" MaskUseAsDisplayFormat="True"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="colChiphi" FieldName="Chiphi" Header="Phí gửi" Width="90" HorizontalHeaderContentAlignment="Center">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:TextEditSettings Mask="n0" MaskType="Numeric" MaskUseAsDisplayFormat="True"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="colHTThanhtoan" FieldName="HTThanhtoan" Header="Hình thức thanh toán" Width="200" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colGhichu" FieldName="Ghichu" Header="Ghi chú" Width="200" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colNguoiLap" FieldName="Nguoilap" Header="Người lập" Width="100" HorizontalHeaderContentAlignment="Center"/> 
+            </dxg:GridControl.Columns>
+        </dxg:GridControl>
+
+        <dxg:GridControl x:Name="grdPhieuCT" AutoPopulateColumns="False" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="215" ShowBorder="True" Margin="0,0,0,-11" >
+            <dxg:GridControl.View>
+                <dxg:TableView x:Name="tblViewCT" ShowAutoFilterRow="False" ExpandDetailButtonWidth="14" ShowGroupPanel="False"/>
+            </dxg:GridControl.View>
+            <dxg:GridControl.Columns> 
+                <dxg:GridColumn x:Name="colMasp" FieldName="Masp" Header="Mã HH" Width="100" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colTenSP" FieldName="Tensp" Header="Hàng Hóa" Width="200" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colDvt" FieldName="Dvt" Header="ĐVT" Width="70" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colQuycach" FieldName="Quycach" Header="Quy Cách" Width="80" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colSothung" FieldName="SLThung" Header="Số Thùng" Width="70" HorizontalHeaderContentAlignment="Center">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:TextEditSettings Mask="n0" MaskType="Numeric" MaskUseAsDisplayFormat="True"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="colSoluong" FieldName="Soluong" Header="Số Lượng" Width="70" HorizontalHeaderContentAlignment="Center">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:TextEditSettings Mask="n0" MaskType="Numeric" MaskUseAsDisplayFormat="True"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn> 
+                <dxg:GridColumn x:Name="colGhichuCT" FieldName="Ghichu" Header="Ghi chú" Width="300" HorizontalHeaderContentAlignment="Center"/>
+            </dxg:GridControl.Columns>
+
+        </dxg:GridControl>
+    </Grid>
+</Window>

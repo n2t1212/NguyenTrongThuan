@@ -1,0 +1,145 @@
+﻿<Window
+        xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="MTPMSWIN.View.DM_BangGia"
+        Title="DM_BangGia" Height="623.418" Width="1110" WindowStyle="None">
+    <Grid Loaded="GridForm_Loaded" Margin="0,0,2,2" Background="#FFE4ECF7" PreviewKeyDown="tblViewCT_PreviewKeyDown1">
+        <Grid x:Name="Toolbar" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Margin="0,528,10,34">
+            <Button x:Name="cmdIn" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right" Margin="0,2,540,0" VerticalAlignment="Top" Width="110" Click="cmdSave_Click" Height="37" Visibility="Hidden">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_print.png" Height="20"  Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="74" Foreground="White" FontWeight="Normal">In (F7)</Label>
+                </StackPanel>
+            </Button>
+            <Button x:Name="cmdSave" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right" Margin="0,3,385,0" VerticalAlignment="Top" Width="133" Click="cmdSave_Click" Visibility="Hidden">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_save.png" Height="20"  Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="74" Foreground="White" FontWeight="Normal">Ghi (F5)</Label>
+                </StackPanel>
+            </Button>
+            <Button x:Name="cmdAdd" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right"  Margin="0,2,385,0" VerticalAlignment="Top" Width="133" Click="cmdAdd_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_addnew.png" Height="20"  Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="74" Foreground="White" FontWeight="Normal">Thêm (F2)</Label>
+                </StackPanel>
+            </Button>
+            <Button x:Name="cmdAbort" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right"  Margin="0,2,270,0" VerticalAlignment="Top" Width="115" Click="cmdAbort_Click" Visibility="Hidden">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_abort.png" Height="20"  Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="74" Foreground="White" FontWeight="Normal">Hủy (Esc)</Label>
+                </StackPanel>
+            </Button>
+            <Button x:Name="cmdEdit" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right"  Margin="0,2,270,0" VerticalAlignment="Top" Width="115" Click="cmdEdit_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_edit.png" Height="20"  Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="74" Foreground="White" FontWeight="Normal">Sửa (F3)</Label>
+                </StackPanel>
+            </Button>
+            <Button x:Name="cmdDel" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right"  Margin="0,2,150,0" VerticalAlignment="Top" Width="120" Click="cmdDel_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_del.png" Height="20"  Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="74" Foreground="White" FontWeight="Normal">Xóa (F4)</Label>
+                </StackPanel>
+            </Button>
+            <Button x:Name="cmdExit" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right" Margin="0,2,3,0" VerticalAlignment="Top" Width="110" Click="cmdExit_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_exit.png" Height="20"  Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="74" Foreground="White" FontWeight="Normal">Thoát (F8)</Label>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="cmdImport" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right" Margin="0,2,701,0" VerticalAlignment="Top" Width="110" Height="37" RenderTransformOrigin="-0.993,0.705" Click="doImport">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_list_import.png" Height="20"  Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="74" Foreground="White" FontWeight="Normal">Nhập (.xls)</Label>
+                </StackPanel>
+            </Button>
+            <Button x:Name="cmdDownload" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right" Margin="0,2,816,0" VerticalAlignment="Top" Width="146" Height="37" RenderTransformOrigin="-0.993,0.705" Click="cmdDownload_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_list_download.png" Height="20"  Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="101" Foreground="White" FontWeight="Normal">Tải mẫu (.xls)</Label>
+                </StackPanel>
+            </Button>
+
+        </Grid>
+        <Grid VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="0 40 0 0" Height="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="170*"/>
+                <ColumnDefinition Width="685*"/>
+                <ColumnDefinition Width="81*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <dxg:GridControl x:Name="grdBangGiaCT" HorizontalAlignment="Stretch" AutoPopulateColumns="False" ShowBorder="False" Margin="457,0,10,158" >
+            <dxg:GridControl.Resources>
+                <Style TargetType="{x:Type dxg:HeaderContentControl}">
+                    <Setter Property="FontFamily" Value="Arial" /> 
+                    <Setter Property="FontSize" Value="14"/>
+                </Style>
+            </dxg:GridControl.Resources>
+            
+            <dxg:GridControl.View>
+                <dxg:TableView x:Name="tblViewCT" FocusedRowChanged="tblView_FocusedRowChanged" InitNewRow="tblView_InitNewRow"  NewItemRowCellStyle="{DynamicResource NewItemRow}" InvalidRowException="tblView_InvalidRowException" CellValueChanging="tblView_CellValueChanging" ValidateRow="tblView_ValidateRow" ExpandDetailButtonWidth="14" ShowGroupPanel="False" RowMinHeight="25" IndicatorWidth="25" HeaderPanelMinHeight="45"
+    				NavigationStyle="Row"/>
+
+            </dxg:GridControl.View>
+            
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn x:Name="colBanggiactid" FieldName="Banggiactid" Header="banggiactid" Width="120" HorizontalHeaderContentAlignment="Center" Visible="False"/>
+                <dxg:GridColumn x:Name="colBanggiaid2" FieldName="Banggiaid" Header="banggiaid" Width="120" HorizontalHeaderContentAlignment="Center" Visible="False"/>
+
+                <dxg:GridColumn x:Name="colMaspid" FieldName="Maspid" Header="Mã SP" Width="250" HorizontalHeaderContentAlignment="Center" Visible="False"/>
+                <dxg:GridColumn x:Name="colMasp" FieldName="Masp" Header="Mã SP" Width="250" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colTenSP" FieldName="Tensp" Header="Tên sản phẩm" Width="250" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colGiagoc" FieldName="Giagoc" Header="Giá gốc" UnboundType="Decimal" Width="120" HorizontalHeaderContentAlignment="Center">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:TextEditSettings Mask="N3" MaskType="Numeric" MaskUseAsDisplayFormat="True"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="colGiasi" FieldName="Giasi" Header="Giá bán sỉ" UnboundType="Decimal" Width="120" HorizontalHeaderContentAlignment="Center">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:TextEditSettings Mask="N3" MaskType="Numeric" MaskUseAsDisplayFormat="True"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="colGiale" FieldName="Giale" Header="Giá bán lẻ" UnboundType="Decimal" Width="120" HorizontalHeaderContentAlignment="Center">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:TextEditSettings Mask="N3" MaskType="Numeric" MaskUseAsDisplayFormat="True"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="colMavung" FieldName="Mavung" Header="Tỉnh/Địa phương" Width="120" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colGhichu" FieldName="Ghichu" Header="Ghi chú" Width="200" HorizontalHeaderContentAlignment="Center"/>            
+            </dxg:GridControl.Columns>
+
+        </dxg:GridControl>
+        <dxg:GridControl x:Name="grdBangGia" AutoPopulateColumns="False" HorizontalAlignment="Left" ShowBorder="False" Width="452" Margin="0,0,0,158" >
+            <dxg:GridControl.View>
+                <dxg:TableView x:Name="tblViewBG" FocusedRowChanged="tblViewGrp_FocusedRowChanged"  ExpandDetailButtonWidth="14" ShowGroupPanel="False" RowMinHeight="25" IndicatorWidth="25" HeaderPanelMinHeight="45"
+        			NavigationStyle="Row"/>
+
+            </dxg:GridControl.View>
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn x:Name="colBanggiaID" FieldName="Banggiaid" Header="BangGiaID" Width="120" HorizontalHeaderContentAlignment="Center" Visible="False"/>
+                <dxg:GridColumn x:Name="colBanggia"  FieldName="Banggia" Header="Bảng Giá" Width="250" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colTungay"  FieldName="Tungay" Header="Bắt đầu" Width="120" HorizontalHeaderContentAlignment="Center">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:DateEditSettings Mask="G" MaskUseAsDisplayFormat="True"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="colDenngay" FieldName="Denngay" Header="Kết thúc" Width="120" HorizontalHeaderContentAlignment="Center">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:DateEditSettings Mask="G" MaskUseAsDisplayFormat="True"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="colNgayapdung" FieldName="Ngayapdung" Header="Ngày Áp Dụng" Width="120" HorizontalHeaderContentAlignment="Center">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:DateEditSettings Mask="G" MaskUseAsDisplayFormat="True"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="colApdung" FieldName="Apdung" Header="Áp Dụng" Width="120" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colNgaylap" FieldName="Ngaylap" Header="Ngày lập" Width="120" HorizontalHeaderContentAlignment="Center" Visible="False"/>
+                <dxg:GridColumn x:Name="colNguoilap" FieldName="Nguoilap" Header="Người lập" Width="120" HorizontalHeaderContentAlignment="Center" Visible="False"/>
+            </dxg:GridControl.Columns>
+
+        </dxg:GridControl>
+    </Grid>
+</Window>

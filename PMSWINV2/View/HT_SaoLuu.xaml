@@ -1,0 +1,21 @@
+﻿<Window xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" x:Class="MTPMSWIN.View.HT_SaoLuu"
+        Title="BH_BanHangList" Height="546.91" Width="1110" WindowStyle="None">
+
+    <Grid Margin="0,0,0,2" Loaded="loadForm" Background="#FFE4ECF7">
+        <Button x:Name="btnBackup" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Center"  Margin="381,209,609,0" VerticalAlignment="Top" Width="112" Click="btnBackup_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/MTPMSWIN;component/Images/Icons/pos_save.png" Height="20"  Stretch="Uniform"/>
+                <Label Padding="0" Margin="5,0,0,0" Height="24" Width="171" Foreground="White" FontWeight="Normal" Content="Sao lưu"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="cmdExit" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Center" Margin="595,209,397,0" VerticalAlignment="Top" Width="110" Height="35" Click="cmdExit_Click">
+            <StackPanel Orientation="Horizontal">
+                <Label Padding="0" Margin="5,0,0,0" Height="24" Width="74" Foreground="White" FontWeight="Normal" Content="Thoát (F8)"/>
+                <Image Source="/Images/Icons/pos_exit.png" Height="20"  Stretch="Uniform"/>
+            </StackPanel>
+        </Button>
+        <Label Content="Chọn thư mục lưu trữ" HorizontalAlignment="Left" Height="30" Margin="232,126,0,0" VerticalAlignment="Top" Width="159" FontSize="14" FontWeight="Bold"/>
+        <dxe:TextEdit Name="txtPath" HorizontalAlignment="Left" Height="30" Margin="402,126,0,0" VerticalAlignment="Top" Width="303" Foreground="#FF030304"/>
+        <Button Content="Chọn" Name="btnSelectPath" Style="{StaticResource MyButtonAction}" Foreground="White" HorizontalAlignment="Left" Height="28" Margin="720,128,0,0" VerticalAlignment="Top" Width="75" FontSize="14" FontWeight="Bold" Click="btnSelectPath_Click"/>
+    </Grid>
+</Window>
