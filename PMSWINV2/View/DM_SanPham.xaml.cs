@@ -18,6 +18,7 @@ using System.Data.SqlClient;
 using DevExpress.Xpf.Core;
 using DevExpress.Xpf.Printing;
 using System.Windows.Forms;
+using DevExpress.Utils;
 
 namespace MTPMSWIN.View
 {
@@ -31,7 +32,10 @@ namespace MTPMSWIN.View
         private const String CODE_NAME = "Masp";
         private const String CODE_HEADER = "Mã sản phẩm";
         private const String SQL_LOAD_ALL_SP = "select * from DM_SANPHAM where Manhomspid='{0}' order by Masp asc";
-        private const String SQL_DELETE_SP = "delete from DM_SANPHAM where Maspid='{0}'";
+        private const String SQL_DELETE_SP = "delete from DM_SANPHAM where Maspid='{0}'" +
+            " and Maspid not in (select Maspid from BH_PHIEUBHCT)" +
+            " and Maspid not in (select Maspid from NX_PHIEUNXCT)" +
+            " and Maspid not in (select Maspid from NX_CHANHXECT)";
         private string SQL_PRODUCT_GROUP = "select * from DM_NHOMSP order by Tennhom asc";
         private CRUDHandling crud = null;
 
@@ -69,6 +73,20 @@ namespace MTPMSWIN.View
             }
         }
 
+        private void DisableEditCode()
+        {
+            colMasp.AllowEditing = DefaultBoolean.False;
+            colMabarcode.AllowEditing = DefaultBoolean.False;
+            colMaQr.AllowEditing = DefaultBoolean.False;
+        }
+
+        private void EnableEditCode()
+        {
+            colMasp.AllowEditing = DefaultBoolean.True;
+            colMabarcode.AllowEditing = DefaultBoolean.True;
+            colMaQr.AllowEditing = DefaultBoolean.True;
+        }
+
         private void cmdAdd_Click(object sender, RoutedEventArgs e)
         {
             if (mNhomspid == "") { 
@@ -76,15 +94,22 @@ namespace MTPMSWIN.View
                 return;
             }
 
-            crud.cmdAdd_Click();           
+            crud.cmdAdd_Click();
+            
+            DisableEditCode();
+
+            colMasp.AllowEditing = DefaultBoolean.True;
+            
         }
         private void cmdEdit_Click(object sender, RoutedEventArgs e)
         {
             crud.cmdEdit_Click();
+            DisableEditCode();
         }
 
         private void cmdSave_Click(object sender, RoutedEventArgs e)
         {
+            DisableEditCode();
             String msg = crud.cmdSave_Click();
             if (msg != "")
             {
@@ -99,12 +124,13 @@ namespace MTPMSWIN.View
             if (msg != "")
             {
                 //System.Windows.MessageBox.Show(msg);
-                Utils.showMessage(msg, "Thông báo");
+                Utils.showMessage("Sản phẩm đang được sử dụng. Không được xóa sản phẩm.", "Thông báo");
             }
         }
 
         private void cmdAbort_Click(object sender, RoutedEventArgs e)
         {
+            DisableEditCode();
             crud.cmdAbort_Click();
         }
         
@@ -261,6 +287,8 @@ namespace MTPMSWIN.View
             {
                 case Key.F2:
                     crud.cmdAdd_Click();
+                    DisableEditCode();
+                    colMasp.AllowEditing = DefaultBoolean.True;
                     break;
 
                 case Key.F3:
@@ -270,10 +298,11 @@ namespace MTPMSWIN.View
                     String msgDel = crud.cmdDel_Click();
                     if (msgDel != "")
                     {
-                        Utils.showMessage(msgDel, "Thông báo");
+                        Utils.showMessage("Sản phẩm đang được sử dụng. Không được xóa sản phẩm.", "Thông báo");
                     }
                     break;
                 case Key.F5:
+                    DisableEditCode();
                     String msgSave = crud.cmdSave_Click();
                     if (msgSave != "")
                     {
@@ -282,11 +311,60 @@ namespace MTPMSWIN.View
                     break;
                 case Key.Escape:
                     crud.cmdAbort_Click();
+                    DisableEditCode();
                     break;
                 case Key.F8:
                     Utils.fExit();
                     break;
             }
         }
+
+        private void grdProduct_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            // Press CTRL + E to edit masp, barcode and QR code
+            if (e.Key == Key.E && Keyboard.Modifiers == ModifierKeys.Control)
+            {
+                EnableEditCode();
+            }
+
+            // Press CTRL + U to disable edit masp, barcode and QR code
+            if (e.Key == Key.U && Keyboard.Modifiers == ModifierKeys.Control)
+            {
+                DisableEditCode();
+            }
+
+            if (e.Key == Key.Enter || e.Key == Key.Tab)
+            {
+                if (tblView.FocusedColumn.FieldName == "Masp" && tblView.FocusedColumn.Name == "colMasp")
+                {
+                    if (grdProduct.GetFocusedRowCellValue(colMasp) == null || grdProduct.GetFocusedRowCellValue(colMasp).ToString() == "")
+                    {
+                        tblView.FocusedColumn = colMasp;
+                        return;
+                    }
+
+                    String sMasp = grdProduct.GetCellValue(tblView.FocusedRowHandle, colMasp).ToString();
+                    if (sMasp == null || sMasp == "")
+                    {
+                        tblView.FocusedColumn = colMasp;
+                        return;
+                    }
+
+                    string errDuplicateSP = ValidateHelper.checkCodeValueNotDuplicate(TABLE_NAME, CODE_NAME, sMasp, "Mã SP");
+
+                    if (errDuplicateSP.Length > 0)
+                    {
+                        tblView.FocusedColumn = colMasp;
+                        Utils.showMessage(errDuplicateSP, "Thông báo");
+                        return;
+                    }
+
+                    grdProduct.SetCellValue(tblView.FocusedRowHandle, colMabarcode, sMasp);
+                    grdProduct.SetCellValue(tblView.FocusedRowHandle, colMaQr, sMasp);
+                }
+            }
+
+        }
+
     }
 }

@@ -71,7 +71,7 @@
                 <ColumnDefinition Width="81*"/>
             </Grid.ColumnDefinitions>
         </Grid>
-        <dxg:GridControl x:Name="grdProduct" AutoPopulateColumns="False" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="490" ShowBorder="False" Margin="372,0,0,0" >
+        <dxg:GridControl x:Name="grdProduct" AutoPopulateColumns="False" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="490" ShowBorder="False" Margin="372,0,0,0" PreviewKeyDown="grdProduct_PreviewKeyDown" >
             <dxg:GridControl.View>
                 <dxg:TableView x:Name="tblView" FocusedRowChanged="tblView_FocusedRowChanged" InitNewRow="tblView_InitNewRow"  NewItemRowCellStyle="{DynamicResource NewItemRow}" InvalidRowException="tblView_InvalidRowException" CellValueChanging="tblView_CellValueChanging" ValidateRow="tblView_ValidateRow" ExpandDetailButtonWidth="14" ShowGroupPanel="False" RowMinHeight="25" IndicatorWidth="25" HeaderPanelMinHeight="45"
     				NavigationStyle="Row"/>
@@ -109,8 +109,8 @@
                         <dxe:TextEditSettings Mask="N3" MaskType="Numeric" MaskUseAsDisplayFormat="True"/>
                     </dxg:GridColumn.EditSettings>
                 </dxg:GridColumn>
-                <dxg:GridColumn x:Name="colMabarcode" FieldName="Mabarcode" Header="Mã Vạch" Width="100" HorizontalHeaderContentAlignment="Center"/>
-                <dxg:GridColumn x:Name="colMaQr" FieldName="Maqrcode" Header="Mã QR" Width="100" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colMabarcode" FieldName="Mabarcode" Header="Mã Vạch" Width="100" HorizontalHeaderContentAlignment="Center" ReadOnly="True"/>
+                <dxg:GridColumn x:Name="colMaQr" FieldName="Maqrcode" ReadOnly="True" Header="Mã QR" Width="100" HorizontalHeaderContentAlignment="Center"/>
                 <dxg:GridColumn x:Name="colNhaCC" FieldName="Nhacungcap" Header="Nhà cung cấp" Width="200" HorizontalHeaderContentAlignment="Center"/>
                 <dxg:GridColumn x:Name="colNgaylap" FieldName="Ngaylap" Header="Ngày Lập" Width="100" HorizontalHeaderContentAlignment="Center" Visible="False">
                     <dxg:GridColumn.EditSettings>

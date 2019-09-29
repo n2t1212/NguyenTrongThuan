@@ -29,13 +29,15 @@ namespace MTPMSWIN.View
         private const String CODE_NAME = "Masp";
         private const String CODE_HEADER = "Mã SP";
         private const String SQL_LOAD_ALL_BGCT = "select bgct.* from DM_BANGGIA_CHITIET bgct where bgct.Banggiaid='{0}' order by bgct.Masp asc";
-        private const String SQL_DELETE_BGCT = "delete from DM_BANGGIA_CHITIET where Banggiactid='{0}'";
+        private const String SQL_DELETE_BGCT = "delete from DM_BANGGIA_CHITIET where Banggiactid='{0}'" +
+            " and Maspid not in (select Maspid from BH_PHIEUBHCT)" +
+            " and Maspid not in (select Maspid from NX_PHIEUNXCT)" +
+            " and Maspid not in (select Maspid from NX_CHANHXECT)";
         private string SQL_PRODUCT_GROUP = "select * from DM_BANGGIA order by Banggia asc";
         private CRUDHandling crud = null;
-
+        private CRUDHandling crud_BangGia = null;
         private String mBangGiaId="";
         private DevExpress.Utils.WaitDialogForm Dlg =null;
-
         private DataTable otblSP = null;
 
         private void LoadSanPham()
@@ -63,9 +65,13 @@ namespace MTPMSWIN.View
             Dlg = Utils.shwWait();
 
             //LOAD PRODUCT GROUP
-            DataTable otblNhomSP = new MTSQLServer().wRead(SQL_PRODUCT_GROUP, null, false);
-            grdBangGia.ItemsSource = otblNhomSP;            
-            MTGlobal.SetGridReadOnly(grdBangGia,tblViewBG, true);
+            //DataTable otblNhomSP = new MTSQLServer().wRead(SQL_PRODUCT_GROUP, null, false);
+            //grdBangGia.ItemsSource = otblNhomSP;            
+            crud_BangGia = new CRUDHandling(grdBangGia, tblViewBG, colBanggia, MTROLE, MTButton, "DM_BANGGIA", "Banggiaid", CODE_NAME,
+                                     CODE_HEADER, SQL_PRODUCT_GROUP, "");
+
+            String err = crud_BangGia.GridForm_Loaded();
+            MTGlobal.SetGridReadOnly(grdBangGia, tblViewBG, true);
 
             crud = new CRUDHandling(grdBangGiaCT, tblViewCT, colMasp, MTROLE, MTButton, TABLE_NAME, ID_NAME, CODE_NAME,
             CODE_HEADER, String.Format(SQL_LOAD_ALL_BGCT, mBangGiaId), SQL_DELETE_BGCT);
@@ -101,22 +107,38 @@ namespace MTPMSWIN.View
         private void cmdEdit_Click(object sender, RoutedEventArgs e)
         {
             crud.cmdEdit_Click();
+            crud_BangGia.cmdEdit_Click();
         }
 
         private void cmdSave_Click(object sender, RoutedEventArgs e)
         {
-            String msg = crud.cmdSave_Click();
+            string msgSaveBangGia = crud_BangGia.cmdSave_Click();
+            MTGlobal.SetButtonAction(MTROLE, MTButton, "EDIT");
+            string msgSaveBangGiaCT = crud.cmdSave_Click();
+
+            string msg = "";
+            if (msgSaveBangGia != "" && msgSaveBangGiaCT != "")
+            {
+                if (msgSaveBangGia == msgSaveBangGiaCT)
+                {
+                    msg = msgSaveBangGiaCT;
+                }
+                else
+                {
+                    msg = Utils.ERR_UPDATE_DB;
+                }
+            }
+
             if (msg != "")
             {
                 Utils.showMessage(msg, "Thông báo");
             }
         }
-
         
         private void cmdDel_Click(object sender, RoutedEventArgs e)
         {
             String msg = crud.cmdDel_Click();
-            Utils.showMessage(msg, "Thông báo");
+            Utils.showMessage("Đơn giá của sản phẩm đang được sử dụng. Không thể xóa", "Thông báo");
         }
 
         private void cmdAbort_Click(object sender, RoutedEventArgs e)
@@ -146,7 +168,7 @@ namespace MTPMSWIN.View
                                          CODE_HEADER, String.Format(SQL_LOAD_ALL_BGCT, mBangGiaId), SQL_DELETE_BGCT);
 
                 String err = crud.GridForm_Loaded();
-                MTGlobal.SetGridReadOnly(grdBangGiaCT,tblViewCT, true);
+                MTGlobal.SetGridReadOnly(grdBangGiaCT, tblViewCT, true);
             }
             catch { }
           
@@ -240,15 +262,17 @@ namespace MTPMSWIN.View
 
                 case Key.F3:
                     crud.cmdEdit_Click();
+                    crud_BangGia.cmdEdit_Click();
                     break;
                 case Key.F4:
                     String msgDel = crud.cmdDel_Click();
                     if (msgDel != "")
                     {
-                        Utils.showMessage(msgDel, "Thông báo");
+                        Utils.showMessage("Đơn giá của sản phẩm đang được sử dụng. Không thể xóa", "Thông báo");
                     }
                     break;
                 case Key.F5:
+                    crud_BangGia.cmdSave_Click();
                     String msgSave = crud.cmdSave_Click();
                     if (msgSave != "")
                     {
@@ -292,6 +316,7 @@ namespace MTPMSWIN.View
 
                                 if (errDuplicateSP.Length > 0)
                                 {
+                                    tblViewCT.FocusedColumn = colMasp;
                                     Utils.showMessage(errDuplicateSP, "Thông báo");
                                     return;
                                 }

@@ -89,7 +89,11 @@
                 <dxg:GridColumn x:Name="colBanggiaid2" FieldName="Banggiaid" Header="banggiaid" Width="120" HorizontalHeaderContentAlignment="Center" Visible="False"/>
 
                 <dxg:GridColumn x:Name="colMaspid" FieldName="Maspid" Header="Mã SP" Width="250" HorizontalHeaderContentAlignment="Center" Visible="False"/>
-                <dxg:GridColumn x:Name="colMasp" FieldName="Masp" Header="Mã SP" Width="250" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colMasp" FieldName="Masp" Header="Mã SP" Width="250" HorizontalHeaderContentAlignment="Center">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:TextEditSettings CharacterCasing="Upper"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
                 <dxg:GridColumn x:Name="colTenSP" FieldName="Tensp" Header="Tên sản phẩm" Width="250" HorizontalHeaderContentAlignment="Center"/>
                 <dxg:GridColumn x:Name="colGiagoc" FieldName="Giagoc" Header="Giá gốc" UnboundType="Decimal" Width="120" HorizontalHeaderContentAlignment="Center">
                     <dxg:GridColumn.EditSettings>

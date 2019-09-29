@@ -1,0 +1,14 @@
+
+*.config
+*.dll
+*.baml
+*.cs
+*.resources
+*.cache
+*.xml
+*.exe
+*.lref
+*.pdb
+*.manifest
+*.txt
+*.licenses

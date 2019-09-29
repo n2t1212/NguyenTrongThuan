@@ -163,13 +163,14 @@ namespace MTPMSWIN.View
                     if (product.Rows.Count == 1)
                     {
                         spid = product.Rows[0]["Maspid"] == DBNull.Value ? "" : product.Rows[0]["Maspid"].ToString();
-                        tensp = product.Rows[0]["Tensp"] == DBNull.Value ? "" : product.Rows[0]["Tensp"].ToString();
+                        //tensp = product.Rows[0]["Tensp"] == DBNull.Value ? "" : product.Rows[0]["Tensp"].ToString();
                     }
                     else
                     {
                         spid = MTGlobal.GetNewID();
-                        tensp = excelContent.Rows[i][1] == DBNull.Value ? "" : excelContent.Rows[i][1].ToString();
+                        //tensp = excelContent.Rows[i][1] == DBNull.Value ? "" : excelContent.Rows[i][1].ToString();
                     }
+                    tensp = excelContent.Rows[i][1] == DBNull.Value ? "" : excelContent.Rows[i][1].ToString();
                     rw["spid"] = spid;
                     rw["masp"] = masp;
                     rw["tensp"] = tensp;
@@ -180,7 +181,7 @@ namespace MTPMSWIN.View
                     rw["nhacungcap"] = excelContent.Rows[i][6] == DBNull.Value ? "" : excelContent.Rows[i][6].ToString();
                     rw["ngaylap"] = DateTime.Now;
                     rw["nguoilap"] = MTGlobal.MT_USER_LOGIN;
-                    rw["mabarcode"] = "";
+                    rw["mabarcode"] = masp;
                     rw["maqrcode"] = masp;
 
                     sanPham.Rows.Add(rw);
