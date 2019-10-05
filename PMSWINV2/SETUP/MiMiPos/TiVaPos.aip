@@ -51,8 +51,6 @@
     <ROW Directory="es_Dir" Directory_Parent="APPDIR" DefaultDir="es"/>
     <ROW Directory="ja_Dir" Directory_Parent="APPDIR" DefaultDir="ja"/>
     <ROW Directory="ru_Dir" Directory_Parent="APPDIR" DefaultDir="ru"/>
-    <ROW Directory="x64_Dir" Directory_Parent="APPDIR" DefaultDir="x64"/>
-    <ROW Directory="x86_Dir" Directory_Parent="APPDIR" DefaultDir="x86"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
     <ROW Component="AI_CustomARPName" ComponentId="{FBFD343F-DC64-4264-B183-DB5DFFDC8B98}" Directory_="APPDIR" Attributes="4" KeyPath="DisplayName" Options="1"/>
@@ -145,8 +143,6 @@
     <ROW Component="PresentationFramework.dll" ComponentId="{93D57BDB-85B5-4C65-A646-6D45DC31068B}" Directory_="APPDIR" Attributes="0" KeyPath="PresentationFramework.dll"/>
     <ROW Component="ProductInformation" ComponentId="{8520F1EC-6B81-4521-AB1E-F4B9F57D6C40}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
     <ROW Component="SHORTCUTDIR" ComponentId="{FDBD81AB-AC91-41BD-B7BB-2D3B39968AE2}" Directory_="SHORTCUTDIR" Attributes="0"/>
-    <ROW Component="SQLite.Interop.dll" ComponentId="{61F292A6-2388-47BA-A1B8-6C8CFAEB4374}" Directory_="x64_Dir" Attributes="256" KeyPath="SQLite.Interop.dll"/>
-    <ROW Component="SQLite.Interop.dll_1" ComponentId="{FBC1E2B9-C359-41BA-A227-775AA0905D29}" Directory_="x86_Dir" Attributes="0" KeyPath="SQLite.Interop.dll_1"/>
     <ROW Component="System.ComponentModel.DataAnnotations.dll" ComponentId="{62E82D20-831D-4585-AC65-2DA9060E6A11}" Directory_="APPDIR" Attributes="0" KeyPath="System.ComponentModel.DataAnnotations.dll"/>
     <ROW Component="System.Configuration.dll" ComponentId="{0D283FC2-6A12-4AE3-8509-E847098AB91D}" Directory_="APPDIR" Attributes="0" KeyPath="System.Configuration.dll"/>
     <ROW Component="System.Data.DataSetExtensions.dll" ComponentId="{DE372B07-72B0-4194-8137-8B3C46E5E71E}" Directory_="APPDIR" Attributes="0" KeyPath="System.Data.DataSetExtensions.dll"/>
@@ -315,11 +311,7 @@
     <ROW File="UIAutomationProvider.dll" Component_="UIAutomationProvider.dll" FileName="UIAUTO~1.DLL|UIAutomationProvider.dll" Attributes="0" SourcePath="..\..\bin\Release\UIAutomationProvider.dll" SelfReg="false"/>
     <ROW File="UIAutomationTypes.dll" Component_="UIAutomationTypes.dll" FileName="UIAUTO~2.DLL|UIAutomationTypes.dll" Attributes="0" SourcePath="..\..\bin\Release\UIAutomationTypes.dll" SelfReg="false"/>
     <ROW File="WindowsBase.dll" Component_="WindowsBase.dll" FileName="WINDOW~1.DLL|WindowsBase.dll" Attributes="0" SourcePath="..\..\bin\Release\WindowsBase.dll" SelfReg="false"/>
-    <ROW File="SQLite.Interop.dll" Component_="SQLite.Interop.dll" FileName="SQLITE~1.DLL|SQLite.Interop.dll" Attributes="0" SourcePath="..\..\bin\Release\x64\SQLite.Interop.dll" SelfReg="false"/>
-    <ROW File="SQLite.Interop.dll_1" Component_="SQLite.Interop.dll_1" FileName="SQLITE~1.DLL|SQLite.Interop.dll" Attributes="0" SourcePath="..\..\bin\Release\x86\SQLite.Interop.dll" SelfReg="false"/>
     <ROW File="app_pos_2.ico" Component_="DevExpress.Data.v12.2.xml" FileName="APP_PO~1.ICO|app_pos_2.ico" Attributes="0" SourcePath="..\..\app_pos_2.ico" SelfReg="false"/>
-    <ROW File="Bieu_mau_gia_san_pham.xlsx" Component_="DevExpress.Data.v12.2.xml" FileName="BIEU_M~1.XLS|Bieu_mau_gia_san_pham.xlsx" Attributes="0" SourcePath="..\..\bin\Release\Bieu_mau_gia_san_pham.xlsx" SelfReg="false"/>
-    <ROW File="Bieu_mau_san_pham.xlsx" Component_="DevExpress.Data.v12.2.xml" FileName="BIEU_M~2.XLS|Bieu_mau_san_pham.xlsx" Attributes="0" SourcePath="..\..\bin\Release\Bieu_mau_san_pham.xlsx" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -602,8 +594,6 @@
     <ROW Feature_="MainFeature" Component_="PresentationFramework.dll"/>
     <ROW Feature_="MainFeature" Component_="ProductInformation"/>
     <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
-    <ROW Feature_="MainFeature" Component_="SQLite.Interop.dll"/>
-    <ROW Feature_="MainFeature" Component_="SQLite.Interop.dll_1"/>
     <ROW Feature_="MainFeature" Component_="System.ComponentModel.DataAnnotations.dll"/>
     <ROW Feature_="MainFeature" Component_="System.Configuration.dll"/>
     <ROW Feature_="MainFeature" Component_="System.Data.DataSetExtensions.dll"/>
@@ -727,7 +717,7 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
     <ROW PrereqKey="C673FE9433B49AFAC9592AB26B8F8E4" DisplayName=".NET Framework 4.0" SetupFileUrl="..\Support\.NET Framework 4.0\dotNetFx40_Full_x86_x64.exe" Location="0" ExactSize="0" WinNTVersions="Windows 8 x86, Windows 8.1 x86, Windows 10 x86" WinNT64Versions="Windows 8 x64, Windows Server 2012 x64, Windows 8.1 x64, Windows Server 2012 R2 x64, Windows 10 x64, Windows Server x64" Operator="1" NoUiComLine="/q /norestart" Options="xy" TargetName="dotNetFx40_Full_x86_x64.exe\dotNetFx40_Full_x86_x64.exe"/>
-    <ROW PrereqKey="MicrosoftSQL2008S" DisplayName="Microsoft SQL 2008 Server Express Edition With Tools" VersionMin="10.0.1601.1" SetupFileUrl="..\Support\SQLEXPRWT_x86_ENU.exe" Location="0" ExactSize="0" Operator="1" Options="yi" TargetName="SQLEXPRWT_x86_ENU.exe"/>
+    <ROW PrereqKey="MicrosoftSQL2008S" DisplayName="Microsoft SQL 2008 Server Express Edition With Tools" VersionMin="10.0.1601.1" SetupFileUrl="..\Support\SQLEXPRWT_x86_ENU.exe" Location="0" ExactSize="0" Operator="1" ComLine="/q /ACTION=Install /FEATURES=SQL,AS,IS,Tools /INSTANCENAME=SQL2008 /SQLSVCACCOUNT=&quot;NT AUTHORITY\SYSTEM&quot; /SQLSYSADMINACCOUNTS=&quot;Builtin\Administrators&quot; /ADDCURRENTUSERASSQLADMIN=True /AGTSVCACCOUNT=&quot;NT AUTHORITY\Network Service&quot; /SECURITYMODE=SQL /SAPWD=&quot;123456789&quot;" BasicUiComLine="/q /ACTION=Install /FEATURES=SQL,AS,IS,Tools /INSTANCENAME=SQL2008 /SQLSVCACCOUNT=&quot;NT AUTHORITY\SYSTEM&quot; /SQLSYSADMINACCOUNTS=&quot;Builtin\Administrators&quot; /ADDCURRENTUSERASSQLADMIN=True /AGTSVCACCOUNT=&quot;NT AUTHORITY\Network Service&quot; /SECURITYMODE=SQL /SAPWD=&quot;123456789&quot;" NoUiComLine="/q /ACTION=Install /FEATURES=SQL,AS,IS,Tools /INSTANCENAME=SQL2008 /SQLSVCACCOUNT=&quot;NT AUTHORITY\SYSTEM&quot; /SQLSYSADMINACCOUNTS=&quot;Builtin\Administrators&quot; /ADDCURRENTUSERASSQLADMIN=True /AGTSVCACCOUNT=&quot;NT AUTHORITY\Network Service&quot; /SECURITYMODE=SQL /SAPWD=&quot;123456789&quot;" Options="yi" TargetName="SQLEXPRWT_x86_ENU.exe"/>
     <ROW PrereqKey="RequiredApplication" DisplayName="AccessDatabaseEngine" VersionMin="14.0.6119.5000" SetupFileUrl="..\Support\AccessDatabaseEngine.exe" Location="0" ExactSize="0" Operator="1" Options="yi" TargetName="AccessDatabaseEngine.exe"/>
     <ATTRIBUTE name="PrereqsOrder" value="C673FE9433B49AFAC9592AB26B8F8E4 MicrosoftSQL2008S RequiredApplication"/>
   </COMPONENT>
