@@ -174,6 +174,26 @@ namespace MTPMSWIN
                         case "mnuDM_KHACHHANG":
                             fRenderForm(mMENUID, "DM_KhachHang", mFormCaption);
                             break;
+                        case "mnuDM_CHIPHI":
+                            fRenderForm(mMENUID, "DM_ChiPhi", mFormCaption);
+                            break;
+                        case "mnuDM_TAIKHOAN":
+                            fRenderForm(mMENUID, "DM_TaiKhoan", mFormCaption);
+                            break;
+                        case "mnuTC_PHIEUTHU":
+                            if (Utils.ChonThoiGian())
+                            {
+                                MTGlobal.MT_LOAIP = MTGlobal.PT;
+                                fRenderForm(mMENUID, "TC_ThuChiList", "DANH SÁCH PHIẾU THU");
+                            }
+                            break;
+                        case "mnuTC_PHIEUCHI":
+                            if (Utils.ChonThoiGian())
+                            {
+                                MTGlobal.MT_LOAIP = MTGlobal.PC;
+                                fRenderForm(mMENUID, "TC_ThuChiList", "DANH SÁCH PHIẾU CHI");
+                            }
+                            break;
                     }
                 }
                 catch (Exception ex) { MessageBox.Show("ERR:" + ex.Message.ToString(), "Thông báo", MessageBoxButton.OK, MessageBoxImage.Error); }

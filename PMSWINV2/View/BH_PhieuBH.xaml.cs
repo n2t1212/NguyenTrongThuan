@@ -431,6 +431,8 @@ namespace MTPMSWIN.View
                 vR["Ghichu"] = txtGhichu.Text;
                 vR["Ngaylap"] = DateTime.Now;
                 vR["Nguoilap"] = MTGlobal.MT_USER_LOGIN;
+                vR["TKNo"] = MTGlobal.TK_NO;
+                vR["TKCo"] = MTGlobal.TK_CO;
                 tmpBH.Rows.Add(vR);
                 tmpBH.AcceptChanges();
                              

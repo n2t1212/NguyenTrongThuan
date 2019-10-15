@@ -354,6 +354,15 @@
     <Compile Include="View\BH_PhieuBH.xaml.cs">
       <DependentUpon>BH_PhieuBH.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\DM_ChiPhi.xaml.cs">
+      <DependentUpon>DM_ChiPhi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DM_LyDo.xaml.cs">
+      <DependentUpon>DM_LyDo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DM_TaiKhoan.xaml.cs">
+      <DependentUpon>DM_TaiKhoan.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\HT_TaoKetNoi.xaml.cs">
       <DependentUpon>HT_TaoKetNoi.xaml</DependentUpon>
     </Compile>
@@ -433,9 +442,6 @@
     <Compile Include="View\DM_BangGia.xaml.cs">
       <DependentUpon>DM_BangGia.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\DM_LyDo.xaml.cs">
-      <DependentUpon>DM_LyDo.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\DM_Xe.xaml.cs">
       <DependentUpon>DM_Xe.xaml</DependentUpon>
     </Compile>
@@ -459,6 +465,15 @@
     </Compile>
     <Compile Include="View\Starting.xaml.cs">
       <DependentUpon>Starting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TC_PhieuChi.xaml.cs">
+      <DependentUpon>TC_PhieuChi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TC_PhieuThu.xaml.cs">
+      <DependentUpon>TC_PhieuThu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TC_ThuChiList.xaml.cs">
+      <DependentUpon>TC_ThuChiList.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -555,6 +570,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\DM_ChiPhi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DM_LyDo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\DM_TaiKhoan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\HT_TaoKetNoi.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -631,10 +658,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\DM_LyDo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="View\DM_Xe.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -692,6 +715,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Starting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TC_PhieuChi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TC_PhieuThu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TC_ThuChiList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

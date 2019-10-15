@@ -149,7 +149,7 @@ namespace MTPMSWIN.View
                      
                 }
 
-                otblPNXCT = new MTSQLServer().wRead(String.Format("SELECT * FROM NX_PHIEUNXCT where phieunxid='{0}' ORDER BY Phieunxctid asc", pPhieuNXID), null, false);
+                otblPNXCT = new MTSQLServer().wRead(String.Format("SELECT * FROM NX_PHIEUNXCT where Phieunxid='{0}' ORDER BY Phieunxctid asc", pPhieuNXID), null, false);
                 grdPhieuNhap.ItemsSource = otblPNXCT;
                 MTGlobal.SetFormatGridControl(grdPhieuNhap, tblView,false);
                 

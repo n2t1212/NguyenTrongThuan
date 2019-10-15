@@ -1,0 +1,146 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" 
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" x:Class="MTPMSWIN.View.TC_PhieuThu"
+        Title="" Height="753.366" Width="1242" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        FontSize="14" WindowStyle="None" Margin="0,0,0,0" BorderBrush="#FFE7F100" WindowState="Maximized">
+
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFD1E1F7" Offset="0"/>
+            <GradientStop Color="#FFCADBF1" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <Grid Margin="0,0,0,10">
+        <Grid VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="41" Margin="0,0,0,0">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF6DA9F9" Offset="0"/>
+                    <GradientStop Color="#FF99C1F7" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Label Content="LẬP PHIẾU THU" Height="41" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" HorizontalAlignment="Left" x:Name="lblTitle" VerticalAlignment="Center" FontFamily="FontAwesome" FontSize="18" Margin="20,0,0,0" Width="350" Foreground="White" FontWeight="Bold" />
+            <Button Content="-" HorizontalAlignment="Right" VerticalAlignment="Center" x:Name="cmdMiniApp" Height="25" Width="41" Click="cmdMiniApp_Click" BorderThickness="1" Cursor="Hand" ForceCursor="False" ToolTip="Close" Margin="0,6,60,10" Foreground="White" FontSize="15" FontWeight="Bold" Background="{x:Null}" BorderBrush="#FFDCE2FB" HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch"/>
+            <Button Content="X" HorizontalAlignment="Right" VerticalAlignment="Center" x:Name="cmdExitApp" Height="25" Width="41" Click="cmdExitApp_Click" BorderThickness="1" Cursor="Hand" ForceCursor="False" ToolTip="Close" Margin="0,6,10,10" Foreground="White" FontSize="15" FontWeight="Bold" Background="{x:Null}" BorderBrush="#FFDCE2FB" HorizontalContentAlignment="Center"/>
+        </Grid>
+
+        <Grid Margin="15,45,15,56" PreviewKeyDown="Grid_PreviewKeyDown_1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="113*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="52*"/>
+
+                <ColumnDefinition Width="539*"/>
+                <ColumnDefinition Width="15*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Đối tượng" HorizontalAlignment="Left" Height="31" Margin="446,52,0,0" VerticalAlignment="Top" Width="77" Grid.Column="1"/>
+            <dxe:TextEdit Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="534,52,0,0" VerticalAlignment="Top" Width="192" x:Name="txtMaDT" LostFocus="txtMaDT_LostFocus_1" PreviewKeyDown="txtMaDT_PreviewKeyDown_1"/>
+            <dxe:TextEdit Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="726,52,0,0" VerticalAlignment="Top" Width="327" x:Name="txtTenDoiTuong" PreviewKeyDown="txtTenDoiTuong_PreviewKeyDown_1"/>
+            <Label Content="Người nộp" HorizontalAlignment="Left" Height="31" Margin="446,84,0,0" VerticalAlignment="Top" Width="77" RenderTransformOrigin="0.553,2.5" Grid.Column="1"/>
+            <dxe:TextEdit Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="534,84,0,0" VerticalAlignment="Top" Width="519" x:Name="txtHoTen" PreviewKeyDown="txtHoTen_PreviewKeyDown_1"/>
+            <Label Content="Địa chỉ" HorizontalAlignment="Left" Height="31" Margin="446,116,0,0" VerticalAlignment="Top" Width="77" Grid.Column="1"/>
+            <dxe:TextEdit Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="534,116,0,0" VerticalAlignment="Top" Width="519" x:Name="txtDiaChi" PreviewKeyDown="txtDiaChi_PreviewKeyDown_1"/>
+            <Label Content="Lý do nộp" HorizontalAlignment="Left" Height="31" Margin="446,148,0,0" VerticalAlignment="Top" Width="77" Grid.Column="1"/>
+            <dxe:TextEdit Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="534,148,0,0" VerticalAlignment="Top" Width="192" x:Name="txtMaLD" LostFocus="txtMaLD_LostFocus_1" PreviewKeyDown="txtMaLD_PreviewKeyDown_1"/>
+            <dxe:TextEdit Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="726,148,0,0" VerticalAlignment="Top" Width="327" x:Name="txtLD" PreviewKeyDown="txtLD_PreviewKeyDown_1"/>
+            <Label Content="Ngày chứng từ" HorizontalAlignment="Left" Height="31" Margin="100,85,0,0" VerticalAlignment="Top" Width="126" Grid.ColumnSpan="2"/>
+            <Label Content="Số chứng từ" HorizontalAlignment="Left" Height="31" Margin="100,54,0,0" VerticalAlignment="Top" Width="126" Grid.ColumnSpan="2"/>
+            <dxe:TextEdit Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="106,53,0,0" VerticalAlignment="Top" Width="233" x:Name="txtSoCT" PreviewKeyDown="txtSoCT_PreviewKeyDown_1"/>
+            <Label Content="Ngày phát sinh" HorizontalAlignment="Left" Height="31" Margin="100,117,0,0" VerticalAlignment="Top" Width="126" Grid.ColumnSpan="2"/>
+            <dxe:DateEdit Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="106,85,0,0" VerticalAlignment="Top" Width="233" x:Name="txtNgayCT" PreviewKeyDown="txtNgayCT_PreviewKeyDown_1"/>
+            <dxe:DateEdit Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="106,117,0,0" VerticalAlignment="Top" Width="233" x:Name="txtNgayPS" PreviewKeyDown="txtNgayPS_PreviewKeyDown_1"/>
+            <Label Content="Ghi chú" HorizontalAlignment="Left" Height="31" Margin="446,181,0,0" VerticalAlignment="Top" Width="76" Grid.Column="1"/>
+            <dxe:TextEdit HorizontalAlignment="Left" Height="31" Margin="534,180,0,0" VerticalAlignment="Top" Width="519" Name="txtGhiChu" PreviewKeyDown="txtGhiChu_PreviewKeyDown_1" Grid.Column="1"/>
+            <Label Content="Nguyên tệ" HorizontalAlignment="Left" Height="29" Margin="100,149,0,0" VerticalAlignment="Top" Width="88" Grid.ColumnSpan="2"/>
+            <dxe:ComboBoxEdit Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="106,149,0,0" VerticalAlignment="Top" Width="72" Name="cbNguyenTe" PreviewKeyDown="cbNguyenTe_PreviewKeyDown_1">
+                <System:String>VND</System:String>
+                <System:String>USD</System:String>
+            </dxe:ComboBoxEdit>
+            <Label Content="Tỷ giá" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="186,150,0,0" VerticalAlignment="Top" Width="52"/>
+            <dxe:TextEdit Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="243,149,0,0" VerticalAlignment="Top" Width="96" Name="txtTyGia" PreviewKeyDown="txtTyGia_PreviewKeyDown_1"/>
+            <Label Content="NV thu nợ" HorizontalAlignment="Left" Height="31" Margin="100,178,0,0" VerticalAlignment="Top" Width="295" Grid.ColumnSpan="2"/>
+            <dxe:TextEdit Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="106,178,0,0" VerticalAlignment="Top" Width="233" PreviewKeyDown="TextEdit_PreviewKeyDown_1"/>
+            <Label Content="Số phiếu" HorizontalAlignment="Left" Height="28" Margin="100,24,0,0" VerticalAlignment="Top" Width="98" Grid.ColumnSpan="2"/>
+            <dxe:TextEdit Name="txtSoPhieu" Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="106,21,0,0" VerticalAlignment="Top" Width="233"/>
+            <dx:DXTabControl Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="349" Margin="35,266,0,0" VerticalAlignment="Top" Width="1147">
+                <dx:DXTabItem Header="Hạch toán">
+                    <Grid>
+                        <dxg:GridControl Name="grdPhieuThuCT" AutoPopulateColumns="False" HorizontalAlignment="Left" Margin="0,27,0,10" VerticalAlignment="Stretch" Width="1123">
+                            <dxg:GridControl.Columns >
+                                <dxg:GridColumn Name="colPhieutcctid" FieldName="Phieutcctid" HorizontalHeaderContentAlignment="Center" Visible="False"/>
+                                <dxg:GridColumn Name="colDiengiai" FieldName="Diengiai" Header="Diễn giải" Width="250" HorizontalHeaderContentAlignment="Center"/>
+                                <dxg:GridColumn Name="colTKNo" FieldName="TKNo" Header="TK Nợ" Width="100" HorizontalHeaderContentAlignment="Center"/>
+                                <dxg:GridColumn x:Name="colTKCo" FieldName="TKCo" Header="TK Có" Width="100" HorizontalHeaderContentAlignment="Center"/>
+                                <dxg:GridColumn Name="colThanhtien" FieldName="Thanhtien" Header="Số tiền" Width="100" HorizontalHeaderContentAlignment="Center"/>
+                                <dxg:GridColumn Name="colMadt" FieldName="Madt" Header="Mã đối tượng" Width="100" HorizontalHeaderContentAlignment="Center"/>
+                                <dxg:GridColumn Name="colMatk" FieldName="Matk" Header="Mã tài khoản" Width="100" HorizontalHeaderContentAlignment="Center"/>
+                                <dxg:GridColumn Name="colMacp" FieldName="Macp" Header="Mã chi phí" Width="100" HorizontalHeaderContentAlignment="Center"/>
+                                <dxg:GridColumn Name="colNguyenTe" FieldName="Nguyente" Header="Nguyên tệ" Width="100" HorizontalHeaderContentAlignment="Center"/>
+                                <dxg:GridColumn Name="colSoHD" FieldName="SoHD" Header="Số HĐ" Width="100" HorizontalHeaderContentAlignment="Center"/>
+                                <dxg:GridColumn Name="colNChono" FieldName="NChono" Header="Số ngày cho nợ" Width="120" HorizontalHeaderContentAlignment="Center"/>
+                            </dxg:GridControl.Columns>
+                            <dxg:GridControl.View>
+                                <dxg:TableView Name="tblView" ShowTotalSummary="True" ShowGroupPanel="False" Margin="0,-9,0,0"/>
+                            </dxg:GridControl.View>
+                        </dxg:GridControl>
+                    </Grid>
+                </dx:DXTabItem>
+                <dx:DXTabItem Header="Thuế">
+                    
+                </dx:DXTabItem>
+            </dx:DXTabControl>
+
+        </Grid>
+
+        <Grid x:Name="Toolbar" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Height="54" Margin="0,0,0,10">
+            <Button x:Name="doIn" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right" Margin="0,8,530,0" VerticalAlignment="Top" Width="110" Click="doPrint_Click" Height="37">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_print.png" Height="22" Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="74" Foreground="White" FontWeight="Normal" Content="In (F7)"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="doSave" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right" Margin="0,8,375,0" VerticalAlignment="Top" Width="133" Click="doSave_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_save.png" Height="22" Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="74" Foreground="White" FontWeight="Normal" Content="Ghi (F5)"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="doAdd" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right"  Margin="0,8,375,0" VerticalAlignment="Top" Width="133" Click="doAdd_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_addnew.png" Height="22" Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="74" Foreground="White" FontWeight="Normal" Content="Thêm (F2)"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="doAbort"  Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right"  Margin="0,8,260,0" VerticalAlignment="Top" Width="115" Click="doAbort_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_abort.png" Height="22" Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="74" Foreground="White" FontWeight="Normal" Content="Bỏ qua (Esc)"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="doEdit" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right"  Margin="0,8,260,0" VerticalAlignment="Top" Width="115" Click="doEdit_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_edit.png" Height="22" Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="74" Foreground="White" FontWeight="Normal" Content="Sửa (F3)"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="doDel" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right"  Margin="0,8,140,0" VerticalAlignment="Top" Width="120" Click="doDel_Click" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_del.png" Height="22" Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="74" Foreground="White" FontWeight="Normal" Content="Xóa (F4)"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="doExit" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right" Margin="0,8,14,0" VerticalAlignment="Top" Width="110" Click="doExit_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Icons/pos_exit.png" Height="22" Stretch="Uniform"/>
+                    <Label Padding="0" Margin="5,0,0,0" Height="24" Width="74" Foreground="White" FontWeight="Normal" Content="Thoát (F8)"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+
+    </Grid>
+</Window>

@@ -34,7 +34,9 @@ namespace MTPMSWIN.Model
             PhieuNX.Columns.Add("Nguoilap", typeof(String));
             PhieuNX.Columns.Add("Ngaysua", typeof(DateTime));
             PhieuNX.Columns.Add("Nguoisua", typeof(String));
-            PhieuNX.Columns.Add("Dongbo", typeof(int));         
+            PhieuNX.Columns.Add("Dongbo", typeof(int));
+            PhieuNX.Columns.Add("TKNo", typeof(String));
+            PhieuNX.Columns.Add("TKCo", typeof(String));
             return PhieuNX; 
         }
 

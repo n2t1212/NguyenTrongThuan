@@ -86,10 +86,14 @@ namespace MTPMSWIN.Model
        public static string PX = "PX";
        public static string CX = "CX";
        public static string BH = "BH";
+       public static string PT = "PT";
+       public static string PC = "PC";
        public static string MT_LOAIP = "";
 
        public static MT_PHIEU MT_LOAIPHIEU; 
        public enum MT_PHIEU {DM=1,PN=2,PX=3,TK=4,CX=5}
+       public static string TK_NO = "N131";
+       public static string TK_CO = "C511";
 
 
        public struct MT_ROLE {

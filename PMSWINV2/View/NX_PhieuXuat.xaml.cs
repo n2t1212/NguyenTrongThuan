@@ -259,6 +259,8 @@ namespace MTPMSWIN.View{
                 vR["Giaonhan"] =txtNguoinhan.Text;
                 vR["Ngaylap"] = DateTime.Now;
                 vR["Nguoilap"] = MTGlobal.MT_USER_LOGIN;
+                vR["TKNo"] = MTGlobal.TK_NO;
+                vR["TKCo"] = MTGlobal.TK_CO;
                 tmpPN.Rows.Add(vR);
                 tmpPN.AcceptChanges();
 

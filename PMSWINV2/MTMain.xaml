@@ -124,6 +124,16 @@
                             <Image Height="45" Source="Images/Icons/pos_list_reason.png"></Image>
                         </MenuItem.Icon>
                     </MenuItem>
+                    <MenuItem Header="Chi phí" Name="mnuDM_CHIPHI" Cursor="Hand" IsEnabled="False"  Style="{StaticResource MySubMenuItem}">
+                        <MenuItem.Icon>
+                            <Image Height="45" Source="Images/Icons/pos_list_price.png"></Image>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Tài khoản" Name="mnuDM_TAIKHOAN" Cursor="Hand" IsEnabled="False"  Style="{StaticResource MySubMenuItem}">
+                        <MenuItem.Icon>
+                            <Image Height="45" Source="Images/Icons/pos_user_logon_white.png"></Image>
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
 
                 <!--HÀNG HÓA-->
@@ -173,6 +183,32 @@
                             <TextBlock Text="Bán Hàng" Cursor="Hand" TextAlignment="Center" Width="auto" FontSize="14" Margin="0,-14,0,16" Foreground="#FFDBEAFF"/>
                         </StackPanel>
                     </MenuItem.Header>
+                </MenuItem>
+
+                <!-- THU CHI-->
+                <MenuItem Name="mnuTC" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="14" HorizontalAlignment="Right" Width="102" Style="{StaticResource MyMenuItem}" Cursor="Hand">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Vertical" Height="45" Width="auto" >
+                            <Image Source="Images/Icons/pos_list_price.png" Margin="0,-1,0,14" Width="24"/>
+                            <TextBlock Text="Phiếu thu chi" Cursor="Hand" TextAlignment="Center" Width="auto" FontSize="14" Margin="0,-14,0,16" Foreground="#FFDBEAFF"/>
+                        </StackPanel>
+                    </MenuItem.Header>
+                    <MenuItem.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel Orientation="Vertical">
+                                <VirtualizingStackPanel.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FF7AA5DC"/>
+                                        <GradientStop Color="#FFA4BEE0" Offset="0.996"/>
+                                    </LinearGradientBrush>
+                                </VirtualizingStackPanel.Background>
+                            </VirtualizingStackPanel>
+                        </ItemsPanelTemplate>
+                    </MenuItem.ItemsPanel>
+                    <MenuItem Header="Phiếu Thu" Name="mnuTC_PHIEUTHU" Cursor="Hand" IsEnabled="False" Style="{StaticResource MySubMenuItem}">
+                    </MenuItem>
+                    <MenuItem Header="Phiếu Chi" Name="mnuTC_PHIEUCHI" Cursor="Hand" IsEnabled="False" Style="{StaticResource MySubMenuItem}">
+                    </MenuItem>
                 </MenuItem>
 
                 <!--BÁO CÁO-->
