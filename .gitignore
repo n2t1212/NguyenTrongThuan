@@ -2,10 +2,8 @@
 *.config
 *.dll
 *.baml
-*.cs
 *.resources
 *.cache
-*.xml
 *.exe
 *.lref
 *.pdb
