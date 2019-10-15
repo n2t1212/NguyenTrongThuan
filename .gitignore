@@ -10,3 +10,6 @@
 *.manifest
 *.txt
 *.licenses
+*i.cs
+*g.cs
+*.xml
