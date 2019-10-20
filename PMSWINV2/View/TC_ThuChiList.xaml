@@ -27,15 +27,15 @@
                 <ColumnDefinition Width="81*"/>
             </Grid.ColumnDefinitions>
         </Grid>
-        <dxg:GridControl x:Name="grdPhieuTC" AutoPopulateColumns="False" HorizontalAlignment="Stretch" ShowBorder="True" Margin="0,0,0,204">
+        <dxg:GridControl x:Name="grdPhieuTC" AutoPopulateColumns="False" HorizontalAlignment="Stretch" ShowBorder="True" Margin="0,0,0,204" MouseDoubleClick="grdPhieuTC_MouseDoubleClick">
             <dxg:GridControl.View>
                 <dxg:TableView x:Name="tblViewTCList" NewItemRowCellStyle="{DynamicResource NewItemRow}" ExpandDetailButtonWidth="14" ShowGroupPanel="False" ShowAutoFilterRow="True" FocusedRowChanged="tblViewTCList_FocusedRowChanged"/>
             </dxg:GridControl.View>
             <dxg:GridControl.Columns>
                 <dxg:GridColumn x:Name="colPhieutcid" FieldName="Phieutcid" Header="SOID" Width="120" HorizontalHeaderContentAlignment="Center" Visible="False"/>
-                <dxg:GridColumn x:Name="colMant" FieldName="Nt" Header="NT" Width="120" HorizontalHeaderContentAlignment="Center"/>
-                <dxg:GridColumn x:Name="colMadt" FieldName="Dt" Header="Đối tượng" Width="120" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colMant" FieldName="Mant" Header="NT" Width="120" HorizontalHeaderContentAlignment="Center" Visible="False"/>
                 <dxg:GridColumn x:Name="colLoaiphieu" FieldName="Loaiphieu" Header="Loại phiếu" Width="120" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colMadt" FieldName="Dt" Header="Đối tượng" Width="120" HorizontalHeaderContentAlignment="Center"/>
                 <dxg:GridColumn x:Name="colSophieu" FieldName="Sophieu" Header="Số phiếu" Width="120" HorizontalHeaderContentAlignment="Center"/>
                 <dxg:GridColumn x:Name="colNgayct" FieldName="Ngayct" Header="Ngày CT" Width="150" HorizontalHeaderContentAlignment="Center"/>
                 <dxg:GridColumn x:Name="colTygia" FieldName="Tygia" Header="Tỷ giá" Width="200" HorizontalHeaderContentAlignment="Center">
@@ -44,7 +44,7 @@
                     </dxg:GridColumn.EditSettings>
                 </dxg:GridColumn>
                 <dxg:GridColumn x:Name="colSoctgoc" FieldName="Soctgoc" Header="Số CT gốc" Width="200" HorizontalHeaderContentAlignment="Center"/>
-                <dxg:GridColumn x:Name="colTKDu" FieldName="TKDu" Header="TK dư" Width="200" HorizontalHeaderContentAlignment="Center">
+                <dxg:GridColumn x:Name="colTKDu" FieldName="TKDu" Header="TK dư" Width="200" HorizontalHeaderContentAlignment="Center" Visible="False">
                     <dxg:GridColumn.EditSettings>
                         <dxe:TextEditSettings Mask="n0" MaskType="Numeric" MaskUseAsDisplayFormat="True"/>
                     </dxg:GridColumn.EditSettings>
@@ -61,7 +61,7 @@
                 </dxg:GridColumn>
                 <dxg:GridColumn x:Name="colHoten" FieldName="Hoten" Header="Họ tên" Width="200" HorizontalHeaderContentAlignment="Center"/>
                 <dxg:GridColumn x:Name="colGhiso" FieldName="Ghiso" Header="Ghi sổ" Width="120" HorizontalHeaderContentAlignment="Center"/>
-                <dxg:GridColumn x:Name="colMald" FieldName="Mald" Header="Mã lý do" Width="120" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colMald" FieldName="Lydo" Header="Mã lý do" Width="120" HorizontalHeaderContentAlignment="Center"/>
                 <dxg:GridColumn x:Name="colNguoiLap" FieldName="Nguoilap" Header="Người lập" Width="120" HorizontalHeaderContentAlignment="Center"/>
                 <dxg:GridColumn x:Name="colGhichu" FieldName="Ghichu" Header="Ghi chú" Width="120" HorizontalHeaderContentAlignment="Center"/>
             </dxg:GridControl.Columns>
@@ -72,9 +72,10 @@
                 <dxg:TableView x:Name="tblViewTCCT" ShowAutoFilterRow="False" ExpandDetailButtonWidth="14" ShowGroupPanel="False"/>
             </dxg:GridControl.View>
             <dxg:GridControl.Columns>
-                <dxg:GridColumn x:Name="colMacp" FieldName="Macp" Header="Mã chi phí" Width="120" HorizontalHeaderContentAlignment="Center"/>
-                <dxg:GridColumn x:Name="TCCT_colMadt" FieldName="Madt" Header="Mã DT" Width="120" HorizontalHeaderContentAlignment="Center"/>
-                <dxg:GridColumn x:Name="colMatk" FieldName="Matk" Header="Mã TK" Width="120" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colMacp" FieldName="Macp" Header="Mã chi phí" Width="120" HorizontalHeaderContentAlignment="Center" Visible="False" />
+                <dxg:GridColumn x:Name="TCCT_colMadt" FieldName="Madt" Header="Mã DT" Width="120" HorizontalHeaderContentAlignment="Center" Visible="False"/>
+                <dxg:GridColumn x:Name="colMatk" FieldName="Matk" Header="Mã TK" Width="120" HorizontalHeaderContentAlignment="Center" Visible="False"/>
+                <dxg:GridColumn x:Name="colDiengiai" FieldName="Diengiai" Header="Diễn giải" Width="150" HorizontalHeaderContentAlignment="Center"/>
                 <dxg:GridColumn x:Name="colTKNo" FieldName="TKNo" Header="TK Nợ" Width="120" HorizontalHeaderContentAlignment="Center"/>
                 <dxg:GridColumn x:Name="colTKCo" FieldName="TKCo" Header="TK Có" Width="120" HorizontalHeaderContentAlignment="Center"/>
                 <dxg:GridColumn x:Name="TCCT_colNguyente" FieldName="Nguyente" Header="Nguyên tệ" Width="120" HorizontalHeaderContentAlignment="Center">
@@ -87,7 +88,6 @@
                         <dxe:TextEditSettings Mask="n0" MaskType="Numeric" MaskUseAsDisplayFormat="True"/>
                     </dxg:GridColumn.EditSettings>
                 </dxg:GridColumn>
-                <dxg:GridColumn x:Name="colDiengiai" FieldName="Diengiai" Header="Diễn giải" Width="150" HorizontalHeaderContentAlignment="Center"/>
                 <dxg:GridColumn x:Name="colSoHD" FieldName="SoHD" Header="Số HĐ" Width="120" HorizontalHeaderContentAlignment="Center"/>
                 <dxg:GridColumn x:Name="colNChono" FieldName="NChono" Header="Ngày cho nợ" Width="100" HorizontalHeaderContentAlignment="Center"/>
             </dxg:GridControl.Columns>

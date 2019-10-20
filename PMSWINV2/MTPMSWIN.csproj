@@ -232,6 +232,7 @@
     </Compile>
     <Compile Include="Model\modChanhxe.cs" />
     <Compile Include="Model\modPhieuBH.cs" />
+    <Compile Include="Model\modPhieuTC.cs" />
     <Compile Include="Model\MTBarCode.cs" />
     <Compile Include="Model\MTReport.cs" />
     <Compile Include="Model\CRUDHandling.cs" />
@@ -354,11 +355,17 @@
     <Compile Include="View\BH_PhieuBH.xaml.cs">
       <DependentUpon>BH_PhieuBH.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\dlg_AddKhachHang.xaml.cs">
+      <DependentUpon>dlg_AddKhachHang.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DM_ChiPhi.xaml.cs">
       <DependentUpon>DM_ChiPhi.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\DM_LyDo.xaml.cs">
       <DependentUpon>DM_LyDo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DM_NhanVien.xaml.cs">
+      <DependentUpon>DM_NhanVien.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\DM_TaiKhoan.xaml.cs">
       <DependentUpon>DM_TaiKhoan.xaml</DependentUpon>
@@ -570,6 +577,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\dlg_AddKhachHang.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\DM_ChiPhi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -577,6 +588,10 @@
     <Page Include="View\DM_LyDo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\DM_NhanVien.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\DM_TaiKhoan.xaml">
       <SubType>Designer</SubType>

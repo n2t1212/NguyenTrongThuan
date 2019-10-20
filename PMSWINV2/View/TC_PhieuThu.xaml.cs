@@ -30,6 +30,13 @@ namespace MTPMSWIN.View
         private bool isEdit = false;
         DevExpress.Utils.WaitDialogForm Dlg;
 
+        // TK nợ, TK có
+        private String TKNo = "";
+        private String TKCo = "";
+
+        private bool isAddDT = false;
+        private bool isAddNV = false;
+
         public TC_PhieuThu()
         {
             InitializeComponent();
@@ -55,8 +62,8 @@ namespace MTPMSWIN.View
             }
             else
             {
-                //BindData();
-                //MTGlobal.SetGridReadOnly(grdPhieuNhap, tblView, true);
+                BindData();
+                MTGlobal.SetGridReadOnly(grdPhieuThuCT, tblView, true);
                 setReadOnly(true);
             }
 
@@ -65,6 +72,49 @@ namespace MTPMSWIN.View
 
         private void BindData()
         {
+            cbNguyenTe.EditValue = "VND";
+            txtMaDT.Text = "";
+            txtTenDoiTuong.Text = "";
+            txtHoTen.Text = "";
+            txtDiaChi.Text = "";
+            txtMaLD.Text = "";
+            txtLD.Text = "";
+            txtManv.Text = "";
+            txtTennv.Text = "";
+            txtGhiChu.Text = "";
+
+            if (pPhieuTCID != "")
+            {
+                String mSql = String.Format("select A.*, B.Tenkh, B.Diachi, C.Lydo, C.TKNo, C.TKCo, D.Tennv from TC_PHIEUTC A left join DM_KHACHHANG B on A.Madt = B.Makh left join DM_LYDO C on A.Mald = C.Mald left join DM_NHANVIEN D on A.Mant = D.Manv where A.Phieutcid = '{0}'", pPhieuTCID);
+
+                otblPTC = new MTSQLServer().wRead(mSql, null, false);
+
+                if (otblPTC != null)
+                {
+                    foreach (DataRow vR in otblPTC.Rows)
+                    {
+                        txtSoPhieu.Text = vR["Sophieu"].ToString();
+                        txtMaDT.Text = vR["Madt"].ToString();
+                        txtTenDoiTuong.Text = vR["Tenkh"].ToString();
+                        txtDiaChi.Text = vR["Diachi"].ToString();
+                        txtHoTen.Text = vR["Hoten"].ToString();
+                        txtMaLD.Text = vR["Mald"].ToString();
+                        txtLD.Text = vR["Lydo"].ToString();
+                        txtManv.Text = vR["Mant"].ToString();
+                        txtTennv.Text = vR["Tennv"].ToString();
+                        txtGhiChu.Text = vR["Ghichu"].ToString();
+                        txtSoCT.Text = vR["Soctgoc"].ToString();
+                        txtNgayCT.EditValue = vR["Ngayct"].ToString() != "" ? Convert.ToDateTime(vR["Ngayct"].ToString()).ToShortDateString() : "";
+                        txtNgayPS.EditValue = vR["Ngayps"].ToString() != "" ? Convert.ToDateTime(vR["Ngayps"].ToString()).ToShortDateString() : "";
+                        cbNguyenTe.EditValue = vR["Loaitien"].ToString();
+                        txtTyGia.Text = vR["Tygia"].ToString();
+
+                        TKNo = vR["TKNo"].ToString();
+                        TKCo = vR["TKCo"].ToString();
+                    }
+                }
+            }
+
             otblPTCCT = new MTSQLServer().wRead(String.Format("SELECT * FROM TC_PHIEUTCCT where Phieutcid='{0}' ORDER BY Phieutcctid asc", pPhieuTCID), null, false);
             grdPhieuThuCT.ItemsSource = otblPTCCT;
             MTGlobal.SetFormatGridControl(grdPhieuThuCT, tblView, false);
@@ -96,6 +146,100 @@ namespace MTPMSWIN.View
                 isEdit = true;
             }
             catch (Exception ex) { Utils.showMessage(ex.Message.ToString(), "Thông báo lỗi"); }
+        }
+
+        private void fdoEdit()
+        {
+            setReadOnly(false);
+            MTGlobal.SetButtonAction(pACT_ROLE, MTButton, "EDIT");
+            isEdit = true;
+            txtMaDT.Focus();
+            if (MTGlobal.SetGridReadOnly(grdPhieuThuCT, tblView, false))
+            {
+                tblView.NewItemRowPosition = DevExpress.Xpf.Grid.NewItemRowPosition.Bottom;
+                tblView.FocusedRowHandle = DevExpress.Xpf.Grid.GridControl.NewItemRowHandle;
+                tblView.FocusedColumn = grdPhieuThuCT.Columns.First();
+                tblView.ShowEditor();
+            }
+        }
+
+        private void fdoSave()
+        {
+            Double soTien = 0;
+            if (fValidate())
+            {
+                DataTable tmpTCCT = new modPhieuTC().dtPhieuTCCT();
+                var filteredRows = tblView.Grid.DataController.GetAllFilteredAndSortedRows();
+                if (filteredRows.Count == 0)
+                {
+                    return;
+                }
+
+                tblView.CommitEditing();
+                tblView.CloseEditor();
+                otblPTCCT.AcceptChanges();
+
+                foreach(DataRow sR in otblPTCCT.Rows)
+                {
+                    DataRow cR = tmpTCCT.NewRow();
+                    cR["Phieutcctid"] = sR["Phieutcctid"];
+                    cR["Phieutcid"] = pPhieuTCID;
+                    cR["Macp"] = sR["Macp"];
+                    cR["Madt"] = sR["Madt"];
+                    cR["Matk"] = sR["Matk"];
+                    cR["TKNo"] = sR["TKNo"];
+                    cR["TKCo"] = sR["TKNo"];
+                    cR["Nguyente"] = sR["Nguyente"];
+                    cR["Thanhtien"] = sR["Thanhtien"];
+                    cR["Diengiai"] = sR["Diengiai"];
+                    cR["SoHD"] = sR["SoHD"];
+                    cR["NChono"] = sR["NChono"];
+
+                    soTien += Convert.ToDouble(sR["Thanhtien"]);
+
+                    tmpTCCT.Rows.Add(cR);
+                }
+                tmpTCCT.AcceptChanges();
+
+                DataTable tmpTC = new modPhieuTC().dtPhieuTC();
+                DataRow vR = tmpTC.NewRow();
+                vR["Phieutcid"] = pPhieuTCID;
+                vR["Mant"] = txtManv.Text.ToUpper(); ;
+                vR["Madt"] = txtMaDT.Text.ToUpper();
+                vR["Loaiphieu"] = "PT";
+                vR["Sophieu"] = txtSoPhieu.Text;
+                vR["Ngayct"] = Convert.ToDateTime(txtNgayCT.Text);
+                vR["Ngayps"] = Convert.ToDateTime(txtNgayCT.Text);
+                vR["Tygia"] = txtTyGia.Text.Length == 0 ? 0 : Double.Parse(txtTyGia.Text);
+                vR["Soctgoc"] = txtSoCT.Text;
+                vR["TKDu"] = "";
+                vR["Nguyente"] = 0;
+                vR["Sotien"] = soTien;
+                vR["Hoten"] = txtHoTen.Text;
+                vR["Nguoilap"] = txtManv.Text;
+                vR["Ngaylap"] = DateTime.Now;
+                vR["Nguoisua"] = "";
+                vR["Ghiso"] = 1;
+                vR["Mald"] = txtMaLD.Text;
+                vR["Ghichu"] = txtGhiChu.Text;
+                vR["Loaitien"] = cbNguyenTe.EditValue;
+
+                tmpTC.Rows.Add(vR);
+                tmpTC.AcceptChanges();
+
+                String Rs = new modPhieuTC().SavePhieuTC(tmpTC, tmpTCCT);
+                if (Rs == "")
+                {
+                    setReadOnly(true);
+                    MTGlobal.SetButtonAction(pACT_ROLE, MTButton, "SAVE");
+                    MTGlobal.SetGridReadOnly(grdPhieuThuCT, tblView, true);
+                    isEdit = false;
+                }
+                else
+                {
+                    Utils.showMessage(Rs, "Thông báo");
+                }        
+            }
         }
 
         private void setUserRight()
@@ -136,11 +280,11 @@ namespace MTPMSWIN.View
 
         private void doEdit_Click(object sender, RoutedEventArgs e)
         {
-            //fdoEdit();
+            fdoEdit();
         }
         private void doSave_Click(object sender, RoutedEventArgs e)
         {
-           // fdoSave();
+           fdoSave();
         }
         private void doDel_Click(object sender, RoutedEventArgs e)
         {
@@ -261,29 +405,6 @@ namespace MTPMSWIN.View
             }
         }
 
-        private void txtMaLD_PreviewKeyDown_1(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter)
-            {
-                String maLD = txtMaLD.Text.ToString().Trim();
-
-                if (maLD.Length == 0)
-                {
-                    txtMaLD.Focus();
-                    return;
-                }
-                (sender as FrameworkElement).MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
-            }
-        }
-
-        private void TextEdit_PreviewKeyDown_1(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter)
-            {
-                
-            }
-        }
-
         private void txtGhiChu_PreviewKeyDown_1(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
@@ -338,26 +459,6 @@ namespace MTPMSWIN.View
             }
         }
 
-        private void txtMaLD_LostFocus_1(object sender, RoutedEventArgs e)
-        {
-            if (isEdit && txtMaLD.Text != "" && txtMaLD.Text != null)
-            {
-                String mLydo = new MTSQLServer().getNameByValue("SELECT Lydo FROM DM_LYDO", "Mald", txtMaLD.Text.Trim(), "Lydo");
-                if (mLydo == "" || mLydo == null)
-                {
-                    dlg_ChonDM oDM = new dlg_ChonDM("LYDO");
-                    oDM.ShowDialog();
-                    txtMaLD.Text = oDM.pMaso;
-                    txtLD.Text = oDM.pGiaTriChon;
-                }
-                else
-                {
-                    txtLD.Text = mLydo;
-                }
-            }
-            if (txtMaLD.Text == "") { txtLD.Text = ""; }
-        }
-
         private void txtMaDT_LostFocus_1(object sender, RoutedEventArgs e)
         {
             if (isEdit && txtMaDT.Text != "" && txtMaDT.Text != null)
@@ -370,11 +471,16 @@ namespace MTPMSWIN.View
                     txtMaDT.Text = oDM.pMaso;
                     txtTenDoiTuong.Text = oDM.pGiaTriChon;
                     txtHoTen.Text = oDM.pGiaTriChon;
+                    txtDiaChi.Text = oDM.pDiaChi;
                 }
                 else
                 {
                     txtTenDoiTuong.Text = mTENKH;
+                    txtHoTen.Text = mTENKH;
+                    txtDiaChi.Text = new MTSQLServer().getNameByValue("SELECT Diachi FROM DM_KHACHHANG", "Makh", txtMaDT.Text.Trim(), "Diachi");
                 }
+
+                txtDiaChi.Focus();
             }
             if (txtMaDT.Text == "") { txtTenDoiTuong.Text = ""; }
         }
@@ -387,7 +493,44 @@ namespace MTPMSWIN.View
             }
         }
 
-        private void txtLD_PreviewKeyDown_1(object sender, KeyEventArgs e)
+        private void txtMaLD_PreviewKeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                String maLD = txtMaLD.Text.ToString().Trim();
+
+                if (maLD.Length == 0)
+                {
+                    txtMaLD.Focus();
+                    return;
+                }
+                (sender as FrameworkElement).MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+            }
+        }
+
+        private void txtMaLD_LostFocus_1(object sender, RoutedEventArgs e)
+        {
+            if (isEdit && txtMaLD.Text != "" && txtMaLD.Text != null)
+            {
+                String mLydo = new MTSQLServer().getNameByValue("SELECT Lydo FROM DM_LYDO", "Mald", txtMaLD.Text.Trim(), "Lydo");
+                if (mLydo == "" || mLydo == null)
+                {
+                    dlg_ChonDM oDM = new dlg_ChonDM("LYDO");
+                    oDM.ShowDialog();
+                    txtMaLD.Text = oDM.pMaso;
+                    txtLD.Text = oDM.pGiaTriChon;
+                    TKNo = oDM.pTKNo;
+                    TKCo = oDM.pTKCo;
+                }
+                else
+                {
+                    txtLD.Text = mLydo;
+                }
+            }
+            if (txtMaLD.Text == "") { txtLD.Text = ""; }
+        }
+
+        private void txtManv_PreviewKeyDown_1(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
@@ -395,5 +538,157 @@ namespace MTPMSWIN.View
             }
         }
 
+        private void txtManv_LostFocus_1(object sender, RoutedEventArgs e)
+        {
+            if (isEdit && txtManv.Text != "" && txtMaLD.Text != null)
+            {
+                String mManv = new MTSQLServer().getNameByValue("SELECT Manv FROM DM_NHANVIEN", "Manv", txtManv.Text.Trim(), "Tennv");
+                if (mManv == "" || mManv == null)
+                {
+                    dlg_ChonDM oDM = new dlg_ChonDM("NHANVIEN");
+                    oDM.ShowDialog();
+                    txtManv.Text = oDM.pMaso;
+                    txtTennv.Text = oDM.pGiaTriChon;
+                }
+                else
+                {
+                    txtTennv.Text = mManv;
+                }
+            }
+            if (txtManv.Text == "") { txtTennv.Text = ""; }
+        }
+
+        private void txtTennv_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                (sender as FrameworkElement).MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+            }
+        }
+
+        private void tblView_PreviewKeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                if (tblView.FocusedColumn.FieldName == "TKNo" && tblView.FocusedColumn.Name == "colTKNo")
+                {
+                    if (grdPhieuThuCT.GetFocusedRowCellValue(colTKNo) == null || grdPhieuThuCT.GetFocusedRowCellValue(colTKNo).ToString() == "")
+                    {
+                        tblView.FocusedColumn = colTKNo;
+                        return;
+                    }
+                }
+
+                if (tblView.FocusedColumn.FieldName == "TKCo" && tblView.FocusedColumn.Name == "colTKCo")
+                {
+                    if (grdPhieuThuCT.GetFocusedRowCellValue(colTKCo) == null || grdPhieuThuCT.GetFocusedRowCellValue(colTKCo).ToString() == "")
+                    {
+                        tblView.FocusedColumn = colTKCo;
+                        return;
+                    }
+                }
+
+                if (tblView.FocusedColumn.FieldName == "Diengiai" && tblView.FocusedColumn.Name == "colDiengiai")
+                {
+                    grdPhieuThuCT.SetFocusedRowCellValue(colTKNo, TKNo);
+                    grdPhieuThuCT.SetFocusedRowCellValue(colTKCo, TKCo);
+                    tblView.FocusedColumn = colTKCo;
+                }
+            }
+        }
+
+        private void tblView_InitNewRow(object sender, DevExpress.Xpf.Grid.InitNewRowEventArgs e)
+        {
+            grdPhieuThuCT.SetCellValue(e.RowHandle, colPhieutcctid, MTGlobal.GetNewID());
+        }
+
+        private bool fValidate()
+        {
+            if (txtMaDT.Text == "")
+            {
+                Utils.showMessage("Đối tượng không được bỏ trống..", "Thông báo");
+                txtMaDT.Focus();
+                return false;
+            }
+
+            if (txtMaLD.Text == "")
+            {
+                Utils.showMessage("Lý do không được bỏ trống..", "Thông báo");
+                txtMaLD.Focus();
+                return false;
+            }
+
+            if (txtSoPhieu.Text == "")
+            {
+                Utils.showMessage("Số phiếu chưa được khởi tạo..", "Thông báo");
+                txtSoPhieu.Focus();
+                return false;
+            }
+
+            if (txtNgayCT.Text == "")
+            {
+                Utils.showMessage("Ngày chứng từ không được bỏ trống..", "Thông báo");
+                txtNgayCT.Focus();
+                return false;
+            }
+
+            if (txtNgayPS.Text == "")
+            {
+                Utils.showMessage("Ngày hoạch toán không được bỏ trống..", "Thông báo");
+                txtNgayPS.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
+        private void btnAddNV_Click(object sender, RoutedEventArgs e)
+        {
+            if (!isAddNV)
+            {
+                return;
+            }
+
+            dlg_ThemNhanVien frmAddNV = new dlg_ThemNhanVien();
+            frmAddNV.ShowDialog();
+
+            String maNV = frmAddNV.maNV;
+            String tenNV = frmAddNV.tenNV;
+
+            if (maNV.Length > 0 && tenNV.Length > 0)
+            {
+                txtManv.Text = maNV;
+                txtTennv.Text = tenNV;
+            }
+            else
+            {
+                txtManv.Focus();
+            }
+        }
+
+        private void btnAddDT_Click(object sender, RoutedEventArgs e)
+        {
+            if (!isAddDT)
+            {
+                return;
+            }
+            dlg_AddKhachHang frmAddKH = new dlg_AddKhachHang();
+            frmAddKH.ShowDialog();
+
+            String maDT = frmAddKH.maKH;
+            String tenDT = frmAddKH.tenKH;
+
+            if (maDT.Length > 0 && maDT.Length > 0)
+            {
+                txtMaDT.Text = maDT;
+                txtTenDoiTuong.Text = tenDT;
+                txtHoTen.Text = tenDT;
+                txtDiaChi.Text = frmAddKH.DiaChi;
+            }
+            else
+            {
+                txtMaDT.Focus();
+            }
+        }
     }
 }

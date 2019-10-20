@@ -25,6 +25,13 @@ namespace MTPMSWIN.View
         public String pMaso = "";
         public String pFieldNameReturn="";
 
+        // Tài khoản nợ, có
+        public String pTKNo = "";
+        public String pTKCo = "";
+
+        // Địa chỉ KH
+        public String pDiaChi = "";
+
         public dlg_ChonDM(String mLoaiDM="",String mFieldName ="")
         {
             InitializeComponent();
@@ -72,7 +79,7 @@ namespace MTPMSWIN.View
                         break;
 
                     case "LYDO":
-                        mSql = "SELECT Mald, Lydo FROM DM_LYDO with(nolock) order by Mald asc";
+                        mSql = "SELECT Mald, Lydo, TKNo, TKCo FROM DM_LYDO with(nolock) order by Mald asc";
                         oTblSrc=new MTSQLServer().wRead(mSql,null,false);
                         colMaso.FieldName="Mald";
                         colMaso.Header = "Mã LD";
@@ -80,8 +87,19 @@ namespace MTPMSWIN.View
                         colTen.FieldName="Lydo";
                         colTen.Header = "Lý do";
                         colTen.Width = 200;
+
+                        colCol1.FieldName="TKNo";
+                        colCol1.Width = 100;
+                        colCol1.Header = "TK Nợ";
+
+                        colCol2.FieldName="TKCo";
+                        colCol2.Width = 100;
+                        colCol2.Header = "TKCo";
+
                         colMaso.Visible=true;
                         colTen.Visible=true;
+                        colCol1.Visible = true;
+                        colCol2.Visible = true;
                         lblTitle.Content = "DANH MỤC LÝ DO";
                         break;
 
@@ -143,6 +161,22 @@ namespace MTPMSWIN.View
                        colCol2.Visible = true;                     
                        lblTitle.Content = "DANH MỤC XE";
                        break;
+                    case "NHANVIEN":
+                       mSql = "SELECT Manvid,Manv,Tennv FROM DM_NHANVIEN with(nolock) order by Manv asc";
+                       oTblSrc = new MTSQLServer().wRead(mSql, null, false);
+                       grdChonDM.Columns[0].FieldName = "Manvid";
+                       colMaso.FieldName = "Manv";
+                       colMaso.Width = 120;
+                       colMaso.Header = "Mã nhân viên";
+
+                       colTen.FieldName = "Tennv";
+                       colTen.Width = 200;
+                       colTen.Header = "Tên nhân viên";
+                         
+                       colMaso.Visible = true;
+                       colTen.Visible = true;                  
+                       lblTitle.Content = "DANH MỤC NHÂN VIÊN";
+                       break;
                 }
  
                 if (oTblSrc == null) {
@@ -163,11 +197,31 @@ namespace MTPMSWIN.View
                 if (pFieldNameReturn != "")
                 {
                     pGiaTriChon = grdChonDM.GetCellValue(tblView.FocusedRowHandle, pFieldNameReturn).ToString();
-                    pMaso = grdChonDM.GetCellValue(tblView.FocusedRowHandle, colMaso).ToString();                    
+                    pMaso = grdChonDM.GetCellValue(tblView.FocusedRowHandle, colMaso).ToString();
+
+                    if (pLoaiDM == "LYDO")
+                    {
+                        pTKNo = grdChonDM.GetCellValue(tblView.FocusedRowHandle, colCol1).ToString();
+                        pTKCo = grdChonDM.GetCellValue(tblView.FocusedRowHandle, colCol2).ToString();
+                    }
+
+                    if (pLoaiDM == "DV")
+                    {
+                        pDiaChi = grdChonDM.GetCellValue(tblView.FocusedRowHandle, colCol2).ToString();
+                    }
                 }
                 else {
                     pGiaTriChon = grdChonDM.GetCellValue(tblView.FocusedRowHandle,colTen).ToString();
-                    pMaso = grdChonDM.GetCellValue(tblView.FocusedRowHandle, colMaso).ToString();
+                    if (pLoaiDM == "LYDO")
+                    {
+                        pTKNo = grdChonDM.GetCellValue(tblView.FocusedRowHandle, colCol1).ToString();
+                        pTKCo = grdChonDM.GetCellValue(tblView.FocusedRowHandle, colCol2).ToString();
+                    }
+
+                    if (pLoaiDM == "DV")
+                    {
+                        pDiaChi = grdChonDM.GetCellValue(tblView.FocusedRowHandle, colCol2).ToString();
+                    }
                 }
                 pRowChon = (System.Data.DataRowView)grdChonDM.GetRow(tblView.FocusedRowHandle);
                 this.Close();
@@ -196,7 +250,17 @@ namespace MTPMSWIN.View
         private void tblView_FocusedRowChanged(object sender, DevExpress.Xpf.Grid.FocusedRowChangedEventArgs e)
         {
             pGiaTriChon = grdChonDM.GetCellValue(tblView.FocusedRowHandle, colTen).ToString();
-      
+            pMaso = grdChonDM.GetCellValue(tblView.FocusedRowHandle, colMaso).ToString();
+            if (pLoaiDM == "LYDO")
+            {
+                pTKNo = grdChonDM.GetCellValue(tblView.FocusedRowHandle, colCol1).ToString();
+                pTKCo = grdChonDM.GetCellValue(tblView.FocusedRowHandle, colCol2).ToString();
+            }
+
+            if (pLoaiDM == "DV")
+            {
+                pDiaChi = grdChonDM.GetCellValue(tblView.FocusedRowHandle, colCol2).ToString();
+            }
         }
 
         private void Grid_PreviewKeyDown_1(object sender, KeyEventArgs e)

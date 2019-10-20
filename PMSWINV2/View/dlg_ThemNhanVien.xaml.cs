@@ -21,12 +21,17 @@ namespace MTPMSWIN.View
     /// </summary>
     public partial class dlg_ThemNhanVien : Window
     {
+
+        public string maNV = "";
+        public string tenNV = "";
+
         private string maBoPhan = "";
         private string tenBoPhan = "";
         private DataTable nhanVienDT;
         public dlg_ThemNhanVien()
         {
             InitializeComponent();
+            txtMaNV.Focus();
         }
 
         public dlg_ThemNhanVien(string mabophan, string tenbophan)
@@ -58,7 +63,7 @@ namespace MTPMSWIN.View
             nhanVienDT.Columns.Add("Nguoisua", typeof(string));
         }
 
-        private void cmdAccept_Click(object sender, RoutedEventArgs e)
+        public void cmdAccept_Click(object sender, RoutedEventArgs e)
         {
             string manv = txtMaNV.Text.ToString();
             string tennv = txtHoTen.Text.ToString();
@@ -73,24 +78,37 @@ namespace MTPMSWIN.View
 
             if (err.Length == 0)
             {
-                err = ValidateHelper.validateFieldNotEmpty("Họ tên", tennv);
+                string sql = string.Format("select * from DM_NHANVIEN where Manv='{0}'",manv);
 
-                if (err.Length == 0)
+                DataTable NV = new MTSQLServer().wRead(sql, null, false);
+                if (NV.Rows.Count > 0)
                 {
-                    err = ValidateHelper.validateFieldIsNumber("Số điện thoại", sdt);
-
-                    if(err.Length > 0)
-                    {
-                        Utils.showMessage(err, "Thông báo");
-                        txtSDT.Focus();
-                        return;
-                    }
+                    err = "Mã nhân viên đã tồn tại";
+                    Utils.showMessage(err, "Thông báo");
+                    txtMaNV.Focus();
+                    return;
                 }
                 else
                 {
-                    Utils.showMessage(err, "Thông báo");
-                    txtHoTen.Focus();
-                    return;
+                    err = ValidateHelper.validateFieldNotEmpty("Họ tên", tennv);
+
+                    if (err.Length == 0)
+                    {
+                        err = ValidateHelper.validateFieldIsNumber("Số điện thoại", sdt);
+
+                        if (err.Length > 0)
+                        {
+                            Utils.showMessage(err, "Thông báo");
+                            txtSDT.Focus();
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        Utils.showMessage(err, "Thông báo");
+                        txtHoTen.Focus();
+                        return;
+                    }
                 }
             } 
             else
@@ -105,25 +123,43 @@ namespace MTPMSWIN.View
             rw["Manvid"] = MTGlobal.GetNewID();
             rw["Mabp"] = maBoPhan;
             rw["Macv"] = "";
-            rw["Manv"] = Utils.convertToUnsignedString(manv);
+            rw["Manv"] = Utils.convertToUnsignedString(manv).ToUpper();
             rw["Tennv"] = tennv;
-            rw["Ngaysinh"] = DateTime.Parse(ngaysinh.ToString());
+
+            if (ngaysinh.Trim().Length > 0)
+            {
+                rw["Ngaysinh"] = DateTime.Parse(ngaysinh.ToString());
+            }
+            
             rw["Diachi"] = diachi;
             rw["Dienthoai"] = sdt;
             rw["Email"] = email;
-            rw["Ngaythuviec"] = DateTime.Parse(ngayThuViec.ToString());
-            rw["Ngaychinhthuc"] = DateTime.Parse(ngayChinhThuc.ToString());
+
+            if (ngayThuViec.Trim().Length > 0)
+            {
+                rw["Ngaythuviec"] = DateTime.Parse(ngayThuViec.ToString());
+            }
+
+            if (ngayChinhThuc.Trim().Length > 0)
+            {
+                rw["Ngaychinhthuc"] = DateTime.Parse(ngayChinhThuc.ToString());
+            }
+            
             rw["Ngaylap"] = DateTime.Now;
             rw["Nguoilap"] = MTGlobal.MT_USER_LOGIN;
             rw["Nguoisua"] = "";
 
             nhanVienDT.Rows.Add(rw);
 
-            saveNhanVien();
+            if (saveNhanVien())
+            {
+                maNV = Utils.convertToUnsignedString(manv).ToUpper();
+                tenNV = tennv;
+            }
             this.Close();
         }
 
-        private void saveNhanVien()
+        private bool saveNhanVien()
         {
             try
             {
@@ -139,18 +175,18 @@ namespace MTPMSWIN.View
                 if (iRs == -1)
                 {
                     Utils.showMessage("Dữ liệu không thể cập nhật. Vui lòng kiểm tra lại.", "Thông báo");
-                    //return;
+                    return false;
                 }
                 else
                 {
                     Utils.showMessage("Dữ liệu cập nhật thành công.", "Thông báo");
-                    
+                    return true;
                 }
             }
             catch (Exception ex)
             {
                 Utils.showMessage("Lỗi kết nối cơ sở dữ liệu", "Thông báo");
-                return;
+                return false;
             }
         }
 

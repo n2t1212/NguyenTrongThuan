@@ -1,11 +1,10 @@
-﻿<Window x:Class="MTPMSWIN.View.DM_TaiKhoan"
+﻿<Window x:Class="MTPMSWIN.View.DM_NhanVien"
         xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
-         xmlns:System="clr-namespace:System;assembly=mscorlib"
-        Title="DM_TaiKhoan" Height="623.418" Width="1110" WindowStyle="None">
-    <Grid Margin="0,0,0,2" Background="#FFE4ECF7" Loaded="Grid_Loaded_1" PreviewKeyDown="Grid_PreviewKeyDown_1">
+        Title="DM_NhanVien" Height="623.418" Width="1110" WindowStyle="None">
+    <Grid Loaded="GridForm_Loaded" Margin="0,0,0,2" Background="#FFE4ECF7" PreviewKeyDown="Grid_PreviewKeyDown_1">
         <Grid x:Name="Toolbar" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="55" Margin="0,520,0,0">
             <Button x:Name="cmdIn" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Right" Margin="0,8,540,0" VerticalAlignment="Top" Width="110" Click="cmdSave_Click" Height="37" Visibility="Hidden">
                 <StackPanel Orientation="Horizontal">
@@ -57,18 +56,26 @@
                 <ColumnDefinition Width="81*"/>
             </Grid.ColumnDefinitions>
         </Grid>
-        <dxg:GridControl x:Name="grdTaiKhoan" AutoPopulateColumns="False" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="515" ShowBorder="False" >
+        <dxg:GridControl x:Name="grdNhanVien" AutoPopulateColumns="False" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="515" ShowBorder="False" >
             <dxg:GridControl.View>
                 <dxg:TableView x:Name="tblView" FocusedRowChanged="tblView_FocusedRowChanged" InitNewRow="tblView_InitNewRow"  NewItemRowCellStyle="{DynamicResource NewItemRow}" InvalidRowException="tblView_InvalidRowException" CellValueChanging="tblView_CellValueChanging" ValidateRow="tblView_ValidateRow" ExpandDetailButtonWidth="14" ShowGroupPanel="False" RowMinHeight="25" IndicatorWidth="25" HeaderPanelMinHeight="45"
     				NavigationStyle="Row" PreviewKeyDown="tblView_PreviewKeyDown_1"/>
 
             </dxg:GridControl.View>
             <dxg:GridControl.Columns>
-                <dxg:GridColumn x:Name="colMatk" FieldName="Matk" Header="Mã TK" Width="150" HorizontalHeaderContentAlignment="Center" />
-                <dxg:GridColumn x:Name="colManhom" FieldName="Manhom" Header="Mã nhóm" Width="150" HorizontalHeaderContentAlignment="Center"/>
-                <dxg:GridColumn x:Name="colTaikhoan" FieldName="Taikhoan" Header="Tài khoản" Width="250" HorizontalHeaderContentAlignment="Center"/>
-                <dxg:GridColumn x:Name="colTietkhoan" FieldName="Tietkhoan" Header="Tiết khoản" Width="150" HorizontalHeaderContentAlignment="Center"/>
-                <dxg:GridColumn x:Name="colCandoi" FieldName="Candoi" Header="Cân đối" Width="200" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colManvid" FieldName="Manvid" Header="ID" Width="180" HorizontalHeaderContentAlignment="Center" Visible="False"/>
+                <dxg:GridColumn x:Name="colManv" FieldName="Manv" Header="Mã nhân viên" Width="120" HorizontalHeaderContentAlignment="Center">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:TextEditSettings CharacterCasing="Upper"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="colTennv" FieldName="Tennv" Header="Họ tên" Width="180" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colNgaysinh" FieldName="Ngaysinh" Header="Ngày sinh" Width="150" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colDiachi" FieldName="Diachi" Header="Địa chỉ" Width="150" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colDienthoai" FieldName="Dienthoai" Header="Điện thoại" Width="150" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colEmail" FieldName="Email" Header="Email" Width="150" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colNgaythuviec" FieldName="Ngaythuviec" Header="Ngày thử việc" Width="150" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colNgaychinhthuc" FieldName="Ngaychinhthuc" Header="Ngày chính thức" Width="150" HorizontalHeaderContentAlignment="Center"/>
             </dxg:GridControl.Columns>
 
         </dxg:GridControl>

@@ -70,7 +70,7 @@ namespace MTPMSWIN.View
                 arrPara[2].Value = pDenNgay;
                 arrPara[3] = new SqlParameter("@NGUOIDUNG", SqlDbType.NVarChar, 50);
                 arrPara[3].Value = MTGlobal.MT_USER_LOGIN;
-                oTblTC = new MTSQLServer().wRead("NX_shwPhieuTCList", arrPara);
+                oTblTC = new MTSQLServer().wRead("TC_shwPhieuTCList", arrPara);
 
                 grdPhieuTC.ItemsSource = oTblTC;
                 MTGlobal.SetGridReadOnly(grdPhieuTC, tblViewTCList, true);
@@ -82,7 +82,7 @@ namespace MTPMSWIN.View
         {
             try
             {
-                String mSql = String.Format("SELECT * FROM NX_PHIEUTCCT where phieutcid='{0}' ORDER BY Phieutcctid asc", mPhieuID);
+                String mSql = String.Format("SELECT * FROM TC_PHIEUTCCT where phieutcid='{0}' ORDER BY Phieutcctid asc", mPhieuID);
                 DataTable oTblNXCT = new MTSQLServer().wRead(mSql, null, false);
                 grdPhieuTCCT.ItemsSource = oTblNXCT;
                 MTGlobal.SetGridReadOnly(grdPhieuTCCT, tblViewTCCT, true);
@@ -121,9 +121,9 @@ namespace MTPMSWIN.View
                 }
                 else if (pLoaiPhieu == MTGlobal.PC)
                 {
-                    //TC_PhieuChi ofrmPC = new TC_PhieuChi(pPhieuID, this.pLoaiPhieu, this.pTuNgay, this.pDenNgay, MTROLE, isNew);
-                    //ofrmPC.ShowDialog();
-                    //BindData();
+                    TC_PhieuChi ofrmPC = new TC_PhieuChi(pPhieuID, this.pLoaiPhieu, this.pTuNgay, this.pDenNgay, MTROLE, isNew);
+                    ofrmPC.ShowDialog();
+                    BindData();
                 }
             }
             catch (Exception ex) { Utils.showMessage(ex.Message.ToString(), "Thông báo lỗi"); }
@@ -195,6 +195,11 @@ namespace MTPMSWIN.View
                 }
             }
             catch (Exception ex) { ex.Data.Clear(); }
+        }
+
+        private void grdPhieuTC_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            fChitietPhieu();
         }
     }
 }

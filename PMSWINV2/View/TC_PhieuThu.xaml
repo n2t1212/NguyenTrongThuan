@@ -28,7 +28,7 @@
             <Button Content="X" HorizontalAlignment="Right" VerticalAlignment="Center" x:Name="cmdExitApp" Height="25" Width="41" Click="cmdExitApp_Click" BorderThickness="1" Cursor="Hand" ForceCursor="False" ToolTip="Close" Margin="0,6,10,10" Foreground="White" FontSize="15" FontWeight="Bold" Background="{x:Null}" BorderBrush="#FFDCE2FB" HorizontalContentAlignment="Center"/>
         </Grid>
 
-        <Grid Margin="15,45,15,56" PreviewKeyDown="Grid_PreviewKeyDown_1">
+        <Grid Margin="20,46,10,55" PreviewKeyDown="Grid_PreviewKeyDown_1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="113*"/>
             </Grid.RowDefinitions>
@@ -38,36 +38,51 @@
                 <ColumnDefinition Width="539*"/>
                 <ColumnDefinition Width="15*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="Đối tượng" HorizontalAlignment="Left" Height="31" Margin="446,52,0,0" VerticalAlignment="Top" Width="77" Grid.Column="1"/>
-            <dxe:TextEdit Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="534,52,0,0" VerticalAlignment="Top" Width="192" x:Name="txtMaDT" LostFocus="txtMaDT_LostFocus_1" PreviewKeyDown="txtMaDT_PreviewKeyDown_1"/>
-            <dxe:TextEdit Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="726,52,0,0" VerticalAlignment="Top" Width="327" x:Name="txtTenDoiTuong" PreviewKeyDown="txtTenDoiTuong_PreviewKeyDown_1"/>
-            <Label Content="Người nộp" HorizontalAlignment="Left" Height="31" Margin="446,84,0,0" VerticalAlignment="Top" Width="77" RenderTransformOrigin="0.553,2.5" Grid.Column="1"/>
-            <dxe:TextEdit Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="534,84,0,0" VerticalAlignment="Top" Width="519" x:Name="txtHoTen" PreviewKeyDown="txtHoTen_PreviewKeyDown_1"/>
-            <Label Content="Địa chỉ" HorizontalAlignment="Left" Height="31" Margin="446,116,0,0" VerticalAlignment="Top" Width="77" Grid.Column="1"/>
-            <dxe:TextEdit Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="534,116,0,0" VerticalAlignment="Top" Width="519" x:Name="txtDiaChi" PreviewKeyDown="txtDiaChi_PreviewKeyDown_1"/>
-            <Label Content="Lý do nộp" HorizontalAlignment="Left" Height="31" Margin="446,148,0,0" VerticalAlignment="Top" Width="77" Grid.Column="1"/>
-            <dxe:TextEdit Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="534,148,0,0" VerticalAlignment="Top" Width="192" x:Name="txtMaLD" LostFocus="txtMaLD_LostFocus_1" PreviewKeyDown="txtMaLD_PreviewKeyDown_1"/>
-            <dxe:TextEdit Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="726,148,0,0" VerticalAlignment="Top" Width="327" x:Name="txtLD" PreviewKeyDown="txtLD_PreviewKeyDown_1"/>
-            <Label Content="Ngày chứng từ" HorizontalAlignment="Left" Height="31" Margin="100,85,0,0" VerticalAlignment="Top" Width="126" Grid.ColumnSpan="2"/>
-            <Label Content="Số chứng từ" HorizontalAlignment="Left" Height="31" Margin="100,54,0,0" VerticalAlignment="Top" Width="126" Grid.ColumnSpan="2"/>
-            <dxe:TextEdit Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="106,53,0,0" VerticalAlignment="Top" Width="233" x:Name="txtSoCT" PreviewKeyDown="txtSoCT_PreviewKeyDown_1"/>
-            <Label Content="Ngày phát sinh" HorizontalAlignment="Left" Height="31" Margin="100,117,0,0" VerticalAlignment="Top" Width="126" Grid.ColumnSpan="2"/>
-            <dxe:DateEdit Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="106,85,0,0" VerticalAlignment="Top" Width="233" x:Name="txtNgayCT" PreviewKeyDown="txtNgayCT_PreviewKeyDown_1"/>
-            <dxe:DateEdit Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="106,117,0,0" VerticalAlignment="Top" Width="233" x:Name="txtNgayPS" PreviewKeyDown="txtNgayPS_PreviewKeyDown_1"/>
-            <Label Content="Ghi chú" HorizontalAlignment="Left" Height="31" Margin="446,181,0,0" VerticalAlignment="Top" Width="76" Grid.Column="1"/>
-            <dxe:TextEdit HorizontalAlignment="Left" Height="31" Margin="534,180,0,0" VerticalAlignment="Top" Width="519" Name="txtGhiChu" PreviewKeyDown="txtGhiChu_PreviewKeyDown_1" Grid.Column="1"/>
-            <Label Content="Nguyên tệ" HorizontalAlignment="Left" Height="29" Margin="100,149,0,0" VerticalAlignment="Top" Width="88" Grid.ColumnSpan="2"/>
-            <dxe:ComboBoxEdit Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="106,149,0,0" VerticalAlignment="Top" Width="72" Name="cbNguyenTe" PreviewKeyDown="cbNguyenTe_PreviewKeyDown_1">
+
+            <GroupBox Grid.ColumnSpan="2" Header="Thông tin chung" HorizontalAlignment="Left" Height="263" Margin="21,10,0,0" VerticalAlignment="Top" Width="695">
+                <Grid HorizontalAlignment="Left" Margin="0,11,0,0" Width="671">
+                    <Label Content="Đối tượng" HorizontalAlignment="Left" Height="31" Margin="45,12,0,0" VerticalAlignment="Top" Width="77"/>
+                    <dxe:TextEdit HorizontalAlignment="Left" Height="31" Margin="132,13,0,0" VerticalAlignment="Top" Width="192" x:Name="txtMaDT" LostFocus="txtMaDT_LostFocus_1" PreviewKeyDown="txtMaDT_PreviewKeyDown_1"/>
+                    <Button Name="btnAddDT" Content="+" HorizontalAlignment="Left" Height="31" Margin="616,13,0,0" VerticalAlignment="Top" Width="35" Click="btnAddDT_Click"/>
+                    <dxe:TextEdit HorizontalAlignment="Left" Height="31" Margin="324,13,0,0" VerticalAlignment="Top" Width="292" x:Name="txtTenDoiTuong" PreviewKeyDown="txtTenDoiTuong_PreviewKeyDown_1"/>
+                    <Label Content="Người nộp" HorizontalAlignment="Left" Height="31" Margin="45,44,0,0" VerticalAlignment="Top" Width="77" RenderTransformOrigin="0.553,2.5"/>
+                    <dxe:TextEdit HorizontalAlignment="Left" Height="31" Margin="132,45,0,0" VerticalAlignment="Top" Width="519" x:Name="txtHoTen" PreviewKeyDown="txtHoTen_PreviewKeyDown_1"/>
+                    <Label Content="Địa chỉ" HorizontalAlignment="Left" Height="31" Margin="45,76,0,0" VerticalAlignment="Top" Width="77"/>
+                    <dxe:TextEdit HorizontalAlignment="Left" Height="31" Margin="132,77,0,0" VerticalAlignment="Top" Width="519" x:Name="txtDiaChi" PreviewKeyDown="txtDiaChi_PreviewKeyDown_1"/>
+                    <Label Content="Lý do nộp" HorizontalAlignment="Left" Height="31" Margin="45,108,0,0" VerticalAlignment="Top" Width="77"/>
+                    <dxe:TextEdit HorizontalAlignment="Left" Height="31" Margin="132,109,0,0" VerticalAlignment="Top" Width="192" x:Name="txtMaLD" LostFocus="txtMaLD_LostFocus_1" PreviewKeyDown="txtMaLD_PreviewKeyDown_1"/>
+                    <dxe:TextEdit HorizontalAlignment="Left" Height="31" Margin="324,109,0,0" VerticalAlignment="Top" Width="327" x:Name="txtLD"/>
+                    <Label Content="NV thu nợ" HorizontalAlignment="Left" Height="31" Margin="45,141,0,0" VerticalAlignment="Top" Width="77"/>
+                    <dxe:TextEdit Name="txtManv" HorizontalAlignment="Left" Height="31" Margin="132,141,0,0" VerticalAlignment="Top" Width="192" PreviewKeyDown="txtManv_PreviewKeyDown_1" LostFocus="txtManv_LostFocus_1"/>
+                    <dxe:TextEdit Name="txtTennv" HorizontalAlignment="Left" Height="31" Margin="325,141,0,0" VerticalAlignment="Top" Width="293" PreviewKeyDown="txtTennv_PreviewKeyDown"/>
+                    <Button Content="+" Name="btnAddNV" HorizontalAlignment="Left" Height="31" Margin="619,141,0,0" VerticalAlignment="Top" Width="34" RenderTransformOrigin="0.471,0.222" Click="btnAddNV_Click"/>
+                    <Label Content="Ghi chú" HorizontalAlignment="Left" Height="31" Margin="45,173,0,0" VerticalAlignment="Top" Width="76"/>
+                    <dxe:TextEdit HorizontalAlignment="Left" Height="31" Margin="132,173,0,0" VerticalAlignment="Top" Width="519" Name="txtGhiChu" PreviewKeyDown="txtGhiChu_PreviewKeyDown_1"/>
+                </Grid>
+            </GroupBox>
+            <GroupBox Grid.Column="1" Header="Chứng từ" HorizontalAlignment="Left" Height="263" Margin="661,10,0,0" VerticalAlignment="Top" Width="398">
+                <Grid HorizontalAlignment="Left" Height="180" Margin="4,1,0,0" VerticalAlignment="Top" Width="378">
+                    <Label Content="Số chứng từ" HorizontalAlignment="Left" Height="31" Margin="0,26,0,0" VerticalAlignment="Top" Width="233"/>
+                    <dxe:TextEdit Name="txtSoPhieu" HorizontalAlignment="Left" Height="31" Margin="117,25,0,0" VerticalAlignment="Top" Width="238"/>
+                    <Label Content="Số chứng từ gốc" HorizontalAlignment="Left" Height="31" Margin="0,58,0,0" VerticalAlignment="Top" Width="233"/>
+                    <dxe:TextEdit HorizontalAlignment="Left" Height="31" Margin="117,57,0,0" VerticalAlignment="Top" Width="238" x:Name="txtSoCT" PreviewKeyDown="txtSoCT_PreviewKeyDown_1"/>
+                    <Label Content="Ngày chứng từ" HorizontalAlignment="Left" Height="31" Margin="0,88,0,0" VerticalAlignment="Top" Width="233"/>
+                    <dxe:DateEdit HorizontalAlignment="Left" Height="31" Margin="117,88,0,0" VerticalAlignment="Top" Width="238" x:Name="txtNgayCT" PreviewKeyDown="txtNgayCT_PreviewKeyDown_1"/>
+                    <Label Content="Ngày hoạch toán" HorizontalAlignment="Left" Height="31" Margin="0,120,0,0" VerticalAlignment="Top" Width="233"/>
+                    <dxe:DateEdit HorizontalAlignment="Left" Height="31" Margin="117,120,0,0" VerticalAlignment="Top" Width="238" x:Name="txtNgayPS" PreviewKeyDown="txtNgayPS_PreviewKeyDown_1"/>
+                </Grid>
+
+            </GroupBox>
+
+            <Label Content="Loại tiền" HorizontalAlignment="Left" Height="29" Margin="665,286,0,0" VerticalAlignment="Top" Width="88" Grid.Column="1"/>
+            <dxe:ComboBoxEdit Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="753,287,0,0" VerticalAlignment="Top" Width="72" Name="cbNguyenTe" PreviewKeyDown="cbNguyenTe_PreviewKeyDown_1">
                 <System:String>VND</System:String>
                 <System:String>USD</System:String>
             </dxe:ComboBoxEdit>
-            <Label Content="Tỷ giá" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="186,150,0,0" VerticalAlignment="Top" Width="52"/>
-            <dxe:TextEdit Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="243,149,0,0" VerticalAlignment="Top" Width="96" Name="txtTyGia" PreviewKeyDown="txtTyGia_PreviewKeyDown_1"/>
-            <Label Content="NV thu nợ" HorizontalAlignment="Left" Height="31" Margin="100,178,0,0" VerticalAlignment="Top" Width="295" Grid.ColumnSpan="2"/>
-            <dxe:TextEdit Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="106,178,0,0" VerticalAlignment="Top" Width="233" PreviewKeyDown="TextEdit_PreviewKeyDown_1"/>
-            <Label Content="Số phiếu" HorizontalAlignment="Left" Height="28" Margin="100,24,0,0" VerticalAlignment="Top" Width="98" Grid.ColumnSpan="2"/>
-            <dxe:TextEdit Name="txtSoPhieu" Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="106,21,0,0" VerticalAlignment="Top" Width="233"/>
-            <dx:DXTabControl Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="349" Margin="35,266,0,0" VerticalAlignment="Top" Width="1147">
+            <Label Content="Tỷ giá" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="840,287,0,0" VerticalAlignment="Top" Width="52"/>
+            <dxe:TextEdit Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="910,287,0,0" VerticalAlignment="Top" Width="125" Name="txtTyGia" PreviewKeyDown="txtTyGia_PreviewKeyDown_1"/>
+            
+            <dx:DXTabControl Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="311" Margin="35,321,0,0" VerticalAlignment="Top" Width="1147">
                 <dx:DXTabItem Header="Hạch toán">
                     <Grid>
                         <dxg:GridControl Name="grdPhieuThuCT" AutoPopulateColumns="False" HorizontalAlignment="Left" Margin="0,27,0,10" VerticalAlignment="Stretch" Width="1123">
@@ -76,25 +91,28 @@
                                 <dxg:GridColumn Name="colDiengiai" FieldName="Diengiai" Header="Diễn giải" Width="250" HorizontalHeaderContentAlignment="Center"/>
                                 <dxg:GridColumn Name="colTKNo" FieldName="TKNo" Header="TK Nợ" Width="100" HorizontalHeaderContentAlignment="Center"/>
                                 <dxg:GridColumn x:Name="colTKCo" FieldName="TKCo" Header="TK Có" Width="100" HorizontalHeaderContentAlignment="Center"/>
-                                <dxg:GridColumn Name="colThanhtien" FieldName="Thanhtien" Header="Số tiền" Width="100" HorizontalHeaderContentAlignment="Center"/>
-                                <dxg:GridColumn Name="colMadt" FieldName="Madt" Header="Mã đối tượng" Width="100" HorizontalHeaderContentAlignment="Center"/>
-                                <dxg:GridColumn Name="colMatk" FieldName="Matk" Header="Mã tài khoản" Width="100" HorizontalHeaderContentAlignment="Center"/>
-                                <dxg:GridColumn Name="colMacp" FieldName="Macp" Header="Mã chi phí" Width="100" HorizontalHeaderContentAlignment="Center"/>
+                                <dxg:GridColumn Name="colThanhtien" FieldName="Thanhtien" Header="Số tiền" Width="200" HorizontalHeaderContentAlignment="Center">
+                                    <dxg:GridColumn.EditSettings>
+                                        <dxe:TextEditSettings Mask="n0"  MaskType="Numeric" MaskUseAsDisplayFormat="True"/>
+                                    </dxg:GridColumn.EditSettings>
+                                </dxg:GridColumn>
+                                <!--<dxg:GridColumn Name="colMadt" FieldName="Madt" Header="Mã đối tượng" Width="100" Visible="False" HorizontalHeaderContentAlignment="Center"/>
+                                <dxg:GridColumn Name="colMatk" FieldName="Matk" Header="Mã tài khoản" Width="100" Visible="False" HorizontalHeaderContentAlignment="Center"/>-->
+                                <dxg:GridColumn Name="colMacp" FieldName="Macp" Header="Mã chi phí" Width="100" Visible="False" HorizontalHeaderContentAlignment="Center"/>
                                 <dxg:GridColumn Name="colNguyenTe" FieldName="Nguyente" Header="Nguyên tệ" Width="100" HorizontalHeaderContentAlignment="Center"/>
                                 <dxg:GridColumn Name="colSoHD" FieldName="SoHD" Header="Số HĐ" Width="100" HorizontalHeaderContentAlignment="Center"/>
                                 <dxg:GridColumn Name="colNChono" FieldName="NChono" Header="Số ngày cho nợ" Width="120" HorizontalHeaderContentAlignment="Center"/>
                             </dxg:GridControl.Columns>
                             <dxg:GridControl.View>
-                                <dxg:TableView Name="tblView" ShowTotalSummary="True" ShowGroupPanel="False" Margin="0,-9,0,0"/>
+                                <dxg:TableView Name="tblView" ShowTotalSummary="True" ShowGroupPanel="False" Margin="0,-9,0,0" PreviewKeyDown="tblView_PreviewKeyDown_1" InitNewRow="tblView_InitNewRow"/>
                             </dxg:GridControl.View>
                         </dxg:GridControl>
                     </Grid>
                 </dx:DXTabItem>
-                <dx:DXTabItem Header="Thuế">
+                <!--<dx:DXTabItem Header="2. Thuế">
                     
-                </dx:DXTabItem>
+                </dx:DXTabItem>-->
             </dx:DXTabControl>
-
         </Grid>
 
         <Grid x:Name="Toolbar" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Height="54" Margin="0,0,0,10">

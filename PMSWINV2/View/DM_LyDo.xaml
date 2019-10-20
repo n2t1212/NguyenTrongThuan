@@ -68,7 +68,10 @@
                         <dxe:TextEditSettings CharacterCasing="Upper"/>
                     </dxg:GridColumn.EditSettings>
                 </dxg:GridColumn>
-                <dxg:GridColumn x:Name="colLydo" FieldName="Lydo" Header="Lý Do" Width="750" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colLydo" FieldName="Lydo" Header="Lý Do" Width="150" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colLoai" FieldName="Loai" Header="Loại" Width="150" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colTKNo" FieldName="TKNo" Header="TK Nợ" Width="150" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colTKCo" FieldName="TKCo" Header="TK Có" Width="150" HorizontalHeaderContentAlignment="Center"/>
             </dxg:GridControl.Columns>
 
         </dxg:GridControl>
