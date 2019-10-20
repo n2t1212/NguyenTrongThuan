@@ -22,10 +22,10 @@ namespace MTPMSWIN.View
     /// Interaction logic for HT_PhucHoi.xaml
     /// </summary>
     public partial class HT_TaoKetNoi : Window
-    {
-        private string restoreFile = "";
+    {      
         private SqlConnection testSQLConnection;
 
+        private string FILE_RESTORE = "";
         private string SERVER = "";
         private string USERNAME = "";
         private string PASSWORD = "";
@@ -41,16 +41,30 @@ namespace MTPMSWIN.View
         private void formLoad(object sender, RoutedEventArgs e)
         {
             //initCSDLCombobox();
-            initServerCombobox();
+            SERVER = MTGlobal.ReadRegistryKey(MTGlobal.MT_REGKEY_SECTION_SQL, MTGlobal.MT_REGKEY_DBHOST, "");
+            DBNAME = MTGlobal.ReadRegistryKey(MTGlobal.MT_REGKEY_SECTION_SQL, MTGlobal.MT_REGKEY_DBNAME, "");
+            USERNAME = MTGlobal.ReadRegistryKey(MTGlobal.MT_REGKEY_SECTION_SQL, MTGlobal.MT_REGKEY_DBUSER, "");
+            PASSWORD = MTGlobal.ReadRegistryKey(MTGlobal.MT_REGKEY_SECTION_SQL, MTGlobal.MT_REGKEY_DBPASS, "");
+
+            cmdCreateData.Visibility = Visibility.Hidden;
+            txtDB.Text = DBNAME;
+            txtUsername.Text = USERNAME;
+            txtPassword.Text = PASSWORD;
+            if (txtDB.Text != ""){
+                cmdSelectFile.IsEnabled = false;         
+            }
+            else {
+                cmdSelectFile.IsEnabled = true;
+            }
+
+            initServerCombobox();  
         }
 
-        private bool isConnection(string connectionStr)
-        {
-            try
-            {
+        private bool isConnection(string connectionStr){
+            try{
                 using (SqlConnection conn = new SqlConnection(connectionStr))
                 {
-                    conn.Open(); // throws if invalid
+                    conn.Open(); 
                     return true;
                 }
             }
@@ -60,10 +74,7 @@ namespace MTPMSWIN.View
             }
         }
 
-        
-
-        private void initServerCombobox()
-        {
+        private void initServerCombobox(){
             List<string> lstServer  = this.ListLocalSqlInstances().ToList();
             int count = lstServer.Count;
             List<ServerSQL> dsServer = new List<ServerSQL>();
@@ -77,45 +88,7 @@ namespace MTPMSWIN.View
 
             cbcServer.ItemsSource = dsServer;
         }
-
-        //private void initCSDLCombobox()
-        //{
-        //    List<string> lstCSDL = new List<string>();
-        //    try
-        //    {
-        //        string connectionString = string.Format(@"Data Source={0};Persist Security Info=True;User ID={1};Password={2};Max Pool Size=2000", ".\\SQL2008", "sa", "123456789");
-        //        using (SqlConnection con = new SqlConnection(connectionString))
-        //        {
-        //            con.Open();
-        //            using (SqlCommand cmd = new SqlCommand("SELECT name from sys.databases", con))
-        //            {
-        //                using (SqlDataReader dr = cmd.ExecuteReader())
-        //                {
-        //                    while (dr.Read())
-        //                    {
-        //                        lstCSDL.Add(dr[0].ToString());
-        //                    }
-        //                }
-        //            }
-        //        }  
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        var a = ex.ToString();
-        //    }
-        //    int count = lstCSDL.Count;
-        //    List<CSDL> dsCSDL = new List<CSDL>();
-        //    if (count > 0)
-        //    {
-        //        for (int i = 0; i < count; i++)
-        //        {
-        //            dsCSDL.Add(new CSDL() { name = lstCSDL[i] });
-        //        }
-        //    }
-
-        //    cbDB.ItemsSource = dsCSDL;
-        //}
-
+         
         public class DatabaseSystem
         {
             public string name { get; set; }
@@ -213,13 +186,7 @@ namespace MTPMSWIN.View
             }
         }
 
-        private void txtDatabase_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter)
-            {
-                (sender as FrameworkElement).MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
-            }
-        }
+     
 
         private void GRID_PRINT_TOP_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -228,26 +195,18 @@ namespace MTPMSWIN.View
 
         private void cmdConnect_Click(object sender, RoutedEventArgs e)
         {
-            if (((MTPMSWIN.View.HT_TaoKetNoi.ServerSQL)(cbcServer.SelectedItem)) == null)
-            {
-                Utils.showMessage("Vui lòng chọn server", "Thông báo");
-                cbcServer.Focus();
-                return;
-            }
-
-            //if (((MTPMSWIN.View.HT_TaoKetNoi.CSDL)(cbDB.SelectedItem)) == null)
-            //{
-            //    Utils.showMessage("Vui lòng chọn CSDL", "Thông báo");
-            //    cbDB.Focus();
-            //    return;
-            //}
-
-            SERVER = ((MTPMSWIN.View.HT_TaoKetNoi.ServerSQL)(cbcServer.SelectedItem)).name;
-            //DBNAME = ((MTPMSWIN.View.HT_TaoKetNoi.CSDL)(cbDB.SelectedItem)).name;
+        
+            //SERVER = ((MTPMSWIN.View.HT_TaoKetNoi.ServerSQL)(cbcServer.SelectedItem)).name;           
             DBNAME = txtDB.Text.ToString().Trim();
             USERNAME = txtUsername.Text.ToString().Trim();
             PASSWORD = txtPassword.Text.ToString().Trim();
 
+            if (SERVER.Length == 0)
+            {
+                Utils.showMessage("Bạn chưa chọn Máy chủ..", "Thông báo");
+                cbcServer.Focus();
+                return;
+            }
             if (DBNAME.Length == 0)
             {
                 Utils.showMessage("CSDL không được để trống", "Thông báo");
@@ -269,61 +228,54 @@ namespace MTPMSWIN.View
                 return;
             }
 
-            string testConnectionStr = string.Format(@"Data Source={0};Initial Catalog={1};Persist Security Info=True;User ID={2};Password={3};Max Pool Size=2000", SERVER, DBNAME, USERNAME, PASSWORD);
-
-            if (isConnection(testConnectionStr))
+            try
             {
-                Utils.showMessage("Tạo kết nối thành công", "Thông báo");
-                isConnect = true;
-
-                /*MTGlobal.SetConfigKey("MT_SQL_HOST", SERVER);
-                MTGlobal.SetConfigKey("MT_SQL_DBNAME",DBNAME );
-                MTGlobal.SetConfigKey("MT_SQL_USER", USERNAME);
-                MTGlobal.SetConfigKey("MT_SQL_PASS", PASSWORD);
-                */
-                MTGlobal.WriteRegistryKey(MTGlobal.MT_REGKEY_SECTION_SQL, MTGlobal.MT_REGKEY_DBHOST, SERVER);
-                MTGlobal.WriteRegistryKey(MTGlobal.MT_REGKEY_SECTION_SQL, MTGlobal.MT_REGKEY_DBNAME, DBNAME);
-                MTGlobal.WriteRegistryKey(MTGlobal.MT_REGKEY_SECTION_SQL, MTGlobal.MT_REGKEY_DBUSER, USERNAME);
-                MTGlobal.WriteRegistryKey(MTGlobal.MT_REGKEY_SECTION_SQL, MTGlobal.MT_REGKEY_DBPASS, PASSWORD);
-                if (MTGlobal.MTAPPSTART() == true)
-                {
-                    isConnect = true;
-                    this.Close();
-                }
-                else
-                {
-                    isConnect = false;
-                }
-                return;
-            }
-            else
-            {
-                string testConnectionStr2 = string.Format(@"Data Source={0};Persist Security Info=True;User ID={1};Password={2};Max Pool Size=2000", SERVER, USERNAME, PASSWORD);
-
-                if (isConnection(testConnectionStr2))
+                DevExpress.Utils.WaitDialogForm Dlg2=null;
+                DevExpress.Utils.WaitDialogForm Dlg = new DevExpress.Utils.WaitDialogForm("Đang thiết lập kết nối đến máy chủ...", "KẾT NỐI MÁY CHỦ");
+                Dlg.Show();
+                string testConnectionStr = string.Format(@"Data Source={0};Initial Catalog={1};Persist Security Info=True;User ID={2};Password={3};Max Pool Size=2000", SERVER, DBNAME, USERNAME, PASSWORD);
+                if (isConnection(testConnectionStr))
                 {
                     MTGlobal.WriteRegistryKey(MTGlobal.MT_REGKEY_SECTION_SQL, MTGlobal.MT_REGKEY_DBHOST, SERVER);
                     MTGlobal.WriteRegistryKey(MTGlobal.MT_REGKEY_SECTION_SQL, MTGlobal.MT_REGKEY_DBNAME, DBNAME);
                     MTGlobal.WriteRegistryKey(MTGlobal.MT_REGKEY_SECTION_SQL, MTGlobal.MT_REGKEY_DBUSER, USERNAME);
                     MTGlobal.WriteRegistryKey(MTGlobal.MT_REGKEY_SECTION_SQL, MTGlobal.MT_REGKEY_DBPASS, PASSWORD);
 
-                    if (Utils.ConfirmMessage("Không thể thiết lập kết nối CSDL. Bạn có muốn tạo kết nối đến CSDL ?", "Xác nhận tạo kết nối"))
+                    if (MTGlobal.MTAPPSTART() == true)
                     {
-                        // Utils.createSQLServerUser(USERNAME, PASSWORD);
-                        lblFile.Visibility = Visibility.Visible;
-                        txtFileRestore.Visibility = Visibility.Visible;
-                        cmdSelectFile.Visibility = Visibility.Visible;
-                        cmdCreateData.Visibility = Visibility.Visible;
-                        cmdConnect.Visibility = Visibility.Hidden;
+                        Dlg.Close();
+                        isConnect = true;
+                        Utils.showMessage("Tạo kết nối thành công", "Thông báo");
+                        this.Close();
                     }
+                    else
+                    {
+                        Dlg.Close();
+                        isConnect = false;
+                        Utils.showMessage("Không thể tạo kết nối. Vui lòng kiểm tra lại...", "Thông báo");
+                    }
+                    Dlg.Close();
+                    return;
                 }
                 else
                 {
-                    Utils.showMessage("Tài khoản hoặc mật khẩu không đúng. Vui lòng kiểm tra lại", "Thông báo");
-                    isConnect = false;
-                    return;
+                    Dlg.Close();
+                    Dlg2= new DevExpress.Utils.WaitDialogForm("Đang kiểm tra tài khoản máy chủ...", "KẾT NỐI MÁY CHỦ");
+                    Dlg2.Show();
+                    string testConnectionStr2 = string.Format(@"Data Source={0};Persist Security Info=True;User ID={1};Password={2};Max Pool Size=2000", SERVER, USERNAME, PASSWORD);
+                    if (!isConnection(testConnectionStr2))
+                    {
+                        Dlg2.Close();
+                        Utils.showMessage("Tài khoản hoặc mật khẩu Máy chủ không đúng. Vui lòng kiểm tra lại", "Thông báo");
+                        isConnect = false;
+                        return;
+                    }
+                    Dlg2.Close();
                 }
+                Dlg.Close();
+                Dlg2.Close();
             }
+            catch { }
         }
 
         private void cmdExit_Click(object sender, RoutedEventArgs e)
@@ -352,25 +304,26 @@ namespace MTPMSWIN.View
             USERNAME = txtUsername.Text.ToString().Trim();
             PASSWORD = txtPassword.Text.ToString().Trim();
 
-            if (DBNAME.Length == 0)
-            {
+            if (SERVER.Length == 0) {
                 Utils.showMessage("CSDL không được để trống", "Thông báo");
+                cbcServer.Focus();
+                return;
+            }
+            if (DBNAME.Length == 0){
+                Utils.showMessage("Vui lòng nhập tên CSDL cần tạo...", "Thông báo");
+                txtDB.Focus();
+                return;
+            }
+            if (FILE_RESTORE.Length == 0){
+                Utils.showMessage("Vui lòng chọn tập tin khôi phục", "Thông báo");
                 txtDB.Focus();
                 return;
             }
 
-            if (restoreFile.Length == 0)
-            {
-                Utils.showMessage("Vui lòng chọn tập tin khôi phục", "Thông báo");
-                txtFileRestore.Focus();
-                return;
-            }
-
-            if (!Utils.validateFileType(restoreFile, Utils.BACKUP_SQL_TYPE))
+            if (!Utils.validateFileType(FILE_RESTORE, Utils.BACKUP_SQL_TYPE))
             {
                 Utils.showMessage(Utils.ERR_FILE_FORMAT(Utils.BACKUP_SQL_EXTENSION), "Thông báo");
-                txtFileRestore.Text = "";
-                cmdCreateData.IsEnabled = false;
+                txtDB.Text = ""; 
                 return;
             }
 
@@ -383,12 +336,17 @@ namespace MTPMSWIN.View
                 return;
             }
 
-            if (Utils.createAndRestoreDB(SERVER, USERNAME, PASSWORD, DBNAME, restoreFile))
+            if (Utils.createAndRestoreDB(SERVER, USERNAME, PASSWORD, DBNAME, FILE_RESTORE))
             {
-                Utils.showMessage("Tạo CSDL thành công", "Thông báo");
+                Utils.showMessage("Tạo CSDL thành công", "Thông báo");                
+                MTGlobal.WriteRegistryKey(MTGlobal.MT_REGKEY_SECTION_SQL, MTGlobal.MT_REGKEY_DBHOST, SERVER);
+                MTGlobal.WriteRegistryKey(MTGlobal.MT_REGKEY_SECTION_SQL, MTGlobal.MT_REGKEY_DBNAME, DBNAME);
+                MTGlobal.WriteRegistryKey(MTGlobal.MT_REGKEY_SECTION_SQL, MTGlobal.MT_REGKEY_DBUSER, USERNAME);
+                MTGlobal.WriteRegistryKey(MTGlobal.MT_REGKEY_SECTION_SQL, MTGlobal.MT_REGKEY_DBPASS, PASSWORD);
                 MTGlobal.MTAPPSTART();
                 isConnect = true;
                 this.Close();
+                cmdCreateData.Visibility = Visibility.Hidden;
             }
             else
             {
@@ -397,16 +355,22 @@ namespace MTPMSWIN.View
             }
         }
 
-        private void cmdSelectFile_Click(object sender, RoutedEventArgs e)
-        {
-            cmdCreateData.IsEnabled = true;
-            System.Windows.Forms.OpenFileDialog ofd = new System.Windows.Forms.OpenFileDialog();
-
-            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                restoreFile = ofd.FileName;
-                txtFileRestore.Text = restoreFile;
+        private void cmdSelectFile_Click(object sender, RoutedEventArgs e){
+            try{ 
+                System.Windows.Forms.OpenFileDialog ofd = new System.Windows.Forms.OpenFileDialog();
+                if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    FILE_RESTORE = ofd.FileName;
+                    txtDB.Text = System.IO.Path.GetFileNameWithoutExtension(ofd.FileName);        
+                    cmdCreateData.Visibility = Visibility.Visible;
+                }
             }
+            catch { }            
+        }
+
+        private void cbcServer_SelectedIndexChanged(object sender, RoutedEventArgs e)
+        {
+            SERVER = cbcServer.Text.Trim();
         }
     }
 }

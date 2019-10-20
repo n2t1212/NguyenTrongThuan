@@ -18,9 +18,7 @@ namespace MTPMSWIN.Model
         public static String SAVE_DB_OK = "Cập nhật dữ liệu thành công.";
 
         public static String ERR_UPDATE_DB = "Lỗi. Không thể cập nhật dữ liệu.";
-
-        public static String DEVICE_NOT_ACTIVE = "Phần mềm chưa được kích hoạt";
-
+         
         public static String DATA_CAN_SYNC = "Dữ liệu đang được đồng bộ với server";
 
         public static String REGISTER_OK = "Đăng kí thành công. Thông tin đang chờ server xử lý.";

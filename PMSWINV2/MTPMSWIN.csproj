@@ -247,6 +247,18 @@
     <Compile Include="MTMain.xaml.cs">
       <DependentUpon>MTMain.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Report\rptCN_CanthuCT_Sub.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptCN_CanthuCT_Sub.Designer.cs">
+      <DependentUpon>rptCN_CanthuCT_Sub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptCN_CanthuCT.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptCN_CanthuCT.Designer.cs">
+      <DependentUpon>rptCN_CanthuCT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\rptHH_Baocaonhapxuatton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -354,6 +366,12 @@
     </Compile>
     <Compile Include="View\BH_PhieuBH.xaml.cs">
       <DependentUpon>BH_PhieuBH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\dlg_ChonKhachHang.xaml.cs">
+      <DependentUpon>dlg_ChonKhachHang.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\dlg_ChonInCongno.xaml.cs">
+      <DependentUpon>dlg_ChonInCongno.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\dlg_AddKhachHang.xaml.cs">
       <DependentUpon>dlg_AddKhachHang.xaml</DependentUpon>
@@ -502,6 +520,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptCN_CanthuCT_Sub.resx">
+      <DependentUpon>rptCN_CanthuCT_Sub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptCN_CanthuCT.resx">
+      <DependentUpon>rptCN_CanthuCT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\rptHH_Baocaonhapxuatton.resx">
       <DependentUpon>rptHH_Baocaonhapxuatton.cs</DependentUpon>
     </EmbeddedResource>
@@ -574,6 +598,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\BH_PhieuBH.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\dlg_ChonKhachHang.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\dlg_ChonInCongno.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

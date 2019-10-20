@@ -753,5 +753,31 @@ namespace MTPMSWIN.Model
             catch (Exception ex) { }
         }
 
+
+        public void rptCN_BaocaoCongnophaithu(DataTable otblRpt)
+        {
+            try{
+                DevExpress.Utils.WaitDialogForm Dlg = new DevExpress.Utils.WaitDialogForm("Vui lòng chờ, hệ thống đang xử lý...", "Báo cáo bán hàng");
+
+                rptCN_CanthuCT oReport = new rptCN_CanthuCT();               
+                Dlg.Close();
+                if (otblRpt != null){
+                    oReport.DataSource = otblRpt;
+                    oReport.BindData();
+                    //oReport.Parameters["parNgayin"].Value = DateTime.Now.ToShortDateString();
+                    setParameterInfo(oReport);
+                    setFormatReport(oReport);
+                    SetMarginReport(oReport, false, 30, 30, 30, 25);
+
+                    PrintPreview oPreview = new PrintPreview();
+                    oPreview.report = oReport;
+                    oPreview.ShowDialog();
+                }
+                Dlg.Close();
+            }
+            catch (Exception ex) { }
+        }
+
+
     }
 }

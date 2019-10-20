@@ -40,7 +40,7 @@ namespace MTPMSWIN.View
 
         private void formLoad(object sender, RoutedEventArgs e)
         {
-            initCSDLCombobox();
+            //initCSDLCombobox();
             initServerCombobox();
         }
 
@@ -48,14 +48,14 @@ namespace MTPMSWIN.View
         {
             try
             {
-                testSQLConnection = new SqlConnection();
-                testSQLConnection.ConnectionString = connectionStr;
-                testSQLConnection.Open();
-                return (testSQLConnection.State == System.Data.ConnectionState.Open);
+                using (SqlConnection conn = new SqlConnection(connectionStr))
+                {
+                    conn.Open(); // throws if invalid
+                    return true;
+                }
             }
             catch (Exception ex)
             {
-                Utils.showMessage("Không thể kết nối server. Vui lòng kiểm tra lại thông tin", "Thông báo");
                 return false;
             }
         }
@@ -78,43 +78,43 @@ namespace MTPMSWIN.View
             cbcServer.ItemsSource = dsServer;
         }
 
-        private void initCSDLCombobox()
-        {
-            List<string> lstCSDL = new List<string>();
-            try
-            {
-                string connectionString = string.Format(@"Data Source={0};Persist Security Info=True;User ID={1};Password={2};Max Pool Size=2000", ".\\SQL2008", "sa", "123456789");
-                using (SqlConnection con = new SqlConnection(connectionString))
-                {
-                    con.Open();
-                    using (SqlCommand cmd = new SqlCommand("SELECT name from sys.databases", con))
-                    {
-                        using (SqlDataReader dr = cmd.ExecuteReader())
-                        {
-                            while (dr.Read())
-                            {
-                                lstCSDL.Add(dr[0].ToString());
-                            }
-                        }
-                    }
-                }  
-            }
-            catch(Exception ex)
-            {
-                var a = ex.ToString();
-            }
-            int count = lstCSDL.Count;
-            List<CSDL> dsCSDL = new List<CSDL>();
-            if (count > 0)
-            {
-                for (int i = 0; i < count; i++)
-                {
-                    dsCSDL.Add(new CSDL() { name = lstCSDL[i] });
-                }
-            }
+        //private void initCSDLCombobox()
+        //{
+        //    List<string> lstCSDL = new List<string>();
+        //    try
+        //    {
+        //        string connectionString = string.Format(@"Data Source={0};Persist Security Info=True;User ID={1};Password={2};Max Pool Size=2000", ".\\SQL2008", "sa", "123456789");
+        //        using (SqlConnection con = new SqlConnection(connectionString))
+        //        {
+        //            con.Open();
+        //            using (SqlCommand cmd = new SqlCommand("SELECT name from sys.databases", con))
+        //            {
+        //                using (SqlDataReader dr = cmd.ExecuteReader())
+        //                {
+        //                    while (dr.Read())
+        //                    {
+        //                        lstCSDL.Add(dr[0].ToString());
+        //                    }
+        //                }
+        //            }
+        //        }  
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        var a = ex.ToString();
+        //    }
+        //    int count = lstCSDL.Count;
+        //    List<CSDL> dsCSDL = new List<CSDL>();
+        //    if (count > 0)
+        //    {
+        //        for (int i = 0; i < count; i++)
+        //        {
+        //            dsCSDL.Add(new CSDL() { name = lstCSDL[i] });
+        //        }
+        //    }
 
-            cbDB.ItemsSource = dsCSDL;
-        }
+        //    cbDB.ItemsSource = dsCSDL;
+        //}
 
         public class DatabaseSystem
         {
@@ -235,17 +235,25 @@ namespace MTPMSWIN.View
                 return;
             }
 
-            if (((MTPMSWIN.View.HT_TaoKetNoi.CSDL)(cbDB.SelectedItem)) == null)
-            {
-                Utils.showMessage("Vui lòng chọn CSDL", "Thông báo");
-                cbDB.Focus();
-                return;
-            }
+            //if (((MTPMSWIN.View.HT_TaoKetNoi.CSDL)(cbDB.SelectedItem)) == null)
+            //{
+            //    Utils.showMessage("Vui lòng chọn CSDL", "Thông báo");
+            //    cbDB.Focus();
+            //    return;
+            //}
 
             SERVER = ((MTPMSWIN.View.HT_TaoKetNoi.ServerSQL)(cbcServer.SelectedItem)).name;
-            DBNAME = ((MTPMSWIN.View.HT_TaoKetNoi.CSDL)(cbDB.SelectedItem)).name;
+            //DBNAME = ((MTPMSWIN.View.HT_TaoKetNoi.CSDL)(cbDB.SelectedItem)).name;
+            DBNAME = txtDB.Text.ToString().Trim();
             USERNAME = txtUsername.Text.ToString().Trim();
             PASSWORD = txtPassword.Text.ToString().Trim();
+
+            if (DBNAME.Length == 0)
+            {
+                Utils.showMessage("CSDL không được để trống", "Thông báo");
+                txtDB.Focus();
+                return;
+            }
 
             if (USERNAME.Length == 0)
             {
@@ -263,7 +271,7 @@ namespace MTPMSWIN.View
 
             string testConnectionStr = string.Format(@"Data Source={0};Initial Catalog={1};Persist Security Info=True;User ID={2};Password={3};Max Pool Size=2000", SERVER, DBNAME, USERNAME, PASSWORD);
 
-            if (isConnection(testConnectionStr) && DBNAME == "MTSMPOS")
+            if (isConnection(testConnectionStr))
             {
                 Utils.showMessage("Tạo kết nối thành công", "Thông báo");
                 isConnect = true;
@@ -290,9 +298,31 @@ namespace MTPMSWIN.View
             }
             else
             {
-                Utils.showMessage("Tạo kết nối không thành công. Vui lòng kiểm tra lại thông tin", "Thông báo");
-                isConnect = false;
-                return;
+                string testConnectionStr2 = string.Format(@"Data Source={0};Persist Security Info=True;User ID={1};Password={2};Max Pool Size=2000", SERVER, USERNAME, PASSWORD);
+
+                if (isConnection(testConnectionStr2))
+                {
+                    MTGlobal.WriteRegistryKey(MTGlobal.MT_REGKEY_SECTION_SQL, MTGlobal.MT_REGKEY_DBHOST, SERVER);
+                    MTGlobal.WriteRegistryKey(MTGlobal.MT_REGKEY_SECTION_SQL, MTGlobal.MT_REGKEY_DBNAME, DBNAME);
+                    MTGlobal.WriteRegistryKey(MTGlobal.MT_REGKEY_SECTION_SQL, MTGlobal.MT_REGKEY_DBUSER, USERNAME);
+                    MTGlobal.WriteRegistryKey(MTGlobal.MT_REGKEY_SECTION_SQL, MTGlobal.MT_REGKEY_DBPASS, PASSWORD);
+
+                    if (Utils.ConfirmMessage("Không thể thiết lập kết nối CSDL. Bạn có muốn tạo kết nối đến CSDL ?", "Xác nhận tạo kết nối"))
+                    {
+                        // Utils.createSQLServerUser(USERNAME, PASSWORD);
+                        lblFile.Visibility = Visibility.Visible;
+                        txtFileRestore.Visibility = Visibility.Visible;
+                        cmdSelectFile.Visibility = Visibility.Visible;
+                        cmdCreateData.Visibility = Visibility.Visible;
+                        cmdConnect.Visibility = Visibility.Hidden;
+                    }
+                }
+                else
+                {
+                    Utils.showMessage("Tài khoản hoặc mật khẩu không đúng. Vui lòng kiểm tra lại", "Thông báo");
+                    isConnect = false;
+                    return;
+                }
             }
         }
 
@@ -314,6 +344,69 @@ namespace MTPMSWIN.View
         private void cbDB_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
 
+        }
+
+        private void cmdCreateData_Click(object sender, RoutedEventArgs e)
+        {
+            DBNAME = txtDB.Text.ToString().Trim();
+            USERNAME = txtUsername.Text.ToString().Trim();
+            PASSWORD = txtPassword.Text.ToString().Trim();
+
+            if (DBNAME.Length == 0)
+            {
+                Utils.showMessage("CSDL không được để trống", "Thông báo");
+                txtDB.Focus();
+                return;
+            }
+
+            if (restoreFile.Length == 0)
+            {
+                Utils.showMessage("Vui lòng chọn tập tin khôi phục", "Thông báo");
+                txtFileRestore.Focus();
+                return;
+            }
+
+            if (!Utils.validateFileType(restoreFile, Utils.BACKUP_SQL_TYPE))
+            {
+                Utils.showMessage(Utils.ERR_FILE_FORMAT(Utils.BACKUP_SQL_EXTENSION), "Thông báo");
+                txtFileRestore.Text = "";
+                cmdCreateData.IsEnabled = false;
+                return;
+            }
+
+            string testConnectionStr = string.Format(@"Data Source={0};Persist Security Info=True;User ID={1};Password={2};Max Pool Size=2000", SERVER, USERNAME, PASSWORD);
+
+            if (!isConnection(testConnectionStr))
+            {
+                Utils.showMessage("Tài khoản hoặc mật khẩu không đúng. Vui lòng kiểm tra lại", "Thông báo");
+                isConnect = false;
+                return;
+            }
+
+            if (Utils.createAndRestoreDB(SERVER, USERNAME, PASSWORD, DBNAME, restoreFile))
+            {
+                Utils.showMessage("Tạo CSDL thành công", "Thông báo");
+                MTGlobal.MTAPPSTART();
+                isConnect = true;
+                this.Close();
+            }
+            else
+            {
+                Utils.showMessage("Tạo CSDL không thành công", "Thông báo");
+                isConnect = false;
+            }
+        }
+
+        private void cmdSelectFile_Click(object sender, RoutedEventArgs e)
+        {
+            cmdCreateData.IsEnabled = true;
+            System.Windows.Forms.OpenFileDialog ofd = new System.Windows.Forms.OpenFileDialog();
+
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                restoreFile = ofd.FileName;
+                txtFileRestore.Text = restoreFile;
+            }
         }
     }
 }

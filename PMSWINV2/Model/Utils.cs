@@ -129,6 +129,17 @@ namespace MTPMSWIN.Model
             catch { return false; }
         }
 
+        public static System.Data.DataTable ChonKhachhang()
+        {
+            try
+            {
+                dlg_ChonKhachHang dlgChon = new dlg_ChonKhachHang();                
+                dlgChon.ShowDialog();
+                return dlgChon.otblChon;
+            }
+            catch { return null; }
+        }
+
         public static bool ChonPhieu(String mType){
             try{
               dlg_ChonPhieu oChonPhieu;

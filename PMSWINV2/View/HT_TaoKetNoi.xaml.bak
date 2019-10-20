@@ -13,14 +13,14 @@
         </dxe:ComboBoxEdit>
         <dxe:TextEdit Name="txtUsername" HorizontalAlignment="Left" Height="30" Margin="257,129,0,0" VerticalAlignment="Top" Width="373" Foreground="#FF030304" PreviewKeyDown="txtUsername_PreviewKeyDown"/>
         <dxe:PasswordBoxEdit  Name="txtPassword" HorizontalAlignment="Left" Height="30" Margin="257,160,0,0" VerticalAlignment="Top" Width="373" Foreground="#FF030304" PreviewKeyDown="txtPassword_PreviewKeyDown"/>
-        <Button Content="Tạo kết nối" x:Name="cmdConnect" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Left" Height="48" Margin="381,232,0,0" VerticalAlignment="Top" Width="120" FontSize="16" FontWeight="Bold" RenderTransformOrigin="-4.061,3.802" Click="cmdConnect_Click"/>
+        <Button Content="Tạo kết nối" x:Name="cmdConnect" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Left" Height="48" Margin="381,246,0,0" VerticalAlignment="Top" Width="120" FontSize="16" FontWeight="Bold" RenderTransformOrigin="-4.061,3.802" Click="cmdConnect_Click"/>
 		<dxe:TextEdit Name="txtDatabase" HorizontalAlignment="Left" Height="30" Margin="442,340,0,0" VerticalAlignment="Top" Width="302" Visibility="Hidden" Foreground="#FF030304" PreviewKeyDown="txtDatabase_PreviewKeyDown"/>
         <Label Content="CSDL" HorizontalAlignment="Left" Height="30" Margin="156,98,0,0" VerticalAlignment="Top" Width="100" FontSize="14" FontWeight="Bold"/>
-        <dxe:ComboBoxEdit x:Name="cbDB" HorizontalAlignment="Left" Height="30" Margin="257,98,0,0" VerticalAlignment="Top" Width="373" Foreground="#FF030304"
+        <!--<dxe:ComboBoxEdit x:Name="cbDB" HorizontalAlignment="Left" Height="30" Margin="257,98,0,0" VerticalAlignment="Top" Width="373" Foreground="#FF030304"
 			ItemsSource="{Binding dsCSDL}"  
 			DisplayMember="name"
-			ValueMember="name" PreviewKeyDown="cbDB_PreviewKeyDown" />
-        <Button Content="Thoát" x:Name="cmdExit" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Left" Height="48" Margin="510,232,0,0" VerticalAlignment="Top" Width="120" FontSize="16" FontWeight="Bold" RenderTransformOrigin="-4.061,3.802" Click="cmdExit_Click"/>
+			ValueMember="name" PreviewKeyDown="cbDB_PreviewKeyDown" />-->
+        <Button Content="Thoát" x:Name="cmdExit" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Left" Height="48" Margin="510,245,0,0" VerticalAlignment="Top" Width="120" FontSize="16" FontWeight="Bold" RenderTransformOrigin="-4.061,3.802" Click="cmdExit_Click"/>
         <Grid x:Name="GRID_PRINT_TOP" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="43" Margin="1,0,0,0" MouseDown="GRID_PRINT_TOP_MouseDown">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -32,5 +32,10 @@
             <Button Content="X" HorizontalAlignment="Right"  VerticalAlignment="Center" x:Name="cmdExitApp" Height="24" Width="41" Click="cmdExitApp_Click" BorderThickness="1" Cursor="Hand" ForceCursor="False" ToolTip="Close" Margin="0,5,0,14" Foreground="White" FontSize="13" Background="{x:Null}" BorderBrush="#FFDCE2FB" FontWeight="Bold"/>
             <Button Content="-" HorizontalAlignment="Right" VerticalAlignment="Center" x:Name="cmdMiniApp" Height="24" Width="41" Cursor="Hand" ForceCursor="False" ToolTip="Close" Margin="0,5,45,14" Foreground="White" FontSize="13" Background="{x:Null}" BorderBrush="#FFDCE2FB" FontWeight="Bold"/>
         </Grid>
+        <dxe:TextEdit x:Name="txtDB" HorizontalAlignment="Left" Height="30" Margin="256,98,0,0" VerticalAlignment="Top" Width="373" Foreground="#FF030304" PreviewKeyDown="txtUsername_PreviewKeyDown"/>
+        <Label Content="Chọn tập tin" x:Name="lblFile" HorizontalAlignment="Left" Height="30" Margin="155,190,0,0" VerticalAlignment="Top" Width="100" FontSize="14" FontWeight="Bold" Visibility="Hidden"/>  
+        <Button Content="Tạo CSDL" x:Name="cmdCreateData" Style="{StaticResource MyButtonAction}" HorizontalAlignment="Left" Height="48" Margin="381,246,0,0" VerticalAlignment="Top" Width="120" FontSize="16" FontWeight="Bold" RenderTransformOrigin="-4.061,3.802" Click="cmdCreateData_Click" Visibility="Hidden"/>
+        <dxe:TextEdit x:Name="txtFileRestore" HorizontalAlignment="Left" Height="30" Margin="256,190,0,0" VerticalAlignment="Top" Width="331" Foreground="#FF030304" Visibility="Hidden"/>
+        <Button Content="..." x:Name="cmdSelectFile" HorizontalAlignment="Left" Height="29" Margin="587,191,0,0" VerticalAlignment="Top" Width="42" Click="cmdSelectFile_Click" Visibility="Hidden"/>
     </Grid>
 </Window>

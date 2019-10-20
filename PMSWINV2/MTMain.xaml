@@ -257,6 +257,17 @@
                             <Image Height="45" Source="Images/Icons/pos_report_transport.png"></Image>
                         </MenuItem.Icon>
                     </MenuItem>
+
+                    <MenuItem Header="Công nợ phải thu" Name="mnuBC_CONGNOTHU" Cursor="Hand" IsEnabled="False" Style="{StaticResource MySubMenuItem}" Click="mnuBC_CONGNOTHU_Click">
+                        <MenuItem.Icon>
+                            <Image Height="45" Source="Images/Icons/pos_report_payment.png"></Image>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Công nợ phải tra" Name="mnuBC_CONGNOTRA" Cursor="Hand" IsEnabled="False" Style="{StaticResource MySubMenuItem}" Click="mnuBC_CONGNOTRA_Click">
+                        <MenuItem.Icon>
+                            <Image Height="45" Source="Images/Icons/pos_report_payment.png"></Image>
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
 
                 <MenuItem x:Name="nmuHT" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="14" HorizontalAlignment="Right" Width="102" Style="{StaticResource MyMenuItem}" Cursor="Hand">

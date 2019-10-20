@@ -36,15 +36,8 @@ namespace MTPMSWIN
             {
                 try
                 {
-                    fSetMenuMain();
-                    if (ValidateHelper.isActivePC())
-                    {
-                        activeMsg.Text = "Bản quyền: " + Utils.DATA_CAN_SYNC;
-                    }
-                    else
-                    {
-                        activeMsg.Text = "BẢN QUYỀN: " + Utils.DEVICE_NOT_ACTIVE;
-                    }
+                    fSetMenuMain();                     
+                    activeMsg.Text = "Bản quyền: " + MTGlobal.HT_POS_ACTIVE;
                     txtServerName.Text = "Máy chủ: " + MTGlobal.MT_DBHost;
                     txtDBName.Text = "CSDL:" + MTGlobal.MT_DBNAME;
 
@@ -53,6 +46,10 @@ namespace MTPMSWIN
                     if (oWorker.IsBusy == false)
                     {
                         oWorker.RunWorkerAsync(2000);
+                    }
+
+                    if (!MTGlobal.HT_POS_IS_ACTIVE){
+                        //Lock Application
                     }
                 }
                 catch (Exception ex) { Utils.showMessage("Không thể khởi tạo ứng dụng...", "Thông báo"); }
@@ -176,6 +173,29 @@ namespace MTPMSWIN
                             break;
                         case "mnuDM_KHACHHANG":
                             fRenderForm(mMENUID, "DM_KhachHang", mFormCaption);
+                            break;
+                        case "mnuDM_CHIPHI":
+                            fRenderForm(mMENUID, "DM_ChiPhi", mFormCaption);
+                            break;
+                        case "mnuDM_TAIKHOAN":
+                            fRenderForm(mMENUID, "DM_TaiKhoan", mFormCaption);
+                            break;
+                        case "mnuDM_NHANVIEN":
+                            fRenderForm(mMENUID, "DM_NhanVien", mFormCaption);
+                            break;
+                        case "mnuTC_PHIEUTHU":
+                            if (Utils.ChonThoiGian())
+                            {
+                                MTGlobal.MT_LOAIP = MTGlobal.PT;
+                                fRenderForm(mMENUID, "TC_ThuChiList", "DANH SÁCH PHIẾU THU");
+                            }
+                            break;
+                        case "mnuTC_PHIEUCHI":
+                            if (Utils.ChonThoiGian())
+                            {
+                                MTGlobal.MT_LOAIP = MTGlobal.PC;
+                                fRenderForm(mMENUID, "TC_ThuChiList", "DANH SÁCH PHIẾU CHI");
+                            }
                             break;
                     }
                 }
