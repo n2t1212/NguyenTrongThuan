@@ -753,5 +753,57 @@ namespace MTPMSWIN.Model
             catch (Exception ex) { }
         }
 
+
+        public void rptCN_BaocaoCongnophaithu(DataTable otblRpt, String mNgaydau, String mNgaycuoi)
+        {
+            try{
+                DevExpress.Utils.WaitDialogForm Dlg = new DevExpress.Utils.WaitDialogForm("Vui lòng chờ, hệ thống đang xử lý...", "Báo cáo bán hàng");
+
+                rptCN_CanthuCT oReport = new rptCN_CanthuCT();               
+                Dlg.Close();
+                if (otblRpt != null){
+                    oReport.DataSource = otblRpt;
+                    oReport.BindData();
+                    oReport.Parameters["parThangNam"].Value = String.Format("Từ ngày: {0}   đến ngày: {1} ", mNgaydau, mNgaycuoi);
+                    setParameterInfo(oReport);
+                    setFormatReport(oReport);
+                    SetMarginReport(oReport, false, 30, 30, 30, 25);
+
+                    PrintPreview oPreview = new PrintPreview();
+                    oPreview.report = oReport;
+                    oPreview.ShowDialog();
+                }
+                Dlg.Close();
+            }
+            catch (Exception ex) { }
+        }
+
+
+public void rptCN_BaocaoCongnophaithuTH(DataTable otblRpt,String mNgaydau,String mNgaycuoi)
+        {
+            try
+            {
+                DevExpress.Utils.WaitDialogForm Dlg = new DevExpress.Utils.WaitDialogForm("Vui lòng chờ, hệ thống đang xử lý...", "Báo cáo bán hàng");
+
+                rptCN_CanthuTH oReport = new rptCN_CanthuTH();
+                Dlg.Close();
+                if (otblRpt != null)
+                {
+                    oReport.DataSource = otblRpt;
+                    oReport.BindData();
+                    oReport.Parameters["parThangNam"].Value =String.Format("Từ ngày: {0}   đến ngày: {1} ",mNgaydau,mNgaycuoi);
+                    
+                    setParameterInfo(oReport);
+                    setFormatReport(oReport);
+                    SetMarginReport(oReport, true, 30, 30, 30, 25);
+
+                    PrintPreview oPreview = new PrintPreview();
+                    oPreview.report = oReport;
+                    oPreview.ShowDialog();
+                }
+                Dlg.Close();
+            }
+            catch (Exception ex) { }
+        }
     }
 }

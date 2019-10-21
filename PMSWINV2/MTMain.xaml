@@ -258,10 +258,34 @@
                         </MenuItem.Icon>
                     </MenuItem>
 
-                    <MenuItem Header="Công nợ phải thu" Name="mnuBC_CONGNOTHU" Cursor="Hand" IsEnabled="False" Style="{StaticResource MySubMenuItem}" Click="mnuBC_CONGNOTHU_Click">
+                    <!-- BAO CAO CN PHAI THU SUBITEM-->
+                    <MenuItem Name="mnuBC_PHAITHU" Header="Công nợ phải thu" Cursor="Hand" IsEnabled="False" Style="{StaticResource MySubMenuItem}">
                         <MenuItem.Icon>
                             <Image Height="45" Source="Images/Icons/pos_report_payment.png"></Image>
                         </MenuItem.Icon>
+                        <MenuItem.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel Orientation="Vertical">
+                                    <VirtualizingStackPanel.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF7AA5DC"/>
+                                            <GradientStop Color="#FFA4BEE0" Offset="0.996"/>
+                                        </LinearGradientBrush>
+                                    </VirtualizingStackPanel.Background>
+                                </VirtualizingStackPanel>
+                            </ItemsPanelTemplate>
+                        </MenuItem.ItemsPanel>
+
+                        <MenuItem Header="Công nợ phải thu - Chi tiết" Name="mnuBC_CONGNOTHU" Cursor="Hand" IsEnabled="False" Style="{StaticResource MySubMenuItem}" Click="mnuBC_CONGNOTHU_Click">
+                            <MenuItem.Icon>
+                                <Image Height="45" Source="Images/Icons/pos_report_payment.png"></Image>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Công nợ phải thu - Tổng hợp" Name="mnuBC_CONGNOTHUTH" Cursor="Hand" IsEnabled="False" Style="{StaticResource MySubMenuItem}" Click="mnuBC_CONGNOTHUTH_Click">
+                            <MenuItem.Icon>
+                                <Image Height="45" Source="Images/Icons/pos_report_payment.png"></Image>
+                            </MenuItem.Icon>
+                        </MenuItem>
                     </MenuItem>
                     <MenuItem Header="Công nợ phải tra" Name="mnuBC_CONGNOTRA" Cursor="Hand" IsEnabled="False" Style="{StaticResource MySubMenuItem}" Click="mnuBC_CONGNOTRA_Click">
                         <MenuItem.Icon>

@@ -2,16 +2,10 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" x:Class="MTPMSWIN.View.dlg_ChonInCongno"
-        Title="dlg_ChonInCongno" Height="500" Width="800" Padding="5,5,5,5" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" MouseDown="Window_MouseDown_1" Background="#FF5991E8" BorderBrush="#FF5991E8">
-    <Grid HorizontalAlignment="Right" Width="800">
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FF85A8DE" Offset="0"/>
-                <GradientStop Color="#FFFBFCE1" Offset="1"/>
-            </LinearGradientBrush>
-        </Grid.Background>
+        Title="dlg_ChonInCongno" Height="500" Width="800" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" MouseDown="Window_MouseDown_1">
+    <Grid HorizontalAlignment="Right" Width="800">      
 
-        <Grid x:Name="GRID_PRINT_TOP" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="43" Margin="5,0">
+        <Grid x:Name="GRID_PRINT_TOP" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="43">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF7AA5DC" Offset="0"/>
@@ -24,62 +18,67 @@
         </Grid>
 
 
-        <Grid x:Name="GRID_BOTTOM" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Height="54" Background="#FFE6EEF9" Margin="5,0,5,5">
-            <Button x:Name="cmdAccept" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource MyButtonAction}" Margin="259,8,420,6" Width="111" Click="cmdAccept_Click" Height="40">
+        <Grid x:Name="GRID_BOTTOM" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Height="59" Background="#FFE6EEF9" Grid.Row="1">
+            <Button x:Name="cmdAccept" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource MyButtonAction}" Margin="276,10,430,8" Width="94" Click="cmdAccept_Click" Height="41">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Images/Icons/pos_accept.png" Height="20"  Stretch="Uniform"/>
                     <Label Padding="0" Margin="5,0,0,0" Height="24" Width="46" Foreground="White" FontWeight="Normal" Content="Xem"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="cmdPrint" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource MyButtonAction}" Margin="370,8,307,6" Width="113" Click="cmdPrint_Click" Height="40">
+            <Button x:Name="cmdPrint" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource MyButtonAction}" Margin="375,10,324,8" Width="101" Click="cmdPrint_Click" Height="41">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Images/Icons/pos_print.png" Height="20"  Stretch="Uniform"/>
                     <Label Padding="0" Margin="5,0,0,0" Height="24" Width="33" Foreground="White" FontWeight="Normal" Content="In"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="cmdExit" Style="{StaticResource MyButtonAction}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="506,8,159,6"  Width="125" Click="cmdExit_Click" RenderTransformOrigin="0.5,-0.029" Height="40">
+            <Button x:Name="cmdExit" Style="{StaticResource MyButtonAction}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="524,10,164,8"  Width="112" Click="cmdExit_Click" RenderTransformOrigin="0.5,-0.029" Height="41">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Images/Icons/pos_exit.png" Height="20"  Stretch="Uniform"/>
                     <Label Padding="0" Margin="5,0,0,0" Height="24" Width="51" Foreground="White" FontWeight="Normal" Content="Thoát"/>
                 </StackPanel>
             </Button>
         </Grid>
-        <Grid x:Name="GRIDLAYOUT" Margin="5,43,5,59" HorizontalAlignment="Stretch" Background="#FFF6F8FC" RenderTransformOrigin="0.502,0.573">
+        <Grid x:Name="GRIDLAYOUT" Margin="0,43,0,59" HorizontalAlignment="Stretch" Background="#FFF6F8FC" RenderTransformOrigin="0.502,0.573" Grid.RowSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="132*"/>
                 <RowDefinition Height="132*"/>
             </Grid.RowDefinitions>
-          
-            <Grid VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="113" Background="#FFD3E5FF">
-                <Label Content="Kỳ báo cáo" HorizontalAlignment="Left" Height="29" Margin="20,20,0,0" VerticalAlignment="Top" Width="84" FontWeight="Normal" Foreground="#FF7498C6"/>
-                <ComboBox x:Name="cbKybc" HorizontalAlignment="Left" Margin="101,20,0,64" 
+
+            <GroupBox Header="      [Tham số]" HorizontalAlignment="Left" VerticalAlignment="Top" Height="130" Width="825" FontSize="14" FontWeight="Bold" Margin="-15,0,-10,0">
+                <Grid VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="102" Margin="0,0,10,0">
+                    <Label Content="Kỳ báo cáo" HorizontalAlignment="Left" Height="29" Margin="21,15,0,0" VerticalAlignment="Top" Width="84" FontWeight="Normal" Foreground="#FF7498C6"/>
+
+
+                    <ComboBox x:Name="cbKybc" HorizontalAlignment="Left" Margin="102,15,0,58" 
                       SelectedValue="{Binding Maky}"  DisplayMemberPath="Tenky"
-                      SelectedValuePath="Maky" Width="326" SelectionChanged="cbKybc_SelectionChanged" BorderBrush="#FFDDE9F7" />
+                      SelectedValuePath="Maky" Width="326" SelectionChanged="cbKybc_SelectionChanged" />
 
-                <Label Content="Từ ngày" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="29" Margin="20,63,0,0" VerticalAlignment="Top" Width="76" Foreground="#FF748BAA" FontWeight="Normal"/>
-                <dxe:DateEdit x:Name="dtpTungay" Mask="d" MaskType="DateTime" HorizontalAlignment="Left" Height="29" Margin="101,63,0,0" VerticalAlignment="Top" Width="118" RenderTransformOrigin="-0.171,0.5"/>
-                <Label Content="Đến ngày" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="29" Margin="237,63,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF748BAA" FontWeight="Normal"/>
-                <dxe:DateEdit x:Name="dtpDenngay" Mask="d" MaskType="DateTime" HorizontalAlignment="Left" Height="29" Margin="312,63,0,0" VerticalAlignment="Top" Width="115"  RenderTransformOrigin="-0.171,0.5"/>
+                    <Label Content="Từ ngày" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="32" Margin="21,58,0,0" VerticalAlignment="Top" Width="76" Foreground="#FF748BAA" FontWeight="Normal"/>
+                    <dxe:DateEdit x:Name="dtpTungay" Mask="d" MaskType="DateTime" HorizontalAlignment="Left" Height="29" Margin="102,58,0,0" VerticalAlignment="Top" Width="118" RenderTransformOrigin="-0.171,0.5" Background="#FFE7EFF9"/>
+                    <Label Content="Đến ngày" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="32" Margin="238,58,0,0" VerticalAlignment="Top" Width="75" Foreground="#FF748BAA" FontWeight="Normal"/>
+                    <dxe:DateEdit x:Name="dtpDenngay" Mask="d" MaskType="DateTime" HorizontalAlignment="Left" Height="32" Margin="313,58,0,0" VerticalAlignment="Top" Width="115"  RenderTransformOrigin="-0.171,0.5" Background="#FFE7EFF9"/>
 
-                <Label Content="Tài khoản" HorizontalAlignment="Left" Height="29" Margin="448,20,0,0" VerticalAlignment="Top" Width="84" FontWeight="Normal" Foreground="#FF7498C6"/>
+                    <Label Content="Tài khoản" HorizontalAlignment="Left" Height="29" Margin="449,15,0,0" VerticalAlignment="Top" Width="84" FontWeight="Normal" Foreground="#FF7498C6"/>
 
-                <ComboBox x:Name="cbTaikhoan" HorizontalAlignment="Left" Margin="516,20,0,64" 
+                    <ComboBox x:Name="cbTaikhoan" HorizontalAlignment="Left" Margin="517,15,0,58" 
                       SelectedValue="{Binding Matk}"  DisplayMemberPath="Tentk"
-                      SelectedValuePath="Matk" Width="247" SelectionChanged="cbTaikhoan_SelectionChanged" BorderBrush="#FFDDE9F7" />
-
-                <!--<dxe:ComboBoxEdit x:Name="cbTaikhoan" HorizontalAlignment="Left" Height="32" Margin="517,15,0,0" VerticalAlignment="Top" Width="276"  
+                      SelectedValuePath="Matk" Width="276" SelectionChanged="cbTaikhoan_SelectionChanged" />
+                    
+                    <!--<dxe:ComboBoxEdit x:Name="cbTaikhoan" HorizontalAlignment="Left" Height="32" Margin="517,15,0,0" VerticalAlignment="Top" Width="276"  
                        DisplayMember="Tentk"
                                       ValueMember="Matk" SelectedIndexChanged="cbTaikhoan_SelectedIndexChanged">
                     </dxe:ComboBoxEdit>-->
 
-                <Label Content="Loại tiền" HorizontalAlignment="Left" Height="29" Margin="447,63,0,0" VerticalAlignment="Top" Width="84" FontWeight="Normal" Foreground="#FF7498C6"/>
-                <ComboBox x:Name="cbLoaitien" HorizontalAlignment="Left" Margin="516,63,0,21" Width="84" BorderBrush="#FFDDE9F7" Background="{x:Null}">
-                    <ComboBoxItem>VND</ComboBoxItem>
-                    <ComboBoxItem>USD</ComboBoxItem>
-                </ComboBox>
-            </Grid>
-            
-            <dxg:GridControl x:Name="grdCN" AutoPopulateColumns="False" ShowBorder="False" Margin="0,113,0,0" Grid.RowSpan="2">
+                    <Label Content="Loại tiền" HorizontalAlignment="Left" Height="32" Margin="448,58,0,0" VerticalAlignment="Top" Width="84" FontWeight="Normal" Foreground="#FF7498C6"/>
+                    <ComboBox x:Name="cbLoaitien" HorizontalAlignment="Left" Margin="517,58,0,15" Width="84">
+                        <ComboBoxItem>VND</ComboBoxItem>
+                        <ComboBoxItem>USD</ComboBoxItem>
+                    </ComboBox>
+                </Grid>
+            </GroupBox>
+
+
+            <dxg:GridControl x:Name="grdCN" AutoPopulateColumns="False" ShowBorder="False" Margin="10,135,10,0" Grid.RowSpan="2">
                 <dxg:GridControl.View>
                     <dxg:TableView x:Name="tblCN" NewItemRowCellStyle="{DynamicResource NewItemRow}" ExpandDetailButtonWidth="14" ShowGroupPanel="False" NavigationStyle="Row" MultiSelectMode="Row"/>
                 </dxg:GridControl.View>

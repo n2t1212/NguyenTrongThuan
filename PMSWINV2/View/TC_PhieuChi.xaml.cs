@@ -201,7 +201,7 @@ namespace MTPMSWIN.View
                 DataTable tmpTC = new modPhieuTC().dtPhieuTC();
                 DataRow vR = tmpTC.NewRow();
                 vR["Phieutcid"] = pPhieuTCID;
-                vR["Mant"] = txtManv.Text.ToUpper();
+                vR["Mant"] = "";
                 vR["Madt"] = txtMaDT.Text.ToUpper();
                 vR["Loaiphieu"] = "PC";
                 vR["Sophieu"] = txtSoPhieu.Text;

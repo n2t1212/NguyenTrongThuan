@@ -16,7 +16,7 @@
                 <Button Content="-" HorizontalAlignment="Right" VerticalAlignment="Center" x:Name="cmdMiniApp" Height="28" Width="41" Click="cmdMiniApp_Click" BorderThickness="1" Cursor="Hand" ForceCursor="False" ToolTip="Close" Margin="0,7,61,8" Foreground="White" FontSize="15" FontWeight="Bold" Background="{x:Null}" BorderBrush="#FFDCE2FB"/>
         </Grid>
 
-        <Grid x:Name="GRIDLAYOUT" Margin="-19,43,0.333,56.333" HorizontalAlignment="Stretch" Background="#FFC6DEFF">
+        <Grid x:Name="GRIDLAYOUT" Margin="-9,43,0,56" HorizontalAlignment="Stretch" Background="#FFC6DEFF">
             <StackPanel Name="PnlNgay"  Orientation="Horizontal" HorizontalAlignment="Left"  Width="513" Margin="-11,30,0,-22" Visibility="Visible">
                 <Label Content="Từ ngày" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="30,0,0,0" FontSize="14" Foreground="#FF7E8EA4"></Label>
                 <dxe:DateEdit Name="dtpTuNgay" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="150" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,0,0,0" FontSize="14" FontWeight="Bold" Foreground="#FF333333" BorderBrush="#FF6CECB2" BorderThickness="1,0,1,1" UseLayoutRounding="False" PreviewKeyDown="dtpTuNgay_PreviewKeyDown" Background="#FFC6DEFF"/>
@@ -34,7 +34,7 @@
                 <Label Content="Chọn Năm" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Margin="125,0, 0, 0"/>
                 <dxe:TextEdit Name="txtNam" Mask="####" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,0,0,0" Width="124" Height="30" BorderBrush="#FF2DD699" MaxLength="4" MaskType="Numeric" FontSize="14" FontWeight="Bold" Foreground="#FF333333" Background="#FFC6DEFF"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,-4,0,0" Width="511" VerticalAlignment="Top" Height="48">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="-21,-4,0,0" Width="532" VerticalAlignment="Top" Height="48">
                 <StackPanel.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFC6DEFF" Offset="0"/>

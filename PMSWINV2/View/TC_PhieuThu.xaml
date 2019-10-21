@@ -43,8 +43,8 @@
                 <Grid HorizontalAlignment="Left" Margin="0,11,0,0" Width="671">
                     <Label Content="Đối tượng" HorizontalAlignment="Left" Height="31" Margin="45,12,0,0" VerticalAlignment="Top" Width="77"/>
                     <dxe:TextEdit HorizontalAlignment="Left" Height="31" Margin="132,13,0,0" VerticalAlignment="Top" Width="192" x:Name="txtMaDT" LostFocus="txtMaDT_LostFocus_1" PreviewKeyDown="txtMaDT_PreviewKeyDown_1"/>
-                    <Button Name="btnAddDT" Content="+" HorizontalAlignment="Left" Height="31" Margin="616,13,0,0" VerticalAlignment="Top" Width="35" Click="btnAddDT_Click"/>
-                    <dxe:TextEdit HorizontalAlignment="Left" Height="31" Margin="324,13,0,0" VerticalAlignment="Top" Width="292" x:Name="txtTenDoiTuong" PreviewKeyDown="txtTenDoiTuong_PreviewKeyDown_1"/>
+                    <!--<Button Name="btnAddDT" Content="+" HorizontalAlignment="Left" Height="31" Margin="616,13,0,0" VerticalAlignment="Top" Width="35" Click="btnAddDT_Click"/>-->
+                    <dxe:TextEdit HorizontalAlignment="Left" Height="31" Margin="324,13,0,0" VerticalAlignment="Top" Width="327" x:Name="txtTenDoiTuong" PreviewKeyDown="txtTenDoiTuong_PreviewKeyDown_1"/>
                     <Label Content="Người nộp" HorizontalAlignment="Left" Height="31" Margin="45,44,0,0" VerticalAlignment="Top" Width="77" RenderTransformOrigin="0.553,2.5"/>
                     <dxe:TextEdit HorizontalAlignment="Left" Height="31" Margin="132,45,0,0" VerticalAlignment="Top" Width="519" x:Name="txtHoTen" PreviewKeyDown="txtHoTen_PreviewKeyDown_1"/>
                     <Label Content="Địa chỉ" HorizontalAlignment="Left" Height="31" Margin="45,76,0,0" VerticalAlignment="Top" Width="77"/>
@@ -54,8 +54,8 @@
                     <dxe:TextEdit HorizontalAlignment="Left" Height="31" Margin="324,109,0,0" VerticalAlignment="Top" Width="327" x:Name="txtLD"/>
                     <Label Content="NV thu nợ" HorizontalAlignment="Left" Height="31" Margin="45,141,0,0" VerticalAlignment="Top" Width="77"/>
                     <dxe:TextEdit Name="txtManv" HorizontalAlignment="Left" Height="31" Margin="132,141,0,0" VerticalAlignment="Top" Width="192" PreviewKeyDown="txtManv_PreviewKeyDown_1" LostFocus="txtManv_LostFocus_1"/>
-                    <dxe:TextEdit Name="txtTennv" HorizontalAlignment="Left" Height="31" Margin="325,141,0,0" VerticalAlignment="Top" Width="293" PreviewKeyDown="txtTennv_PreviewKeyDown"/>
-                    <Button Content="+" Name="btnAddNV" HorizontalAlignment="Left" Height="31" Margin="619,141,0,0" VerticalAlignment="Top" Width="34" RenderTransformOrigin="0.471,0.222" Click="btnAddNV_Click"/>
+                    <dxe:TextEdit Name="txtTennv" HorizontalAlignment="Left" Height="31" Margin="325,141,0,0" VerticalAlignment="Top" Width="326" PreviewKeyDown="txtTennv_PreviewKeyDown"/>
+                    <!--<Button Content="+" Name="btnAddNV" HorizontalAlignment="Left" Height="31" Margin="619,141,0,0" VerticalAlignment="Top" Width="34" RenderTransformOrigin="0.471,0.222" Click="btnAddNV_Click"/>-->
                     <Label Content="Ghi chú" HorizontalAlignment="Left" Height="31" Margin="45,173,0,0" VerticalAlignment="Top" Width="76"/>
                     <dxe:TextEdit HorizontalAlignment="Left" Height="31" Margin="132,173,0,0" VerticalAlignment="Top" Width="519" Name="txtGhiChu" PreviewKeyDown="txtGhiChu_PreviewKeyDown_1"/>
                 </Grid>

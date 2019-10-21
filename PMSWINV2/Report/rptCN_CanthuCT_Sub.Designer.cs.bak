@@ -38,14 +38,13 @@
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
-            this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.parThangNam = new DevExpress.XtraReports.Parameters.Parameter();
+            this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.parTax = new DevExpress.XtraReports.Parameters.Parameter();
             this.parCompany = new DevExpress.XtraReports.Parameters.Parameter();
             this.parAddress = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow4 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.xrTableCell20 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell24 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell25 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell30 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -54,6 +53,7 @@
             this.parTel = new DevExpress.XtraReports.Parameters.Parameter();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.parNguoiLap = new DevExpress.XtraReports.Parameters.Parameter();
+            this.xrTableCell20 = new DevExpress.XtraReports.UI.XRTableCell();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -101,7 +101,6 @@
             this.crSTT.StylePriority.UseTextAlignment = false;
             this.crSTT.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.crSTT.Weight = 0.125290220551982D;
-            this.crSTT.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.crSTT_BeforePrint);
             // 
             // crNgay
             // 
@@ -171,6 +170,11 @@
             this.ReportHeader.HeightF = 26.38889F;
             this.ReportHeader.Name = "ReportHeader";
             // 
+            // parThangNam
+            // 
+            this.parThangNam.Description = "Tháng Năm";
+            this.parThangNam.Name = "parThangNam";
+            // 
             // xrLabel4
             // 
             this.xrLabel4.BorderColor = System.Drawing.Color.DimGray;
@@ -186,11 +190,6 @@
             this.xrLabel4.StylePriority.UseTextAlignment = false;
             this.xrLabel4.Text = "Bảng kê chi tiết thanh toán trong kỳ";
             this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // parThangNam
-            // 
-            this.parThangNam.Description = "Tháng Năm";
-            this.parThangNam.Name = "parThangNam";
             // 
             // parTax
             // 
@@ -229,19 +228,6 @@
             this.xrTableCell30});
             this.xrTableRow4.Name = "xrTableRow4";
             this.xrTableRow4.Weight = 0.89549646047238463D;
-            // 
-            // xrTableCell20
-            // 
-            this.xrTableCell20.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell20.Font = new System.Drawing.Font("Times New Roman", 11F);
-            this.xrTableCell20.Name = "xrTableCell20";
-            this.xrTableCell20.StylePriority.UseBorders = false;
-            this.xrTableCell20.StylePriority.UseFont = false;
-            this.xrTableCell20.StylePriority.UseTextAlignment = false;
-            this.xrTableCell20.Text = "STT";
-            this.xrTableCell20.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell20.Weight = 0.12529015111286412D;
             // 
             // xrTableCell24
             // 
@@ -310,6 +296,19 @@
             // 
             this.parNguoiLap.Description = "Người Lập";
             this.parNguoiLap.Name = "parNguoiLap";
+            // 
+            // xrTableCell20
+            // 
+            this.xrTableCell20.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell20.Font = new System.Drawing.Font("Times New Roman", 11F);
+            this.xrTableCell20.Name = "xrTableCell20";
+            this.xrTableCell20.StylePriority.UseBorders = false;
+            this.xrTableCell20.StylePriority.UseFont = false;
+            this.xrTableCell20.StylePriority.UseTextAlignment = false;
+            this.xrTableCell20.Text = "STT";
+            this.xrTableCell20.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrTableCell20.Weight = 0.12529015111286412D;
             // 
             // rptCN_CanthuCT_Sub
             // 

@@ -247,6 +247,12 @@
     <Compile Include="MTMain.xaml.cs">
       <DependentUpon>MTMain.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Report\rptCN_CanthuTH.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptCN_CanthuTH.Designer.cs">
+      <DependentUpon>rptCN_CanthuTH.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\rptCN_CanthuCT_Sub.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -372,6 +378,7 @@
     </Compile>
     <Compile Include="View\dlg_ChonInCongno.xaml.cs">
       <DependentUpon>dlg_ChonInCongno.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\dlg_AddKhachHang.xaml.cs">
       <DependentUpon>dlg_AddKhachHang.xaml</DependentUpon>
     </Compile>
@@ -518,6 +525,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+	<EmbeddedResource Include="Report\rptCN_CanthuTH.resx">
+      <DependentUpon>rptCN_CanthuTH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\rptCN_CanthuCT_Sub.resx">
       <DependentUpon>rptCN_CanthuCT_Sub.cs</DependentUpon>

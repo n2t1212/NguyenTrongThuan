@@ -85,7 +85,6 @@ namespace MTPMSWIN.View
                     dsServer.Add(new ServerSQL() { name = lstServer[i] });
                 }
             }
-
             cbcServer.ItemsSource = dsServer;
         }
          
@@ -213,14 +212,12 @@ namespace MTPMSWIN.View
                 txtDB.Focus();
                 return;
             }
-
             if (USERNAME.Length == 0)
             {
                 Utils.showMessage("Tài khoản không được bỏ trống", "Thông báo");
                 txtUsername.Focus();
                 return;
             }
-
             if (PASSWORD.Length == 0)
             {
                 Utils.showMessage("Mật khẩu không được bỏ trống", "Thông báo");
@@ -240,7 +237,6 @@ namespace MTPMSWIN.View
                     MTGlobal.WriteRegistryKey(MTGlobal.MT_REGKEY_SECTION_SQL, MTGlobal.MT_REGKEY_DBNAME, DBNAME);
                     MTGlobal.WriteRegistryKey(MTGlobal.MT_REGKEY_SECTION_SQL, MTGlobal.MT_REGKEY_DBUSER, USERNAME);
                     MTGlobal.WriteRegistryKey(MTGlobal.MT_REGKEY_SECTION_SQL, MTGlobal.MT_REGKEY_DBPASS, PASSWORD);
-
                     if (MTGlobal.MTAPPSTART() == true)
                     {
                         Dlg.Close();
@@ -277,6 +273,7 @@ namespace MTPMSWIN.View
             }
             catch { }
         }
+
 
         private void cmdExit_Click(object sender, RoutedEventArgs e)
         {
@@ -328,7 +325,6 @@ namespace MTPMSWIN.View
             }
 
             string testConnectionStr = string.Format(@"Data Source={0};Persist Security Info=True;User ID={1};Password={2};Max Pool Size=2000", SERVER, USERNAME, PASSWORD);
-
             if (!isConnection(testConnectionStr))
             {
                 Utils.showMessage("Tài khoản hoặc mật khẩu không đúng. Vui lòng kiểm tra lại", "Thông báo");
@@ -372,5 +368,6 @@ namespace MTPMSWIN.View
         {
             SERVER = cbcServer.Text.Trim();
         }
+ 
     }
 }

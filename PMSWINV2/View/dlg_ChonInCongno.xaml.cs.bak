@@ -20,14 +20,11 @@ namespace MTPMSWIN.View
         public bool isChon = false;
         private DataTable otblSrc = null;
         public DataTable otblChon = null;
-        private DataSet oDsetTH = null;
-
         private String mIsType = "";
         private String mTuNgay = "";
         private String mDenNgay = "";
         private String mMatk = "";
         private String mLoaitien = "";
-        
 
         private ObservableCollection<KyBC> oKyBC = new ObservableCollection<KyBC>();
         private ObservableCollection<Taikhoan> oTaikhoan = new ObservableCollection<Taikhoan>();
@@ -58,17 +55,13 @@ namespace MTPMSWIN.View
             mLoaitien = "VND";
 
             if (mType == "PTHU") {
-                lblTitle.Content = "Bảng chi tiết công nợ phải thu";
-            }
-            else if (mType == "PTHUTH") {
-                lblTitle.Content = "Bảng tổng hợp công nợ phải thu";
+                lblTitle.Content = "Tổng hợp công nợ phải thu";
             }
             else if (mType == "PTRA")
             {
                 lblTitle.Content = "Tổng hợp công nợ phải trả";
             }
-            else
-            {
+            else {
                 lblTitle.Content = "Tổng hợp công nợ";
             }
             setDataCombo();
@@ -82,7 +75,7 @@ namespace MTPMSWIN.View
             try
             {
                 SqlParameter[] arrPara = new SqlParameter[2];
-                arrPara[0] = new SqlParameter("@LoaiBC", SqlDbType.NVarChar, 10);
+                arrPara[0] = new SqlParameter("@LoaiBC", SqlDbType.NVarChar, 5);
                 arrPara[0].Value = this.mIsType; 
                 arrPara[1] = new SqlParameter("@Nguoidung", SqlDbType.NVarChar, 50);
                 arrPara[1].Value = MTGlobal.MT_USER_LOGIN;
@@ -181,21 +174,7 @@ namespace MTPMSWIN.View
                 arrPara[3].Value = mLoaitien;
                 arrPara[4] = new SqlParameter("@tblMADT", SqlDbType.Structured);
                 arrPara[4].Value = otblChon;
-                if (mIsType == "PTHU")
-                {
-                    oTblBC = new MTSQLServer().wRead("rptCN_CanthuCT", arrPara);
-                }
-                else if (mIsType == "PTHUTH")
-                {
-                    oDsetTH= new MTSQLServer().wDset("rptCN_CanthuTH", arrPara);
-                    if (oDsetTH != null) {
-                        oTblBC = oDsetTH.Tables[0];
-                    } 
-                }
-                else {
-                   
-                    oTblBC = new MTSQLServer().wRead("rptCN_CanthuCT", arrPara);
-                }
+                oTblBC = new MTSQLServer().wRead("rptCN_CanthuCT", arrPara);
                 grdCN.ItemsSource = oTblBC;
                 //this.Close();
             }
@@ -248,25 +227,13 @@ namespace MTPMSWIN.View
         {
             if (oTblBC != null && oTblBC.Rows.Count > 0)
             {
-                if (mIsType == "PTHU")
-                {
-                    new MTReport().rptCN_BaocaoCongnophaithu(oTblBC,mTuNgay,mDenNgay);
-                }
-                else if (mIsType == "PTHUTH") {
-                    new MTReport().rptCN_BaocaoCongnophaithuTH(oDsetTH.Tables[1],mTuNgay,mDenNgay);
-                }
+                new MTReport().rptCN_BaocaoCongnophaithu(oTblBC);
             }
             else {
                 cmdAccept_Click(sender, e);
                 if (oTblBC != null && oTblBC.Rows.Count > 0)
                 {
-                    if (mIsType == "PTHU")
-                    {
-                        new MTReport().rptCN_BaocaoCongnophaithu(oTblBC,mTuNgay,mDenNgay);
-                    }
-                    else if(mIsType=="PTHUTH"){
-                        new MTReport().rptCN_BaocaoCongnophaithuTH(oDsetTH.Tables[1],mTuNgay,mDenNgay);
-                    }
+                    new MTReport().rptCN_BaocaoCongnophaithu(oTblBC);
                 }
                 else
                 {

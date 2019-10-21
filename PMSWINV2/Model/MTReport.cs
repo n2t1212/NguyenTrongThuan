@@ -754,7 +754,7 @@ namespace MTPMSWIN.Model
         }
 
 
-        public void rptCN_BaocaoCongnophaithu(DataTable otblRpt)
+        public void rptCN_BaocaoCongnophaithu(DataTable otblRpt, String mNgaydau, String mNgaycuoi)
         {
             try{
                 DevExpress.Utils.WaitDialogForm Dlg = new DevExpress.Utils.WaitDialogForm("Vui lòng chờ, hệ thống đang xử lý...", "Báo cáo bán hàng");
@@ -764,7 +764,7 @@ namespace MTPMSWIN.Model
                 if (otblRpt != null){
                     oReport.DataSource = otblRpt;
                     oReport.BindData();
-                    //oReport.Parameters["parNgayin"].Value = DateTime.Now.ToShortDateString();
+                    oReport.Parameters["parThangNam"].Value = String.Format("Từ ngày: {0}   đến ngày: {1} ", mNgaydau, mNgaycuoi);
                     setParameterInfo(oReport);
                     setFormatReport(oReport);
                     SetMarginReport(oReport, false, 30, 30, 30, 25);
@@ -779,5 +779,64 @@ namespace MTPMSWIN.Model
         }
 
 
+        public void rptCN_BaocaoCongnophaithuTH(DataTable otblRpt,String mNgaydau,String mNgaycuoi)
+        {
+            try
+            {
+                DevExpress.Utils.WaitDialogForm Dlg = new DevExpress.Utils.WaitDialogForm("Vui lòng chờ, hệ thống đang xử lý...", "Báo cáo bán hàng");
+
+                rptCN_CanthuTH oReport = new rptCN_CanthuTH();
+                Dlg.Close();
+                if (otblRpt != null)
+                {
+                    oReport.DataSource = otblRpt;
+                    oReport.BindData();
+                    oReport.Parameters["parThangNam"].Value =String.Format("Từ ngày: {0}   đến ngày: {1} ",mNgaydau,mNgaycuoi);
+                    
+                    setParameterInfo(oReport);
+                    setFormatReport(oReport);
+                    SetMarginReport(oReport, true, 30, 30, 30, 25);
+
+                    PrintPreview oPreview = new PrintPreview();
+                    oPreview.report = oReport;
+                    oPreview.ShowDialog();
+                }
+                Dlg.Close();
+            }
+            catch (Exception ex) { }
+        }
+
+        public void rptTC_Phieuthu(String mPhieunxid)
+        {
+            try
+            {
+                DevExpress.Utils.WaitDialogForm Dlg = new DevExpress.Utils.WaitDialogForm("Vui lòng chờ, hệ thống đang xử lý...", "In phiếu nhập");
+
+                rptTC_Phieuthu oReport = new rptTC_Phieuthu();
+                SqlParameter[] arrPara = new SqlParameter[2];
+                arrPara[0] = new SqlParameter("@Phieutcid", SqlDbType.NVarChar, 50);
+                arrPara[0].Value = mPhieunxid;
+                arrPara[1] = new SqlParameter("@Nguoidung", SqlDbType.NVarChar, 50);
+                arrPara[1].Value = MTGlobal.MT_USER_LOGIN;
+                DataTable otblRpt = new MTSQLServer().wRead("rptTC_Phieuthuchi", arrPara);
+
+                Dlg.Close();
+                if (otblRpt != null)
+                {
+                    oReport.DataSource = otblRpt;
+                    oReport.BindData();
+                    setParameterInfo(oReport);
+                    setFormatReport(oReport);
+                    SetMarginReport(oReport, false, 30, 30, 30, 25);
+                    PrintPreview oPreview = new PrintPreview();
+                    oPreview.report = oReport;
+
+                    oPreview.ShowDialog();
+                }
+
+                Dlg.Close();
+            }
+            catch (Exception ex) { }
+        }
     }
 }

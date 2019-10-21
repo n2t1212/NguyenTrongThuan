@@ -37,11 +37,10 @@ namespace MTPMSWIN.Report
             crNgaychono.DataBindings.Add(new XRBinding("Text", DataSource, "Nchono", "{0:n0}"));
             crNgayDH.DataBindings.Add(new XRBinding("Text", DataSource, "Ngaydh", "{0:dd/MM/yyyy}"));
 
-            /*crSumTienDH.DataBindings.Add(new XRBinding("Text", DataSource, "Sotien", "{0:#,#}"));
+            crSumTienDH.DataBindings.Add(new XRBinding("Text", DataSource, "Sotien", "{0:#,#}"));
             crSumTienDH.Summary.Func = SummaryFunc.Sum;
             crSumTienDH.Summary.FormatString = "{0:n0}";
             crSumTienDH.Summary.Running = SummaryRunning.Group;
-            */
 
             crSotienQH.DataBindings.Add(new XRBinding("Text", DataSource, "Dudau", "{0:n0}"));
             crSotienDatra.DataBindings.Add(new XRBinding("Text", DataSource, "Datra","{0:n0}"));
@@ -106,17 +105,18 @@ namespace MTPMSWIN.Report
 
         private void crSotienDH_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
-            try{               
-                    Double iSotien = 0;
-                    Double.TryParse(GetCurrentColumnValue("Sotien").ToString(), out iSotien);
-                    mSumSotien += iSotien;     
+            try
+            {
+                Double iSotien = 0;
+                Double.TryParse(GetCurrentColumnValue("Sotien").ToString(), out iSotien);
+                mSumSotien += iSotien;
             }
             catch { }
         }
 
         private void crSumTienDH_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
-            (sender as XRLabel).Text =String.Format("{0:N0}", mSumSotien);               
+            //(sender as XRLabel).Text = mSumSotien.ToString();   
             Model.MTGlobal.BlankZero(sender);
         }
 
@@ -140,7 +140,6 @@ namespace MTPMSWIN.Report
         {
             iStt = 0;
             iPageNumber = 0;
-            mSumSotien = 0;
         }
 
         private void crNgaychono_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
@@ -156,14 +155,6 @@ namespace MTPMSWIN.Report
         private void crSotienCantra_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
             Model.MTGlobal.BlankZero(sender);
-        }
-
-        private void Detail_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
-        {
-            if (GetCurrentColumnValue("Phan").ToString() == "2")
-            {
-                e.Cancel = true;
-            }
-        }
+        } 
     }
 }

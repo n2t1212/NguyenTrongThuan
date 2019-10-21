@@ -361,6 +361,30 @@ namespace MTPMSWIN
                     Utils.showMessage("Bạn chưa chọn khách hàng cần xem...", "Lưu ý");
                 }
             }
+            private void mnuBC_CONGNOTHUTH_Click(object sender, RoutedEventArgs e)
+            {
+
+                DataTable otblChonKH = Utils.ChonKhachhang();
+                if (otblChonKH != null && otblChonKH.Rows.Count > 0)
+                {
+                    DataTable otblChon = new DataTable();
+                    otblChon.Columns.Add(new DataColumn("Maso", typeof(System.String)));
+                    foreach (DataRow vR in otblChonKH.Rows)
+                    {
+                        DataRow vsR = otblChon.NewRow();
+                        vsR[0] = vR["Makh"].ToString();
+                        otblChon.Rows.Add(vsR);
+                    }
+                    otblChon.AcceptChanges();
+
+                    dlg_ChonInCongno oCN = new dlg_ChonInCongno(otblChon,"PTHUTH");
+                    oCN.ShowDialog();
+                }
+                else
+                {
+                    Utils.showMessage("Bạn chưa chọn khách hàng cần xem...", "Lưu ý");
+                }
+            }
 
             private void mnuBC_CONGNOTRA_Click(object sender, RoutedEventArgs e)
             {
