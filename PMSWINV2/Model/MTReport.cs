@@ -838,5 +838,38 @@ namespace MTPMSWIN.Model
             }
             catch (Exception ex) { }
         }
+
+        public void rptTC_Phieuchi(String mPhieunxid)
+        {
+            try
+            {
+                DevExpress.Utils.WaitDialogForm Dlg = new DevExpress.Utils.WaitDialogForm("Vui lòng chờ, hệ thống đang xử lý...", "In phiếu nhập");
+
+                rptTC_Phieuchi oReport = new rptTC_Phieuchi();
+                SqlParameter[] arrPara = new SqlParameter[2];
+                arrPara[0] = new SqlParameter("@Phieutcid", SqlDbType.NVarChar, 50);
+                arrPara[0].Value = mPhieunxid;
+                arrPara[1] = new SqlParameter("@Nguoidung", SqlDbType.NVarChar, 50);
+                arrPara[1].Value = MTGlobal.MT_USER_LOGIN;
+                DataTable otblRpt = new MTSQLServer().wRead("rptTC_Phieuthuchi", arrPara);
+
+                Dlg.Close();
+                if (otblRpt != null)
+                {
+                    oReport.DataSource = otblRpt;
+                    oReport.BindData();
+                    setParameterInfo(oReport);
+                    setFormatReport(oReport);
+                    SetMarginReport(oReport, false, 30, 30, 30, 25);
+                    PrintPreview oPreview = new PrintPreview();
+                    oPreview.report = oReport;
+
+                    oPreview.ShowDialog();
+                }
+
+                Dlg.Close();
+            }
+            catch (Exception ex) { }
+        }
     }
 }

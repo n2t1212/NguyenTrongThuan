@@ -1,6 +1,6 @@
 ﻿namespace MTPMSWIN.Report
 {
-    partial class rptTC_Phieuthu
+    partial class rptTC_Phieuchi
     {
         /// <summary>
         /// Required designer variable.
@@ -369,7 +369,7 @@
             this.xrTableCell12.StylePriority.UseFont = false;
             this.xrTableCell12.StylePriority.UsePadding = false;
             this.xrTableCell12.StylePriority.UseTextAlignment = false;
-            this.xrTableCell12.Text = "Họ và tên người nộp tiền:";
+            this.xrTableCell12.Text = "Họ và tên người nhận tiền:";
             this.xrTableCell12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrTableCell12.Weight = 1.1332029440250462D;
             // 
@@ -527,7 +527,7 @@
             this.xrLabel4.StylePriority.UseBorders = false;
             this.xrLabel4.StylePriority.UseFont = false;
             this.xrLabel4.StylePriority.UseTextAlignment = false;
-            this.xrLabel4.Text = "PHIẾU THU";
+            this.xrLabel4.Text = "PHIẾU CHI";
             this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel3
@@ -681,7 +681,7 @@
             this.xrLabel8.SizeF = new System.Drawing.SizeF(154.0293F, 23F);
             this.xrLabel8.StylePriority.UseFont = false;
             this.xrLabel8.StylePriority.UseTextAlignment = false;
-            this.xrLabel8.Text = "Người nộp tiền";
+            this.xrLabel8.Text = "Thủ quỹ";
             this.xrLabel8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // xrLabel9
@@ -804,7 +804,7 @@
             this.xrLabel10.SizeF = new System.Drawing.SizeF(167.4348F, 23.00001F);
             this.xrLabel10.StylePriority.UseFont = false;
             this.xrLabel10.StylePriority.UseTextAlignment = false;
-            this.xrLabel10.Text = "Thủ quỹ";
+            this.xrLabel10.Text = "Người nhận tiền";
             this.xrLabel10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // rptTC_Phieuthu

@@ -264,7 +264,7 @@ namespace MTPMSWIN.View
             {
                 Utils.showMessage("Bạn chưa chọn phiếu để in...", "Lưu ý");
             }
-            // new MTReport().rptNX_Phieunhap(pPhieuTCID);
+           new MTReport().rptTC_Phieuchi(pPhieuTCID);
         }
         private void doAdd_Click(object sender, RoutedEventArgs e)
         {
