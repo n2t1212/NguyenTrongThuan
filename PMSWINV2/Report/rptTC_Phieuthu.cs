@@ -22,6 +22,7 @@ namespace MTPMSWIN.Report
             crLyDo.DataBindings.Add(new XRBinding("Text", DataSource, "Lydo"));
             crSoTien.DataBindings.Add(new XRBinding("Text", DataSource, "Sotien", "{0:#,#}"));
             crGhiChu.DataBindings.Add(new XRBinding("Text", DataSource, "Ghichu"));
+            crNgayIn.DataBindings.Add(new XRBinding("Text", DataSource, "NgayPhieu"));
         }
 
         private void xrPage_PrintOnPage(object sender, PrintOnPageEventArgs e)

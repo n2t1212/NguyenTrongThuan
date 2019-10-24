@@ -37,6 +37,8 @@ namespace MTPMSWIN.View{
         DevExpress.Utils.WaitDialogForm Dlg;
 
         private DataTable otblSP = null;
+        private String TKNo;
+        private String TKCo;
 
         public NX_PhieuXuat(String mPhieuNXID,String mLoaiPhieu, String mTuNgay, String mDenNgay, MTGlobal.MT_ROLE mActRole, bool isAddNew = false)
         {
@@ -259,8 +261,8 @@ namespace MTPMSWIN.View{
                 vR["Giaonhan"] =txtNguoinhan.Text;
                 vR["Ngaylap"] = DateTime.Now;
                 vR["Nguoilap"] = MTGlobal.MT_USER_LOGIN;
-                vR["TKNo"] = MTGlobal.TK_NO;
-                vR["TKCo"] = MTGlobal.TK_CO;
+                vR["TKNo"] = TKNo;
+                vR["TKCo"] = TKCo;
                 tmpPN.Rows.Add(vR);
                 tmpPN.AcceptChanges();
 
@@ -887,6 +889,8 @@ namespace MTPMSWIN.View{
                     oDM.ShowDialog();
                     txtMald.Text = oDM.pMaso;
                     txtLydo.Text = oDM.pGiaTriChon;
+                    TKNo = oDM.pTKNo;
+                    TKCo = oDM.pTKCo;
                 }
                 else
                 {
