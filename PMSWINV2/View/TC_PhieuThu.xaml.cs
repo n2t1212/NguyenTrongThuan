@@ -34,9 +34,6 @@ namespace MTPMSWIN.View
         private String TKNo = "";
         private String TKCo = "";
 
-        private bool isAddDT = false;
-        private bool isAddNV = false;
-
         public TC_PhieuThu()
         {
             InitializeComponent();
@@ -605,11 +602,6 @@ namespace MTPMSWIN.View
 
         private void btnAddNV_Click(object sender, RoutedEventArgs e)
         {
-            if (!isAddNV)
-            {
-                return;
-            }
-
             dlg_ThemNhanVien frmAddNV = new dlg_ThemNhanVien();
             frmAddNV.ShowDialog();
 
@@ -629,10 +621,6 @@ namespace MTPMSWIN.View
 
         private void btnAddDT_Click(object sender, RoutedEventArgs e)
         {
-            if (!isAddDT)
-            {
-                return;
-            }
             dlg_AddKhachHang frmAddKH = new dlg_AddKhachHang();
             frmAddKH.ShowDialog();
 
