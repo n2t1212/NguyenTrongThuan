@@ -375,7 +375,7 @@
             this.xrTableCell12.StylePriority.UseTextAlignment = false;
             this.xrTableCell12.Text = "Họ và tên người nhận tiền:";
             this.xrTableCell12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell12.Weight = 1.1332029440250462D;
+            this.xrTableCell12.Weight = 1.4154373969047536D;
             // 
             // crTenKH
             // 
@@ -388,7 +388,7 @@
             this.crTenKH.StylePriority.UsePadding = false;
             this.crTenKH.StylePriority.UseTextAlignment = false;
             this.crTenKH.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.crTenKH.Weight = 3.6703840453008252D;
+            this.crTenKH.Weight = 3.3881495924211178D;
             // 
             // xrTableRow8
             // 

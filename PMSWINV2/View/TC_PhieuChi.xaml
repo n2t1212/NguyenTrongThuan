@@ -14,7 +14,7 @@
         </LinearGradientBrush>
     </Window.Background>
 
-    <Grid Margin="0,0,0,10">
+    <Grid Margin="0,0,0,10" PreviewKeyDown="Grid_PreviewKeyDown_1" >
         <Grid VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="41" Margin="0,0,0,0">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -27,7 +27,7 @@
             <Button Content="X" HorizontalAlignment="Right" VerticalAlignment="Center" x:Name="cmdExitApp" Height="25" Width="41" Click="cmdExitApp_Click" BorderThickness="1" Cursor="Hand" ForceCursor="False" ToolTip="Close" Margin="0,6,10,10" Foreground="White" FontSize="15" FontWeight="Bold" Background="{x:Null}" BorderBrush="#FFDCE2FB" HorizontalContentAlignment="Center"/>
         </Grid>
 
-        <Grid Margin="20,46,10,55" PreviewKeyDown="Grid_PreviewKeyDown_1">
+        <Grid Margin="20,46,10,55">
             <Grid.RowDefinitions>
                 <RowDefinition Height="113*"/>
             </Grid.RowDefinitions>
@@ -42,8 +42,8 @@
                 <Grid HorizontalAlignment="Left" Margin="0,11,0,0" Width="671">
                     <Label Content="Đối tượng" HorizontalAlignment="Left" Height="31" Margin="45,12,0,0" VerticalAlignment="Top" Width="77"/>
                     <dxe:TextEdit TabIndex="1" HorizontalAlignment="Left" Height="31" Margin="132,13,0,0" VerticalAlignment="Top" Width="192" x:Name="txtMaDT" LostFocus="txtMaDT_LostFocus_1" PreviewKeyDown="txtMaDT_PreviewKeyDown_1"/>
-                    <!--<Button Name="btnAddDT" Content="+" HorizontalAlignment="Left" Height="31" Margin="616,13,0,0" VerticalAlignment="Top" Width="35" Click="btnAddDT_Click" RenderTransformOrigin="9.057,0.71"/>-->
-                    <dxe:TextEdit TabIndex="2" HorizontalAlignment="Left" Height="31" Margin="324,13,0,0" VerticalAlignment="Top" Width="327" x:Name="txtTenDoiTuong" PreviewKeyDown="txtTenDoiTuong_PreviewKeyDown_1"/>
+                    <Button Name="btnAddDT" Content="+" HorizontalAlignment="Left" Height="31" Margin="324,13,0,0" VerticalAlignment="Top" Width="35" Click="btnAddDT_Click" RenderTransformOrigin="9.057,0.71"/>
+                    <dxe:TextEdit TabIndex="2" HorizontalAlignment="Left" Height="31" Margin="359,13,0,0" VerticalAlignment="Top" Width="292" x:Name="txtTenDoiTuong" PreviewKeyDown="txtTenDoiTuong_PreviewKeyDown_1"/>
                     <Label Content="Người nộp" HorizontalAlignment="Left" Height="31" Margin="45,44,0,0" VerticalAlignment="Top" Width="77" RenderTransformOrigin="0.553,2.5"/>
                     <dxe:TextEdit TabIndex="3" HorizontalAlignment="Left" Height="31" Margin="132,45,0,0" VerticalAlignment="Top" Width="519" x:Name="txtHoTen" PreviewKeyDown="txtHoTen_PreviewKeyDown_1"/>
                     <Label Content="Địa chỉ" HorizontalAlignment="Left" Height="31" Margin="45,76,0,0" VerticalAlignment="Top" Width="77"/>
@@ -53,8 +53,8 @@
                     <dxe:TextEdit TabIndex="6" HorizontalAlignment="Left" Height="31" Margin="324,109,0,0" VerticalAlignment="Top" Width="327" x:Name="txtLD" PreviewKeyDown="txtLD_PreviewKeyDown" />
                     <Label Content="NV thu nợ" HorizontalAlignment="Left" Height="31" Margin="45,141,0,0" VerticalAlignment="Top" Width="77"/>
                     <dxe:TextEdit TabIndex="7" Name="txtManv" HorizontalAlignment="Left" Height="31" Margin="132,141,0,0" VerticalAlignment="Top" Width="192" PreviewKeyDown="txtManv_PreviewKeyDown_1" LostFocus="txtManv_LostFocus_1"/>
-                    <dxe:TextEdit TabIndex="8" Name="txtTennv" HorizontalAlignment="Left" Height="31" Margin="324,141,0,0" VerticalAlignment="Top" Width="327" PreviewKeyDown="txtTennv_PreviewKeyDown"/>
-                    <!--<Button Content="+" Name="btnAddNV" HorizontalAlignment="Left" Height="31" Margin="617,140,0,0" VerticalAlignment="Top" Width="34" RenderTransformOrigin="0.471,0.222" Click="btnAddNV_Click"/>-->
+                    <dxe:TextEdit TabIndex="8" Name="txtTennv" HorizontalAlignment="Left" Height="31" Margin="358,141,0,0" VerticalAlignment="Top" Width="293" PreviewKeyDown="txtTennv_PreviewKeyDown"/>
+                    <Button Content="+" Name="btnAddNV" HorizontalAlignment="Left" Height="31" Margin="324,141,0,0" VerticalAlignment="Top" Width="34" RenderTransformOrigin="0.471,0.222" Click="btnAddNV_Click"/>
                     <Label Content="Ghi chú" HorizontalAlignment="Left" Height="31" Margin="45,173,0,0" VerticalAlignment="Top" Width="76"/>
                     <dxe:TextEdit TabIndex="9" HorizontalAlignment="Left" Height="31" Margin="132,173,0,0" VerticalAlignment="Top" Width="519" Name="txtGhiChu" PreviewKeyDown="txtGhiChu_PreviewKeyDown_1"/>
                 </Grid>
@@ -62,7 +62,7 @@
             <GroupBox Grid.Column="1" Header="Chứng từ" HorizontalAlignment="Left" Height="263" Margin="661,10,0,0" VerticalAlignment="Top" Width="398">
                 <Grid HorizontalAlignment="Left" Height="180" Margin="4,1,0,0" VerticalAlignment="Top" Width="378">
                     <Label Content="Số chứng từ" HorizontalAlignment="Left" Height="31" Margin="0,26,0,0" VerticalAlignment="Top" Width="233"/>
-                    <dxe:TextEdit TabIndex="10" Name="txtSoPhieu" HorizontalAlignment="Left" Height="31" Margin="117,25,0,0" VerticalAlignment="Top" Width="238"/>
+                    <dxe:TextEdit TabIndex="10" Name="txtSoPhieu" HorizontalAlignment="Left" Height="31" Margin="117,25,0,0" VerticalAlignment="Top" Width="238" PreviewKeyDown="txtSoPhieu_PreviewKeyDown"/>
                     <Label Content="Số chứng từ gốc" HorizontalAlignment="Left" Height="31" Margin="0,58,0,0" VerticalAlignment="Top" Width="233"/>
                     <dxe:TextEdit TabIndex="11" HorizontalAlignment="Left" Height="31" Margin="117,57,0,0" VerticalAlignment="Top" Width="238" x:Name="txtSoCT" PreviewKeyDown="txtSoCT_PreviewKeyDown_1"/>
                     <Label Content="Ngày chứng từ" HorizontalAlignment="Left" Height="31" Margin="0,88,0,0" VerticalAlignment="Top" Width="233"/>
@@ -79,7 +79,7 @@
                 <System:String>USD</System:String>
             </dxe:ComboBoxEdit>
             <Label Content="Tỷ giá" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="840,287,0,0" VerticalAlignment="Top" Width="52"/>
-            <dxe:TextEdit TabIndex="15" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="910,287,0,0" VerticalAlignment="Top" Width="125" Name="txtTyGia" PreviewKeyDown="txtTyGia_PreviewKeyDown_1"/>
+            <dxe:TextEdit TabIndex="15" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="910,287,0,0" VerticalAlignment="Top" Width="125" Name="txtTyGia"/>
 
             <dx:DXTabControl Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="311" Margin="35,321,0,0" VerticalAlignment="Top" Width="1147">
                 <dx:DXTabItem Header="Hạch toán">

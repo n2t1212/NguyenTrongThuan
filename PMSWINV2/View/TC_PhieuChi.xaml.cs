@@ -346,38 +346,6 @@ namespace MTPMSWIN.View
             this.Close();
         }
 
-        private void Grid_PreviewKeyDown_1(object sender, System.Windows.Input.KeyEventArgs e)
-        {
-            if (e.Key == Key.F2)
-            {
-                doAdd_Click(sender, e);
-            }
-            else if (e.Key == Key.F3)
-            {
-                doEdit_Click(sender, e);
-            }
-            else if (e.Key == Key.F5)
-            {
-                doSave_Click(sender, e);
-            }
-            else if (e.Key == Key.F7)
-            {
-                doPrint_Click(sender, e);
-            }
-            else if (e.Key == Key.F8)
-            {
-                doExit_Click(sender, e);
-            }
-            else if (e.Key == Key.Escape)
-            {
-                doAbort_Click(sender, e);
-            }
-
-            if (e.Key == Key.Enter)
-            {
-            }
-        }
-
         private void txtMaDT_PreviewKeyDown_1(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
@@ -441,14 +409,6 @@ namespace MTPMSWIN.View
         }
 
         private void cbNguyenTe_PreviewKeyDown_1(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter)
-            {
-                (sender as FrameworkElement).MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
-            }
-        }
-
-        private void txtTyGia_PreviewKeyDown_1(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
@@ -684,6 +644,46 @@ namespace MTPMSWIN.View
             if (e.Key == Key.Enter)
             {
                 (sender as FrameworkElement).MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+            }
+        }
+
+        private void txtSoPhieu_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                (sender as FrameworkElement).MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+            }
+        }
+
+        private void Grid_PreviewKeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F2)
+            {
+                doAdd_Click(sender, e);
+            }
+            else if (e.Key == Key.F3)
+            {
+                doEdit_Click(sender, e);
+            }
+            else if (e.Key == Key.F5)
+            {
+                doSave_Click(sender, e);
+            }
+            else if (e.Key == Key.F7)
+            {
+                doPrint_Click(sender, e);
+            }
+            else if (e.Key == Key.F8)
+            {
+                doExit_Click(sender, e);
+            }
+            else if (e.Key == Key.Escape)
+            {
+                doAbort_Click(sender, e);
+            }
+
+            if (e.Key == Key.Enter)
+            {
             }
         }
     }
