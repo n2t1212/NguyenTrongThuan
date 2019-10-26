@@ -126,6 +126,10 @@
                     <dxg:GridColumn x:Name="colghichu" FieldName="Ghichu" Header="Ghi chú" Width="200" HorizontalHeaderContentAlignment="Center"/>
                 </dxg:GridControl.Columns>
             </dxg:GridControl>
+            <Label Content="TK Nợ" Grid.Column="2" HorizontalAlignment="Left" Height="35" Margin="397,79,0,0" VerticalAlignment="Top" Width="66"/>
+            <Label Content="TK Có" Grid.Column="2" HorizontalAlignment="Left" Height="26" Margin="397,107,0,0" VerticalAlignment="Top" Width="49"/>
+            <dxe:TextEdit Name="txtTKNo" Grid.Column="2" HorizontalAlignment="Left" Height="26" Margin="463,80,0,0" VerticalAlignment="Top" Width="97"/>
+            <dxe:TextEdit Name="txtTKCo" Grid.Column="2" HorizontalAlignment="Left" Height="26" Margin="464,107,0,0" VerticalAlignment="Top" Width="96"/>
 
 
         </Grid>

@@ -141,6 +141,8 @@ namespace MTPMSWIN.View{
                             txtLydo.Text = vR["Lydo"].ToString();
                             txtNguoinhan.Text = vR["Giaonhan"].ToString();
                             txtGhichu.Text = vR["Ghichu"].ToString();
+                            txtTKNo.Text = vR["TKNo"].ToString();
+                            txtTKCo.Text = vR["TKCo"].ToString();
                         }
                     }
                      
@@ -185,6 +187,18 @@ namespace MTPMSWIN.View{
             {
                 Utils.showMessage("Bạn chưa nhập người nhận hàng..", "Thông báo");
                 txtNguoinhan.Focus();
+                return false;
+            }
+            if (txtTKNo.Text.ToString().Trim() == "")
+            {
+                Utils.showMessage("Bạn chưa nhập tài khoản nợ..", "Thông báo");
+                txtTKNo.Focus();
+                return false;
+            }
+            if (txtTKCo.Text.ToString().Trim() == "")
+            {
+                Utils.showMessage("Bạn chưa nhập tài khoản có..", "Thông báo");
+                txtTKCo.Focus();
                 return false;
             }
             if (grdPhieuNhap.VisibleRowCount <= 0)
@@ -261,8 +275,8 @@ namespace MTPMSWIN.View{
                 vR["Giaonhan"] =txtNguoinhan.Text;
                 vR["Ngaylap"] = DateTime.Now;
                 vR["Nguoilap"] = MTGlobal.MT_USER_LOGIN;
-                vR["TKNo"] = TKNo;
-                vR["TKCo"] = TKCo;
+                vR["TKNo"] = txtTKNo.Text.ToString().Trim();
+                vR["TKCo"] = txtTKCo.Text.ToString().Trim();
                 tmpPN.Rows.Add(vR);
                 tmpPN.AcceptChanges();
 
@@ -891,6 +905,8 @@ namespace MTPMSWIN.View{
                     txtLydo.Text = oDM.pGiaTriChon;
                     TKNo = oDM.pTKNo;
                     TKCo = oDM.pTKCo;
+                    txtTKNo.Text = oDM.pTKNo;
+                    txtTKCo.Text = oDM.pTKCo;
                 }
                 else
                 {

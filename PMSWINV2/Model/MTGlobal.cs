@@ -92,8 +92,9 @@ namespace MTPMSWIN.Model
 
        public static MT_PHIEU MT_LOAIPHIEU; 
        public enum MT_PHIEU {DM=1,PN=2,PX=3,TK=4,CX=5}
-       public static string TK_NO = "N131";
-       public static string TK_CO = "C511";
+       // Cong no ban hang
+       public static string TK_NO = "1312";
+       public static string TK_CO = "511";
 
 
        public struct MT_ROLE {
