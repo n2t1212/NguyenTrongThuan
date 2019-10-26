@@ -678,5 +678,13 @@ namespace MTPMSWIN.View
                 txtMaDT.Focus();
             }
         }
+
+        private void txtLD_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                (sender as FrameworkElement).MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+            }
+        }
     }
 }
