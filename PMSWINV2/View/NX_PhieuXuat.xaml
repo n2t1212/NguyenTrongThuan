@@ -39,13 +39,12 @@
             <dxe:TextEdit x:Name="txtSophieu" HorizontalAlignment="Left" Height="26" Margin="116,6,0,0" VerticalAlignment="Top" Width="191" IsReadOnly="True" Grid.Column="1" PreviewKeyDown="txtSophieu_PreviewKeyDown"/>
             <Label Content="Ngày chứng từ" HorizontalAlignment="Left" Height="26" Margin="12,50,0,0" VerticalAlignment="Top" Width="110" Grid.Column="1"/>
             <dxe:DateEdit x:Name="dtpNgaylap" Mask="d" MaskType="DateTime" HorizontalAlignment="Left" Height="26" Margin="116,50,0,0" VerticalAlignment="Top" Width="191" Grid.Column="1" PreviewKeyDown="dtpNgaylap_PreviewKeyDown"/>
-            <Label Content="Ngày phát sinh" HorizontalAlignment="Left" Height="26" Margin="12,79,0,0" VerticalAlignment="Top" Width="110" Grid.Column="1"/>
+            <Label Content="Ngày phát sinh" HorizontalAlignment="Left" Height="35" Margin="12,79,0,0" VerticalAlignment="Top" Width="110" Grid.Column="1"/>
             <dxe:DateEdit x:Name="dtpNgayPS"  Mask="d" MaskType="DateTime" DisplayFormatString="d" HorizontalAlignment="Left" Height="28" Margin="116,77,0,0" VerticalAlignment="Top" Width="191"  Grid.Column="1" PreviewKeyDown="dtpNgayPS_PreviewKeyDown" RenderTransformOrigin="0.497,-1.143"/>
 
-            <Label Content="Số chứng từ" HorizontalAlignment="Left" Height="26" Margin="12,106,0,0" VerticalAlignment="Top" Width="104" Grid.Column="1"/>
+            <Label Content="Số chứng từ" HorizontalAlignment="Left" Height="37" Margin="12,106,0,0" VerticalAlignment="Top" Width="104" Grid.Column="1"/>
             <dxe:TextEdit x:Name="txtSoctgoc" CharacterCasing="Upper" HorizontalAlignment="Left" Height="26" Margin="116,106,0,0" VerticalAlignment="Top" Width="191"  Grid.Column="1" PreviewKeyDown="txtSoctgoc_PreviewKeyDown"/>
-            <Label Content="Nguyên Tệ" HorizontalAlignment="Left" Height="26" Margin="12,132,0,0" VerticalAlignment="Top" Width="98" Grid.Column="1"/>
-            <Label Content="%" HorizontalAlignment="Left" Height="24" Margin="149,76,0,0" VerticalAlignment="Top" Width="20" RenderTransformOrigin="0.7,1.292" Grid.Column="2"/>
+            <Label Content="Nguyên Tệ" HorizontalAlignment="Left" Height="35" Margin="12,132,0,0" VerticalAlignment="Top" Width="98" Grid.Column="1"/>
             <dxe:ComboBoxEdit x:Name="cbNguyente" HorizontalAlignment="Left" Height="26" Margin="116,132,0,0" VerticalAlignment="Top" Width="61" Grid.Column="1" PreviewKeyDown="cbNguyente_PreviewKeyDown">
                 <System:String>VND</System:String>
                 <System:String>USD</System:String>
@@ -53,19 +52,19 @@
             <Label Content="Tỷ giá" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="26" Margin="178,132,0,0" VerticalAlignment="Top" Width="52" RenderTransformOrigin="0.683,0.519" Grid.Column="1"/>
             <dxe:TextEdit x:Name="txtTygia" HorizontalAlignment="Left" Height="26" Margin="235,132,0,0" VerticalAlignment="Top" Width="72" RenderTransformOrigin="0.528,1.346" MaskType="Numeric" Grid.Column="1" PreviewKeyDown="txtTygia_PreviewKeyDown"/>
 
-            <Label Content="Kho hàng" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="26" Margin="347,28,0,0" VerticalAlignment="Top" Width="111" Grid.Column="1"/>
+            <Label Content="Kho hàng" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="38" Margin="347,28,0,0" VerticalAlignment="Top" Width="111" Grid.Column="1"/>
             <dxe:TextEdit x:Name="txtMakho" HorizontalAlignment="Left" Height="26" Margin="475,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" Grid.Column="1" Validate="txtMakho_Validate" LostFocus="txtMakho_LostFocus" PreviewKeyDown="txtMakho_PreviewKeyDown" CharacterCasing="Upper"/>
             <dxe:TextEdit x:Name="txtTenkho" HorizontalAlignment="Left" Height="26" Margin="610,28,0,0" VerticalAlignment="Top" Width="369" Grid.Column="1" IsEnabled="False" Grid.ColumnSpan="2" />
 
-            <Label Content="Khách hàng" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="26" Margin="347,53,0,0" VerticalAlignment="Top" Width="111" Grid.Column="1"/>
+            <Label Content="Khách hàng" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="38" Margin="347,53,0,0" VerticalAlignment="Top" Width="111" Grid.Column="1"/>
             <dxe:TextEdit x:Name="txtMadv" HorizontalAlignment="Left" Height="26" Margin="475,53,0,0" VerticalAlignment="Top" Width="135" Grid.Column="1" PreviewKeyDown="txtMadv_PreviewKeyDown" CharacterCasing="Upper" LostFocus="txtMadv_LostFocus"/>
             <dxe:TextEdit x:Name="txtTendonvi" HorizontalAlignment="Left" Height="26" Margin="610,53,0,0" VerticalAlignment="Top" Width="369"  Grid.Column="1" IsEnabled="False" Grid.ColumnSpan="2"/>
-            <Label Content="Lý do" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="26" Margin="347,80,0,0" VerticalAlignment="Top" Width="111" Grid.Column="1"/>
+            <Label Content="Lý do" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="34" Margin="347,80,0,0" VerticalAlignment="Top" Width="111" Grid.Column="1"/>
             <dxe:TextEdit x:Name="txtMald" HorizontalAlignment="Left" Height="26" Margin="475,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" Grid.Column="1" PreviewKeyDown="txtMald_PreviewKeyDown" CharacterCasing="Upper" LostFocus="txtMald_LostFocus"/>
             <dxe:TextEdit x:Name="txtLydo" HorizontalAlignment="Left" Height="26" Margin="610,80,0,0" VerticalAlignment="Top" Width="369" Grid.Column="1" IsEnabled="False" Grid.ColumnSpan="2" />
-            <Label Content="Người nhận" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="26" Margin="347,106,0,0" VerticalAlignment="Top" Width="111" Grid.Column="1"/>
+            <Label Content="Người nhận" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="37" Margin="347,106,0,0" VerticalAlignment="Top" Width="111" Grid.Column="1"/>
             <dxe:TextEdit x:Name="txtNguoinhan" HorizontalAlignment="Left" Height="26" Margin="475,106,0,0" VerticalAlignment="Top" Width="503" Grid.Column="1" Grid.ColumnSpan="2" PreviewKeyDown="txtNguoinhan_PreviewKeyDown"/>
-            <Label Content="Ghi chú chứng từ" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="26" Margin="324,132,0,0" VerticalAlignment="Top" Width="134" Grid.Column="1"/>
+            <Label Content="Ghi chú chứng từ" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="35" Margin="324,132,0,0" VerticalAlignment="Top" Width="134" Grid.Column="1"/>
             <dxe:TextEdit x:Name="txtGhichu" HorizontalAlignment="Left" Height="26" Margin="475,132,0,0" VerticalAlignment="Top" Width="503" Grid.Column="1" Grid.ColumnSpan="2" PreviewKeyDown="txtGhichu_PreviewKeyDown"/>
 
 

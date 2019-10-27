@@ -185,7 +185,7 @@ namespace MTPMSWIN.View
                     cR["Madt"] = sR["Madt"];
                     cR["Matk"] = sR["Matk"];
                     cR["TKNo"] = sR["TKNo"];
-                    cR["TKCo"] = sR["TKNo"];
+                    cR["TKCo"] = sR["TKCo"];
                     cR["Nguyente"] = sR["Nguyente"];
                     cR["Thanhtien"] = sR["Thanhtien"];
                     cR["Diengiai"] = sR["Diengiai"];
