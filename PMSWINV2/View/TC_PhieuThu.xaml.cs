@@ -482,7 +482,15 @@ namespace MTPMSWIN.View
                 }
                 else
                 {
-                    txtLD.Text = mLydo;
+                    String mSql = String.Format("SELECT Mald, Lydo, TKNo, TKCo FROM DM_LYDO with(nolock) where Mald='{0}'", txtMaLD.Text.Trim().ToUpper());
+                    DataTable oTblSrc = new MTSQLServer().wRead(mSql, null, false);
+
+                    if (oTblSrc.Rows.Count == 1)
+                    {
+                        txtLD.Text = mLydo;
+                        TKNo = oTblSrc.Rows[0].ItemArray[2].ToString();
+                        TKCo = oTblSrc.Rows[0].ItemArray[3].ToString();
+                    }
                 }
             }
             if (txtMaLD.Text == "") { txtLD.Text = ""; }

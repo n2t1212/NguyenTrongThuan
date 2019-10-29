@@ -94,7 +94,7 @@ namespace MTPMSWIN.View
 
                         colCol2.FieldName="TKCo";
                         colCol2.Width = 100;
-                        colCol2.Header = "TKCo";
+                        colCol2.Header = "TK Có";
 
                         colMaso.Visible=true;
                         colTen.Visible=true;

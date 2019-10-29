@@ -115,6 +115,9 @@ namespace MTPMSWIN
                         case "mnuDM_XE":
                             fRenderForm(mMENUID, "DM_Xe", mFormCaption);
                             break;
+                        case "mnuDM_BANGGIA":
+                            fRenderForm(mMENUID, "DM_BangGiaMain", mFormCaption);
+                            break;
                         case "mnuDM_DONGIA":
                             fRenderForm(mMENUID, "DM_BangGia", mFormCaption);
                             break;

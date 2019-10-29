@@ -107,38 +107,25 @@ namespace MTPMSWIN.View
         private void cmdEdit_Click(object sender, RoutedEventArgs e)
         {
             crud.cmdEdit_Click();
-            crud_BangGia.cmdEdit_Click();
         }
 
         private void cmdSave_Click(object sender, RoutedEventArgs e)
         {
-            string msgSaveBangGia = crud_BangGia.cmdSave_Click();
-            MTGlobal.SetButtonAction(MTROLE, MTButton, "EDIT");
-            string msgSaveBangGiaCT = crud.cmdSave_Click();
-
-            string msg = "";
-            if (msgSaveBangGia != "" && msgSaveBangGiaCT != "")
-            {
-                if (msgSaveBangGia == msgSaveBangGiaCT)
-                {
-                    msg = msgSaveBangGiaCT;
-                }
-                else
-                {
-                    msg = Utils.ERR_UPDATE_DB;
-                }
-            }
+            string msg = crud.cmdSave_Click();
 
             if (msg != "")
             {
                 Utils.showMessage(msg, "Thông báo");
             }
         }
-        
+
         private void cmdDel_Click(object sender, RoutedEventArgs e)
         {
             String msg = crud.cmdDel_Click();
-            Utils.showMessage("Đơn giá của sản phẩm đang được sử dụng. Không thể xóa", "Thông báo");
+            if (msg != "")
+            {
+                Utils.showMessage(msg, "Thông báo");
+            }
         }
 
         private void cmdAbort_Click(object sender, RoutedEventArgs e)
@@ -262,17 +249,15 @@ namespace MTPMSWIN.View
 
                 case Key.F3:
                     crud.cmdEdit_Click();
-                    crud_BangGia.cmdEdit_Click();
                     break;
                 case Key.F4:
-                    String msgDel = crud.cmdDel_Click();
-                    if (msgDel != "")
+                    String msg = crud.cmdDel_Click();
+                    if (msg != "")
                     {
-                        Utils.showMessage("Đơn giá của sản phẩm đang được sử dụng. Không thể xóa", "Thông báo");
+                        Utils.showMessage(msg, "Thông báo");
                     }
                     break;
                 case Key.F5:
-                    crud_BangGia.cmdSave_Click();
                     String msgSave = crud.cmdSave_Click();
                     if (msgSave != "")
                     {

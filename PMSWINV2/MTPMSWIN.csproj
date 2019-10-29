@@ -394,6 +394,9 @@
     <Compile Include="View\dlg_AddKhachHang.xaml.cs">
       <DependentUpon>dlg_AddKhachHang.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\DM_BangGiaMain.xaml.cs">
+      <DependentUpon>DM_BangGiaMain.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DM_ChiPhi.xaml.cs">
       <DependentUpon>DM_ChiPhi.xaml</DependentUpon>
     </Compile>
@@ -637,6 +640,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\dlg_AddKhachHang.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DM_BangGiaMain.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

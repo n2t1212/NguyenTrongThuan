@@ -114,6 +114,11 @@
                             <Image Height="45" Source="Images/Icons/pos_list_car.png"></Image>
                         </MenuItem.Icon>
                     </MenuItem>
+                    <MenuItem Header="Bảng giá" Name="mnuDM_BANGGIA" Cursor="Hand" IsEnabled="False"  Style="{StaticResource MySubMenuItem}">
+                        <MenuItem.Icon>
+                            <Image Height="45" Source="Images/Icons/pos_list_price.png"></Image>
+                        </MenuItem.Icon>
+                    </MenuItem>
                     <MenuItem Header="Đơn giá bán" Name="mnuDM_DONGIA" Cursor="Hand" IsEnabled="False"  Style="{StaticResource MySubMenuItem}">
                         <MenuItem.Icon>
                             <Image Height="45" Source="Images/Icons/pos_list_price.png"></Image>
