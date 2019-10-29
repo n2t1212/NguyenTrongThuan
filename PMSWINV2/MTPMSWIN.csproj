@@ -409,6 +409,9 @@
     <Compile Include="View\DM_TaiKhoan.xaml.cs">
       <DependentUpon>DM_TaiKhoan.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\DM_TichLuyDiem.xaml.cs">
+      <DependentUpon>DM_TichLuyDiem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\HT_TaoKetNoi.xaml.cs">
       <DependentUpon>HT_TaoKetNoi.xaml</DependentUpon>
     </Compile>
@@ -660,6 +663,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\DM_TaiKhoan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DM_TichLuyDiem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

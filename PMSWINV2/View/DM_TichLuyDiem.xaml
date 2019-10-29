@@ -2,7 +2,7 @@
         xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" x:Class="MTPMSWIN.View.DM_BangGiaMain"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" x:Class="MTPMSWIN.View.DM_TichLuyDiem"
         Title="DM_NhomSanPham" Height="623.418" Width="1110" WindowStyle="None">
     <Grid Loaded="GridForm_Loaded" Margin="0,0,0,2" Background="#FFE4ECF7" PreviewKeyDown="Grid_PreviewKeyDown_1">
         <Grid x:Name="Toolbar" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="55" Margin="0,497,0,0">
@@ -56,35 +56,40 @@
                 <ColumnDefinition Width="81*"/>
             </Grid.ColumnDefinitions>
         </Grid>
-        <dxg:GridControl x:Name="grdPrice" AutoPopulateColumns="False" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="477" ShowBorder="False" >
+        <dxg:GridControl x:Name="grdTichLuyDiem" AutoPopulateColumns="False" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="477" ShowBorder="False" >
             <dxg:GridControl.View>
                 <dxg:TableView x:Name="tblView" FocusedRowChanged="tblView_FocusedRowChanged" InitNewRow="tblView_InitNewRow"  NewItemRowCellStyle="{DynamicResource NewItemRow}" InvalidRowException="tblView_InvalidRowException" CellValueChanging="tblView_CellValueChanging" ValidateRow="tblView_ValidateRow" ExpandDetailButtonWidth="14" ShowGroupPanel="False" RowMinHeight="25" IndicatorWidth="25" HeaderPanelMinHeight="45"
     				NavigationStyle="Row"/>
 
             </dxg:GridControl.View>
             <dxg:GridControl.Columns>
-                <dxg:GridColumn x:Name="colBanggiaid" FieldName="Banggiaid" Header="ID" Width="120" HorizontalHeaderContentAlignment="Center" Visible="False"/>
-                <dxg:GridColumn x:Name="colBanggia" FieldName="Banggia" Header="Bảng giá" Width="300" HorizontalHeaderContentAlignment="Center"/>
-                <dxg:GridColumn x:Name="colTungay" FieldName="Tungay" Header="Từ ngày" Width="120" HorizontalHeaderContentAlignment="Center">
+                <dxg:GridColumn x:Name="colMasp" FieldName="Masp" Header="Mã sản phẩm" Width="150" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colDoanhSo" FieldName="DoanhSo" Header="Doanh số" Width="150" HorizontalHeaderContentAlignment="Center">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:TextEditSettings Mask="N3" MaskType="Numeric" MaskUseAsDisplayFormat="True"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="colDoanhsoNo" FieldName="DoanhsoNo" Header="Doanh số nợ" Width="150" HorizontalHeaderContentAlignment="Center">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:TextEditSettings Mask="N3" MaskType="Numeric" MaskUseAsDisplayFormat="True"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn x:Name="colQDDiemDS" FieldName="QDDiemDS" Header="Quy đổi điểm doanh số" Width="150" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colQDDiemDSNo" FieldName="QDDiemDSNo" Header="Quy đổi điểm doanh số nợ" Width="150" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colNgayapdung" FieldName="Ngayapdung" Header="Ngày áp dụng" Width="100" HorizontalHeaderContentAlignment="Center" >
                     <dxg:GridColumn.EditSettings>
                         <dxe:DateEditSettings Mask="G" MaskUseAsDisplayFormat="True"/>
                     </dxg:GridColumn.EditSettings>
                 </dxg:GridColumn>
-                <dxg:GridColumn x:Name="colDenngay" FieldName="Denngay" Header="Đến ngày" Width="120" HorizontalHeaderContentAlignment="Center">
+                <dxg:GridColumn x:Name="colDenngay" FieldName="Denngay" Header="Đến ngày" Width="100" HorizontalHeaderContentAlignment="Center">
                     <dxg:GridColumn.EditSettings>
                         <dxe:DateEditSettings Mask="G" MaskUseAsDisplayFormat="True"/>
                     </dxg:GridColumn.EditSettings>
                 </dxg:GridColumn>
-                <dxg:GridColumn x:Name="colNgayapdung" FieldName="Ngayapdung" Header="Ngày áp dụng" Width="120" HorizontalHeaderContentAlignment="Center">
-                    <dxg:GridColumn.EditSettings>
-                        <dxe:DateEditSettings Mask="G" MaskUseAsDisplayFormat="True"/>
-                    </dxg:GridColumn.EditSettings>
-                </dxg:GridColumn>
-                <dxg:GridColumn x:Name="colApdung" FieldName="Apdung" Header="Áp dụng" Width="120" HorizontalHeaderContentAlignment="Center"/>
-                <dxg:GridColumn x:Name="colNgaylap" FieldName="Ngaylap" Header="Ngày Lập" Width="100" HorizontalHeaderContentAlignment="Center" Visible="False"/>
-                <dxg:GridColumn x:Name="colNguoilap" FieldName="Nguoilap" Header="Người Lập" Width="100" HorizontalHeaderContentAlignment="Center" Visible="False"/>
+                <dxg:GridColumn x:Name="colApdung" FieldName="Apdung" Header="Áp dụng" Width="100" HorizontalHeaderContentAlignment="Center"/>
             </dxg:GridControl.Columns>
 
         </dxg:GridControl>
     </Grid>
 </Window>
+

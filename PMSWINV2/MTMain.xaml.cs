@@ -186,6 +186,9 @@ namespace MTPMSWIN
                         case "mnuDM_NHANVIEN":
                             fRenderForm(mMENUID, "DM_NhanVien", mFormCaption);
                             break;
+                        case "mnuDM_TICHLUYDIEM":
+                            fRenderForm(mMENUID, "DM_TichLuyDiem", mFormCaption);
+                            break;
                         case "mnuTC_PHIEUTHU":
                             if (Utils.ChonThoiGian())
                             {

@@ -144,6 +144,11 @@
                             <Image Height="45" Source="Images/Icons/pos_user_logon_white.png"></Image>
                         </MenuItem.Icon>
                     </MenuItem>
+                    <MenuItem Header="Định mức tích lũy điểm" Name="mnuDM_TICHLUYDIEM" Cursor="Hand" IsEnabled="False"  Style="{StaticResource MySubMenuItem}">
+                        <MenuItem.Icon>
+                            <Image Height="45" Source="Images/Icons/pos_setting_white.png"></Image>
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
 
                 <!--HÀNG HÓA-->
