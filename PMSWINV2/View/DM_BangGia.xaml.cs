@@ -30,9 +30,9 @@ namespace MTPMSWIN.View
         private const String CODE_HEADER = "Mã SP";
         private const String SQL_LOAD_ALL_BGCT = "select bgct.* from DM_BANGGIA_CHITIET bgct where bgct.Banggiaid='{0}' order by bgct.Masp asc";
         private const String SQL_DELETE_BGCT = "delete from DM_BANGGIA_CHITIET where Banggiactid='{0}'" +
-            " and Maspid not in (select Maspid from BH_PHIEUBHCT)" +
-            " and Maspid not in (select Maspid from NX_PHIEUNXCT)" +
-            " and Maspid not in (select Maspid from NX_CHANHXECT)";
+            " and Maspid not in (isnull((select Maspid from BH_PHIEUBHCT), ''))" +
+            " and Maspid not in (isnull((select Maspid from NX_PHIEUNXCT), ''))" +
+            " and Maspid not in (isnull((select Maspid from NX_CHANHXECT), ''))";
         private string SQL_PRODUCT_GROUP = "select * from DM_BANGGIA order by Banggia asc";
         private CRUDHandling crud = null;
         private CRUDHandling crud_BangGia = null;
