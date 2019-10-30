@@ -114,6 +114,25 @@ namespace MTPMSWIN.Model
             }
         }
 
+        public string SaveDiemTichLuy(String Makh, System.Data.DataTable tblBHCT)
+        {
+            try
+            {
+                SqlParameter[] arrPara = new SqlParameter[3];
+                arrPara[0] = new SqlParameter("@Makh", SqlDbType.NVarChar, 50);
+                arrPara[0].Value = Makh;
+                arrPara[1] = new SqlParameter("@Phieubhct", SqlDbType.Structured);
+                arrPara[1].Value = tblBHCT;
+                arrPara[2] = new SqlParameter("@ketqua", SqlDbType.NVarChar, 255);
+                arrPara[2].Direction = ParameterDirection.Output;
+                int iRs = MTSQLServer.getMTSQLServer().wExec("spTL_AddTichLuyKhachHang", arrPara);
+                return arrPara[3].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                return ex.Message.ToString();
+            }
+        }
 
         public bool DelPhieuBH(String mPhieubhid)
         {

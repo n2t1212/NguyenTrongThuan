@@ -1,6 +1,7 @@
 ﻿using MTPMSWIN.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -29,6 +30,8 @@ namespace MTPMSWIN.View
 
         private CRUDHandling crud = null;
 
+        private DataTable otblSP = null;
+
         public DM_TichLuyDiem()
         {
             InitializeComponent();
@@ -41,6 +44,9 @@ namespace MTPMSWIN.View
 
             crud = new CRUDHandling(grdTichLuyDiem, tblView, colMasp, MTROLE, MTButton, TABLE_NAME, ID_NAME, CODE_NAME,
             CODE_HEADER, SQL_LOAD_ALL, SQL_DELETE);
+
+            String mSql = "SELECT Maspid,Manhomspid,Masp,Tensp,Dvt,Quycach,Quydoikgl,Quydoithung,Nhacungcap FROM DM_SANPHAM with(nolock) order by Masp asc";
+            otblSP = new MTSQLServer().wRead(mSql, null, false);
         }
 
         private void GridForm_Loaded(object sender, RoutedEventArgs e)
@@ -162,6 +168,72 @@ namespace MTPMSWIN.View
                 case Key.F8:
                     Utils.fExit();
                     break;
+            }
+            if (e.Key == Key.Enter)
+            {
+                if (tblView.FocusedColumn.FieldName == "Masp" && tblView.FocusedColumn.Name == "colMasp")
+                {
+                    if (grdTichLuyDiem.GetFocusedRowCellValue(colMasp) == null || grdTichLuyDiem.GetFocusedRowCellValue(colMasp).ToString() == "")
+                    {
+                        tblView.FocusedColumn = colMasp;
+                        return;
+                    }
+
+                    String sMasp = grdTichLuyDiem.GetCellValue(tblView.FocusedRowHandle, colMasp).ToString();
+                    if (sMasp == null || sMasp == "")
+                    {
+                        tblView.FocusedColumn = colMasp;
+                        return;
+                    }
+
+                    if (sMasp != "")
+                    {
+                        if (otblSP != null && otblSP.Rows.Count > 0)
+                        {
+                            DataRow[] vRow = otblSP.Select(string.Format("Masp='{0}'", sMasp));
+
+                            if (vRow.Length > 0)
+                            {
+                                string errDuplicateSP = ValidateHelper.checkCodeValueNotDuplicate(TABLE_NAME, CODE_NAME, sMasp, "Mã SP");
+
+                                if (errDuplicateSP.Length > 0)
+                                {
+                                    tblView.FocusedColumn = colMasp;
+                                    Utils.showMessage(errDuplicateSP, "Thông báo");
+                                    return;
+                                }
+
+                                grdTichLuyDiem.SetCellValue(tblView.FocusedRowHandle, colMasp, vRow[0]["Masp"].ToString());
+                            }
+                            else
+                            {
+                                dlg_ChonSanPham oChonSP = new dlg_ChonSanPham(otblSP);
+                                oChonSP.ShowDialog();
+                                DataRowView vRw = oChonSP.pRowChon;
+                                if (vRw != null && vRw.Row.ItemArray.Length > 0)
+                                {
+                                    string errDuplicateSP = ValidateHelper.checkCodeValueNotDuplicate(TABLE_NAME, CODE_NAME, vRw.Row.ItemArray.GetValue(2).ToString(), "Mã SP");
+
+                                    if (errDuplicateSP.Length > 0)
+                                    {
+                                        Utils.showMessage(errDuplicateSP, "Thông báo");
+                                        return;
+                                    }
+
+                                    sMasp = vRw.Row.ItemArray.GetValue(2).ToString().ToUpper();
+                                }
+                                else
+                                {
+                                    tblView.FocusedColumn = colMasp;
+                                }
+                            }
+                            //tblView.FocusedColumn = colDoanhSo;
+                        }
+                        tblView.CloseEditor();
+                        tblView.ShowEditor();
+                        grdTichLuyDiem.SetCellValue(tblView.FocusedRowHandle, colMasp, sMasp);
+                    }
+                }
             }
         }
     }

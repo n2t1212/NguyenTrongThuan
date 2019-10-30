@@ -472,6 +472,8 @@ namespace MTPMSWIN.View
                 String Rs = new modPhieuBH().SavePhieuBH(tmpBH, tmpBHCT, MTGlobal.MT_USER_LOGIN);
                 if (Rs == "")
                 {
+                    String msg = new modPhieuBH().SaveDiemTichLuy(txtMadv.Text.ToString().ToUpper(), tmpBHCT);
+
                     setReadOnly(true);
                     MTGlobal.SetButtonAction(pACT_ROLE, MTButton, "SAVE");
                     MTGlobal.SetGridReadOnly(grdPhieuBH,tblView, true);
