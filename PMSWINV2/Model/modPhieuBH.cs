@@ -126,7 +126,7 @@ namespace MTPMSWIN.Model
                 arrPara[2] = new SqlParameter("@ketqua", SqlDbType.NVarChar, 255);
                 arrPara[2].Direction = ParameterDirection.Output;
                 int iRs = MTSQLServer.getMTSQLServer().wExec("spTL_AddTichLuyKhachHang", arrPara);
-                return arrPara[3].Value.ToString();
+                return arrPara[2].Value.ToString();
             }
             catch (Exception ex)
             {

@@ -262,6 +262,11 @@
                             <Image Height="45" Source="Images/Icons/pos_report_payment.png"></Image>
                         </MenuItem.Icon>
                     </MenuItem>
+                    <MenuItem Header="Điểm tích lũy khách hàng" Name="mnuBC_DIEMTICHLUY" Cursor="Hand" IsEnabled="False" Style="{StaticResource MySubMenuItem}" Click="mnuBC_DIEMTICHLUY_Click">
+                        <MenuItem.Icon>
+                            <Image Height="45" Source="Images/Icons/pos_report_payment.png"></Image>
+                        </MenuItem.Icon>
+                    </MenuItem>
                     <MenuItem Header="Thống kê gửi Chành" Name="mnuBC_TKGUICHANH" Cursor="Hand" Style="{StaticResource MySubMenuItem}"  Click="mnuBC_TKGUICHANH_Click">
                         <MenuItem.Icon>
                             <Image Height="45" Source="Images/Icons/pos_report_transport.png"></Image>

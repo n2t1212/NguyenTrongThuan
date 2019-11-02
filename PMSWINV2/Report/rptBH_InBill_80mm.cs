@@ -33,7 +33,8 @@ namespace MTPMSWIN.Report
 
             crTienhang.DataBindings.Add(new XRBinding("Text", DataSource, "Tienhang", "{0:n0}"));
             crChietKhau.DataBindings.Add(new XRBinding("Text", DataSource, "TongTTCk", "{0:n0}"));
-            crTongCong.DataBindings.Add(new XRBinding("Text", DataSource, "Thanhtoan", "{0:N0}")); 
+            crTongCong.DataBindings.Add(new XRBinding("Text", DataSource, "Thanhtoan", "{0:N0}"));
+            crDiemtichluy.DataBindings.Add(new XRBinding("Text", DataSource, "DiemTichLuy", "{0:N0}")); 
         }
 
         private void grpLoai_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)

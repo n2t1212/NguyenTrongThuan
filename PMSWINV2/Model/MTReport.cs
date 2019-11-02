@@ -871,5 +871,39 @@ namespace MTPMSWIN.Model
             }
             catch (Exception ex) { }
         }
+
+        public void rptTL_DiemTichLuy(int isChiTiet, DataTable tblKH)
+        {
+            try
+            {
+                DevExpress.Utils.WaitDialogForm Dlg = new DevExpress.Utils.WaitDialogForm("Vui lòng chờ, hệ thống đang xử lý...", "In điểm tích lũy chi tiết");
+
+                rptTL_DiemTichLuy oReport = new rptTL_DiemTichLuy();
+                SqlParameter[] arrPara = new SqlParameter[2];
+                arrPara[0] = new SqlParameter("@isChiTiet", SqlDbType.Int);
+                arrPara[0].Value = 1;
+                arrPara[1] = new SqlParameter("@tblMADT", SqlDbType.Structured);
+                arrPara[1].Value = tblKH;
+
+                DataTable otblRpt = new MTSQLServer().wRead("rptTL_TongDiemTL", arrPara);
+
+                Dlg.Close();
+                if (otblRpt != null)
+                {
+                    oReport.DataSource = otblRpt;
+                    oReport.BindData();
+                    setParameterInfo(oReport);
+                    setFormatReport(oReport);
+                    SetMarginReport(oReport, true, 30, 30, 30, 25);
+                    PrintPreview oPreview = new PrintPreview();
+                    oPreview.report = oReport;
+
+                    oPreview.ShowDialog();
+                }
+
+                Dlg.Close();
+            }
+            catch (Exception ex) { }
+        }
     }
 }

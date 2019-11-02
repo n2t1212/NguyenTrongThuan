@@ -247,6 +247,12 @@
     <Compile Include="MTMain.xaml.cs">
       <DependentUpon>MTMain.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Report\rptTL_DiemTichLuy.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptTL_DiemTichLuy.Designer.cs">
+      <DependentUpon>rptTL_DiemTichLuy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\rptTC_Phieuchi.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -384,6 +390,9 @@
     </Compile>
     <Compile Include="View\BH_PhieuBH.xaml.cs">
       <DependentUpon>BH_PhieuBH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\dlg_ChonInDiemTichLuy.xaml.cs">
+      <DependentUpon>dlg_ChonInDiemTichLuy.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\dlg_ChonKhachHang.xaml.cs">
       <DependentUpon>dlg_ChonKhachHang.xaml</DependentUpon>
@@ -544,6 +553,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptTL_DiemTichLuy.resx">
+      <DependentUpon>rptTL_DiemTichLuy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\rptTC_Phieuchi.resx">
       <DependentUpon>rptTC_Phieuchi.cs</DependentUpon>
     </EmbeddedResource>
@@ -633,6 +645,10 @@
     <Page Include="View\BH_PhieuBH.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\dlg_ChonInDiemTichLuy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\dlg_ChonKhachHang.xaml">
       <Generator>MSBuild:Compile</Generator>
