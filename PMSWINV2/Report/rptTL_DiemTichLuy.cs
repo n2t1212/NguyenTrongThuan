@@ -19,7 +19,6 @@ namespace MTPMSWIN.Report
             crTenkh.DataBindings.Add(new XRBinding("Text", DataSource, "Tenkh"));
             crDiachi.DataBindings.Add(new XRBinding("Text", DataSource, "Diachi"));
 
-            crDoanhso.DataBindings.Add(new XRBinding("Text", DataSource, "TongDoanhso", "{0:n0}"));
             crDiemds.DataBindings.Add(new XRBinding("Text", DataSource, "TongDiemDs", "{0:n0}"));
             crDiemhientai.DataBindings.Add(new XRBinding("Text", DataSource, "Diemhientai", "{0:n0}"));
             crDiemdatru.DataBindings.Add(new XRBinding("Text", DataSource, "TongDiemdatru", "{0:n0}"));
