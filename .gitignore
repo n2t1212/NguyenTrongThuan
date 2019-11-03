@@ -9,3 +9,9 @@
 /build
 /captures
 .externalNativeBuild
+*.g.i.cs
+*.baml
+*.g.cs
+bin/
+obj/
+
