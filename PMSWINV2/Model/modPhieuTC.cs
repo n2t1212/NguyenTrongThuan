@@ -96,9 +96,9 @@ namespace MTPMSWIN.Model
                 }
 
                 SqlParameter[] arrPara = new SqlParameter[3];
-                arrPara[0] = new SqlParameter("@mPhieutcid", SqlDbType.NVarChar, 50);
+                arrPara[0] = new SqlParameter("@Phieutcid", SqlDbType.NVarChar, 50);
                 arrPara[0].Value = mPhieutcid;
-                arrPara[1] = new SqlParameter("@nguoidung", SqlDbType.NVarChar, 50);
+                arrPara[1] = new SqlParameter("@Nguoidung", SqlDbType.NVarChar, 50);
                 arrPara[1].Value = MTGlobal.MT_USER_LOGIN;
                 arrPara[2] = new SqlParameter("@ketqua", SqlDbType.NVarChar, 100);
                 arrPara[2].Direction = ParameterDirection.Output;

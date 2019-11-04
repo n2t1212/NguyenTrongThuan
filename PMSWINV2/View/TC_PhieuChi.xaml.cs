@@ -292,7 +292,7 @@ namespace MTPMSWIN.View
             }
             if (Utils.ConfirmMessage("Bạn có chắc muốn xóa phiếu này?", "Xác nhận"))
             {
-                if (new modPhieuNX().DelPhieuNX(pPhieuTCID))
+                if (new modPhieuTC().DelPhieuTC(pPhieuTCID))
                 {
                     pPhieuTCID = "";
                     BindData();
