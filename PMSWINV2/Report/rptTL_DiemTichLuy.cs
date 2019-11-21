@@ -14,14 +14,16 @@ namespace MTPMSWIN.Report
         }
 
         public void BindData(){
-            crSTT.DataBindings.Add(new XRBinding("Text", DataSource, "STT"));
             crMakh.DataBindings.Add(new XRBinding("Text", DataSource, "Makh"));
             crTenkh.DataBindings.Add(new XRBinding("Text", DataSource, "Tenkh"));
-            crDiachi.DataBindings.Add(new XRBinding("Text", DataSource, "Diachi"));
-
             crDiemds.DataBindings.Add(new XRBinding("Text", DataSource, "TongDiemDs", "{0:n0}"));
             crDiemhientai.DataBindings.Add(new XRBinding("Text", DataSource, "Diemhientai", "{0:n0}"));
             crDiemdatru.DataBindings.Add(new XRBinding("Text", DataSource, "TongDiemdatru", "{0:n0}"));
+            crMasp.DataBindings.Add(new XRBinding("Text", DataSource, "Masp"));
+            crTensp.DataBindings.Add(new XRBinding("Text", DataSource, "Tensp"));
+            crDoanhso.DataBindings.Add(new XRBinding("Text", DataSource, "Doanhso", "{0:n0}"));
+            crDiemDoanhso.DataBindings.Add(new XRBinding("Text", DataSource, "DiemDs", "{0:n0}"));
+
         }
           
         

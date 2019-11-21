@@ -63,7 +63,11 @@
 
             </dxg:GridControl.View>
             <dxg:GridControl.Columns>
-                <dxg:GridColumn x:Name="colMasp" FieldName="Masp" Header="Mã sản phẩm" Width="150" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn x:Name="colMasp" FieldName="Masp" Header="Mã sản phẩm" Width="150" HorizontalHeaderContentAlignment="Center">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:TextEditSettings CharacterCasing="Upper"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
                 <dxg:GridColumn x:Name="colDoanhSo" FieldName="DoanhSo" Header="Doanh số" Width="150" HorizontalHeaderContentAlignment="Center">
                     <dxg:GridColumn.EditSettings>
                         <dxe:TextEditSettings Mask="N3" MaskType="Numeric" MaskUseAsDisplayFormat="True"/>
