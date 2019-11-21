@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rptHH_Thekho));
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -45,7 +44,6 @@
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
-            this.xrPictureBox2 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.xrTable6 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow6 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell12 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -55,6 +53,8 @@
             this.crMasp = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell22 = new DevExpress.XtraReports.UI.XRTableCell();
             this.crDvt = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell32 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.crQuycach = new DevExpress.XtraReports.UI.XRTableCell();
             this.crNgay = new DevExpress.XtraReports.UI.XRLabel();
             this.parThangNam = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
@@ -119,8 +119,6 @@
             this.xrTableCell39 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell40 = new DevExpress.XtraReports.UI.XRTableCell();
             this.crSumThanhtien = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell32 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.crQuycach = new DevExpress.XtraReports.UI.XRTableCell();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
@@ -338,14 +336,6 @@
             this.ReportHeader.HeightF = 0F;
             this.ReportHeader.Name = "ReportHeader";
             // 
-            // xrPictureBox2
-            // 
-            this.xrPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("xrPictureBox2.Image")));
-            this.xrPictureBox2.LocationFloat = new DevExpress.Utils.PointFloat(5.04169F, 0F);
-            this.xrPictureBox2.Name = "xrPictureBox2";
-            this.xrPictureBox2.SizeF = new System.Drawing.SizeF(71.24999F, 68.99998F);
-            this.xrPictureBox2.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage;
-            // 
             // xrTable6
             // 
             this.xrTable6.LocationFloat = new DevExpress.Utils.PointFloat(1.04169F, 156.5001F);
@@ -442,6 +432,28 @@
             this.crDvt.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.crDvt.Weight = 0.56080336866848768D;
             // 
+            // xrTableCell32
+            // 
+            this.xrTableCell32.Name = "xrTableCell32";
+            this.xrTableCell32.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 5, 0, 0, 100F);
+            this.xrTableCell32.StylePriority.UsePadding = false;
+            this.xrTableCell32.StylePriority.UseTextAlignment = false;
+            this.xrTableCell32.Text = "Quy cách";
+            this.xrTableCell32.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrTableCell32.Weight = 0.47694377309919356D;
+            // 
+            // crQuycach
+            // 
+            this.crQuycach.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
+            this.crQuycach.Name = "crQuycach";
+            this.crQuycach.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 0, 0, 0, 100F);
+            this.crQuycach.StylePriority.UseFont = false;
+            this.crQuycach.StylePriority.UsePadding = false;
+            this.crQuycach.StylePriority.UseTextAlignment = false;
+            this.crQuycach.Text = "crQuycach";
+            this.crQuycach.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.crQuycach.Weight = 2.1179938498906963D;
+            // 
             // crNgay
             // 
             this.crNgay.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
@@ -480,7 +492,7 @@
             this.xrLabel3.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
             new DevExpress.XtraReports.UI.XRBinding(this.parTax, "Text", "")});
             this.xrLabel3.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(77.04161F, 45.99998F);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(9.999901F, 45.99998F);
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 2, 0, 0, 100F);
             this.xrLabel3.SizeF = new System.Drawing.SizeF(431.9999F, 23F);
@@ -501,7 +513,7 @@
             this.xrLabel2.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
             new DevExpress.XtraReports.UI.XRBinding(this.parCompany, "Text", "")});
             this.xrLabel2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(77.04171F, 0F);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(10F, 0F);
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 2, 0, 0, 100F);
             this.xrLabel2.SizeF = new System.Drawing.SizeF(459.9165F, 23F);
@@ -522,7 +534,7 @@
             this.xrLabel1.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
             new DevExpress.XtraReports.UI.XRBinding(this.parAddress, "Text", "")});
             this.xrLabel1.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(77.04161F, 22.99999F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(9.999901F, 22.99999F);
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 2, 0, 0, 100F);
             this.xrLabel1.SizeF = new System.Drawing.SizeF(373.5757F, 23F);
@@ -957,7 +969,6 @@
             // grpSP
             // 
             this.grpSP.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrPictureBox2,
             this.xrLabel3,
             this.xrLabel4,
             this.crNgay,
@@ -1227,28 +1238,6 @@
             this.crSumThanhtien.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.crSumThanhtien.Weight = 0.20034733581867245D;
             // 
-            // xrTableCell32
-            // 
-            this.xrTableCell32.Name = "xrTableCell32";
-            this.xrTableCell32.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 5, 0, 0, 100F);
-            this.xrTableCell32.StylePriority.UsePadding = false;
-            this.xrTableCell32.StylePriority.UseTextAlignment = false;
-            this.xrTableCell32.Text = "Quy cách";
-            this.xrTableCell32.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.xrTableCell32.Weight = 0.47694377309919356D;
-            // 
-            // crQuycach
-            // 
-            this.crQuycach.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
-            this.crQuycach.Name = "crQuycach";
-            this.crQuycach.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 0, 0, 0, 100F);
-            this.crQuycach.StylePriority.UseFont = false;
-            this.crQuycach.StylePriority.UsePadding = false;
-            this.crQuycach.StylePriority.UseTextAlignment = false;
-            this.crQuycach.Text = "crQuycach";
-            this.crQuycach.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.crQuycach.Weight = 2.1179938498906963D;
-            // 
             // rptHH_Thekho
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -1364,7 +1353,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell39;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell40;
         private DevExpress.XtraReports.UI.XRTableCell crSumThanhtien;
-        private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox2;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell2;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell14;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell18;

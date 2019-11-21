@@ -68,7 +68,6 @@
             this.parCompany = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.parAddress = new DevExpress.XtraReports.Parameters.Parameter();
-            this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell2 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -275,7 +274,6 @@
             this.xrLabel3,
             this.xrLabel2,
             this.xrLabel1,
-            this.xrPictureBox1,
             this.xrTable1});
             this.ReportHeader.Dpi = 254F;
             this.ReportHeader.HeightF = 680F;
@@ -588,7 +586,7 @@
             this.xrLabel3.Dpi = 254F;
             this.xrLabel3.Font = new System.Drawing.Font("Arial", 7F);
             this.xrLabel3.ForeColor = System.Drawing.Color.DimGray;
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(174.625F, 116.84F);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(8.360924F, 116.84F);
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(13, 5, 0, 0, 254F);
             this.xrLabel3.SizeF = new System.Drawing.SizeF(767.08F, 50.8F);
@@ -612,7 +610,7 @@
             this.xrLabel2.Dpi = 254F;
             this.xrLabel2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.xrLabel2.ForeColor = System.Drawing.Color.DimGray;
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(174.625F, 0F);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(8.360923F, 0F);
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(13, 5, 0, 0, 254F);
             this.xrLabel2.SizeF = new System.Drawing.SizeF(767.08F, 50.8F);
@@ -636,7 +634,7 @@
             this.xrLabel1.Dpi = 254F;
             this.xrLabel1.Font = new System.Drawing.Font("Arial", 7F);
             this.xrLabel1.ForeColor = System.Drawing.Color.DimGray;
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(174.625F, 58.42F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(8.360924F, 58.42F);
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(13, 5, 0, 0, 254F);
             this.xrLabel1.SizeF = new System.Drawing.SizeF(767.08F, 50.8F);
@@ -652,13 +650,6 @@
             this.parAddress.Description = "Địa chỉ Công Ty";
             this.parAddress.Name = "parAddress";
             this.parAddress.ValueInfo = "Số 1 Đường Cộng Hòa, F.13, Q.Tân Bình, TP.HCM";
-            // 
-            // xrPictureBox1
-            // 
-            this.xrPictureBox1.Dpi = 254F;
-            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(2.645834F, 0F);
-            this.xrPictureBox1.Name = "xrPictureBox1";
-            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(171.9792F, 167.64F);
             // 
             // xrTable1
             // 
@@ -1107,7 +1098,6 @@
         private DevExpress.XtraReports.UI.ReportFooterBand ReportFooter;
         private DevExpress.XtraReports.UI.XRLabel xrLabel6;
         private DevExpress.XtraReports.Parameters.Parameter parNguoiLap;
-        private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox1;
         private DevExpress.XtraReports.UI.XRTable xrTable5;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow5;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell10;

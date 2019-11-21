@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rptCN_CanthuTH));
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -75,7 +74,6 @@
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.parTax = new DevExpress.XtraReports.Parameters.Parameter();
-            this.xrPictureBox2 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.parAddress = new DevExpress.XtraReports.Parameters.Parameter();
             this.crNgayCT = new DevExpress.XtraReports.UI.XRLabel();
@@ -308,7 +306,6 @@
             this.xrTable1,
             this.xrLabel4,
             this.xrLabel3,
-            this.xrPictureBox2,
             this.xrLabel1,
             this.crNgayCT});
             this.ReportHeader.HeightF = 268.7778F;
@@ -331,7 +328,7 @@
             this.xrLabel2.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
             new DevExpress.XtraReports.UI.XRBinding(this.parCompany, "Text", "")});
             this.xrLabel2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(90.08336F, 0F);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(2.083333F, 0F);
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 2, 0, 0, 100F);
             this.xrLabel2.SizeF = new System.Drawing.SizeF(496.3749F, 23F);
@@ -725,7 +722,7 @@
             this.xrLabel3.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
             new DevExpress.XtraReports.UI.XRBinding(this.parTax, "Text", "")});
             this.xrLabel3.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(90.08336F, 49F);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(2.083333F, 49F);
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 2, 0, 0, 100F);
             this.xrLabel3.SizeF = new System.Drawing.SizeF(496.3749F, 23F);
@@ -741,20 +738,12 @@
             this.parTax.Name = "parTax";
             this.parTax.ValueInfo = "0343434343";
             // 
-            // xrPictureBox2
-            // 
-            this.xrPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("xrPictureBox2.Image")));
-            this.xrPictureBox2.LocationFloat = new DevExpress.Utils.PointFloat(2.083333F, 0F);
-            this.xrPictureBox2.Name = "xrPictureBox2";
-            this.xrPictureBox2.SizeF = new System.Drawing.SizeF(87.91666F, 89.41669F);
-            this.xrPictureBox2.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage;
-            // 
             // xrLabel1
             // 
             this.xrLabel1.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
             new DevExpress.XtraReports.UI.XRBinding(this.parAddress, "Text", "")});
             this.xrLabel1.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(90.08325F, 25.99996F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(2.083226F, 25.99996F);
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 2, 0, 0, 100F);
             this.xrLabel1.SizeF = new System.Drawing.SizeF(496.3749F, 23F);
@@ -1202,7 +1191,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell33;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell34;
         private DevExpress.XtraReports.UI.XRTableCell crSTongPT;
-        private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox2;
         private DevExpress.XtraReports.UI.GroupHeaderBand grpDP;
         private DevExpress.XtraReports.UI.XRLabel crMatk;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell2;
