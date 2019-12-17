@@ -14,7 +14,7 @@
         </LinearGradientBrush>
     </Window.Background>
 
-    <Grid Margin="0,0,0,10" PreviewKeyDown="Grid_PreviewKeyDown_1" >
+    <Grid PreviewKeyDown="Grid_PreviewKeyDown_1" >
         <Grid VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="41" Margin="0,0,0,0">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
